@@ -4,7 +4,7 @@ permalink: get-started/dr-licensing.html
 keywords: bluexp license, disaster recovery licensing 
 summary: Com o NetApp Disaster Recovery, você pode usar diferentes planos de licenciamento, incluindo um teste gratuito, uma assinatura paga conforme o uso ou trazer sua própria licença. 
 ---
-= Configurar licenciamento para recuperação de desastres da NetApp
+= Configurar licenciamento para NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -14,7 +14,7 @@ summary: Com o NetApp Disaster Recovery, você pode usar diferentes planos de li
 [role="lead"]
 Com o NetApp Disaster Recovery, você pode usar diferentes planos de licenciamento, incluindo um teste gratuito, uma assinatura paga conforme o uso ou trazer sua própria licença.
 
-*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
 link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre funções de acesso para todos os serviços"^] .
 
@@ -22,7 +22,7 @@ link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permiss�
 
 * Inscreva-se para um teste gratuito de 30 dias.
 * Compre uma assinatura pré-paga (PAYGO) do Amazon Web Services (AWS) Marketplace ou do Microsoft Azure Marketplace.
-* Traga sua própria licença (BYOL), que é um arquivo de licença NetApp (NLF) que você obtém do seu representante de vendas NetApp .  Você pode usar o número de série da licença para ativar o BYOL no NetApp Console.
+* Traga sua própria licença (BYOL), que é um arquivo de licença NetApp (NLF) que você obtém do seu representante de vendas NetApp . Você pode usar o número de série da licença para ativar o BYOL no NetApp Console.
 
 
 
@@ -51,19 +51,19 @@ Para continuar após o teste, você precisará comprar uma licença BYOL ou uma 
 Durante o teste, você terá funcionalidade total.
 
 .Passos
-. Faça login no https://console.netapp.com/["Console NetApp"^] .
-. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
+. Faça login no https://console.netapp.com/["NetApp Console"^] .
+. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 +
 Se esta for a primeira vez que você faz login neste serviço, a página de destino será exibida.
 
 +
-image:draas-landing6-free-trial.png["Captura de tela da página de destino para recuperação de desastres da NetApp"]
+image:draas-landing6-free-trial.png["Captura de tela da página de destino para NetApp Disaster Recovery"]
 
 . Se você ainda não adicionou um agente do Console para outros serviços, adicione um.
 +
 Para adicionar um agente de console, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Saiba mais sobre os agentes do Console"^] .
 
-. Depois de configurar o agente, na página inicial do NetApp Disaster Recovery, o botão para adicionar o agente muda para um botão para iniciar um teste gratuito.  Selecione *Iniciar teste gratuito*.
+. Depois de configurar o agente, na página inicial do NetApp Disaster Recovery , o botão para adicionar o agente muda para um botão para iniciar um teste gratuito.  Selecione *Iniciar teste gratuito*.
 . Comece adicionando vCenters.
 +
 Para obter detalhes, consulte link:../use/sites-add.html["Adicionar sites do vCenter"] .
@@ -88,7 +88,7 @@ image:dr-licensing-payment-methods.png["Página de métodos de pagamento do NetA
 . Use o AWS Marketplace ou o Microsoft Azure Marketplace para assinar o * NetApp Disaster Recovery*.
 . Quando você retorna ao NetApp Disaster Recovery, uma mensagem informa que você está inscrito.
 +
-Você pode visualizar os detalhes da assinatura na página de assinatura do NetApp Console. link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-homepage.html["Saiba mais sobre o gerenciamento de assinaturas com o NetApp Console"^] .
+Você pode visualizar os detalhes da assinatura na página de assinatura do NetApp Console . link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-homepage.html["Saiba mais sobre o gerenciamento de assinaturas com o NetApp Console"^] .
 
 
 
@@ -108,7 +108,7 @@ https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-li
 
 == Atualize sua licença quando ela expirar
 
-Se o prazo da sua licença estiver próximo da data de expiração ou se a capacidade da sua licença estiver atingindo o limite, você será notificado na interface do usuário do NetApp Disaster Recovery.  Você pode atualizar sua licença do NetApp Disaster Recovery antes que ela expire para que não haja interrupção na sua capacidade de acessar seus dados digitalizados.
+Se o prazo da sua licença estiver próximo da data de expiração ou se a capacidade da sua licença estiver atingindo o limite, você será notificado na interface do usuário do NetApp Disaster Recovery .  Você pode atualizar sua licença do NetApp Disaster Recovery antes que ela expire para que não haja interrupção na sua capacidade de acessar seus dados digitalizados.
 
 
 TIP: Esta mensagem também aparece no NetApp Console e no https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificações"] .

@@ -2,28 +2,28 @@
 sidebar: sidebar 
 permalink: reference/evs-deploy-guide-config-add-arrays.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
-summary: Antes de usar o NetApp Disaster Recovery, você deve adicionar instâncias de armazenamento locais e hospedadas na nuvem ao sistema NetApp Console. 
+summary: Antes de usar o NetApp Disaster Recovery, você deve adicionar instâncias de armazenamento locais e hospedadas na nuvem ao sistema NetApp Console . 
 ---
 = Adicione matrizes locais ao sistema NetApp Console para Amazon EVS com NetApp Disaster Recovery
 :allow-uri-read: 
 
 
 [role="lead"]
-Antes de usar o NetApp Disaster Recovery, você deve adicionar instâncias de armazenamento locais e hospedadas na nuvem ao sistema NetApp Console.
+Antes de usar o NetApp Disaster Recovery, você deve adicionar instâncias de armazenamento locais e hospedadas na nuvem ao sistema NetApp Console .
 
 Você precisa fazer o seguinte:
 
-* Adicione matrizes locais ao seu sistema NetApp Console.
-* Adicione instâncias do Amazon FSx for NetApp ONTAP (FSx para ONTAP) ao seu sistema NetApp Console.
+* Adicione matrizes locais ao seu sistema NetApp Console .
+* Adicione instâncias do Amazon FSx for NetApp ONTAP (FSx para ONTAP) ao seu sistema NetApp Console .
 
 
 
 
 == Adicionar matrizes de armazenamento locais ao sistema NetApp Console
 
-Adicione recursos de armazenamento ONTAP local ao seu sistema NetApp Console.
+Adicione recursos de armazenamento ONTAP local ao seu sistema NetApp Console .
 
-. Na página Sistemas do console NetApp , selecione *Adicionar sistema*.
+. Na página Sistemas do NetApp Console , selecione *Adicionar sistema*.
 +
 image:evs-canvas-add-working-env-1.png["Adicionar sistema"]
 
@@ -53,9 +53,9 @@ image:evs-canvas-add-working-env-4-5.png["Adicionar imagem do sistema"]
 
 == Adicionar instâncias de armazenamento do Amazon FSx for NetApp ONTAP ao sistema NetApp Console
 
-Em seguida, adicione um Amazon FSx for NetApp ONTAP ao seu sistema NetApp Console.
+Em seguida, adicione um Amazon FSx for NetApp ONTAP ao seu sistema NetApp Console .
 
-. Na página Sistemas do console NetApp , selecione *Adicionar sistema*.
+. Na página Sistemas do NetApp Console , selecione *Adicionar sistema*.
 +
 image:evs-canvas-add-working-env-1.png["Adicionar imagem do sistema"]
 

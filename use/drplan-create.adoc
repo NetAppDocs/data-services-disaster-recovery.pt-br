@@ -14,7 +14,7 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 [role="lead"]
 Depois de adicionar sites do vCenter, você estará pronto para criar um _plano de replicação ou recuperação de desastres_.  Os planos de replicação gerenciam a proteção de dados da infraestrutura VMware.  Selecione os vCenters de origem e destino, escolha os grupos de recursos e agrupe como os aplicativos devem ser restaurados e ligados.  Por exemplo, você pode agrupar máquinas virtuais (VMs) associadas a um aplicativo ou pode agrupar aplicativos que tenham camadas semelhantes.  Esses planos são às vezes chamados de _projetos_.
 
-*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
 link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -83,9 +83,9 @@ Ao criar o plano, você deve seguir estas diretrizes:
 Primeiro, selecione o vCenter de origem e depois selecione o vCenter de destino.
 
 .Passos
-. Faça login no https://console.netapp.com/["Console NetApp"^] .
-. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
-. No menu NetApp Disaster Recovery, selecione *Planos de replicação* e selecione *Adicionar*.  Ou, se você estiver apenas começando a usar o serviço, no Painel, selecione *Adicionar plano de replicação*.
+. Faça login no https://console.netapp.com/["NetApp Console"^] .
+. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
+. No menu NetApp Disaster Recovery , selecione *Planos de replicação* e selecione *Adicionar*.  Ou, se você estiver apenas começando a usar o serviço, no Painel, selecione *Adicionar plano de replicação*.
 +
 image:dr-plan-create-name2.png["Captura de tela mostrando a página Adicionar plano de replicação > Adicionar plano"]
 
@@ -450,7 +450,7 @@ Um failover de teste cria um volume FlexClone , monta o armazenamento de dados e
 Com base no cronograma, o teste de failover é executado e garante que as cargas de trabalho sejam movidas para o destino especificado pelo plano de replicação.
 
 .Passos
-. No menu NetApp Disaster Recovery, selecione *Planos de replicação*.
+. No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
 +
 image:dr-plan-list.png["Captura de tela mostrando a lista de planos de replicação"]
 

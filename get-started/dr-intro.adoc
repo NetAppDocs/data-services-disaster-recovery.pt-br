@@ -14,7 +14,7 @@ summary: A recuperação de desastres na nuvem é uma maneira resiliente e econ�
 [role="lead"]
 A recuperação de desastres na nuvem é uma maneira resiliente e econômica de proteger cargas de trabalho contra interrupções do site e eventos de corrupção de dados.  Com o NetApp Disaster Recovery for VMware, você pode replicar suas cargas de trabalho de VM ou datastore VMware locais executando armazenamento ONTAP para um data center definido por software VMware em uma nuvem pública usando o armazenamento em nuvem NetApp ou para outro ambiente VMware local com armazenamento ONTAP como um site de recuperação de desastres.  Você também pode usar o Disaster Recovery para migrar cargas de trabalho de VM de um site para outro.
 
-O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres.  Com o NetApp Disaster Recovery, você pode proteger suas cargas de trabalho locais baseadas em NFS e os armazenamentos de dados do sistema de arquivos de máquina virtual (VMFS) VMware vSphere para armazenamento NetApp executando iSCSI e FC em um dos seguintes:
+O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres.  Com o NetApp Disaster Recovery, você pode proteger suas cargas de trabalho locais baseadas em NFS e os armazenamentos de dados do sistema de arquivos de máquina virtual (VMFS) VMware vSphere para iSCSI e FC executando o armazenamento NetApp em um dos seguintes locais:
 
 * VMware Cloud (VMC) na AWS com Amazon FSx for NetApp ONTAP
 * Amazon Elastic VMware Service (EVS) com Amazon FSx for NetApp ONTAP Para obter detalhes, consultelink:../reference/evs-deploy-guide-introduction.html["Introdução ao NetApp Disaster Recovery usando o Amazon Elastic VMware Service e o Amazon FSx for NetApp ONTAP"] .
@@ -28,15 +28,15 @@ image:../use/evs-bluexp-architecture.png["Diagrama mostrando os componentes do N
 
 
 
-== Console NetApp
+== NetApp Console
 
-O NetApp Disaster Recovery pode ser acessado pelo NetApp Console.
+O NetApp Disaster Recovery pode ser acessado por meio do NetApp Console.
 
 O NetApp Console fornece gerenciamento centralizado de serviços de armazenamento e dados da NetApp em ambientes locais e na nuvem em nível empresarial. O Console é necessário para acessar e usar os serviços de dados do NetApp . Como uma interface de gerenciamento, ele permite que você gerencie muitos recursos de armazenamento a partir de uma única interface. Os administradores do console podem controlar o acesso ao armazenamento e aos serviços de todos os sistemas da empresa.
 
 Você não precisa de uma licença ou assinatura para começar a usar o NetApp Console e só incorrerá em cobranças quando precisar implantar agentes do Console na sua nuvem para garantir a conectividade com seus sistemas de armazenamento ou serviços de dados do NetApp . No entanto, alguns serviços de dados da NetApp acessíveis pelo Console são licenciados ou baseados em assinatura.
 
-Saiba mais sobre o https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["Console NetApp"] .
+Saiba mais sobre o https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"] .
 
 
 
@@ -77,7 +77,7 @@ NOTE: A configuração do servidor vSphere é feita fora do NetApp Disaster Reco
 
 A NetApp não cobra pelo uso da versão de teste do NetApp Disaster Recovery.
 
-O NetApp Disaster Recovery pode ser usado com uma licença da NetApp ou com um plano de assinatura anual da Amazon Web Services.
+O NetApp Disaster Recovery pode ser usado com uma licença da NetApp ou com um plano de assinatura anual por meio da Amazon Web Services.
 
 
 IMPORTANT: Alguns lançamentos incluem uma prévia da tecnologia.  A NetApp não cobra por nenhuma capacidade de carga de trabalho visualizada.  Verlink:../release-notes/dr-whats-new.html["Novidades no NetApp Disaster Recovery"] para obter informações sobre as últimas novidades tecnológicas.
@@ -90,14 +90,14 @@ Você pode usar os seguintes tipos de licença:
 
 * Inscreva-se para um teste gratuito de 30 dias.
 * Compre uma assinatura pré-paga (PAYGO) com o Amazon Web Services (AWS) Marketplace ou o Microsoft Azure Marketplace.  Esta licença permite que você compre uma licença de capacidade protegida fixa sem nenhum compromisso de longo prazo.
-* Traga sua própria licença (BYOL), que é um arquivo de licença NetApp (NLF) que você obtém do seu representante de vendas NetApp .  Você pode usar o número de série da licença para ativar o BYOL no NetApp Console.
+* Traga sua própria licença (BYOL), que é um arquivo de licença NetApp (NLF) que você obtém do seu representante de vendas NetApp . Você pode usar o número de série da licença para ativar o BYOL no NetApp Console.
 
 
 As licenças para todos os serviços de dados do NetApp são gerenciadas por meio de assinaturas no NetApp Console.  Depois de configurar seu BYOL, você poderá ver uma licença ativa para o serviço no Console.
 
 O serviço é licenciado com base na quantidade de dados hospedados em volumes ONTAP protegidos.  O serviço determina quais volumes devem ser considerados para fins de licenciamento mapeando VMs protegidas para seus armazenamentos de dados do vCenter.  Cada armazenamento de dados é hospedado em um volume ONTAP ou LUN.  A capacidade usada relatada pelo ONTAP para esse volume ou LUN é usada para determinações de licenciamento.
 
-Volumes protegidos podem hospedar muitas VMs.  Alguns podem não fazer parte de um grupo de recursos de recuperação de desastres da NetApp .  Independentemente disso, o armazenamento consumido por todas as VMs naquele volume ou LUN é usado em relação à capacidade máxima da licença.
+Volumes protegidos podem hospedar muitas VMs.  Alguns podem não fazer parte de um grupo de recursos de NetApp Disaster Recovery .  Independentemente disso, o armazenamento consumido por todas as VMs naquele volume ou LUN é usado em relação à capacidade máxima da licença.
 
 
 NOTE: As cobranças do NetApp Disaster Recovery são baseadas na capacidade usada dos armazenamentos de dados no site de origem quando há pelo menos uma VM com um plano de replicação.  A capacidade para um armazenamento de dados com failover não está incluída na capacidade permitida.  Para um BYOL, se os dados excederem a capacidade permitida, as operações no serviço serão limitadas até que você obtenha uma licença de capacidade adicional ou atualize a licença no NetApp Console.
@@ -116,9 +116,9 @@ Você pode comprar uma licença a qualquer momento e não será cobrado até o t
 
 
 
-== Como funciona a recuperação de desastres da NetApp
+== Como funciona a NetApp Disaster Recovery
 
-O NetApp Disaster Recovery é um serviço hospedado no ambiente de software como serviço (SaaS) do NetApp Console.  A recuperação de desastres pode recuperar cargas de trabalho replicadas de um site local para o Amazon FSx for ONTAP ou para outro site local.  Este serviço automatiza a recuperação do nível SnapMirror , por meio do registro de máquinas virtuais no VMware Cloud na AWS, e para mapeamentos de rede diretamente na plataforma de virtualização e segurança de rede da VMware, NSX-T. Este recurso está incluído em todos os ambientes do Virtual Machine Cloud.
+O NetApp Disaster Recovery é um serviço hospedado no ambiente de software como serviço (SaaS) do NetApp Console .  A recuperação de desastres pode recuperar cargas de trabalho replicadas de um site local para o Amazon FSx for ONTAP ou para outro site local.  Este serviço automatiza a recuperação do nível SnapMirror , por meio do registro de máquinas virtuais no VMware Cloud na AWS, e para mapeamentos de rede diretamente na plataforma de virtualização e segurança de rede da VMware, NSX-T. Este recurso está incluído em todos os ambientes do Virtual Machine Cloud.
 
 O NetApp Disaster Recovery usa a tecnologia ONTAP SnapMirror , que fornece replicação altamente eficiente e preserva as eficiências de snapshot incremental e permanente do ONTAP .  A replicação do SnapMirror garante que cópias de snapshot consistentes com o aplicativo estejam sempre sincronizadas e que os dados possam ser usados ​​imediatamente após um failover.
 
@@ -185,7 +185,7 @@ Depois que o Disaster Recovery cria e inicializa todos os relacionamentos, em ca
 
 
 
-== Termos que podem ajudar você com a recuperação de desastres da NetApp
+== Termos que podem ajudar você com a NetApp Disaster Recovery
 
 Você pode se beneficiar ao entender alguma terminologia relacionada à recuperação de desastres.
 

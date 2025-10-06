@@ -21,8 +21,8 @@ TIP: Depois de criar o plano de replicação, identificar a recorrência no assi
 Antes de iniciar a migração, você deve ter criado um plano de replicação e selecionado migrar os aplicativos.  Em seguida, a opção *Migrar* aparece no menu Ações.
 
 .Passos
-. Faça login no https://console.netapp.com/["Console NetApp"^] .
-. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
+. Faça login no https://console.netapp.com/["NetApp Console"^] .
+. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 . No menu, selecione *Planos de replicação*.
 . Selecione o plano de replicação.
 . À direita, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] e selecione *Migrar*.

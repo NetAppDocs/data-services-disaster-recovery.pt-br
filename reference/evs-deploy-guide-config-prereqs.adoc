@@ -16,7 +16,7 @@ Especificamente, faça o seguinte:
 * Crie uma conta de usuário do vCenter com os privilégios específicos do VMware necessários para que o NetApp Disaster Recovery execute as operações necessárias.
 +
 
-NOTE: Não recomendamos usar a conta de administrador padrão "\administrator@vsphere.com".  Em vez disso, você deve criar uma conta de usuário específica do NetApp Disaster Recovery em todos os clusters do vCenter que participarão do processo de DR.  Para obter uma lista de privilégios específicos necessários, consultelink:vcenter-privileges.html["Privilégios do vCenter necessários para recuperação de desastres do NetApp"] .
+NOTE: Não recomendamos usar a conta de administrador padrão "\administrator@vsphere.com".  Em vez disso, você deve criar uma conta de usuário específica do NetApp Disaster Recovery em todos os clusters do vCenter que participarão do processo de DR.  Para obter uma lista de privilégios específicos necessários, consultelink:vcenter-privileges.html["Privilégios do vCenter necessários para NetApp Disaster Recovery"] .
 
 * Certifique-se de que todos os datastores do vCenter que hospedarão VMs protegidas pelo NetApp Disaster Recovery estejam localizados em recursos de armazenamento do NetApp ONTAP .
 +

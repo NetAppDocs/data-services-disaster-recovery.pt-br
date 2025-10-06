@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/replicate.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: Usando o NetApp Disaster Recovery, você pode replicar aplicativos VMware no seu site de origem para um site remoto de recuperação de desastres na nuvem usando a replicação do SnapMirror . 
+summary: Usando o NetApp Disaster Recovery, você pode replicar aplicativos VMware no seu site de origem para um site remoto de recuperação de desastres na nuvem usando a replicação SnapMirror . 
 ---
 = Replique aplicativos para outro site com o NetApp Disaster Recovery
 :hardbreaks:
@@ -12,12 +12,12 @@ summary: Usando o NetApp Disaster Recovery, você pode replicar aplicativos VMwa
 
 
 [role="lead"]
-Usando o NetApp Disaster Recovery, você pode replicar aplicativos VMware no seu site de origem para um site remoto de recuperação de desastres na nuvem usando a replicação do SnapMirror .
+Usando o NetApp Disaster Recovery, você pode replicar aplicativos VMware no seu site de origem para um site remoto de recuperação de desastres na nuvem usando a replicação SnapMirror .
 
 
 TIP: Depois de criar o plano de recuperação de desastres, identificar a recorrência no assistente e iniciar uma replicação para um site de recuperação de desastres, a cada 30 minutos o NetApp Disaster Recovery verifica se a replicação está realmente ocorrendo de acordo com o plano. Você pode monitorar o progresso na página Job Monitor.
 
-*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de failover de recuperação de desastres.
+*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de failover de recuperação de desastres.
 
 link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -25,8 +25,8 @@ link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permiss�
 Antes de iniciar a replicação, você deve ter criado um plano de replicação e selecionado replicar os aplicativos.  Em seguida, a opção *Replicar* aparece no menu Ações.
 
 .Passos
-. Faça login no https://console.netapp.com/["Console NetApp"^] .
-. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
+. Faça login no https://console.netapp.com/["NetApp Console"^] .
+. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 . No menu, selecione *Planos de replicação*.
 . Selecione o plano de replicação.
 . À direita, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] e selecione *Replicar*.

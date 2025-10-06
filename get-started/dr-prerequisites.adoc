@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/dr-prerequisites.html 
 keywords: what are disaster recovery requirements, disaster recovery prerequisites, bluexp, disaster recovery 
-summary: Antes de usar o NetApp Disaster Recovery, você deve garantir que seu ambiente atenda aos requisitos de armazenamento ONTAP , cluster VMware vCenter e NetApp Console. 
+summary: Antes de usar o NetApp Disaster Recovery, você deve garantir que seu ambiente atenda aos requisitos de armazenamento ONTAP , cluster VMware vCenter e NetApp Console . 
 ---
 = Pré-requisitos do NetApp Disaster Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Antes de usar o NetApp Disaster Recovery, você deve garantir que seu a
 
 
 [role="lead"]
-Antes de usar o NetApp Disaster Recovery, você deve garantir que seu ambiente atenda aos requisitos de armazenamento ONTAP , cluster VMware vCenter e NetApp Console.
+Antes de usar o NetApp Disaster Recovery, você deve garantir que seu ambiente atenda aos requisitos de armazenamento ONTAP , cluster VMware vCenter e NetApp Console .
 
 
 
@@ -64,7 +64,7 @@ Esses pré-requisitos se aplicam ao ONTAP ou ao Amazon FSX para instâncias do N
 
 Esses pré-requisitos se aplicam aos clusters vCenter locais e ao data center definido por software (SDDC) do VMware Cloud for AWS.
 
-* Análiselink:../reference/vcenter-privileges.html["Privilégios do vCenter"] necessário para a recuperação de desastres da NetApp .
+* Análiselink:../reference/vcenter-privileges.html["Privilégios do vCenter"] necessário para NetApp Disaster Recovery.
 * Todos os clusters VMware que você deseja que o NetApp Disaster Recovery gerencie usam volumes ONTAP para hospedar quaisquer VMs que você deseja proteger.
 * Todos os datastores VMware a serem gerenciados pelo NetApp Disaster Recovery devem usar um dos seguintes protocolos:
 +
@@ -98,7 +98,7 @@ Se você ainda não fez isso, https://docs.netapp.com/us-en/bluexp-setup-admin/t
 * As credenciais do Amazon FSx para ONTAP e AWS devem ser adicionadas ao sistema dentro do projeto do NetApp Console que será usado para gerenciar o NetApp Disaster Recovery.
 * O NetApp Disaster Recovery requer credenciais do vCenter.  Você insere as credenciais do vCenter ao adicionar um site no NetApp Disaster Recovery.
 +
-Para obter uma lista de privilégios do vCenter necessários, consultelink:../reference/vcenter-privileges.html["Privilégios do vCenter necessários para recuperação de desastres do NetApp"] .  Para obter instruções sobre como adicionar um site, consultelink:../use/sites-add.html["Adicionar um site"] .
+Para obter uma lista de privilégios do vCenter necessários, consultelink:../reference/vcenter-privileges.html["Privilégios do vCenter necessários para NetApp Disaster Recovery"] .  Para obter instruções sobre como adicionar um site, consultelink:../use/sites-add.html["Adicionar um site"] .
 
 
 
@@ -127,7 +127,7 @@ TIP: Para locais para locais, use o agente do Console local.  Para o local na AW
 +
 Ver https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Descubra clusters ONTAP locais"^] .
 
-* Para obter informações sobre como configurar um proxy inteligente para o NetApp Disaster Recovery, consultelink:../get-started/dr-setup.html["Configure sua infraestrutura para recuperação de desastres da NetApp"] .
+* Para obter informações sobre como configurar um proxy inteligente para o NetApp Disaster Recovery, consultelink:../get-started/dr-setup.html["Configure sua infraestrutura para NetApp Disaster Recovery"] .
 
 
 

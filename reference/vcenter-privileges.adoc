@@ -4,7 +4,7 @@ permalink: reference/vcenter-privileges.html
 keywords: disaster recovery, bluexp, vcenter, 
 summary: 'A conta do vCenter deve ter um conjunto mínimo de privilégios do vCenter para permitir que o NetApp Disaster Recovery execute seus serviços, como registrar e cancelar o registro de datastores, iniciar e parar VMs e reconfigurar máquinas virtuais (VMs).  A tabela a seguir lista todos os privilégios necessários para que o NetApp Disaster Recovery interaja com um cluster vCenter.' 
 ---
-= Privilégios do vCenter necessários para recuperação de desastres do NetApp
+= Privilégios do vCenter necessários para NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

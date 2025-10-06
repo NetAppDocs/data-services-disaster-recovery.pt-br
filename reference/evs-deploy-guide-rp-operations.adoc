@@ -20,8 +20,8 @@ A principal operação que você pode precisar executar é aquela que você espe
 O failover é um processo iniciado manualmente.
 
 .Etapas para acessar a operação de failover
-. Na barra de navegação esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
-. No menu NetApp Disaster Recovery, selecione *Planos de replicação*.
+. Na barra de navegação esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
+. No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
 
 
 .Etapas para executar um failover
@@ -89,7 +89,7 @@ image:evs-rp-menu-compliance-check.png["Opção de menu Executar verificação d
 
 == Atualizar recursos
 
-Sempre que você fizer alterações na sua infraestrutura virtual — como adicionar ou excluir VMs, adicionar ou excluir datastores ou mover VMs entre datastores — será necessário executar uma atualização dos clusters do vCenter afetados no serviço NetApp Disaster Recovery.  O serviço faz isso automaticamente uma vez a cada 24 horas por padrão, mas uma atualização manual garante que as informações mais recentes da infraestrutura virtual estejam disponíveis e sejam levadas em consideração para proteção de DR.
+Sempre que você fizer alterações na sua infraestrutura virtual — como adicionar ou excluir VMs, adicionar ou excluir datastores ou mover VMs entre datastores — será necessário executar uma atualização dos clusters do vCenter afetados no serviço NetApp Disaster Recovery .  O serviço faz isso automaticamente uma vez a cada 24 horas por padrão, mas uma atualização manual garante que as informações mais recentes da infraestrutura virtual estejam disponíveis e sejam levadas em consideração para proteção de DR.
 
 Há dois casos em que uma atualização é necessária:
 
@@ -117,7 +117,7 @@ image::evs-rp-menu-migrate.png[Opção de menu Migrar]
 
 == Tire uma foto agora
 
-A qualquer momento, você pode tirar um instantâneo imediato do plano de replicação.  Este instantâneo está incluído nas considerações de recuperação de desastres do NetApp definidas pela contagem de retenção de instantâneos do plano de replicação.
+A qualquer momento, você pode tirar um instantâneo imediato do plano de replicação.  Este instantâneo está incluído nas considerações de NetApp Disaster Recovery definidas pela contagem de retenção de instantâneos do plano de replicação.
 
 . Selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] ao lado do plano de replicação.
 . Para tirar um instantâneo imediato dos recursos do plano de replicação, selecione *Tirar instantâneo agora* no menu Ações do plano de replicação:

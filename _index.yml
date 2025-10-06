@@ -4,7 +4,7 @@ indexpage:
   summary: Com o NetApp Disaster Recovery for VMware, você pode replicar suas cargas
     de trabalho VMware locais executando armazenamento ONTAP para um data center definido
     por software VMware em uma nuvem pública como um site de recuperação de desastres
-    usando o armazenamento em nuvem da NetApp .
+    usando o armazenamento em nuvem NetApp .
   keywords: disaster, disaster recovery, bluexp, replicate, replication, cloud storage
   lead: A recuperação de desastres na nuvem é uma maneira resiliente e econômica de
     proteger cargas de trabalho contra interrupções do site e eventos de corrupção
@@ -15,7 +15,7 @@ indexpage:
   tiles:
   - title: Começar
     links:
-    - title: Saiba mais sobre a recuperação de desastres da NetApp
+    - title: Saiba mais sobre a NetApp Disaster Recovery
       url: "/get-started/dr-intro.html"
     - title: Novidades no NetApp Disaster Recovery
       url: "/release-notes/dr-whats-new.html"
@@ -23,11 +23,11 @@ indexpage:
       url: "/get-started/dr-quick-start.html"
     - title: Pré-requisitos
       url: "/get-started/dr-prerequisites.html"
-    - title: Acesse a recuperação de desastres da NetApp
+    - title: Acesse a NetApp Disaster Recovery
       url: "/get-started/dr-login.html"
     - title: Perguntas frequentes
       url: "/get-started/dr-faq.html"
-  - title: Use a recuperação de desastres da NetApp
+  - title: Use a NetApp Disaster Recovery
     links:
     - title: Adicionar vCenters a um site
       url: "/use/sites-add.html"
@@ -43,13 +43,13 @@ indexpage:
       url: "/use/failback.html"
   - title: Blogs e comunidade
     links:
-    - title: Console NetApp
+    - title: NetApp Console
       url: https://www.netapp.com/console
-    - title: Serviços de dados NetApp
+    - title: NetApp Data Services
       url: https://www.netapp.com/data-services/
     - title: Comunidade NetApp
       url: https://community.netapp.com
-    - title: Blog de recuperação de desastres da NetApp
+    - title: Blog de NetApp Disaster Recovery
       url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-disaster-recovery-service-for-BC-with-VMware-Cloud-on-AWS-and-FSx-for/ba-p/447066
     - title: Introdução ao NetApp Disaster Recovery como um laboratório de serviço
         sob demanda

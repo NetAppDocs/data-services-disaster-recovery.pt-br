@@ -15,11 +15,11 @@ summary: Antes de criar um plano de recuperação de desastres, você precisa ad
 Antes de criar um plano de recuperação de desastres, você precisa adicionar um servidor vCenter primário a um site e um site de recuperação de desastres do vCenter de destino no NetApp Console.
 
 
-TIP: Certifique-se de que os vCenters de origem e de destino usem o mesmo agente do NetApp Console.
+TIP: Certifique-se de que os vCenters de origem e de destino usem o mesmo agente do NetApp Console .
 
 Após a adição dos vCenters, o NetApp Disaster Recovery realiza uma descoberta profunda dos ambientes do vCenter, incluindo clusters do vCenter, hosts ESXi, datastores, área de armazenamento, detalhes da máquina virtual, réplicas do SnapMirror e redes de máquinas virtuais.
 
-*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto ou administrador de recuperação de desastres.
+*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto ou administrador de recuperação de desastres.
 
 link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -58,10 +58,10 @@ NOTE: O serviço oferece suporte a certificados de segurança autoassinados ou c
 
 
 .Passos
-. Faça login no https://console.netapp.com/["Console NetApp"^] .
-. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
+. Faça login no https://console.netapp.com/["NetApp Console"^] .
+. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 +
-Você será direcionado para a página do Painel de Recuperação de Desastres da NetApp .  Ao iniciar o serviço pela primeira vez, você precisa adicionar informações do vCenter.  Mais tarde, o Painel exibe dados sobre seus sites e planos de replicação.
+Você será direcionado para a página do Painel de NetApp Disaster Recovery .  Ao iniciar o serviço pela primeira vez, você precisa adicionar informações do vCenter.  Mais tarde, o Painel exibe dados sobre seus sites e planos de replicação.
 
 +
 
@@ -139,7 +139,7 @@ O uso do mapeamento de sub-rede é um processo opcional de duas etapas:
 
 
 .Passos
-. No menu NetApp Disaster Recovery, selecione *Sites*.
+. No menu NetApp Disaster Recovery , selecione *Sites*.
 . Das Açõesimage:icon-vertical-dots.png["Ícone de ações"] ícone à direita, selecione *Adicionar sub-rede*.
 +
 image:dr-sites-subnet-menu.png["Captura de tela do menu Adicionar sub-rede"]
@@ -177,7 +177,7 @@ O uso do mapeamento de sub-rede é um processo opcional de duas etapas:
 
 
 .Passos
-. No menu NetApp Disaster Recovery, selecione *Planos de replicação*.
+. No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
 . Selecione *Adicionar* para adicionar um plano de replicação.
 . Preencha os campos da maneira usual, adicionando os servidores vCenter, selecionando os grupos de recursos ou aplicativos e concluindo os mapeamentos.
 . Na página Plano de replicação > Mapeamento de recursos, selecione a seção *Máquinas virtuais*.
@@ -203,7 +203,7 @@ Se você tiver vCenters de versões anteriores e quiser alterar quando a descobe
 Se não quiser agendar a descoberta, você pode desabilitar a opção de descoberta agendada e atualizar a descoberta manualmente a qualquer momento.
 
 .Passos
-. No menu NetApp Disaster Recovery, selecione *Sites*.
+. No menu NetApp Disaster Recovery , selecione *Sites*.
 . Selecione o site que você deseja editar.
 . Selecione as Açõesimage:icon-vertical-dots.png["Ícone de ações"] ícone à direita e selecione *Editar*.
 . Na página Editar servidor vCenter, edite os campos conforme necessário.
@@ -221,7 +221,7 @@ image:sites-edit-schedule.png["Captura de tela da edição do cronograma de desc
 Você pode atualizar a descoberta manualmente a qualquer momento.  Isso é útil se você adicionou ou removeu VMs e deseja atualizar as informações no NetApp Disaster Recovery.
 
 .Passos
-. No menu NetApp Disaster Recovery, selecione *Sites*.
+. No menu NetApp Disaster Recovery , selecione *Sites*.
 . Selecione o site que você deseja atualizar.
 . Selecione as Açõesimage:icon-vertical-dots.png["Ícone de ações"] ícone à direita e selecione *Atualizar*.
 

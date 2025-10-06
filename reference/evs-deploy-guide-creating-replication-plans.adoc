@@ -12,7 +12,7 @@ summary: 'Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FS
 Depois de ter vCenters para proteger no site local e ter um site Amazon EVS configurado para usar o Amazon FSx for NetApp ONTAP que você pode usar como um destino de DR, você pode criar um plano de replicação (RP) para proteger qualquer conjunto de VMs hospedadas no cluster vCenter dentro do seu site local.
 
 .Para iniciar o processo de criação do plano de replicação:
-. Em qualquer tela do NetApp Disaster Recovery, selecione a opção *Planos de replicação*.
+. Em qualquer tela do NetApp Disaster Recovery , selecione a opção *Planos de replicação*.
 +
 image:evs-create-rp-1.png["opção de planos de replicação"]
 

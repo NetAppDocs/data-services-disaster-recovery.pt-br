@@ -4,7 +4,7 @@ permalink: reference/evs-deploy-guide-install-connector.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
 summary: Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx for NetApp ONTAP.  Embora o Connector possa ser instalado em qualquer um dos locais da sua rede, para o NetApp Disaster Recovery, recomendamos que você instale o Connector no site de DR.  Isso garante que, em caso de falha do site principal, a interface do usuário do console NetApp continue a ter contato com o agente do console e possa orquestrar o processo de recuperação dentro desse site de DR. 
 ---
-= Instalar o agente do NetApp Console para recuperação de desastres do NetApp
+= Instalar o agente do NetApp Console para NetApp Disaster Recovery
 :allow-uri-read: 
 
 

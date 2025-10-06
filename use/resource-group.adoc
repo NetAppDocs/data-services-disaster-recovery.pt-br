@@ -14,7 +14,7 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 [role="lead"]
 Depois de adicionar sites do vCenter, você pode criar grupos de recursos para proteger VMs por VM ou armazenamento de dados como uma única unidade.  Grupos de recursos permitem que você organize um conjunto de VMs dependentes em grupos lógicos que atendem aos seus requisitos.  Por exemplo, você pode agrupar VMs associadas a um aplicativo ou agrupar aplicativos que tenham níveis semelhantes.  Como outro exemplo, grupos podem conter ordens de inicialização atrasadas que podem ser executadas na recuperação.
 
-*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
 link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -77,9 +77,9 @@ Ao criar grupos de recursos, considere as seguintes questões:
 *PRÁTICA RECOMENDADA*: Organize suas VMs antes de implantar o NetApp Disaster Recovery para minimizar a "dispersão do armazenamento de dados".  Coloque as VMs que precisam de proteção em um subconjunto de armazenamentos de dados e coloque as VMs que não serão protegidas em um subconjunto diferente de armazenamentos de dados.  Certifique-se de que as VMs em qualquer armazenamento de dados não estejam protegidas por diferentes planos de replicação.
 
 .Passos
-. Faça login no https://console.netapp.com/["Console NetApp"^] .
-. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
-. No menu NetApp Disaster Recovery, selecione *Grupos de recursos*.
+. Faça login no https://console.netapp.com/["NetApp Console"^] .
+. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
+. No menu NetApp Disaster Recovery , selecione *Grupos de recursos*.
 . Selecione *Adicionar*.
 . Insira um nome para o grupo de recursos.
 . Selecione o cluster vCenter de origem onde as VMs estão localizadas.

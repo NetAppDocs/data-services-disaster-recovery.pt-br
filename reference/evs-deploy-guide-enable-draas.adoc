@@ -11,7 +11,7 @@ summary: Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx
 [role="lead"]
 O NetApp Disaster Recovery é um produto licenciado que deve ser adquirido antes de poder ser usado.  Existem vários tipos de licenças e várias maneiras de adquiri-las.  Uma licença lhe dá o direito de proteger uma quantidade específica de dados por um período de tempo específico.
 
-Para obter mais informações sobre as licenças do NetApp Disaster Recovery, consultelink:../get-started/dr-licensing.html["Configurar licenciamento para recuperação de desastres da NetApp"] .
+Para obter mais informações sobre as licenças do NetApp Disaster Recovery , consultelink:../get-started/dr-licensing.html["Configurar licenciamento para NetApp Disaster Recovery"] .
 
 
 

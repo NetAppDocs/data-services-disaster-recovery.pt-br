@@ -4,7 +4,7 @@ permalink: release-notes/dr-limitations.html
 keywords: disaster recovery, bluexp 
 summary: Limitações conhecidas identificam plataformas, dispositivos ou funções que não são suportados por esta versão do serviço ou que não interoperam corretamente com ele. 
 ---
-= Limitações na recuperação de desastres da NetApp
+= Limitações na NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -30,7 +30,7 @@ Após a conclusão de um failover, não inicie a descoberta no vCenter de origem
 
 Se você precisar remover o cluster ONTAP FSx do NetApp Disaster Recovery, conclua as seguintes etapas:
 
-. No agente do NetApp Console, use as opções de conectividade do seu provedor de nuvem, conecte-se à VM Linux na qual o agente do Console é executado, reinicie o serviço "occm" usando o `docker restart occm` comando.
+. No agente do NetApp Console , use as opções de conectividade do seu provedor de nuvem, conecte-se à VM Linux na qual o agente do Console é executado, reinicie o serviço "occm" usando o `docker restart occm` comando.
 
 
 Consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["Gerenciar agentes de console existentes"^] .

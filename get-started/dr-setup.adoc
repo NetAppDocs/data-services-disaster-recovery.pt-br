@@ -4,7 +4,7 @@ permalink: get-started/dr-setup.html
 keywords: bluexp, disaster recovery, aws, amazon web services, amazon fsx for netapp ontap 
 summary: Para usar o NetApp Disaster Recovery, siga algumas etapas para configurá-lo. 
 ---
-= Configure sua infraestrutura para recuperação de desastres da NetApp
+= Configure sua infraestrutura para NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -133,7 +133,7 @@ Certifique-se de que os seguintes requisitos sejam atendidos antes de configurar
 * Clusters do vCenter
 +
 ** Certifique-se de que as VMs que você deseja proteger estejam hospedadas em datastores NFS (usando volumes ONTAP NFS) ou datastores VMFS (usando LUNs iSCSI da NetApp ).
-** Análiselink:../reference/vcenter-privileges.html["Privilégios do vCenter"] necessário para a recuperação de desastres da NetApp .
+** Análiselink:../reference/vcenter-privileges.html["Privilégios do vCenter"] necessário para NetApp Disaster Recovery.
 ** Crie uma conta de usuário de recuperação de desastres (não a conta de administrador padrão do vCenter) e atribua os privilégios do vCenter à conta.
 
 
@@ -147,6 +147,6 @@ O agente do NetApp Console oferece suporte ao proxy inteligente.  O proxy inteli
 
 Quando um proxy é configurado, o NetApp Disaster Recovery tenta se comunicar diretamente com o VMware ou o ONTAP e usa o proxy configurado se a comunicação direta falhar.
 
-A implementação do proxy de recuperação de desastres da NetApp requer comunicação na porta 443 entre o agente do Console e quaisquer servidores vCenter e matrizes ONTAP usando um protocolo HTTPS.  O agente NetApp Disaster Recovery dentro do agente do Console se comunica diretamente com o VMware vSphere, o VC ou o ONTAP ao executar qualquer ação.
+A implementação do proxy de NetApp Disaster Recovery requer comunicação na porta 443 entre o agente do Console e quaisquer servidores vCenter e matrizes ONTAP usando um protocolo HTTPS.  O agente NetApp Disaster Recovery dentro do agente do Console se comunica diretamente com o VMware vSphere, o VC ou o ONTAP ao executar qualquer ação.
 
 Para obter mais informações sobre a configuração geral do proxy no NetApp Console, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurar o agente do Console para usar um servidor proxy"^] .

@@ -4,7 +4,7 @@ permalink: get-started/dr-quick-start.html
 keywords: how to get started with bluexp disaster recovery, disaster recovery quick start, failover, failback 
 summary: Comece a usar o serviço NetApp Disaster Recovery em algumas etapas. 
 ---
-= Início rápido para recuperação de desastres da NetApp
+= Início rápido para NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

@@ -4,7 +4,7 @@ permalink: use/reports.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
 summary: Analisar relatórios de recuperação de desastres pode ajudar você a analisar sua preparação para recuperação de desastres.  Os relatórios pré-projetados incluem um resumo de failovers e failbacks, detalhes de replicação em todos os sites e detalhes do trabalho do ano passado. 
 ---
-= Crie relatórios de recuperação de desastres da NetApp
+= Crie relatórios de NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,16 +12,16 @@ summary: Analisar relatórios de recuperação de desastres pode ajudar você a 
 
 
 [role="lead"]
-Analisar os relatórios de recuperação de desastres da NetApp pode ajudar você a analisar sua preparação para recuperação de desastres.  Os relatórios pré-projetados incluem um resumo de failovers de teste, detalhes do plano de replicação e detalhes do trabalho em todos os sites de uma conta nos últimos sete dias.
+Analisar os relatórios de NetApp Disaster Recovery pode ajudar você a analisar sua preparação para recuperação de desastres.  Os relatórios pré-projetados incluem um resumo de failovers de teste, detalhes do plano de replicação e detalhes do trabalho em todos os sites de uma conta nos últimos sete dias.
 
 Você pode baixar relatórios em formato PDF, HTML ou JSON.
 
 O link para download é válido por seis horas.
 
 .Passos
-. Faça login no https://console.netapp.com/["Console NetApp"^] .
-. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
-. Na barra de navegação esquerda do NetApp Console, selecione *Planos de replicação*.
+. Faça login no https://console.netapp.com/["NetApp Console"^] .
+. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
+. Na barra de navegação esquerda do NetApp Console , selecione *Planos de replicação*.
 . Selecione *Criar relatório*.
 . Selecione o tipo de formato de arquivo e o período nos últimos 7 dias.
 . Selecione *Criar*.

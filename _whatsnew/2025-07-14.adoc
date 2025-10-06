@@ -42,9 +42,9 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.
 ** Quando um cluster, host ou datacenter é excluído do vCenter, o NetApp Disaster Recovery agora o exclui do plano de replicação e do grupo de recursos.
 
 
-* Agora você pode acessar a documentação do Swagger no modo anônimo do seu navegador.  Você pode acessá-lo no NetApp Disaster Recovery na opção Configurações > Documentação da API ou diretamente no seguinte URL no modo anônimo do seu navegador: https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["Documentação do Swagger"^] .
-* Em algumas situações, após uma operação de failback, o iGroup foi deixado para trás após a conclusão da operação.  Esta atualização remove o iGroup se ele estiver obsoleto.
-* Se o FQDN do NFS foi usado no plano de replicação, o NetApp Disaster Recovery agora o resolve para um endereço IP.  Esta atualização é útil se o FQDN não puder ser resolvido no site de recuperação de desastres.
+* Agora você pode acessar a documentação do Swagger no modo anônimo do seu navegador. Você pode acessá-lo no NetApp Disaster Recovery na opção Configurações > Documentação da API ou diretamente no seguinte URL no modo anônimo do seu navegador: https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["Documentação do Swagger"^] .
+* Em algumas situações, após uma operação de failback, o iGroup foi deixado para trás após a conclusão da operação. Esta atualização remove o iGroup se ele estiver obsoleto.
+* Se o FQDN do NFS foi usado no plano de replicação, o NetApp Disaster Recovery agora o resolve para um endereço IP. Esta atualização é útil se o FQDN não puder ser resolvido no site de recuperação de desastres.
 * Melhorias no alinhamento da interface do usuário
 * Melhorias no log para capturar os detalhes de dimensionamento do vCenter após a descoberta bem-sucedida
 

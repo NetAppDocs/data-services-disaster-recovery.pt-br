@@ -22,9 +22,9 @@ O serviço usa as seguintes funções específicas do NetApp Disaster Recovery.
 * *Visualizador de recuperação de desastres*: visualize informações no NetApp Disaster Recovery, mas não pode executar nenhuma ação.
 
 
-Essas funções são específicas do NetApp Disaster Recovery e não são as mesmas que as funções de plataforma usadas no NetApp Console.  Para obter detalhes sobre todas as funções da plataforma NetApp Console, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["a documentação de configuração e administração do NetApp Console"^] .
+Essas funções são específicas do NetApp Disaster Recovery e não são as mesmas que as funções de plataforma usadas no NetApp Console.  Para obter detalhes sobre todas as funções da plataforma NetApp Console , consulte https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["a documentação de configuração e administração do NetApp Console"^] .
 
-A tabela a seguir indica as ações que cada função de recuperação de desastres da NetApp pode executar.
+A tabela a seguir indica as ações que cada função de NetApp Disaster Recovery pode executar.
 
 [cols="30,20a,20a,20a,20a"]
 |===

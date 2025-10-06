@@ -4,7 +4,7 @@ permalink: use/monitor-jobs.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp 
 summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres.  Você pode monitorar todos os trabalhos de recuperação de desastres e determinar seu progresso. 
 ---
-= Monitorar trabalhos de recuperação de desastres da NetApp
+= Monitorar trabalhos de NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,19 +12,19 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 
 [role="lead"]
-Você pode monitorar todos os trabalhos de recuperação de desastres da NetApp e determinar seu progresso.
+Você pode monitorar todos os trabalhos de NetApp Disaster Recovery e determinar seu progresso.
 
 
 
 == Ver empregos
 
-*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de aplicativo de recuperação de desastres ou função de visualizador de recuperação de desastres.
+*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de aplicativo de recuperação de desastres ou função de visualizador de recuperação de desastres.
 
 link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
-. Faça login no https://console.netapp.com/["Console NetApp"^] .
-. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
+. Faça login no https://console.netapp.com/["NetApp Console"^] .
+. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 . No menu, selecione *Monitoramento de tarefas*.
 . Explore todos os trabalhos relacionados às operações e revise seus registros de data e hora e status.
 . Para visualizar detalhes de um trabalho específico, selecione essa linha.
@@ -37,12 +37,12 @@ link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permiss�
 
 Se um trabalho estiver em andamento ou em estado de fila e você não quiser que ele continue, você pode cancelá-lo.  Talvez você queira cancelar um trabalho se ele estiver travado no mesmo estado e você quiser liberar a próxima operação na fila.  Talvez você queira cancelar um trabalho antes que ele expire.
 
-*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
 link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
-. Na barra de navegação esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
+. Na barra de navegação esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 . No menu, selecione *Monitoramento de tarefas*.
 . Na página Monitor de tarefas, anote o ID da tarefa que você deseja cancelar.
 +

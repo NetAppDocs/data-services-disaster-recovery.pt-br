@@ -4,7 +4,7 @@ permalink: use/dashboard-view.html
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
 summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres. 
 ---
-= Veja a integridade dos seus planos de recuperação de desastres da NetApp no ​​painel
+= Veja a integridade dos seus planos de NetApp Disaster Recovery no ​​painel
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -14,16 +14,16 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 [role="lead"]
 Usando o NetApp Disaster Recovery Dashboard, você pode determinar a integridade dos seus sites de recuperação de desastres e planos de replicação.  Você pode verificar rapidamente quais sites e planos estão íntegros, desconectados ou degradados.
 
-*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de aplicativo de recuperação de desastres ou função de visualizador de recuperação de desastres.
+*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de aplicativo de recuperação de desastres ou função de visualizador de recuperação de desastres.
 
 link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
-. Faça login no https://console.netapp.com/["Console NetApp"^] .
-. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
-. No menu NetApp Disaster Recovery, selecione *Painel*.
+. Faça login no https://console.netapp.com/["NetApp Console"^] .
+. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
+. No menu NetApp Disaster Recovery , selecione *Painel*.
 +
-image:dr-dashboard.png["Painel de recuperação de desastres da NetApp"]
+image:dr-dashboard.png["Painel de NetApp Disaster Recovery"]
 
 . Revise as seguintes informações no Painel:
 +
