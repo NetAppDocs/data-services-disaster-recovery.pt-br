@@ -1,0 +1,20 @@
+= Suporte para datastores VMware VMFS locais para locais para FC
+:allow-uri-read: 
+
+
+
+
+=== Suporte para datastores VMware VMFS locais para locais para FC
+
+Esta versão inclui uma _prévia tecnológica_ de suporte para VMs montadas em armazenamentos de dados do sistema de arquivos de máquina virtual (VMFS) VMware vSphere para FC protegido para armazenamento local.  Anteriormente, o serviço fornecia uma prévia de tecnologia com suporte a armazenamentos de dados VMFS para iSCSI.
+
+
+NOTE: A NetApp não cobra por nenhuma capacidade de carga de trabalho visualizada.
+
+
+
+=== Cancelamento de trabalho
+
+Com esta versão, agora você pode cancelar um trabalho na interface do Job Monitor.
+
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Monitorar trabalhos"] .

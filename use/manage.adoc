@@ -1,0 +1,190 @@
+---
+sidebar: sidebar 
+permalink: use/manage.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plans, resource groups 
+summary: Você pode dar uma olhada rápida em todos os seus recursos do NetApp Disaster Recovery e gerenciar sites do vCenter, grupos de recursos e planos de replicação. 
+---
+= Gerencie sites, grupos de recursos, planos de replicação, repositórios de dados e informações de máquinas virtuais com o NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Você pode dar uma olhada rápida em todos os seus recursos de recuperação de desastres da NetApp ou analisar cada um deles em detalhes:
+
+* Sítios
+* Grupos de recursos
+* Planos de replicação
+* Armazenamentos de dados
+* Máquinas virtuais
+
+
+As tarefas exigem funções diferentes do NetApp Console.  Para obter detalhes, consulte a seção *Função necessária do NetApp Console* em cada tarefa.
+
+link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+
+
+== Gerenciar sites do vCenter
+
+Você pode editar o nome do site do vCenter e o tipo de site (local ou AWS).
+
+*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto ou administrador de recuperação de desastres.
+
+.Passos
+. No menu, selecione *Sites*.
+. Selecione a opção *Ações*image:../use/icon-vertical-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do nome do vCenter e selecione *Editar*.
+. Edite o nome e o local do site do vCenter.
+
+
+
+
+== Gerenciar grupos de recursos
+
+Embora você possa adicionar um grupo de recursos como parte da criação de um plano de replicação, pode ser mais conveniente adicionar os grupos separadamente e usá-los posteriormente no plano.  Você cria grupos de recursos por VMs ou por armazenamentos de dados.
+
+*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+
+Você pode criar um grupo de recursos por armazenamentos de dados das seguintes maneiras:
+
+* Ao adicionar um grupo de recursos usando armazenamentos de dados, você pode ver uma lista de armazenamentos de dados.  Você pode selecionar um ou mais armazenamentos de dados para criar um grupo de recursos.
+* Ao criar um plano de replicação e um grupo de recursos dentro do plano, você pode ver as VMs nos armazenamentos de dados.
+
+
+Você pode executar as seguintes tarefas com grupos de recursos:
+
+* Alterar o nome do grupo de recursos.
+* Adicione VMs ao grupo de recursos.
+* Remova VMs do grupo de recursos.
+* Excluir grupos de recursos.
+
+
+Para obter detalhes sobre como criar um grupo de recursos, consultelink:resource-group.html["Crie um grupo de recursos para organizar VMs em conjunto"] .
+
+.Passos
+. No menu, selecione *Grupos de recursos*.
+. Para adicionar um grupo de recursos, selecione *Adicionar grupo*.
+. Para executar ações com o grupo de recursos, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita e selecione qualquer uma das opções, como *Editar grupo de recursos* ou *Excluir grupo de recursos*.
+
+
+
+
+== Gerenciar planos de replicação
+
+Você pode desabilitar, habilitar e excluir planos de replicação.  Você pode alterar horários.
+
+*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+
+* Se quiser pausar um plano de replicação temporariamente, você pode desativá-lo e habilitá-lo depois.
+* Se você não precisar mais do plano, poderá excluí-lo.
+
+
+.Passos
+. No menu, selecione *Planos de replicação*.
++
+image:../use/dr-plan-list.png["Lista de planos de replicação"]
+
+. Para visualizar os detalhes do plano, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] e selecione *Ver detalhes do plano*.
+. Faça qualquer um dos seguintes:
++
+** Para editar os detalhes do plano (alterar a recorrência), selecione a aba *Detalhes do plano* e selecione o ícone *Editar* à direita.
+** Para editar os mapeamentos de recursos, selecione a guia *Mapeamento de failover* e selecione o ícone *Editar*.
+** Para adicionar ou editar as máquinas virtuais, selecione a aba *Máquinas virtuais* e selecione a opção *Adicionar VMs* ou o ícone *Editar*.
+
+
+. Retorne à lista de planos selecionando "Planos de replicação" nas trilhas de navegação à esquerda.
+. Para executar ações com o plano, na lista de planos de replicação, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e selecione qualquer uma das opções, como *Editar agendamentos*, *Testar failover*, *Failover*, *Failback*, *Migrar*, *Tirar snapshot agora*, *Limpar snapshots antigos*, *Desativar*, *Ativar* ou *Excluir*.
+. Para definir ou alterar um cronograma de failover de teste ou definir a verificação de frequência de conformidade, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e selecione *Editar agendamentos*.
++
+.. Na página Editar agendamentos, insira a frequência em minutos com que você deseja que a verificação de conformidade de failover ocorra.
+.. Marque *Executar failovers de teste conforme agendamento*.
+.. Na opção Repetir, selecione a programação diária, semanal ou mensal.
+.. Selecione *Salvar*.
+
+
+
+
+
+
+=== Reconciliar instantâneos sob demanda
+
+Você pode reconciliar snapshots que estão fora de sincronia entre a origem e o destino.  Isso pode ocorrer se os snapshots forem excluídos em um destino fora do NetApp Disaster Recovery.  O serviço exclui automaticamente o snapshot na origem a cada 24 horas.  No entanto, você pode fazer isso sob demanda.  Esse recurso permite que você garanta que os instantâneos sejam consistentes em todos os sites.
+
+*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+
+.Passos
+. No menu, selecione *Planos de replicação*.
++
+image:../use/dr-plan-list.png["Lista de planos de replicação"]
+
+. Na lista de planos de replicação, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e selecione *Reconciliar instantâneos*.
+. Revise as informações de reconciliação.
+. Selecione *Reconciliar*.
+
+
+
+
+=== Excluir um plano de replicação
+
+Você pode excluir um plano de replicação se não precisar mais dele.  Se você excluir um plano de replicação, também poderá excluir os snapshots primários e secundários criados pelo plano.
+
+*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+
+.Passos
+. No menu, selecione *Planos de replicação*.
+. Selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e selecione *Excluir*.
+. Selecione se deseja excluir os snapshots primários, os snapshots secundários ou apenas os metadados criados pelo plano.
+. Digite "delete" para confirmar a exclusão.
+. Selecione *Excluir*.
+
+
+
+
+=== Alterar contagem de retenção para agendamentos de failover
+
+Você pode alterar quantos armazenamentos de dados são retidos.
+
+*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+
+.Passos
+. No menu, selecione *Planos de replicação*.
+. Selecione o plano de replicação, selecione a guia *Mapeamento de failover* e selecione o ícone de lápis *Editar*.
+. Selecione a seta *Datastores* para expandi-la.
++
+image:../use/dr-plan-failover-edit.png["Editar página de mapeamentos de failover"]
+
+. Altere o valor da contagem de retenção no plano de replicação.
+. Com o plano de replicação selecionado, selecione o menu Ações e, em seguida, selecione *Limpar instantâneos antigos* para remover instantâneos antigos no destino para corresponder à nova contagem de retenção.
+
+
+
+
+== Exibir informações dos armazenamentos de dados
+
+Você pode visualizar informações sobre quantos armazenamentos de dados existem na origem e no destino.
+
+*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres, administrador de aplicativo de recuperação de desastres ou função de visualizador de recuperação de desastres.
+
+.Passos
+. No menu, selecione *Painel*.
+. Selecione o vCenter na linha do site.
+. Selecione *Datastores*.
+. Visualize as informações dos armazenamentos de dados.
+
+
+
+
+== Exibir informações das máquinas virtuais
+
+Você pode visualizar informações sobre quantas máquinas virtuais existem na origem e no destino, juntamente com CPU, memória e capacidade disponível.
+
+*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres, administrador de aplicativo de recuperação de desastres ou função de visualizador de recuperação de desastres.
+
+.Passos
+. No menu, selecione *Painel*.
+. Selecione o vCenter na linha do site.
+. Selecione *Máquinas virtuais*.
+. Veja as informações das máquinas virtuais.
+

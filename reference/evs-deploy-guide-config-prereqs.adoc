@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-config-prereqs.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Você deve garantir que vários pré-requisitos sejam atendidos antes de continuar a configurar o Amazon EVS com o NetApp Disaster Recovery. 
+---
+= Pré-requisitos para Amazon EVS com NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+[role="lead"]
+Você deve garantir que vários pré-requisitos sejam atendidos antes de continuar a configurar o Amazon EVS com o NetApp Disaster Recovery.
+
+Especificamente, faça o seguinte:
+
+* Crie uma conta de usuário do vCenter com os privilégios específicos do VMware necessários para que o NetApp Disaster Recovery execute as operações necessárias.
++
+
+NOTE: Não recomendamos usar a conta de administrador padrão "\administrator@vsphere.com".  Em vez disso, você deve criar uma conta de usuário específica do NetApp Disaster Recovery em todos os clusters do vCenter que participarão do processo de DR.  Para obter uma lista de privilégios específicos necessários, consultelink:vcenter-privileges.html["Privilégios do vCenter necessários para recuperação de desastres do NetApp"] .
+
+* Certifique-se de que todos os datastores do vCenter que hospedarão VMs protegidas pelo NetApp Disaster Recovery estejam localizados em recursos de armazenamento do NetApp ONTAP .
++
+O serviço oferece suporte a NFS e VMFS em iSCSI (e não FC) ao usar o Amazon FSx no NetApp ONTAP.  Embora o serviço suporte FC, o Amazon FSx for NetApp ONTAP não oferece.
+
+* Certifique-se de que o Amazon EVS vCenter esteja conectado a um cluster de armazenamento Amazon FSx for NetApp ONTAP .
+* Certifique-se de que as ferramentas VMware estejam instaladas em todas as VMs protegidas.
+* Certifique-se de que sua rede local esteja conectada à sua rede AWS VPC usando um método de conexão aprovado pela Amazon.  Recomendamos que você use o AWS Direct Connect, o AWS Private Link ou uma VPN de site para site da AWS.
+

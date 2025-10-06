@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-quick-start.html 
+keywords: how to get started with bluexp disaster recovery, disaster recovery quick start, failover, failback 
+summary: Comece a usar o serviço NetApp Disaster Recovery em algumas etapas. 
+---
+= Início rápido para recuperação de desastres da NetApp
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Veja aqui uma visão geral das etapas necessárias para começar a usar o NetApp Disaster Recovery. Os links em cada etapa levam você a uma página que fornece mais detalhes.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"]Revise os pré-requisitos
+[role="quick-margin-para"]
+link:../get-started/dr-prerequisites.html["Certifique-se de que seu sistema atenda a esses requisitos"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"]Configurar o NetApp Disaster Recovery
+[role="quick-margin-list"]
+* link:../get-started/dr-setup.html["Configurar a infraestrutura para o serviço"] .
+* link:../get-started/dr-licensing.html["Configurar licenciamento"] .
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Três"]O que vem a seguir?
+[role="quick-margin-para"]
+Depois de configurar o serviço, veja o que você pode fazer em seguida.
+
+[role="quick-margin-list"]
+* link:../use/sites-add.html["Adicione seus sites do vCenter ao NetApp Disaster Recovery"] .
+* link:../use/manage.html#manage-resource-groups["Crie seu primeiro grupo de recursos"] .
+* link:../use/drplan-create.html["Crie seu primeiro plano de replicação"] .
+* link:../use/replicate.html["Replicar aplicativos para outro site"] .
+* link:../use/failover.html["Falha na execução de aplicativos para um site remoto"] .
+* link:../use/failback.html["Fazer failback de aplicativos para o site de origem original"] .
+* link:../use/manage.html["Gerenciar sites, grupos de recursos e planos de replicação"] .
+* link:../use/monitor-jobs.html["Monitorar operações de recuperação de desastres"] .
+

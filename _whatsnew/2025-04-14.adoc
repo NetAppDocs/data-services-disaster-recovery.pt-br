@@ -1,0 +1,39 @@
+= Descoberta agendada para VMs
+:allow-uri-read: 
+
+
+
+
+=== Descoberta agendada para VMs
+
+O NetApp Disaster Recovery realiza a descoberta uma vez a cada 24 horas.  Com esta versão, agora você pode personalizar o cronograma de descoberta para atender às suas necessidades e reduzir o impacto no desempenho quando precisar.  Por exemplo, se você tiver um grande número de VMs, poderá definir o agendamento de descoberta para ser executado a cada 48 horas.  Se você tiver um pequeno número de VMs, poderá definir o agendamento de descoberta para ser executado a cada 12 horas.
+
+Se não quiser agendar a descoberta, você pode desabilitar a opção de descoberta agendada e atualizar a descoberta manualmente a qualquer momento.
+
+Para mais detalhes, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Adicionar sites do servidor vCenter"] .
+
+
+
+=== Suporte ao armazenamento de dados do grupo de recursos
+
+Anteriormente, você só podia criar grupos de recursos por VMs.  Com esta versão, você pode criar um grupo de recursos por armazenamentos de dados.  Ao criar um plano de replicação e um grupo de recursos para esse plano, todas as VMs em um armazenamento de dados serão listadas.  Isso é útil se você tiver um grande número de VMs e quiser agrupá-las por armazenamento de dados.
+
+Você pode criar um grupo de recursos com um armazenamento de dados das seguintes maneiras:
+
+* Ao adicionar um grupo de recursos usando armazenamentos de dados, você pode ver uma lista de armazenamentos de dados.  Você pode selecionar um ou mais armazenamentos de dados para criar um grupo de recursos.
+* Ao criar um plano de replicação e um grupo de recursos dentro do plano, você pode ver as VMs nos armazenamentos de dados.
+
+
+Para mais detalhes, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .
+
+
+
+=== Notificações de teste gratuito ou expiração de licença
+
+Esta versão fornece notificações de que o teste gratuito irá expirar em 60 dias para garantir que você tenha tempo de obter uma licença.  Esta versão também fornece notificações sobre o dia em que a licença expira.
+
+
+
+=== Notificação de atualizações de serviço
+
+Com esta versão, um banner aparece na parte superior para indicar que os serviços estão sendo atualizados e que o serviço foi colocado em modo de manutenção.  O banner aparece quando o serviço está sendo atualizado e desaparece quando a atualização é concluída.  Embora você possa continuar trabalhando na interface do usuário enquanto a atualização estiver em andamento, não será possível enviar novos trabalhos.  Os trabalhos agendados serão executados após a conclusão da atualização e o serviço retornar ao modo de produção.

@@ -1,0 +1,264 @@
+---
+sidebar: sidebar 
+permalink: reference/dr-reference-roles.html 
+keywords: how bluexp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back, vmware cloud, netapp intelligent services 
+summary: O NetApp Disaster Recovery emprega funções para controlar o acesso que cada usuário tem a recursos e ações específicos. 
+---
+= Acesso baseado em função do NetApp Disaster Recovery aos recursos
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use
+
+
+[role="lead"]
+O NetApp Disaster Recovery emprega funções para controlar o acesso que cada usuário tem a recursos e ações específicos.
+
+O serviço usa as seguintes funções específicas do NetApp Disaster Recovery.
+
+* *Administrador de recuperação de desastres*: execute quaisquer ações no NetApp Disaster Recovery.
+* *Administrador de failover de recuperação de desastres*: execute ações de failover e migração no NetApp Disaster Recovery.
+* *Administrador do aplicativo de recuperação de desastres*: Crie e modifique planos de replicação e inicie failovers de teste.
+* *Visualizador de recuperação de desastres*: visualize informações no NetApp Disaster Recovery, mas não pode executar nenhuma ação.
+
+
+Essas funções são específicas do NetApp Disaster Recovery e não são as mesmas que as funções de plataforma usadas no NetApp Console.  Para obter detalhes sobre todas as funções da plataforma NetApp Console, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["a documentação de configuração e administração do NetApp Console"^] .
+
+A tabela a seguir indica as ações que cada função de recuperação de desastres da NetApp pode executar.
+
+[cols="30,20a,20a,20a,20a"]
+|===
+| Recurso e ação | Administrador de recuperação de desastres | Administrador de failover de recuperação de desastres | Administrador do aplicativo de recuperação de desastres | Visualizador de recuperação de desastres 
+
+
+| Ver painel e todas as guias  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Iniciar teste gratuito  a| 
+Sim
+ a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Iniciar descoberta de cargas de trabalho  a| 
+Sim
+ a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Ver informações da licença  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Ativar licença  a| 
+Sim
+ a| 
+Não
+ a| 
+Sim
+ a| 
+Não
+
+
+
+5+| *Na opção Sites*: 
+
+
+| Ver sites  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Adicionar, modificar ou excluir sites  a| 
+Sim
+ a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+5+| *Sobre a opção Planos de replicação*: 
+
+
+| Ver planos de replicação  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Ver detalhes do plano de replicação  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Criar ou modificar planos de replicação  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+ a| 
+Não
+
+
+
+| Criar relatórios  a| 
+Sim
+ a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Ver instantâneos  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Executar testes de failover  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+ a| 
+Não
+
+
+
+| Executar failovers  a| 
+Sim
+ a| 
+Sim
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Executar failbacks  a| 
+Sim
+ a| 
+Sim
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Executar migrações  a| 
+Sim
+ a| 
+Sim
+ a| 
+Não
+ a| 
+Não
+
+
+
+5+| *Na opção Grupos de recursos*: 
+
+
+| Exibir grupos de recursos  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Criar, modificar ou excluir grupos de recursos  a| 
+Sim
+ a| 
+Não
+ a| 
+Sim
+ a| 
+Não
+
+
+
+5+| *Opção de monitoramento no trabalho*: 
+
+
+| Ver empregos  a| 
+Sim
+ a| 
+Não
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Cancelar trabalhos  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+ a| 
+Não
+
+|===

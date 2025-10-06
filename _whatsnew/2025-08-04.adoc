@@ -1,0 +1,20 @@
+= Atualizações do NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+
+
+=== Atualizações do NetApp Disaster Recovery
+
+Esta versão inclui as seguintes atualizações:
+
+* Melhorou o suporte do VMFS para lidar com o mesmo LUN apresentado por várias máquinas virtuais de armazenamento.
+* Melhorou a limpeza de desmontagem do teste para lidar com o armazenamento de dados que já está sendo desmontado e/ou excluído.
+* Mapeamento de sub-rede aprimorado para que agora valide se o gateway inserido está contido na rede fornecida.
+* Foi corrigido um problema que poderia causar falha no plano de replicação se o nome da VM contivesse ".com".
+* Foi removida uma restrição que impedia que o volume de destino fosse o mesmo que o volume de origem ao criar o volume como parte da criação do plano de replicação.
+* Adicionou suporte para uma assinatura de pagamento conforme o uso (PAYGO) para o NetApp Intelligent Services no Azure Marketplace e adicionou um link para o Azure Marketplace na caixa de diálogo de teste gratuito.
++
+Para mais detalhes, veja https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html#licensing["Licenciamento de recuperação de desastres da NetApp"] e https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar licenciamento para recuperação de desastres da NetApp"] .
+
+

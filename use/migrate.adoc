@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: use/migrate.html 
+keywords: disaster recovery, bluexp disaster recovery, migrate, vmware, vcenter 
+summary: Usando o NetApp Disaster Recovery, você pode migrar aplicativos VMware do seu site de origem para outro site. 
+---
+= Migrar aplicativos para outro site com o NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Usando o NetApp Disaster Recovery, você pode migrar aplicativos VMware do seu site de origem para outro site.
+
+
+TIP: Depois de criar o plano de replicação, identificar a recorrência no assistente e iniciar a migração, a cada 30 minutos o NetApp Disaster Recovery verifica se a migração está realmente ocorrendo de acordo com o plano. Você pode monitorar o progresso na página Job Monitor.
+
+.Antes de começar
+Antes de iniciar a migração, você deve ter criado um plano de replicação e selecionado migrar os aplicativos.  Em seguida, a opção *Migrar* aparece no menu Ações.
+
+.Passos
+. Faça login no https://console.netapp.com/["Console NetApp"^] .
+. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
+. No menu, selecione *Planos de replicação*.
+. Selecione o plano de replicação.
+. À direita, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] e selecione *Migrar*.
+

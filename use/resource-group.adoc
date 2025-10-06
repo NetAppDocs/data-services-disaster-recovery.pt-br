@@ -1,0 +1,97 @@
+---
+sidebar: sidebar 
+permalink: use/resource-group.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
+summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres.  Depois de adicionar sites do vCenter, você estará pronto para criar um plano de recuperação de desastres ou replicação. 
+---
+= Crie um grupo de recursos para organizar VMs no NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Depois de adicionar sites do vCenter, você pode criar grupos de recursos para proteger VMs por VM ou armazenamento de dados como uma única unidade.  Grupos de recursos permitem que você organize um conjunto de VMs dependentes em grupos lógicos que atendem aos seus requisitos.  Por exemplo, você pode agrupar VMs associadas a um aplicativo ou agrupar aplicativos que tenham níveis semelhantes.  Como outro exemplo, grupos podem conter ordens de inicialização atrasadas que podem ser executadas na recuperação.
+
+*Função necessária do NetApp Console* Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+
+link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+*Sobre esta tarefa*
+
+Você pode agrupar VMs em si ou VMs em armazenamentos de dados.
+
+Você pode criar grupos de recursos usando os seguintes métodos:
+
+* Na opção Grupos de recursos
+* Enquanto você cria um plano de recuperação de desastres ou _replicação_.  Se você tiver muitas VMs hospedadas por um cluster vCenter de origem, pode ser mais fácil criar os grupos de recursos enquanto cria o plano de replicação.  Para obter instruções sobre como criar grupos de recursos enquanto você cria um plano de replicação, consultelink:drplan-create.html["Crie um plano de replicação"] .
+
+
+
+TIP: Cada grupo de recursos pode incluir uma ou mais VMs ou armazenamentos de dados.  As VMs serão ligadas com base na sequência em que você as incluir no plano de replicação.  Você pode alterar a ordem arrastando as VMs ou os armazenamentos de dados para cima ou para baixo na lista de grupos de recursos.
+
+.Sobre grupos de recursos
+Grupos de recursos permitem que você combine VMs ou armazenamentos de dados como uma única unidade.
+
+Por exemplo, um aplicativo de ponto de venda pode usar várias VMs para bancos de dados, lógica de negócios e vitrines.  Você pode gerenciar todas essas VMs com um grupo de recursos.  Configure grupos de recursos para aplicar regras de plano de replicação para ordem de inicialização de VM, conexão de rede e recuperação de todas as VMs necessárias para o aplicativo.
+
+.Como funciona?
+O NetApp Disaster Recovery protege as VMs replicando os volumes ONTAP subjacentes e os LUNs que hospedam as VMs no grupo de recursos.  Para fazer isso, o sistema consulta o vCenter para obter o nome de cada armazenamento de dados que hospeda VMs em um grupo de recursos.  O NetApp Disaster Recovery identifica então o volume ONTAP de origem ou LUN que hospeda esse armazenamento de dados.  Toda a proteção é executada no nível de volume ONTAP usando a replicação SnapMirror .
+
+Se as VMs no grupo de recursos estiverem hospedadas em diferentes armazenamentos de dados, o NetApp Disaster Recovery usará um dos seguintes métodos para criar um instantâneo consistente de dados dos volumes ONTAP ou LUNs.
+
+[cols="30,65a"]
+|===
+| Localização relativa dos volumes FlexVol | Processo de réplica de instantâneo 
+
+
+| Vários armazenamentos de dados - volumes FlexVol no *mesmo SVM*  a| 
+* Grupo de consistência ONTAP criado
+* Instantâneos do grupo de consistência tirados
+* Replicação SnapMirror com escopo de volume realizada
+
+
+
+
+| Vários armazenamentos de dados - volumes FlexVol em *vários SVMs*  a| 
+* API ONTAP : `cg_start` .  Silencia todos os volumes para que instantâneos possam ser tirados e inicia instantâneos com escopo de volume de todos os volumes do grupo de recursos.
+* API ONTAP : `cg_end` .  Retoma a E/S em todos os volumes e habilita a replicação do SnapMirror no escopo do volume após os snapshots serem tirados.
+
+
+|===
+Ao criar grupos de recursos, considere as seguintes questões:
+
+* Antes de adicionar armazenamentos de dados a grupos de recursos, inicie primeiro uma descoberta manual ou uma descoberta agendada das VMs.  Isso garante que as VMs sejam descobertas e listadas no grupo de recursos.  Se você não iniciar uma descoberta manual, as VMs poderão não ser listadas no grupo de recursos.
+* Certifique-se de que haja pelo menos uma VM no armazenamento de dados.  Se não houver VMs no armazenamento de dados, a Recuperação de Desastres não descobrirá o armazenamento de dados.
+* Um único armazenamento de dados não deve hospedar VMs protegidas por mais de um plano de replicação.
+* Não hospede VMs protegidas e desprotegidas no mesmo armazenamento de dados.  Se VMs protegidas e desprotegidas estiverem hospedadas no mesmo armazenamento de dados, os seguintes problemas poderão surgir:
++
+** Como o NetApp Disaster Recovery usa o SnapMirror e o sistema replica volumes ONTAP inteiros, a capacidade usada desse volume é usada para considerações de licenciamento.  Nesse caso, o espaço de volume consumido por VMs protegidas e desprotegidas seria incluído neste cálculo.
+** Se o grupo de recursos e seus armazenamentos de dados associados precisarem ser transferidos para o site de recuperação de desastres, quaisquer VMs desprotegidas (VMs que não fazem parte do grupo de recursos, mas hospedadas no volume ONTAP ) não existirão mais no site de origem a partir do processo de failover, resultando em falha de VMs desprotegidas no site de origem.  Além disso, o NetApp Disaster Recovery não iniciará essas VMs desprotegidas no site do vCenter de failover.
+
+
+* Para ter uma VM protegida, ela deve ser incluída em um grupo de recursos.
+
+
+*PRÁTICA RECOMENDADA*: Organize suas VMs antes de implantar o NetApp Disaster Recovery para minimizar a "dispersão do armazenamento de dados".  Coloque as VMs que precisam de proteção em um subconjunto de armazenamentos de dados e coloque as VMs que não serão protegidas em um subconjunto diferente de armazenamentos de dados.  Certifique-se de que as VMs em qualquer armazenamento de dados não estejam protegidas por diferentes planos de replicação.
+
+.Passos
+. Faça login no https://console.netapp.com/["Console NetApp"^] .
+. Na navegação à esquerda do NetApp Console, selecione *Proteção* > *Recuperação de desastres*.
+. No menu NetApp Disaster Recovery, selecione *Grupos de recursos*.
+. Selecione *Adicionar*.
+. Insira um nome para o grupo de recursos.
+. Selecione o cluster vCenter de origem onde as VMs estão localizadas.
+. Selecione *Máquinas virtuais* ou *Armazenamentos de dados* dependendo de como você deseja pesquisar.
+. Selecione a aba *Adicionar grupos de recursos*.  O sistema lista todos os armazenamentos de dados ou VMs no cluster vCenter selecionado.  Se você selecionou *Datastores*, o sistema listará todos os datastores no cluster vCenter selecionado.  Se você selecionou *Máquinas virtuais*, o sistema listará todas as VMs no cluster vCenter selecionado.
+. No lado esquerdo da página Adicionar grupos de recursos, selecione as VMs que você deseja proteger.
++
+image:dr-resource-groups-add.png["Captura de tela mostrando a página Adicionar grupos de recursos"]
+
++
+image:dr-resource-groups-datastores-add.png["Captura de tela mostrando a página Adicionar grupos de recursos"]
+
+. Opcionalmente, altere a ordem das VMs à direita arrastando cada VM para cima ou para baixo na lista.  As VMs serão ligadas com base na sequência em que você as incluir.
+. Selecione *Adicionar*.
+

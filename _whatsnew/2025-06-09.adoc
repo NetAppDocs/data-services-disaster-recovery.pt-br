@@ -1,0 +1,13 @@
+= Suporte à solução de senha de administrador local do Windows (LAPS)
+:allow-uri-read: 
+
+
+
+
+=== Suporte à solução de senha de administrador local do Windows (LAPS)
+
+O Windows Local Administrator Password Solution (Windows LAPS) é um recurso do Windows que gerencia e faz backup automaticamente da senha de uma conta de administrador local no Active Directory.
+
+Agora você pode selecionar opções de mapeamento de sub-rede e verificar a opção LAPS fornecendo os detalhes do controlador de domínio.  Usando esta opção, você não precisa fornecer uma senha para cada uma de suas máquinas virtuais.
+
+Para mais detalhes, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .

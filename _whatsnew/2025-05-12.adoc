@@ -1,0 +1,53 @@
+= Mapeamento de sub-rede
+:allow-uri-read: 
+
+
+
+
+=== Mapeamento de sub-rede
+
+Com esta versão, você pode gerenciar endereços IP em failover de uma nova maneira usando o mapeamento de sub-redes, que permite adicionar sub-redes para cada vCenter.  Ao fazer isso, você define o CIDR IPv4, o gateway padrão e o DNS para cada rede virtual.
+
+Após o failover, o NetApp Disaster Recovery determina o endereço IP apropriado de cada vNIC observando o CIDR fornecido para a rede virtual mapeada e o usa para derivar o novo endereço IP.
+
+Por exemplo:
+
+* RedeA = 10.1.1.0/24
+* RedeB = 192.168.1.0/24
+
+
+A VM1 tem uma vNIC (10.1.1.50) que está conectada à RedeA.  A RedeA é mapeada para a RedeB nas configurações do plano de replicação.
+
+No failover, o NetApp Disaster Recovery substitui a parte de rede do endereço IP original (10.1.1) e mantém o endereço de host (.50) do endereço IP original (10.1.1.50).  Para VM1, o NetApp Disaster Recovery analisa as configurações CIDR da NetworkB e usa a parte da rede NetworkB 192.168.1, mantendo a parte do host (.50) para criar o novo endereço IP para VM1.  O novo IP se torna 192.168.1.50.
+
+Em resumo, o endereço do host permanece o mesmo, enquanto o endereço de rede é substituído pelo que estiver configurado no mapeamento de sub-rede do site.  Isso permite que você gerencie a reatribuição de endereços IP em caso de failover com mais facilidade, especialmente se você tiver centenas de redes e milhares de VMs para gerenciar.
+
+Para obter detalhes sobre como incluir mapeamento de sub-rede em seus sites, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Adicionar sites do servidor vCenter"] .
+
+
+
+=== Proteção contra pulos
+
+Agora você pode pular a proteção para que o serviço não crie automaticamente um relacionamento de proteção reversa após um failover do plano de replicação.  Isso é útil se você quiser executar operações adicionais no site restaurado antes de colocá-lo novamente online no NetApp Disaster Recovery.
+
+Quando você inicia um failover, por padrão, o serviço cria automaticamente um relacionamento de proteção reversa para cada volume no plano de replicação, se o site de origem original estiver online.  Isso significa que o serviço cria um relacionamento SnapMirror do site de destino de volta ao site de origem.  O serviço também reverte automaticamente o relacionamento do SnapMirror quando você inicia um failback.
+
+Ao iniciar um failover, agora você pode escolher a opção *Ignorar proteção*.  Com isso, o serviço não reverte automaticamente o relacionamento do SnapMirror .  Em vez disso, ele deixa o volume gravável em ambos os lados do plano de replicação.
+
+Depois que o site de origem estiver online novamente, você poderá estabelecer a proteção reversa selecionando *Proteger recursos* no menu Ações do plano de replicação.  Isso tenta criar um relacionamento de replicação reversa para cada volume no plano.  Você pode executar esta tarefa repetidamente até que a proteção seja restaurada.  Quando a proteção for restaurada, você poderá iniciar um failback da maneira usual.
+
+Para obter detalhes sobre proteção contra saltos, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Falha na execução de aplicativos para um site remoto"] .
+
+
+
+=== Atualizações de agendamento do SnapMirror no plano de replicação
+
+O NetApp Disaster Recovery agora oferece suporte ao uso de soluções externas de gerenciamento de snapshots, como o agendador de políticas nativo ONTAP SnapMirror ou integrações de terceiros com o ONTAP.  Se cada armazenamento de dados (volume) no plano de replicação já tiver um relacionamento SnapMirror que esteja sendo gerenciado em outro lugar, você poderá usar esses instantâneos como pontos de recuperação no NetApp Disaster Recovery.
+
+Para configurar, na seção Plano de replicação > Mapeamento de recursos, marque a caixa de seleção *Usar backups e agendamentos de retenção gerenciados pela plataforma* ao configurar o mapeamento de Datastores.
+
+Quando a opção é selecionada, o NetApp Disaster Recovery não configura um agendamento de backup.  No entanto, você ainda precisa configurar um cronograma de retenção porque snapshots ainda podem ser tirados para operações de teste, failover e failback.
+
+Depois que isso for configurado, o serviço não fará nenhum snapshot agendado regularmente, mas dependerá da entidade externa para tirar e atualizar esses snapshots.
+
+Para obter detalhes sobre o uso de soluções de instantâneo externo no plano de replicação, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .

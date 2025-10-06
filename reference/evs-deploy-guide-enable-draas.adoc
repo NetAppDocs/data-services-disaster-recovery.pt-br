@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-enable-draas.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
+summary: Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx for NetApp ONTAP.  O NetApp Disaster Recovery é um produto licenciado que deve ser adquirido antes de poder ser usado.  Existem vários tipos de licenças e várias maneiras de adquiri-las. 
+---
+= Adicione o serviço NetApp Disaster Recovery à sua conta do NetApp Console para Amazon EVS
+:allow-uri-read: 
+
+
+[role="lead"]
+O NetApp Disaster Recovery é um produto licenciado que deve ser adquirido antes de poder ser usado.  Existem vários tipos de licenças e várias maneiras de adquiri-las.  Uma licença lhe dá o direito de proteger uma quantidade específica de dados por um período de tempo específico.
+
+Para obter mais informações sobre as licenças do NetApp Disaster Recovery, consultelink:../get-started/dr-licensing.html["Configurar licenciamento para recuperação de desastres da NetApp"] .
+
+
+
+== Tipos de licença
+
+Existem dois tipos principais de licença:
+
+* A NetApp oferece umalink:../get-started/dr-licensing.html["Licença de teste de 30 dias"] que você pode usar para avaliar o NetApp Disaster Recovery usando seus recursos ONTAP e VMware.  Esta licença fornece 30 dias de uso para uma quantidade ilimitada de capacidade protegida.
+* Compre uma licença de produção se quiser proteção de DR além do período de teste de 30 dias.  Esta licença pode ser adquirida nos marketplaces de qualquer um dos parceiros de nuvem da NetApp, mas para este guia, recomendamos que você compre sua licença de marketplace para o NetApp Disaster Recovery usando o Amazon AWS Marketplace.  Para saber mais sobre como comprar uma licença através do Amazon Marketplace, consultelink:../get-started/dr-licensing.html["Assine pelo AWS Marketplace"] .
+
+
+
+
+== Dimensione suas necessidades de capacidade de recuperação de desastres
+
+Antes de comprar sua licença, você deve entender quanta capacidade de armazenamento ONTAP você precisa proteger.  Uma das vantagens de usar o armazenamento NetApp ONTAP é a alta eficiência com que a NetApp armazena seus dados.  Todos os dados armazenados em um volume ONTAP — como VMs que hospedam datastore VMware — são armazenados de maneira altamente eficiente.  O ONTAP adota três tipos de eficiência de armazenamento por padrão ao gravar dados no armazenamento físico: compactação, desduplicação e compressão.  O resultado líquido é uma eficiência de armazenamento entre 1,5:1 e 4:1, dependendo dos tipos de dados armazenados.  Na verdade, a NetApp oferece uma https://www.netapp.com/media/79014-ng-937-Efficiency-Guarantee-Customer-Flyer.pdf["garantia de eficiência de armazenamento"^] para determinadas cargas de trabalho.
+
+Isso pode ser benéfico para você porque o NetApp Disaster Recovery calcula a capacidade para fins de licenciamento depois que todas as eficiências de armazenamento do ONTAP são aplicadas.  Por exemplo, digamos que você provisionou um armazenamento de dados NFS de 100 terabytes (TiB) no vCenter para hospedar 100 VMs que você deseja proteger usando o serviço.  Além disso, vamos supor que quando os dados são gravados no volume ONTAP , as técnicas de eficiência de armazenamento aplicadas automaticamente resultam no consumo de apenas 33 TiB por essas VMs (eficiência de armazenamento de 3:1).  O NetApp Disaster Recovery precisa ser licenciado apenas para 33 TiB, não 100 TiB.  Isso pode ser um benefício muito grande para o custo total de propriedade da sua solução de DR quando comparado a outras soluções de DR.
+
+.Passos
+. Para determinar a quantidade de dados que está sendo consumida em cada volume que hospeda um armazenamento de dados VMware a ser protegido, determine o consumo de capacidade no disco executando o comando ONTAP CLI para cada volume: `volume show-space -volume < _volume name_ > -vserver < _SVM name_ >` .
++
+Por exemplo:
+
++
+[listing]
+----
+cluster1::> volume show-space
+Vserver : vm-nfs-ds1
+Volume  : vol0
+Feature                                Used      Used%
+-----------------------------      --------     ------
+User Data                           163.4MB         3%
+Filesystem Metadata                   172KB         0%
+Inodes                               2.93MB         0%
+Snapshot Reserve                    292.9MB         5%
+Total Metadata                        185KB         0%
+Total Used                          459.4MB         8%
+Total Physical Used                 166.4MB         3%
+
+----
+. Anote o valor *Total Físico Usado* para cada volume.  Essa é a quantidade de dados que o NetApp Disaster Recovery precisa proteger e é o valor que você usará para determinar quanta capacidade precisa licenciar.
+

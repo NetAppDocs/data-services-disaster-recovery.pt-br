@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: reference/vcenter-privileges.html 
+keywords: disaster recovery, bluexp, vcenter, 
+summary: 'A conta do vCenter deve ter um conjunto mínimo de privilégios do vCenter para permitir que o NetApp Disaster Recovery execute seus serviços, como registrar e cancelar o registro de datastores, iniciar e parar VMs e reconfigurar máquinas virtuais (VMs).  A tabela a seguir lista todos os privilégios necessários para que o NetApp Disaster Recovery interaja com um cluster vCenter.' 
+---
+= Privilégios do vCenter necessários para recuperação de desastres do NetApp
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+A conta do vCenter deve ter um conjunto mínimo de privilégios do vCenter para permitir que o NetApp Disaster Recovery execute seus serviços, como registrar e cancelar o registro de datastores, iniciar e parar VMs e reconfigurar máquinas virtuais (VMs).  A tabela a seguir lista todos os privilégios necessários para que o NetApp Disaster Recovery interaja com um cluster vCenter.
+
+[cols="25,35a,40a"]
+|===
+| Tipo | Nome do privilégio | Descrição 
+
+
+| *Armazenamento de dados*  a| 
+Datastore.Configurar armazenamento de dados
+ a| 
+Use para configurar um armazenamento de dados.
+
+
+
+|   a| 
+Armazenamento de dados. Remover armazenamento de dados
+ a| 
+Use para remover um armazenamento de dados.
+
+
+
+| *Máquina Virtual*  a| 
+Máquina virtual.Configuração.Alterar configurações
+ a| 
+Use para alterar as configurações gerais da VM.
+
+
+
+|   a| 
+Máquina virtual. Configuração. Modificar configurações do dispositivo
+ a| 
+Use para alterar as propriedades de um dispositivo existente.
+
+
+
+|   a| 
+Máquina virtual.Configuração.Recarregar do caminho
+ a| 
+Use para alterar um patch de configuração de VM, preservando a identidade da VM.  Soluções como o VMware vCenter Site Recovery Manager usam essa operação para manter a identidade da VM durante failover e failback.
+
+
+
+|   a| 
+Máquina virtual.Configuração.Renomear
+ a| 
+Use para renomear uma VM ou modificar os nós associados a uma VM.
+
+
+
+|   a| 
+Máquina virtual.Configuração.Redefinir informações do convidado
+ a| 
+Use para editar as informações do sistema operacional convidado para uma VM.
+
+
+
+|   a| 
+Máquina virtual.Configuração.Alterar memória
+ a| 
+Use para alterar a quantidade de memória alocada para a VM.
+
+
+
+|   a| 
+Máquina virtual.Configuração.Alterar contagem de CPU
+ a| 
+Use para alterar o número de CPUs virtuais.
+
+
+
+| *Convidado da Máquina Virtual*  a| 
+Máquina virtual. Operações de convidado. Modificações de operação de convidado
+ a| 
+Habilita operações de convidado de VM que envolvem alterações em um sistema operacional convidado em uma VM, como transferir um arquivo para a VM.
+
+
+
+| *Interação com Máquina Virtual*  a| 
+Máquina virtual.Interação.Desligamento
+ a| 
+Use para desligar uma VM ligada.  Esta operação desliga o sistema operacional convidado.
+
+
+
+|   a| 
+Máquina virtual.Interação.Ligar
+ a| 
+Use para ligar uma VM desligada e retomar uma VM suspensa.
+
+
+
+|   a| 
+Máquina virtual.Interação.Instalação de ferramentas VMware
+ a| 
+Use para montar e desmontar o instalador do CD do VMware Tools como um CD-ROM para o sistema operacional convidado.
+
+
+
+| *Inventário de Máquina Virtual*  a| 
+Máquina virtual.Inventário.Criar novo
+ a| 
+Use para criar uma VM e alocar recursos para sua execução.
+
+
+
+|   a| 
+Máquina virtual.Inventário.Registro
+ a| 
+Use para adicionar uma VM existente a um vCenter Server ou inventário de host.
+
+
+
+|   a| 
+Máquina virtual.Inventário.Cancelar registro
+ a| 
+Use para cancelar o registro de uma VM de um vCenter Server ou inventário de host.
+
+
+
+| *Estado da Máquina Virtual*  a| 
+Máquina virtual. Gerenciamento de snapshot. Criar snapshot
+ a| 
+Use para criar um instantâneo do estado atual da VM.
+
+
+
+|   a| 
+Máquina virtual. Gerenciamento de instantâneos. Remover instantâneo
+ a| 
+Use para remover um instantâneo do histórico de instantâneos.
+
+
+
+|   a| 
+Máquina virtual. Gerenciamento de instantâneos. Reverter para instantâneos
+ a| 
+Use para definir a VM para o estado em que estava em um determinado instantâneo.
+
+|===

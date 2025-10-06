@@ -1,0 +1,142 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-prerequisites.html 
+keywords: what are disaster recovery requirements, disaster recovery prerequisites, bluexp, disaster recovery 
+summary: Antes de usar o NetApp Disaster Recovery, você deve garantir que seu ambiente atenda aos requisitos de armazenamento ONTAP , cluster VMware vCenter e NetApp Console. 
+---
+= Pré-requisitos do NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Antes de usar o NetApp Disaster Recovery, você deve garantir que seu ambiente atenda aos requisitos de armazenamento ONTAP , cluster VMware vCenter e NetApp Console.
+
+
+
+== Versões de software
+
+[cols="35,55a"]
+|===
+| Componente | Versão mínima 
+
+
+| Software ONTAP  a| 
+ONTAP 9.10.0 ou posterior
+
+
+
+| VMware vCenter local  a| 
+7.0u3 ou posterior
+
+
+
+| VMware Cloud para AWS  a| 
+Última versão disponível
+
+
+
+| Amazon FSx for NetApp ONTAP  a| 
+Última versão disponível
+
+|===
+
+
+== Pré-requisitos de armazenamento ONTAP
+
+Esses pré-requisitos se aplicam ao ONTAP ou ao Amazon FSX para instâncias do NetApp ONTAP .
+
+* Os clusters de origem e destino devem ter um relacionamento de pares.
+* O SVM que hospedará os volumes de recuperação de desastres deve existir no cluster de destino.
+* O SVM de origem e o SVM de destino devem ter um relacionamento de mesmo nível.
+* Se estiver implantando com o Amazon FSx for NetApp ONTAP, o seguinte pré-requisito se aplica:
++
+** Uma instância do Amazon FSx for NetApp ONTAP para hospedar datastores do VMware DR deve existir na sua VPC.  Consulte a documentação do Amazon FSx para ONTAP em https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["como começar"^] .
+
+
+
+
+
+
+== Pré-requisitos dos clusters VMware vCenter
+
+Esses pré-requisitos se aplicam aos clusters vCenter locais e ao data center definido por software (SDDC) do VMware Cloud for AWS.
+
+* Análiselink:../reference/vcenter-privileges.html["Privilégios do vCenter"] necessário para a recuperação de desastres da NetApp .
+* Todos os clusters VMware que você deseja que o NetApp Disaster Recovery gerencie usam volumes ONTAP para hospedar quaisquer VMs que você deseja proteger.
+* Todos os datastores VMware a serem gerenciados pelo NetApp Disaster Recovery devem usar um dos seguintes protocolos:
++
+** NFS
+** VMFS usando o protocolo iSCSI ou FC
+
+
+* VMware vSphere versão 7.0 Atualização 3 (7.0v3) ou posterior
+* Se você estiver usando o VMware Cloud SDDC, estes pré-requisitos se aplicam.
++
+** No VMware Cloud Console, use as funções de serviço de Administrador e Administrador do NSX Cloud.  Use também o proprietário da organização para a função Organização. Consulte https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["Usando o VMware Cloud Foundations com AWS FSx para documentação do NetApp ONTAP"^] .
+** Vincule o VMware Cloud SDDC ao Amazon FSx for NetApp ONTAP . Consulte https://vmc.techzone.vmware.com/fsx-guide#overview["Integração do VMware Cloud on AWS com o Amazon FSx for NetApp ONTAP"^] .
+
+
+
+
+
+
+== Pré-requisitos do NetApp Console
+
+
+
+=== Comece a usar o NetApp Console
+
+Se você ainda não fez isso, https://docs.netapp.com/us-en/bluexp-setup-admin/task-sign-up-saas.html["inscreva-se no NetApp Console e crie uma organização"^] .
+
+
+
+=== Reúna credenciais para ONTAP e VMware
+
+* As credenciais do Amazon FSx para ONTAP e AWS devem ser adicionadas ao sistema dentro do projeto do NetApp Console que será usado para gerenciar o NetApp Disaster Recovery.
+* O NetApp Disaster Recovery requer credenciais do vCenter.  Você insere as credenciais do vCenter ao adicionar um site no NetApp Disaster Recovery.
++
+Para obter uma lista de privilégios do vCenter necessários, consultelink:../reference/vcenter-privileges.html["Privilégios do vCenter necessários para recuperação de desastres do NetApp"] .  Para obter instruções sobre como adicionar um site, consultelink:../use/sites-add.html["Adicionar um site"] .
+
+
+
+
+
+=== Crie o agente do NetApp Console
+
+O agente do Console é um componente de software que permite que o Console se comunique com seus clusters de armazenamento ONTAP e VMware vCenter.  É necessário para que a Recuperação de Desastres funcione corretamente.  O agente reside na sua rede privada (em um data center local ou em uma VPC na nuvem) e se comunica com suas instâncias de armazenamento ONTAP e quaisquer componentes adicionais de servidor e aplicativo.  Para recuperação de desastres, este é o acesso aos seus clusters vCenter gerenciados.
+
+Um agente do Console deve ser configurado no NetApp Console.  Quando você usa o agente, ele inclui os recursos apropriados para o serviço de Recuperação de Desastres.
+
+* O NetApp Disaster Recovery funciona apenas com a implantação do agente no modo padrão. Ver https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["Introdução ao NetApp Console no modo padrão"^] .
+* Certifique-se de que os vCenters de origem e de destino usem o mesmo agente de console.
+* Tipo de agente de console necessário:
++
+** *Recuperação de desastres local para local*: Instale o agente local do Console no site de recuperação de desastres.  Usando esse método, uma falha no site principal não impede que o serviço reinicie seus recursos virtuais no site de DR. Consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Instalar e configurar o agente do Console no local"^] .
+** *No local para AWS*: Instale o agente do Console para AWS na sua VPC da AWS. Consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-install-options-aws.html["Opções de instalação do agente de console na AWS"^] .
++
+
+TIP: Para locais para locais, use o agente do Console local.  Para o local na AWS, use o agente do Console da AWS, que tem acesso ao vCenter local de origem e ao vCenter local de destino.
+
+** O agente do Console instalado deve ser capaz de acessar qualquer cluster VMware que o NetApp Disaster Recovery gerenciará.
+
+
+* Todos os arrays ONTAP a serem gerenciados pelo NetApp Disaster Recovery devem ser adicionados a qualquer sistema dentro do projeto do NetApp Console que será usado para gerenciar o NetApp Disaster Recovery.
++
+Ver https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Descubra clusters ONTAP locais"^] .
+
+* Para obter informações sobre como configurar um proxy inteligente para o NetApp Disaster Recovery, consultelink:../get-started/dr-setup.html["Configure sua infraestrutura para recuperação de desastres da NetApp"] .
+
+
+
+
+== Pré-requisitos de carga de trabalho
+
+Para garantir que os processos de consistência de aplicativos sejam bem-sucedidos, aplique estes pré-requisitos:
+
+* Certifique-se de que as ferramentas VMware (ou ferramentas Open VM) estejam em execução nas VMs que serão protegidas.
+* Para VMs Windows executando o Microsoft SQL Server ou o Oracle Database ou ambos, os bancos de dados devem ter seus VSS Writers habilitados.
+* Os bancos de dados Oracle executados em um sistema operacional Linux devem ter a autenticação do usuário do sistema operacional habilitada para a função SYSDBA do banco de dados Oracle.
+

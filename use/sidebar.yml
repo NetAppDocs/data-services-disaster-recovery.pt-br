@@ -1,0 +1,29 @@
+---
+section: use
+title: Use a recuperação de desastres da NetApp
+entries:
+- title: Visão geral do uso do NetApp Disaster Recovery
+  url: "/use/use-overview.html"
+- title: Veja a integridade dos seus planos de recuperação de desastres no Painel
+  url: "/use/dashboard-view.html"
+- title: Adicionar vCenters a um site
+  url: "/use/sites-add.html"
+- title: Criar um grupo de recursos
+  url: "/use/resource-group.html"
+- title: Crie um plano de replicação
+  url: "/use/drplan-create.html"
+- title: Replicar para outro site
+  url: "/use/replicate.html"
+- title: Migrar para outro site
+  url: "/use/migrate.html"
+- title: Failover para um site remoto
+  url: "/use/failover.html"
+- title: Fazer failback de aplicativos para o site de origem original
+  url: "/use/failback.html"
+- title: Gerenciar informações de sites, planos, armazenamentos de dados e máquinas
+    virtuais
+  url: "/use/manage.html"
+- title: Monitorar trabalhos de recuperação de desastres
+  url: "/use/monitor-jobs.html"
+- title: Criar relatórios de recuperação de desastres
+  url: "/use/reports.html"

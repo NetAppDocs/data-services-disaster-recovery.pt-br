@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-creating-replication-plans.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
+summary: 'Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx for NetApp ONTAP.  Depois de ter vCenters para proteger no site local e ter um site Amazon EVS configurado para usar o Amazon FSx for NetApp ONTAP que você pode usar como um destino de DR, agora você pode criar um plano de replicação (RP) para proteger qualquer conjunto de VMs hospedadas no cluster vCenter dentro do seu site local.' 
+---
+= Criar planos de replicação na visão geral do NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+[role="lead"]
+Depois de ter vCenters para proteger no site local e ter um site Amazon EVS configurado para usar o Amazon FSx for NetApp ONTAP que você pode usar como um destino de DR, você pode criar um plano de replicação (RP) para proteger qualquer conjunto de VMs hospedadas no cluster vCenter dentro do seu site local.
+
+.Para iniciar o processo de criação do plano de replicação:
+. Em qualquer tela do NetApp Disaster Recovery, selecione a opção *Planos de replicação*.
++
+image:evs-create-rp-1.png["opção de planos de replicação"]
+
+. Na página Planos de replicação, selecione *Adicionar*.
++
+image:evs-create-rp-2.png["Tela de planos de replicação"]
+
+
+
+Isso abre o assistente Criar plano de replicação.
+
+Continuar comlink:evs-deploy-guide-create-rp-wiz-01.html["Assistente para criação de plano de replicação Etapa 1"] .

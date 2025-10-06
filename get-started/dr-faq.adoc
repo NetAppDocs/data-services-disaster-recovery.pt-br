@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-faq.html 
+keywords: disaster recovery faq, disaster recovery frequently asked questions 
+summary: Estas perguntas frequentes podem ajudar se você estiver apenas procurando uma resposta rápida para uma pergunta. 
+---
+= Perguntas frequentes sobre recuperação de desastres da NetApp
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Estas perguntas frequentes podem ajudar se você estiver apenas procurando uma resposta rápida para uma pergunta.
+
+*Qual é o URL do NetApp Disaster Recovery?*  Para o URL, em um navegador, digite: https://console.netapp.com/["https://console.netapp.com/"^] para acessar o console do NetApp .
+
+*Você precisa de uma licença para usar o NetApp Disaster Recovery?*  Uma licença do NetApp Disaster Recovery é necessária para acesso completo.  No entanto, você pode experimentá-lo com o teste gratuito.
+
+Para obter detalhes sobre a configuração do licenciamento para o NetApp Disaster Recovery, consultelink:../get-started/dr-licensing.html["Configurar o licenciamento do NetApp Disaster Recovery"] .
+
+*Como acessar o NetApp Disaster Recovery?*  O NetApp Disaster Recovery não requer nenhuma ativação.  A opção de recuperação de desastres aparece automaticamente na navegação à esquerda do NetApp Console.

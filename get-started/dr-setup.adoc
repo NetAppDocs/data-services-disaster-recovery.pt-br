@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-setup.html 
+keywords: bluexp, disaster recovery, aws, amazon web services, amazon fsx for netapp ontap 
+summary: Para usar o NetApp Disaster Recovery, siga algumas etapas para configurá-lo. 
+---
+= Configure sua infraestrutura para recuperação de desastres da NetApp
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Para usar o NetApp Disaster Recovery, siga algumas etapas para configurá-lo no Amazon Web Services (AWS) e no NetApp Console.
+
+
+TIP: Análiselink:../get-started/dr-prerequisites.html["pré-requisitos"] para garantir que seu sistema esteja pronto.
+
+Você pode usar o NetApp Disaster Recovery nas seguintes infraestruturas:
+
+* DR de nuvem híbrida que replica um datacenter VMware mais ONTAP local para uma infraestrutura de DR da AWS baseada no VMware Cloud on AWS e no Amazon FSx for NetApp ONTAP.
+* DR de nuvem privada que replica um VMware mais ONTAP vCenter local para outro VMware mais ONTAP vCenter local.
+
+
+
+
+== Nuvem híbrida com VMware Cloud e Amazon FSx for NetApp ONTAP
+
+Este método consiste em uma infraestrutura vCenter de produção local usando datastores hospedados em volumes ONTAP FlexVol usando um protocolo NFS.  O site de DR consiste em uma ou mais instâncias do VMware Cloud SDDC usando armazenamentos de dados hospedados em volumes FlexVol fornecidos por uma ou mais instâncias do FSx for ONTAP usando um protocolo NFS.
+
+Os sites de produção e DR são conectados por uma conexão segura compatível com AWS.  Os tipos comuns de conexão são VPN segura (privada ou fornecida pela AWS), AWS Direct Connect ou outros métodos de interconexão aprovados.
+
+Para recuperação de desastres envolvendo infraestrutura de nuvem da AWS, você deve usar o agente do Console para AWS.  O agente deve ser instalado na mesma VPC que a instância do FSx para ONTAP .  Se instâncias adicionais do FSx for ONTAP foram implantadas em outras VPCs, a VPC que hospeda o agente deve ter acesso às outras VPCs.
+
+
+
+=== Zonas de disponibilidade da AWS
+
+A AWS oferece suporte à implantação de soluções em uma ou mais zonas de disponibilidade (AZ) dentro de uma determinada região.  O Disaster Recovery usa dois serviços hospedados na AWS: VMware Cloud para AWS e AWS FSx para NetApp ONTAP.
+
+* *VMware Cloud para AWS*: oferece suporte à implantação em um ambiente SDDC de cluster extensível de AZ única ou de AZ dupla.  O Disaster Recovery oferece suporte a uma implantação de SDDC de AZ único somente para o Amazon VMware Cloud para AWS.
+* *AWS FSx para NetApp ONTAP*: Quando implantado em uma configuração dual-AZ, cada volume pertence a um único sistema FSx.  Cada volume pertence a um único sistema FSx.  Os dados do volume são espelhados para o segundo sistema FSx.  O FSx para sistemas ONTAP pode ser implantado em implantações de AZ simples ou duplas.  O Disaster Recovery oferece suporte a FSx de AZ única e múltipla para implantações de FSx para ONTAP .
+
+
+*PRÁTICA RECOMENDADA*: Para configuração de site de DR da AWS, a NetApp recomenda usar implantações de AZ única para instâncias VMware Cloud e AWS FSx para ONTAP .  Como a AWS está sendo usada para DR, não há vantagem em introduzir várias AZs.  Multi-AZs podem aumentar custos e complexidade.
+
+
+
+=== No local para AWS
+
+A AWS fornece os seguintes métodos para conectar datacenters privados à nuvem AWS.  Cada solução tem seus benefícios e considerações de custo.
+
+* *AWS Direct Connect*: Esta é uma interconexão de nuvem da AWS localizada na mesma área geográfica do seu datacenter privado e fornecida por um parceiro da AWS.  Esta solução fornece uma conexão segura e privada entre seu datacenter local e a nuvem AWS sem a necessidade de uma conexão pública com a internet.  Este é o método de conexão mais direto e eficiente oferecido pela AWS.
+* *AWS Internet Gateway*: fornece conectividade pública entre recursos de nuvem da AWS e recursos de computação externos.  Esse tipo de conexão normalmente é usado para fornecer serviços a clientes externos, como serviços HTTP/HTTPS, onde a segurança não é um requisito.  Não há controle de qualidade de serviço, segurança ou garantia de conectividade.  Por esse motivo, esse método de conexão não é recomendado para conectar um datacenter de produção à nuvem.
+* *AWS Site-Site VPN*: Esta conexão de rede privada virtual pode ser usada para fornecer conexões de acesso seguras junto com um provedor de serviços de Internet público.  A VPN criptografa e descriptografa todos os dados que viajam de e para a nuvem AWS.  VPNs podem ser baseadas em software ou hardware.  Para aplicações empresariais, o provedor de serviços de Internet público (ISP) deve oferecer garantias de qualidade de serviço para assegurar que largura de banda e latência adequadas sejam fornecidas para replicação de DR.
+
+
+*PRÁTICA RECOMENDADA*: Para configuração de site de DR da AWS, a NetApp recomenda usar o AWS Direct Connect.  Esta solução oferece o mais alto desempenho e segurança para aplicativos corporativos.  Caso não esteja disponível, uma conexão ISP pública de alto desempenho juntamente com uma VPN deve ser usada.  Certifique-se de que o ISP ofereça níveis de serviço de QoS comerciais para garantir um desempenho de rede adequado.
+
+
+
+=== Interconexões VPC para VPC
+
+A AWS oferece os seguintes tipos de interconexões de VPC para VPC.  Cada solução tem seus benefícios e considerações de custo.
+
+* *VPC Peering*: Esta é uma conexão privada entre duas VPCs.  É o método de conexão mais direto e eficiente oferecido pela AWS.  O peering de VPC pode ser usado para conectar VPCs na mesma região da AWS ou em regiões diferentes.
+* *AWS Internet Gateway*: normalmente é usado para fornecer conexões entre recursos do AWS VPC e recursos e endpoints que não são da AWS.  Todo o tráfego segue um caminho "em grampo" em que o tráfego da VPC destinado a outra VPC sai da infraestrutura da AWS pelo gateway da Internet e retorna à infraestrutura da AWS pelo mesmo gateway ou por um diferente.  Este não é um tipo de conexão VPC adequado para soluções VMware corporativas.
+* *AWS Transit Gateway*: Este é um tipo de conexão centralizada baseada em roteador que permite que cada VPC se conecte a um único gateway central, que atua como um hub central para todo o tráfego de VPC para VPC.  Isso também pode ser conectado à sua solução VPN para permitir que recursos do datacenter local acessem recursos hospedados no AWS VPC.  Esse tipo de conexão normalmente exige um custo adicional para ser implementado.
+
+
+*PRÁTICA RECOMENDADA*: Para soluções de DR envolvendo VMware Cloud e um único FSx para ONTAP VPC, a NetApp recomenda que você use a conexão de peer VPC.  Se vários FSx para VPCs ONTAP forem implantados, recomendamos usar um AWS Transit Gateway para reduzir a sobrecarga de gerenciamento de várias conexões de peers de VPC.
+
+
+
+=== Prepare-se para a proteção local para a nuvem usando a AWS
+
+Para configurar o NetApp Disaster Recovery para proteção local para a nuvem usando a AWS, você precisa configurar o seguinte:
+
+* Configurar o AWS FSx para NetApp ONTAP
+* Configurar o VMware Cloud no AWS SDDC
+
+
+
+
+==== Configurar o AWS FSx para NetApp ONTAP
+
+* Crie um sistema de arquivos Amazon FSx for NetApp ONTAP .
++
+** Provisione e configure o FSx para ONTAP.  O Amazon FSx for NetApp ONTAP é um serviço totalmente gerenciado que fornece armazenamento de arquivos altamente confiável, escalável, de alto desempenho e rico em recursos, criado no sistema de arquivos NetApp ONTAP .
+** Siga os passos em https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-native-overview.html["Relatório técnico 4938: Monte o Amazon FSx ONTAP como um armazenamento de dados NFS com o VMware Cloud na AWS"^] e https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/task-getting-started-fsx.html["Início rápido para Amazon FSx for NetApp ONTAP"] para provisionar e configurar o FSx para ONTAP.
+
+
+* Adicione o Amazon FSx para ONTAP ao sistema e adicione credenciais da AWS para o FSx para ONTAP.
+* Crie ou verifique seu SVM ONTAP de destino no AWS FSx para a instância ONTAP .
+* Configure a replicação entre seu cluster ONTAP local de origem e sua instância do FSx for ONTAP no NetApp Console.
+
+
+Consulte https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["como configurar um FSx para sistema ONTAP"^] para etapas detalhadas.
+
+
+
+==== Configurar o VMware Cloud no AWS SDDC
+
+https://www.vmware.com/products/vmc-on-aws.html["VMware Cloud na AWS"^]fornece uma experiência nativa em nuvem para cargas de trabalho baseadas em VMware no ecossistema da AWS. Cada data center definido por software (SDDC) da VMware é executado em uma Amazon Virtual Private Cloud (VPC) e fornece uma pilha VMware completa (incluindo o vCenter Server), rede definida por software NSX-T, armazenamento definido por software vSAN e um ou mais hosts ESXi que fornecem recursos de computação e armazenamento para as cargas de trabalho.
+
+Para configurar um ambiente VMware Cloud na AWS, siga as etapas em https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-setup.html["Implantar e configurar o ambiente de virtualização na AWS"^] . Um conjunto de luzes piloto também pode ser usado para fins de recuperação de desastres.
+
+
+
+== Nuvem privada
+
+Você pode usar o NetApp Disaster Recovery para proteger VMs VMware hospedadas em um ou mais clusters vCenter replicando datastores de VM para outro cluster vCenter no mesmo datacenter privado ou em um datacenter privado ou colocalizado remoto.
+
+Para situações de local para local, instale o agente do Console em um dos sites físicos.
+
+O Disaster Recovery oferece suporte à replicação de site para site usando Ethernet e TCP/IP.  Certifique-se de que haja largura de banda adequada disponível para suportar taxas de alteração de dados nas VMs do site de produção, para que todas as alterações possam ser replicadas no site de DR dentro do período do Objetivo de Ponto de Recuperação (RPO).
+
+
+
+=== Prepare-se para proteção local para local
+
+Certifique-se de que os seguintes requisitos sejam atendidos antes de configurar o NetApp Disaster Recovery para proteção local para local:
+
+* Armazenamento ONTAP
++
+** Certifique-se de ter credenciais ONTAP .
+** Crie ou verifique seu site de recuperação de desastres.
+** Crie ou verifique seu ONTAP SVM de destino.
+** Certifique-se de que seus SVMs ONTAP de origem e destino estejam pareados.
+
+
+* Clusters do vCenter
++
+** Certifique-se de que as VMs que você deseja proteger estejam hospedadas em datastores NFS (usando volumes ONTAP NFS) ou datastores VMFS (usando LUNs iSCSI da NetApp ).
+** Análiselink:../reference/vcenter-privileges.html["Privilégios do vCenter"] necessário para a recuperação de desastres da NetApp .
+** Crie uma conta de usuário de recuperação de desastres (não a conta de administrador padrão do vCenter) e atribua os privilégios do vCenter à conta.
+
+
+
+
+
+
+=== Suporte a proxy inteligente
+
+O agente do NetApp Console oferece suporte ao proxy inteligente.  O proxy inteligente é uma maneira leve, segura e eficiente de conectar seu ambiente local ao NetApp Console.  Ele fornece uma conexão segura entre seu sistema e o serviço do Console sem exigir uma VPN ou acesso direto à Internet.  Essa implementação de proxy otimizada descarrega o tráfego de API dentro da rede local.
+
+Quando um proxy é configurado, o NetApp Disaster Recovery tenta se comunicar diretamente com o VMware ou o ONTAP e usa o proxy configurado se a comunicação direta falhar.
+
+A implementação do proxy de recuperação de desastres da NetApp requer comunicação na porta 443 entre o agente do Console e quaisquer servidores vCenter e matrizes ONTAP usando um protocolo HTTPS.  O agente NetApp Disaster Recovery dentro do agente do Console se comunica diretamente com o VMware vSphere, o VC ou o ONTAP ao executar qualquer ação.
+
+Para obter mais informações sobre a configuração geral do proxy no NetApp Console, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurar o agente do Console para usar um servidor proxy"^] .
