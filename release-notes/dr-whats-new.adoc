@@ -12,7 +12,7 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 
 [role="lead"]
-Saiba o que há de novo no NetApp Disaster Recovery.
+Descubra as novidades em NetApp Disaster Recovery.
 
 
 
@@ -461,11 +461,11 @@ Esta versão inclui atualizações nos dados do plano de replicação, o que res
 Veja como:
 
 . No menu, selecione *Planos de replicação*.
-. Selecione o plano de replicação, clique na guia *Mapeamento de failover* e clique no ícone de lápis *Editar*.
-. Clique na seta *Datastores* para expandi-la.
-. Observe o valor da contagem de retenção no plano de replicação.  Você precisará restabelecer esse valor original quando terminar essas etapas.
+. Selecione o plano de replicação, selecione a guia *Mapeamento de failover* e selecione o ícone de lápis *Editar*.
+. Selecione a seta *Datastores* para expandi-la.
+. Observe o valor da contagem de retenção no plano de replicação. Você precisa restaurar esse valor original quando terminar essas etapas.
 . Reduza a contagem para 1.
-. Inicie um snapshot sob demanda.  Para fazer isso, na página Plano de replicação, selecione o plano, clique no ícone Ações e selecione *Tirar instantâneo agora*.
+. Inicie um snapshot sob demanda. Para isso, na página do plano de replicação, selecione o plano, selecione o ícone Ações e selecione *Tirar instantâneo agora*.
 . Após a conclusão bem-sucedida do trabalho de instantâneo, aumente a contagem no plano de replicação de volta ao valor original anotado na primeira etapa.
 . Repita essas etapas para todos os planos de replicação existentes.
 
@@ -682,7 +682,7 @@ Esta versão de pré-visualização do NetApp Disaster Recovery inclui as seguin
 
 === Atualizações do painel
 
-Agora você pode clicar nas opções do Painel, o que facilita a revisão rápida das informações. Além disso, o Painel agora mostra o status de failovers e migrações.
+Agora você pode selecionar as opções no Painel de Controle, facilitando a revisão rápida das informações. Além disso, o Painel agora mostra o status de failovers e migrações.
 
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/dashboard-view.html["Veja a integridade dos seus planos de recuperação de desastres no Painel"] .
 

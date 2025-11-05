@@ -12,7 +12,7 @@ summary: Você pode dar uma olhada rápida em todos os seus recursos do NetApp D
 
 
 [role="lead"]
-Você pode dar uma olhada rápida em todos os seus recursos de NetApp Disaster Recovery ou analisar cada um deles em detalhes:
+O NetApp Disaster Recovery oferece visões gerais e perspectivas mais detalhadas de todos os seus recursos:
 
 * Locais
 * Grupos de recursos
@@ -43,7 +43,7 @@ Você pode editar o nome do site do vCenter e o tipo de site (local ou AWS).
 
 == Gerenciar grupos de recursos
 
-Embora você possa adicionar um grupo de recursos como parte da criação de um plano de replicação, pode ser mais conveniente adicionar os grupos separadamente e usá-los posteriormente no plano.  Você cria grupos de recursos por VMs ou por armazenamentos de dados.
+Você pode criar grupos de recursos por máquinas virtuais ou por datastores.  Eles podem ser adicionados ao criar o plano de replicação ou posteriormente.
 
 *Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
@@ -53,7 +53,7 @@ Você pode criar um grupo de recursos por armazenamentos de dados das seguintes 
 * Ao criar um plano de replicação e um grupo de recursos dentro do plano, você pode ver as VMs nos armazenamentos de dados.
 
 
-Você pode executar as seguintes tarefas com grupos de recursos:
+Você pode realizar as seguintes tarefas com grupos de recursos:
 
 * Alterar o nome do grupo de recursos.
 * Adicione VMs ao grupo de recursos.
@@ -66,7 +66,7 @@ Para obter detalhes sobre como criar um grupo de recursos, consultelink:resource
 .Passos
 . No menu, selecione *Grupos de recursos*.
 . Para adicionar um grupo de recursos, selecione *Adicionar grupo*.
-. Para executar ações com o grupo de recursos, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita e selecione qualquer uma das opções, como *Editar grupo de recursos* ou *Excluir grupo de recursos*.
+. Você pode modificar ou excluir o grupo de recursos selecionando a opção *Ações*.image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] .
 
 
 
@@ -110,7 +110,7 @@ image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
 === Reconciliar instantâneos sob demanda
 
-Você pode reconciliar snapshots que estão fora de sincronia entre a origem e o destino.  Isso pode ocorrer se os snapshots forem excluídos em um destino fora do NetApp Disaster Recovery.  O serviço exclui automaticamente o snapshot na origem a cada 24 horas.  No entanto, você pode fazer isso sob demanda.  Esse recurso permite que você garanta que os instantâneos sejam consistentes em todos os sites.
+A Recuperação de Desastres exclui automaticamente os snapshots na origem a cada 24 horas.  Se você descobrir que os snapshots estão dessincronizados entre a origem e o destino, precisará resolver a discrepância entre os snapshots para garantir a consistência entre os sites.
 
 *Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
@@ -119,7 +119,7 @@ Você pode reconciliar snapshots que estão fora de sincronia entre a origem e o
 +
 image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
-. Na lista de planos de replicação, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e selecione *Reconciliar instantâneos*.
+. Na lista de planos de replicação, selecione a opção *Ações*.image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] Em seguida, *Reconciliar instantâneos*.
 . Revise as informações de reconciliação.
 . Selecione *Reconciliar*.
 
@@ -128,7 +128,7 @@ image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
 === Excluir um plano de replicação
 
-Você pode excluir um plano de replicação se não precisar mais dele.  Se você excluir um plano de replicação, também poderá excluir os snapshots primários e secundários criados pelo plano.
+Se você excluir um plano de replicação, também poderá excluir os snapshots primários e secundários criados pelo plano.
 
 *Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
@@ -136,7 +136,7 @@ Você pode excluir um plano de replicação se não precisar mais dele.  Se voc�
 . No menu, selecione *Planos de replicação*.
 . Selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e selecione *Excluir*.
 . Selecione se deseja excluir os snapshots primários, os snapshots secundários ou apenas os metadados criados pelo plano.
-. Digite "delete" para confirmar a exclusão.
+. Digite "excluir" para confirmar a exclusão.
 . Selecione *Excluir*.
 
 
@@ -144,18 +144,18 @@ Você pode excluir um plano de replicação se não precisar mais dele.  Se voc�
 
 === Alterar contagem de retenção para agendamentos de failover
 
-Você pode alterar quantos armazenamentos de dados são retidos.
+Alterar o número de retenções permite aumentar ou diminuir a quantidade de dados armazenados.
 
 *Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
 .Passos
 . No menu, selecione *Planos de replicação*.
-. Selecione o plano de replicação, selecione a guia *Mapeamento de failover* e selecione o ícone de lápis *Editar*.
-. Selecione a seta *Datastores* para expandi-la.
+. Selecione o plano de replicação e, em seguida, a guia *Mapeamento de failover*. Selecione o ícone de lápis *Editar*.
+. Selecione a seta para baixo na linha *Datastores* para expandi-la.
 +
 image:../use/dr-plan-failover-edit.png["Editar página de mapeamentos de failover"]
 
-. Altere o valor da contagem de retenção no plano de replicação.
+. Altere o valor da **Contagem de retenção para todos os armazenamentos de dados**.
 . Com o plano de replicação selecionado, selecione o menu Ações e, em seguida, selecione *Limpar instantâneos antigos* para remover instantâneos antigos no destino para corresponder à nova contagem de retenção.
 
 

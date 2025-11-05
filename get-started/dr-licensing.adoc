@@ -28,7 +28,7 @@ link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permiss�
 
 NOTE: As cobranças do NetApp Disaster Recovery são baseadas na capacidade usada dos armazenamentos de dados no site de origem quando há pelo menos uma VM com um plano de replicação.  A capacidade para um armazenamento de dados com failover não está incluída na capacidade permitida.  Para um BYOL, se os dados excederem a capacidade permitida, as operações no serviço serão limitadas até que você obtenha uma licença de capacidade adicional ou atualize a licença no NetApp Console.
 
-link:https://docs.netapp.com/us-en/bluexp-digital-wallet/concept-digital-wallet.html["Saiba mais sobre assinaturas"^] .
+link:https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-licenses-subscriptions.html["Saiba mais sobre assinaturas"^].
 
 Após o término do teste gratuito ou a licença expirar, você ainda poderá fazer o seguinte no serviço:
 
