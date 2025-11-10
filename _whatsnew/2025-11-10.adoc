@@ -1,0 +1,31 @@
+= Suporte a failover em cascata
+:allow-uri-read: 
+
+
+
+
+=== Suporte a failover em cascata
+
+Agora você pode configurar um relacionamento em cascata no ONTAP e usar qualquer um dos ramos desse relacionamento de replicação para recuperação de desastres.
+
+
+
+=== Reduzir o suporte de hardware da VMware durante o registro
+
+O Disaster Recovery agora oferece suporte ao downgrade do hardware VMware para uma versão anterior do vSphere durante o registro. Isso é útil quando o host ESX de origem está executando uma versão mais recente do que o site de recuperação de desastres.
+
+Para mais informações, consulte xref:drplan-create.html#map-resources-virtual-machines-section[Crie um plano de replicação no NetApp Disaster Recovery].
+
+
+
+=== Encerramento elegante
+
+A Recuperação de Desastres agora desliga as VMs de forma controlada, em vez de desligá-las completamente. Se uma determinada máquina virtual demorar mais de dez minutos para ser desligada, o sistema de Recuperação de Desastres a desliga automaticamente.
+
+
+
+=== Suporte para scripts de pré-backup
+
+Agora você pode inserir scripts personalizados no fluxo de trabalho de failover para serem executados antes da criação de um backup. A criação de scripts de pré-backup permite controlar o estado da máquina virtual antes da replicação de um snapshot e preparar a máquina virtual para uma transição. Por exemplo, você pode injetar um script que desmonta uma montagem NFS, a qual será remontada usando um script diferente após a recuperação de falha.
+
+Para mais informações, consulte xref:drplan-create.html#map-resources-virtual-machines-section[Crie um plano de replicação no NetApp Disaster Recovery].
