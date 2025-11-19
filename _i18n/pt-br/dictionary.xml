@@ -1918,7 +1918,6 @@
   <block id="8115dd8449bd907d08f3347f6d04324a" category="paragraph">Agora você pode configurar um relacionamento em cascata no ONTAP e usar qualquer um dos ramos desse relacionamento de replicação para recuperação de desastres.</block>
   <block id="eb2fa9dcb8eaa46c82c070f8bbe8418a" category="section-title">Reduzir o suporte de hardware da VMware durante o registro</block>
   <block id="f83d7a6597b186db7483e2f478aeb8fa" category="paragraph">O Disaster Recovery agora oferece suporte ao downgrade do hardware VMware para uma versão anterior do vSphere durante o registro. Isso é útil quando o host ESX de origem está executando uma versão mais recente do que o site de recuperação de desastres.</block>
-  <block id="a412b7de9758b999e39beb6a86f38803" category="paragraph">Para mais informações, consulte <block ref="3b88d2273f8f2a777f18a77cece1dbb2" category="inline-xref-macro-rx"></block>.</block>
   <block id="bcf697aa5ef7fc37fba63ce6d2bf0e43" category="section-title">Encerramento elegante</block>
   <block id="9437b903cdafc2fdfce3c66af80b97f0" category="paragraph">A Recuperação de Desastres agora desliga as VMs de forma controlada, em vez de desligá-las completamente. Se uma determinada máquina virtual demorar mais de dez minutos para ser desligada, o sistema de Recuperação de Desastres a desliga automaticamente.</block>
   <block id="9b9e3165f7ecae3e2e3b2c795e562976" category="section-title">Suporte para scripts de pré-backup</block>
@@ -1926,4 +1925,5 @@
   <block id="77750efa6f5ff153acdc42067058017f" category="section-title">10 de novembro de 2025</block>
   <block id="67d901d806b31ec45748075cf6b4b785" category="list-text">*Reduzir a versão do hardware da VM e registrá-la*: Selecione esta opção se a versão do host ESX de destino for anterior à de origem, para que correspondam durante o registro.</block>
   <block id="c41917a6c517c418de809b1e4f43f537" category="admonition">Recomenda-se criar uma política de exportação dedicada que limite o acesso ao volume _apenas_ aos hosts vCenter ESXi de origem e destino que hospedarão as VMs protegidas. Isso garante que entidades externas não consigam acessar a exportação NFS.</block>
+  <block id="11decf8e913c8fbeb5d947338d43e3b0" category="paragraph">Para mais informações, consulte <block ref="bf6dbdf786c7323ca961bfd2e12103c6" category="inline-link-macro-rx"></block>.</block>
 </blocks>
