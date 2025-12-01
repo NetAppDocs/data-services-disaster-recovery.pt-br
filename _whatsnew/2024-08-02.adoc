@@ -17,4 +17,4 @@ NOTE: A NetApp não cobra por nenhuma capacidade de carga de trabalho visualizad
 
 Com esta versão, agora você pode cancelar um trabalho na interface do Job Monitor.
 
-Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Monitorar trabalhos"] .
+Consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["Monitorar trabalhos"] .

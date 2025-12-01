@@ -18,9 +18,9 @@ O serviço usa as seguintes funções específicas do NetApp Disaster Recovery.
 
 Se estiver clicando no serviço NetApp Disaster Recovery e configurando-o pela primeira vez, você deverá ter a permissão *SnapCenterAdmin* ou ter a função *Organization Admin*.
 
-Para obter detalhes, consulte  https://docs.netapp.com/us-en/bluexp-disaster-recovery/reference/dr-reference-roles.html["Funções e permissões do usuário no NetApp Disaster Recovery"] .
+Para mais detalhes, vejalink:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Funções e permissões do usuário no NetApp Disaster Recovery"] .
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre funções de acesso para todos os serviços"^] .
+https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre funções de acesso para todos os serviços"^].
 
 
 

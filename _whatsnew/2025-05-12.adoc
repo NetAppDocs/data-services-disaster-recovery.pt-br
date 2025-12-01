@@ -22,7 +22,7 @@ No failover, o NetApp Disaster Recovery substitui a parte de rede do endereço I
 
 Em resumo, o endereço do host permanece o mesmo, enquanto o endereço de rede é substituído pelo que estiver configurado no mapeamento de sub-rede do site.  Isso permite que você gerencie a reatribuição de endereços IP em caso de failover com mais facilidade, especialmente se você tiver centenas de redes e milhares de VMs para gerenciar.
 
-Para obter detalhes sobre como incluir mapeamento de sub-rede em seus sites, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Adicionar sites do servidor vCenter"] .
+Para obter detalhes sobre como incluir o mapeamento de sub-redes em seus sites, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html["Adicionar sites do servidor vCenter"] .
 
 
 
@@ -36,7 +36,7 @@ Ao iniciar um failover, agora você pode escolher a opção *Ignorar proteção*
 
 Depois que o site de origem estiver online novamente, você poderá estabelecer a proteção reversa selecionando *Proteger recursos* no menu Ações do plano de replicação.  Isso tenta criar um relacionamento de replicação reversa para cada volume no plano.  Você pode executar esta tarefa repetidamente até que a proteção seja restaurada.  Quando a proteção for restaurada, você poderá iniciar um failback da maneira usual.
 
-Para obter detalhes sobre proteção contra saltos, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Falha na execução de aplicativos para um site remoto"] .
+Para obter detalhes sobre a proteção contra saltos, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Falha na execução de aplicativos para um site remoto"] .
 
 
 
@@ -50,4 +50,4 @@ Quando a opção é selecionada, o NetApp Disaster Recovery não configura um ag
 
 Depois que isso for configurado, o serviço não fará nenhum snapshot agendado regularmente, mas dependerá da entidade externa para tirar e atualizar esses snapshots.
 
-Para obter detalhes sobre o uso de soluções de instantâneo externo no plano de replicação, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .
+Para obter detalhes sobre como usar soluções de snapshots externos no plano de replicação, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .

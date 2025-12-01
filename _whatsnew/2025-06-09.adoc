@@ -10,4 +10,4 @@ O Windows Local Administrator Password Solution (Windows LAPS) é um recurso do 
 
 Agora você pode selecionar opções de mapeamento de sub-rede e verificar a opção LAPS fornecendo os detalhes do controlador de domínio.  Usando esta opção, você não precisa fornecer uma senha para cada uma de suas máquinas virtuais.
 
-Para mais detalhes, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .
+Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .

@@ -12,11 +12,11 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 
 [role="lead"]
-Depois de adicionar sites do vCenter, você estará pronto para criar um _plano de replicação ou recuperação de desastres_.  Os planos de replicação gerenciam a proteção de dados da infraestrutura VMware.  Selecione os vCenters de origem e destino, escolha os grupos de recursos e agrupe como os aplicativos devem ser restaurados e ligados.  Por exemplo, você pode agrupar máquinas virtuais (VMs) associadas a um aplicativo ou pode agrupar aplicativos que tenham camadas semelhantes.  Esses planos são às vezes chamados de _projetos_.
+Depois de adicionar os sites do vCenter, você estará pronto para criar um plano de recuperação de desastres ou de replicação. Os planos de replicação gerenciam a proteção de dados da infraestrutura VMware. Selecione os vCenters de origem e destino, escolha os grupos de recursos e agrupe como os aplicativos devem ser restaurados e ligados. Por exemplo, você pode agrupar máquinas virtuais (VMs) associadas a um aplicativo ou pode agrupar aplicativos que tenham camadas semelhantes. Esses planos são às vezes chamados de _projetos_.
 
 *Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
-link:../reference/dr-reference-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 *Sobre esta tarefa*
 
@@ -55,6 +55,8 @@ O serviço executa verificações de simetria de instantâneos a cada 24 horas.
 Antes de criar um relacionamento SnapMirror , configure o cluster e o peering SVM fora do Disaster Recovery.
 
 *PRÁTICA RECOMENDADA*: Organize suas VMs antes de implantar o NetApp Disaster Recovery para minimizar a "dispersão do armazenamento de dados".  Coloque as VMs que precisam de proteção em um subconjunto de armazenamentos de dados e coloque as VMs que não serão protegidas em um subconjunto diferente de armazenamentos de dados.  Use proteção baseada em armazenamento de dados para garantir que as VMs em qualquer armazenamento de dados estejam protegidas.
+
+>[!IMPORTANTE] >Com o Google Cloud, você só pode adicionar um volume ou armazenamento de dados a um plano de replicação.
 
 
 

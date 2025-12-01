@@ -23,13 +23,18 @@ Antes de usar o NetApp Disaster Recovery, certifique-se de que seu ambiente aten
 | Componente | Versão mínima 
 
 
+| Amazon FSx for NetApp ONTAP  a| 
+Última versão disponível
+
+
+
+| Google Cloud VMware Engine usando Google Cloud NetApp Volumes  a| 
+Última versão disponível
+
+
+
 | Software ONTAP  a| 
 ONTAP 9.10.0 ou posterior
-
-
-
-| VMware vCenter local  a| 
-7.0u3 ou posterior
 
 
 
@@ -38,10 +43,64 @@ ONTAP 9.10.0 ou posterior
 
 
 
-| Amazon FSx for NetApp ONTAP  a| 
-Última versão disponível
+| VMware vCenter local  a| 
+7.0u3 ou posterior
 
 |===
+
+
+== Pré-requisitos e considerações do Google Cloud
+
+Ao utilizar o Disaster Recovery no Google Cloud VMware Engine com o Google Cloud NetApp Volumes, certifique-se de configurar as permissões corretas e seguir as considerações indicadas.
+
+* Entre em contato com a equipe de SRE do Google para adicionar os seguintes itens à lista de permissões:
++
+** API de sincronização para transferir snapshots do armazenamento local para o Google Cloud NetApp Volumes.
+** O projeto do Google com o mecanismo da VMware para criar, montar e desmontar armazenamentos de dados.
+
+
+* Você develink:https://docs.google.com/forms/d/1zuaHu437MNpUf8i5oByK-OTLWXcNIg0es9t036riYRc/viewform?edit_requested=true["Envie uma solicitação para adicionar seus volumes à lista de permissões para replicação híbrida."^] .
+* Esteja ciente dolink:https://docs.cloud.google.com/netapp/volumes/docs/quotas["Cota e limites do Google Cloud NetApp Volumes"^] .
+* Você só pode adicionar um volume ou armazenamento de dados a um plano de replicação.
+* Analise olink:../release-notes/dr-limitations.html#limitations-with-google-cloud-netapp-volumes["limitações"] .
+
+
+**Considerações sobre failover**
+
+* O failover só é compatível com a versão snapshot mais recente.  Se necessário, você pode criar um novo instantâneo durante a captura de um novo instantâneo (ou seja, a opção de instantâneo seletivo deve estar desativada).
+* Não é possível criar um novo snapshot após um failover.
+* Não é possível manter e reconciliar snapshots após um failover.
+
+
+**Considerações sobre planos de contingência**
+
+* O failback só é possível com a opção de snapshot seletivo.  Não é possível realizar um failback tirando um novo snapshot.
+* Se você remover o emparelhamento de cluster entre o armazenamento local e os clusters de armazenamento do Google Cloud NetApp Volumes , será necessário limpar manualmente a entrada de emparelhamento do cluster e da VM de armazenamento no cluster local. Para mais informações, consulte link:https://docs.netapp.com/us-en/ontap-cli/vserver-peer-delete.html["Excluir um relacionamento de pares do servidor virtual"^].
+
+
+
+
+=== Permissões do Google Cloud
+
+A entidade de serviço no Google Cloud deve ter atribuídas as seguintes funções ou permissões equivalentes:
+
+* link:https://docs.cloud.google.com/compute/docs/access/iam["Função de Administrador de Computação"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["Permissões do Google Cloud para o NetApp Console"^]
+* link:https://docs.cloud.google.com/iam/docs/roles-permissions/netapp["Administrador de Google Cloud NetApp Volumes"]
+* link:https://docs.cloud.google.com/vmware-engine/docs/iam#vmware-engine-roles["Administrador de serviço do VMware Engine"^]
+
+
+
+
+=== Permissões do NetApp Console
+
+O usuário do NetApp Console deve ter as seguintes funções:
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-gcnv-roles.html["Administrador do Google Cloud NetApp Volumes"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html#data-service-roles["Administrador do SnapCenter"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Administrador de failover de recuperação de desastres"^]
+
+
 
 
 == Pré-requisitos de armazenamento ONTAP
@@ -89,7 +148,7 @@ Esses pré-requisitos se aplicam aos clusters vCenter locais e ao data center de
 
 === Comece a usar o NetApp Console
 
-Se você ainda não fez isso, https://docs.netapp.com/us-en/bluexp-setup-admin/task-sign-up-saas.html["inscreva-se no NetApp Console e crie uma organização"^] .
+Se você ainda não o fez, https://docs.netapp.com/us-en/console-setup-admin/task-sign-up-saas.html["inscreva-se no NetApp Console e crie uma organização"^] .
 
 
 
@@ -110,12 +169,12 @@ O agente do Console é um componente de software que permite que o Console se co
 
 Um agente do Console deve ser configurado no NetApp Console.  Quando você usa o agente, ele inclui os recursos apropriados para o serviço de Recuperação de Desastres.
 
-* O NetApp Disaster Recovery funciona apenas com a implantação do agente no modo padrão. Ver https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["Introdução ao NetApp Console no modo padrão"^] .
+* O NetApp Disaster Recovery funciona apenas com a implantação do agente no modo padrão. Ver https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introdução ao NetApp Console no modo padrão"^] .
 * Certifique-se de que os vCenters de origem e de destino usem o mesmo agente de console.
 * Tipo de agente de console necessário:
 +
-** *Recuperação de desastres local para local*: Instale o agente local do Console no site de recuperação de desastres.  Usando esse método, uma falha no site principal não impede que o serviço reinicie seus recursos virtuais no site de DR. Consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Instalar e configurar o agente do Console no local"^] .
-** *No local para AWS*: Instale o agente do Console para AWS na sua VPC da AWS. Consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-install-options-aws.html["Opções de instalação do agente de console na AWS"^] .
+** *Recuperação de desastres local para local*: Instale o agente local do Console no site de recuperação de desastres. Usando esse método, uma falha no site principal não impede que o serviço reinicie seus recursos virtuais no site de DR. Consulte https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Instalar e configurar o agente do Console no local"^] .
+** *No local para AWS*: Instale o agente do Console para AWS na sua VPC da AWS. Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-install-options-aws.html["Opções de instalação do agente de console na AWS"^] .
 +
 
 TIP: Para locais para locais, use o agente do Console local.  Para o local na AWS, use o agente do Console da AWS, que tem acesso ao vCenter local de origem e ao vCenter local de destino.
@@ -125,7 +184,7 @@ TIP: Para locais para locais, use o agente do Console local.  Para o local na AW
 
 * Todos os arrays ONTAP a serem gerenciados pelo NetApp Disaster Recovery devem ser adicionados a qualquer sistema dentro do projeto do NetApp Console que será usado para gerenciar o NetApp Disaster Recovery.
 +
-Ver https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Descubra clusters ONTAP locais"^] .
+Ver https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Descubra clusters ONTAP locais"^] .
 
 * Para obter informações sobre como configurar um proxy inteligente para o NetApp Disaster Recovery, consultelink:../get-started/dr-setup.html["Configure sua infraestrutura para NetApp Disaster Recovery"] .
 

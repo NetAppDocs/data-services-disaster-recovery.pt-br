@@ -10,7 +10,7 @@ O NetApp Disaster Recovery realiza a descoberta uma vez a cada 24 horas.  Com es
 
 Se não quiser agendar a descoberta, você pode desabilitar a opção de descoberta agendada e atualizar a descoberta manualmente a qualquer momento.
 
-Para mais detalhes, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Adicionar sites do servidor vCenter"] .
+Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html["Adicionar sites do servidor vCenter"] .
 
 
 
@@ -24,7 +24,7 @@ Você pode criar um grupo de recursos com um armazenamento de dados das seguinte
 * Ao criar um plano de replicação e um grupo de recursos dentro do plano, você pode ver as VMs nos armazenamentos de dados.
 
 
-Para mais detalhes, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .
+Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .
 
 
 
