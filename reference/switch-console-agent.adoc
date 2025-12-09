@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: reference/switch-console-agent.html 
+keywords: disaster recovery, console agent, high availability 
+summary: Saiba mais sobre os requisitos para usar vários agentes de console com o NetApp Disaster Recovery. 
+---
+= Alternar agentes do Console ao usar o NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+O NetApp Console suporta o uso de vários agentes de console em um único ambiente de trabalho.  Utilizar vários agentes de console pode ser útil para manter o acesso aos recursos enquanto se realiza manutenção em outro agente de console ou caso um agente de console apresente falha.  Como cada agente do Console possui um identificador único, a troca inadequada de agentes do Console pode comprometer a disponibilidade de recursos em um ambiente de trabalho.
+
+
+
+== Antes de começar
+
+* Você deve terxref:../get-started/dr-prerequisites.html#create-the-netapp-console-agent[Adicionou pelo menos dois agentes de console ao seu ambiente de trabalho.] .
+* Ambos os agentes do Console devem conter os mesmos clusters ONTAP .
+
+
+
+
+== Passos
+
+. Em Recuperação de Desastres, selecione **Sites**.
+. Você precisa alterar o agente do console tanto para o vCenter de origem quanto para o de destino.  Identifique os vCenters que deseja modificar.  Selecione o menu de ações do vCenter e, em seguida, **Editar**.
++
+image:dr-sites-subnet-menu.png["Captura de tela do painel de controle de Sites"]
+
+. Selecione o agente do console que deseja usar no menu suspenso e insira novamente seu nome de usuário e senha do vCenter. Selecione **Salvar**.
++
+image:edit-vcenter.png["Captura de tela da alteração do agente do console"]
+
+. Repita os passos 2 e 3 para cada vCenter adicional que você deseja modificar.
+. No vCenter que você modificou, atualize-o para que o novo agente do Console seja detectado.  Repita este passo para cada vCenter que você modificou.
+. Em Recuperação de Desastres, navegue até **Planos de replicação**.
+. Identifique os planos de replicação que deseja usar para retomar os fluxos de trabalho.  Selecione o menu de ações `...` Em seguida, **atualize os recursos**.  Você pode acompanhar o status das tarefas em **Monitoramento de tarefas**.
+
+
+
+
+== Mais informações
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-on-prem.html["Saiba mais sobre os agentes do Console"^]
+

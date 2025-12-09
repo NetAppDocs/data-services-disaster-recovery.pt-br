@@ -16,7 +16,33 @@ Descubra as novidades em NetApp Disaster Recovery.
 
 
 
+== 09 de dezembro de 2025
+
+Versão 4.2.8P1
+
+
+
+=== Retenção da hierarquia de pastas
+
+Por padrão, a Recuperação de Desastres mantém a hierarquia de inventário da VM (estrutura de pastas) em caso de failover.  Se o destino da recuperação não tiver a pasta necessária, a Recuperação de Desastres a criará.
+
+Agora você pode substituir essa configuração designando uma nova pasta principal para a máquina virtual ou desmarcando a opção **Manter a hierarquia de pastas original**.
+
+Para mais informações, consulte link:../use/drplan-create.adoc["Crie um plano de replicação"].
+
+
+
+=== Atualização simplificada do agente do console
+
+A Recuperação de Desastres agora oferece suporte a um processo simplificado para o uso de vários agentes do Console em um ambiente de trabalho.  Para alternar entre agentes do Console, você deve editar a configuração do vCenter, redescobrir as credenciais e atualizar os planos de replicação para usar o novo agente do Console.
+
+Para mais informações, consulte link:../reference/switch-console-agent.html["Agentes do console de troca"].
+
+
+
 == 01 de dezembro de 2025
+
+Versão 4.2.8
 
 
 
@@ -29,6 +55,8 @@ Certifique-se de revisar olink:https://docs.netapp.com/us-en/data-services-disas
 
 
 == 10 de novembro de 2025
+
+Versão 4.2.7
 
 
 
@@ -61,6 +89,8 @@ Para mais informações, consulte link:https://docs.netapp.com/us-en/data-servic
 
 
 == 06 de outubro de 2025
+
+Versão 4.2.6
 
 
 
