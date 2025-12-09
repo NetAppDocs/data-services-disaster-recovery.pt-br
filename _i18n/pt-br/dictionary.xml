@@ -1927,11 +1927,9 @@
   <block id="b706122b5735a672dec906da7d14b15c" category="doc">Retenção da hierarquia de pastas</block>
   <block id="c8d94434feabcd9486a228e1a7a02882" category="paragraph">Por padrão, a Recuperação de Desastres mantém a hierarquia de inventário da VM (estrutura de pastas) em caso de failover.  Se o destino da recuperação não tiver a pasta necessária, a Recuperação de Desastres a criará.</block>
   <block id="5a54761f5d99470c8137218395b65ca5" category="paragraph">Agora você pode substituir essa configuração designando uma nova pasta principal para a máquina virtual ou desmarcando a opção **Manter a hierarquia de pastas original**.</block>
-  <block id="4b4839446c123b0f7cbb37cc05973b41" category="paragraph">Para mais informações, consulte <block ref="8ed6b1ab912526d5ffcc717e1a39851e" category="inline-link-macro-rx"></block>.</block>
   <block id="c1bacabdbdc0d5e57b5ead85a617b4b0" category="section-title">Atualização simplificada do agente do console</block>
   <block id="1220fc49240c9d2c58d7490c6c40ac65" category="paragraph">A Recuperação de Desastres agora oferece suporte a um processo simplificado para o uso de vários agentes do Console em um ambiente de trabalho.  Para alternar entre agentes do Console, você deve editar a configuração do vCenter, redescobrir as credenciais e atualizar os planos de replicação para usar o novo agente do Console.</block>
   <block id="d6155caa68c59478855dfa8342f87d18" category="inline-link-macro">Agentes do console de troca</block>
-  <block id="8c3cfaa540744075b83a947ed57c6f60" category="paragraph">Para mais informações, consulte <block ref="0905281a07a8919c4c92242f0cf75d65" category="inline-link-macro-rx"></block>.</block>
   <block id="5fbf922c777310b5aadba9b1dab4f7b0" category="summary">Saiba mais sobre os requisitos para usar vários agentes de console com o NetApp Disaster Recovery.</block>
   <block id="ac340102b6e26791143e3212d85bb1dd" category="doc">Alternar agentes do Console ao usar o NetApp Disaster Recovery</block>
   <block id="5784bc747a9795446f48f40111e7bf58" category="paragraph">O NetApp Console suporta o uso de vários agentes de console em um único ambiente de trabalho.  Utilizar vários agentes de console pode ser útil para manter o acesso aos recursos enquanto se realiza manutenção em outro agente de console ou caso um agente de console apresente falha.  Como cada agente do Console possui um identificador único, a troca inadequada de agentes do Console pode comprometer a disponibilidade de recursos em um ambiente de trabalho.</block>
@@ -1965,4 +1963,6 @@
   <block id="ed5adefa93ed81ded190826eed4455dd" category="paragraph">Desmarque esta caixa para ignorar a hierarquia de pastas original.</block>
   <block id="06596d9f3a6cac6c36599f4c1598f756" category="sidebar">Privilégios do vCenter necessários para recuperação de desastres.</block>
   <block id="2b1806d17c0606f8caa4232aa6a3c113" category="sidebar">Agente do console de troca</block>
+  <block id="98ade846ffa73dc9c6bcd3e3e84c38b7" category="paragraph">Para mais informações, consulte <block ref="1762f821178ef43810c03e86465a946d" category="inline-link-macro-rx"></block>.</block>
+  <block id="1df351797bd2540f3ec41bc24e67bf1f" category="paragraph">Para mais informações, consulte <block ref="2631c62a2ac2ec2e6a0ebc0352319a2c" category="inline-link-macro-rx"></block>.</block>
 </blocks>
