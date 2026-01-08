@@ -10,7 +10,7 @@ Por padrão, a Recuperação de Desastres mantém a hierarquia de inventário da
 
 Agora você pode substituir essa configuração designando uma nova pasta principal para a máquina virtual ou desmarcando a opção **Manter a hierarquia de pastas original**.
 
-Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.adoc["Crie um plano de replicação"].
+Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"].
 
 
 
@@ -18,4 +18,4 @@ Para mais informações, consulte link:https://docs.netapp.com/us-en/data-servic
 
 A Recuperação de Desastres agora oferece suporte a um processo simplificado para o uso de vários agentes do Console em um ambiente de trabalho.  Para alternar entre agentes do Console, você deve editar a configuração do vCenter, redescobrir as credenciais e atualizar os planos de replicação para usar o novo agente do Console.
 
-Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/reference/switch-console-agents.html["Agentes do console de troca"].
+Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/reference/switch-console-agent.html["Agentes do console de troca"].

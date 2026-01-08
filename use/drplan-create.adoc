@@ -280,10 +280,7 @@ Para habilitar a execução do script com o sistema operacional convidado da VM,
 
 
 * *Reduzir a versão do hardware da VM e registrá-la*: Selecione esta opção se a versão do host ESX de destino for anterior à de origem, para que correspondam durante o registro.
-* *Manter a hierarquia de pastas original*: Quando selecionada, a Recuperação de Desastres mantém a hierarquia de inventário da VM (estrutura de pastas) em caso de failover.  Se o destino da recuperação _não_ tiver a hierarquia de pastas original, a Recuperação de Desastres a cria.
-+
-Desmarque esta caixa para ignorar a hierarquia de pastas original.
-
+* *Manter a hierarquia de pastas original*: Quando selecionada, a Recuperação de Desastres mantém a hierarquia de inventário da VM (estrutura de pastas) em caso de failover. Se o destino da recuperação _não_ tiver a hierarquia de pastas original, a Recuperação de Desastres a cria. Marque a caixa para manter a hierarquia de pastas; desmarque-a para ignorar a hierarquia de pastas original.
 * *Prefixo e sufixo da VM de destino*: nos detalhes das máquinas virtuais, você pode, opcionalmente, adicionar um prefixo e um sufixo a cada nome de VM com failover.  Isso pode ser útil para diferenciar as VMs com failover das VMs de produção em execução no mesmo cluster do vCenter.  Por exemplo, você pode adicionar um prefixo "DR-" e um sufixo "-failover" ao nome da VM.  Algumas pessoas adicionam um segundo vCenter de produção para hospedar VMs temporariamente em um site diferente no caso de um desastre.  Adicionar um prefixo ou sufixo pode ajudar você a identificar rapidamente VMs com failover.  Você também pode usar o prefixo ou sufixo em scripts personalizados.
 +
 Você pode usar o método alternativo de definir a pasta da VM de destino na seção Recursos de computação.
