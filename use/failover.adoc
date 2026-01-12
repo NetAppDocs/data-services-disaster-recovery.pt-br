@@ -20,9 +20,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 *Sobre esta tarefa*
 
-Durante um failover, o Disaster Recovery usa a cópia mais recente do snapshot do SnapMirror .  Ou você pode selecionar um instantâneo específico de um instantâneo de momento específico (conforme a política de retenção do SnapMirror).
-
-Use a opção de ponto no tempo se as réplicas mais recentes forem comprometidas, como durante um ataque de ransomware.  A BlueXP disaster recovery mostra todos os pontos disponíveis no tempo.
+Durante uma falha de sistema, a Recuperação de Desastres usa, por padrão, a cópia de snapshot mais recente do SnapMirror , embora você possa selecionar um snapshot específico a partir de um snapshot pontual (de acordo com a política de retenção do SnapMirror). Utilize a opção de verificação pontual caso as réplicas mais recentes estejam comprometidas, como durante um ataque de ransomware.
 
 Esse processo difere dependendo se o site de produção está íntegro e se você está executando um failover para o site de recuperação de desastres por outros motivos que não uma falha crítica de infraestrutura:
 
@@ -38,9 +36,9 @@ Este procedimento interrompe o relacionamento de replicação, coloca as VMs de 
 
 Antes de iniciar o failover, você pode testar o processo.  O teste não coloca as máquinas virtuais offline.
 
-Durante um teste de failover, a BlueXP disaster recovery cria temporariamente máquinas virtuais.  A BlueXP disaster recovery mapeia um armazenamento de dados temporário que faz o backup do volume FlexClone para os hosts ESXi.
+Durante um teste de failover, o Disaster Recovery cria máquinas virtuais temporariamente. O Risaster Recovery mapeia um armazenamento de dados temporário que faz backup do volume FlexClone nos hosts ESXi.
 
-Este processo não consome capacidade física adicional no armazenamento ONTAP local ou no FSx para armazenamento ONTAP da NetApp na AWS.  O volume de origem original não é modificado e os trabalhos de réplica podem continuar mesmo durante a recuperação de desastres.
+Esse processo não consome capacidade física adicional no armazenamento ONTAP local ou no FSx para armazenamento NetApp ONTAP na AWS. O volume de origem original não é modificado e as tarefas de replicação podem continuar mesmo durante a recuperação de desastres.
 
 Quando terminar o teste, você deve redefinir as máquinas virtuais com a opção *Limpar teste*.  Embora isso seja recomendado, não é obrigatório.
 
@@ -76,8 +74,8 @@ Após a conclusão do teste de failover, você deve limpar o ambiente de teste. 
 .Passos
 . No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
 . Selecione o plano de replicação.
-. À direita, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] e selecione *Limpar teste de failover*.
-. Na página Testar failover, insira “Limpar failover” e selecione *Limpar teste de failover*.
+. À direita, selecione a opção *Ações*. image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] Em seguida, *limpe o teste de failover*.
+. Na página de teste de failover, digite "Limpar failover" e selecione *Limpeza do teste de failover*.
 
 
 
@@ -102,6 +100,9 @@ O processo de failover envolve as seguintes operações:
 
 
 
+NOTE: Para planos de replicação baseados em armazenamento de dados, se você adicionou e descobriu alguma máquina virtual, mas não forneceu detalhes de mapeamento, essas máquinas virtuais serão incluídas no failover. A operação de failover falhará e uma notificação será exibida nos trabalhos. Você precisa fornecer os detalhes do mapeamento para concluir o failover com sucesso.
+
+
 TIP: Após o início do failover, você poderá ver as VMs recuperadas no vCenter do site de recuperação de desastres (máquinas virtuais, redes e armazenamentos de dados).  Por padrão, as máquinas virtuais são recuperadas para a pasta Carga de trabalho.
 
 .Passos
@@ -111,7 +112,7 @@ TIP: Após o início do failover, você poderá ver as VMs recuperadas no vCente
 +
 image:dr-plan-failover3.png["Página de failover"]
 
-. Na página Failover, inicie um snapshot agora ou escolha o snapshot do armazenamento de dados do qual deseja recuperar.  O padrão é o mais recente.
+. Na página de Failover, crie um novo snapshot agora ou escolha um snapshot existente para o armazenamento de dados usar como base para a recuperação. A versão padrão é a mais recente.
 +
 Um instantâneo da origem atual será tirado e replicado para o destino atual antes que o failover ocorra.
 

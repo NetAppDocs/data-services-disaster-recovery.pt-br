@@ -130,7 +130,7 @@ TIP: Crie um conjunto separado e dedicado de mapeamentos para seus testes de fai
 . Opcionalmente, pesquise por VM ou armazenamento de dados específico pelo nome.
 . No lado esquerdo da página Aplicativos, selecione as VMs ou os armazenamentos de dados que você deseja proteger e atribua ao grupo selecionado.
 +
-O vCenter de origem deve residir no vCenter local.  O vCenter de destino pode ser um segundo vCenter local no mesmo site ou em um site remoto, ou um data center definido por software (SDDC) baseado em nuvem, como o VMware Cloud na AWS.  Ambos os vCenters já devem estar adicionados ao seu ambiente de trabalho de BlueXP disaster recovery .
+O vCenter de origem deve residir no vCenter local. O vCenter de destino pode ser um segundo vCenter local no mesmo site ou em um site remoto, ou ainda um data center definido por software (SDDC) baseado em nuvem, como o VMware Cloud on AWS. Ambos os vCenters já devem ter sido adicionados ao seu ambiente de trabalho de Recuperação de Desastres.
 
 +
 O recurso selecionado é adicionado automaticamente ao grupo 1 e um novo grupo 2 é iniciado.  Cada vez que você adiciona um recurso ao último grupo, outro grupo é adicionado.
@@ -170,7 +170,7 @@ Se você planeja executar failovers de teste como parte do seu plano de DR, forn
 Se você quiser criar um relacionamento SnapMirror neste serviço, o cluster e seu peering SVM já deverão ter sido configurados fora do NetApp Disaster Recovery.
 
 .Passos
-. Na página Mapeamento de recursos, para usar os mesmos mapeamentos para operações de failover e teste, marque a caixa.
+. Na página de mapeamento de recursos, marque a caixa para usar os mesmos mapeamentos tanto para operações de failover quanto para operações de teste.
 +
 image:dr-plan-resource-mapping2.png["Plano de replicação, guia Mapeamento de recursos"]
 
@@ -263,7 +263,7 @@ image:dr-plan-vm-subnet-option2.png["Captura de tela mostrando Adicionar plano d
 
 
 
-* *Scripts*: Você pode incluir scripts personalizados hospedados no sistema operacional convidado nos formatos .sh, .bat ou .ps1 como pós-processos.  Com scripts personalizados, a BlueXP disaster recovery pode executar seu script após processos de failover, failback e migração.  Por exemplo, você pode usar um script personalizado para retomar todas as transações do banco de dados após a conclusão do failover.  O serviço pode executar scripts em VMs que executam o Microsoft Windows ou qualquer variante do Linux suportada com parâmetros de linha de comando suportados.  Você pode atribuir um script a VMs individuais ou a todas as VMs no plano de replicação.
+* *Scripts*: Você pode incluir scripts personalizados hospedados no sistema operacional convidado nos formatos .sh, .bat ou .ps1 como pós-processos. Com scripts personalizados, a Recuperação de Desastres pode executar seu script após processos de failover, failback e migração. Por exemplo, você pode usar um script personalizado para retomar todas as transações do banco de dados após a conclusão do failover. O serviço pode executar scripts em máquinas virtuais com Microsoft Windows ou qualquer variante Linux compatível com parâmetros de linha de comando. Você pode atribuir um script a VMs individuais ou a todas as VMs no plano de replicação.
 +
 Para habilitar a execução do script com o sistema operacional convidado da VM, as seguintes condições devem ser atendidas:
 
@@ -280,7 +280,10 @@ Para habilitar a execução do script com o sistema operacional convidado da VM,
 
 
 * *Reduzir a versão do hardware da VM e registrá-la*: Selecione esta opção se a versão do host ESX de destino for anterior à de origem, para que correspondam durante o registro.
-* *Manter a hierarquia de pastas original*: Quando selecionada, a Recuperação de Desastres mantém a hierarquia de inventário da VM (estrutura de pastas) em caso de failover. Se o destino da recuperação _não_ tiver a hierarquia de pastas original, a Recuperação de Desastres a cria. Marque a caixa para manter a hierarquia de pastas; desmarque-a para ignorar a hierarquia de pastas original.
+* *Manter a hierarquia de pastas original*: Por padrão, a Recuperação de Desastres mantém a hierarquia de inventário da VM (estrutura de pastas) em caso de failover. Se o destino da recuperação _não_ tiver a hierarquia de pastas original, a Recuperação de Desastres a criará.
++
+Desmarque esta caixa para ignorar a hierarquia de pastas original.
+
 * *Prefixo e sufixo da VM de destino*: nos detalhes das máquinas virtuais, você pode, opcionalmente, adicionar um prefixo e um sufixo a cada nome de VM com failover.  Isso pode ser útil para diferenciar as VMs com failover das VMs de produção em execução no mesmo cluster do vCenter.  Por exemplo, você pode adicionar um prefixo "DR-" e um sufixo "-failover" ao nome da VM.  Algumas pessoas adicionam um segundo vCenter de produção para hospedar VMs temporariamente em um site diferente no caso de um desastre.  Adicionar um prefixo ou sufixo pode ajudar você a identificar rapidamente VMs com failover.  Você também pode usar o prefixo ou sufixo em scripts personalizados.
 +
 Você pode usar o método alternativo de definir a pasta da VM de destino na seção Recursos de computação.
@@ -295,7 +298,7 @@ image:dr-plan-resource-mapping-vm-boot-order.png["Captura de tela mostrando Adic
 
 * *Ordem de inicialização*: Você pode modificar a ordem de inicialização após um failover para todas as máquinas virtuais selecionadas nos grupos de recursos.  Por padrão, todas as VMs inicializam juntas em paralelo; no entanto, você pode fazer alterações nesta fase.  Isso é útil para garantir que todas as suas VMs de prioridade um estejam em execução antes que as VMs de prioridade subsequentes sejam iniciadas.
 +
-A BlueXP disaster recovery inicializa quaisquer VMs com o mesmo número de ordem de inicialização em paralelo.
+A Recuperação de Desastres inicializa em paralelo quaisquer máquinas virtuais com o mesmo número de ordem de inicialização.
 
 +
 ** Inicialização sequencial: atribua a cada VM um número exclusivo para inicializar na ordem atribuída, por exemplo, 1,2,3,4,5.

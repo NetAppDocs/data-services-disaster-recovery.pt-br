@@ -18,9 +18,11 @@ Após a resolução de um desastre, faça failback do site de recuperação de d
 
 link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
-*Sobre esta tarefa*
 
-Neste fluxo de trabalho, o NetApp Disaster Recovery replica (ressincroniza) quaisquer alterações de volta para a máquina virtual de origem original antes de reverter a direção da replicação. Esse processo começa com um relacionamento que concluiu o failover para um alvo e envolve as seguintes etapas:
+
+== Sobre o failback
+
+Em caso de failback, o NetApp Disaster Recovery replica (ressincroniza) quaisquer alterações de volta para a máquina virtual de origem original antes de inverter a direção da replicação. Esse processo começa com um relacionamento que concluiu a transição para um destino e envolve as seguintes etapas:
 
 * Execute uma verificação de conformidade no site recuperado.
 * Atualize as informações do vCenter para cada cluster do vCenter identificado como localizado no site recuperado.
@@ -30,13 +32,21 @@ Neste fluxo de trabalho, o NetApp Disaster Recovery replica (ressincroniza) quai
 * Ligue e registre as máquinas virtuais de origem e monte os volumes na origem.
 
 
-.Passos
-. Faça login no https://console.netapp.com/["NetApp Console"^] .
+
+
+== Antes de começar
+
+Se você estiver usando proteção baseada em armazenamento de dados, as VMs que foram adicionadas ao armazenamento de dados podem ser adicionadas novamente durante o processo de failover. Caso isso tenha ocorrido, certifique-se de fornecer as informações de mapeamento adicionais para essas VMs antes de iniciar o failback. Para editar o mapeamento de recursos, consulte link:manage.html#manage-replication-plans["Gerenciar planos de replicação"].
+
+
+
+== Passos
+
 . Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 . No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
 . Selecione o plano de replicação.
 . À direita, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] e selecione *Fail back*.
-. Insira o nome do plano de replicação para confirmar e iniciar o failback.
-. Escolha o snapshot do armazenamento de dados do qual deseja recuperar.  O padrão é o mais recente.
-. Para verificar o progresso, no menu, selecione *Monitoramento de tarefas*.
+. Insira o nome do plano de replicação para iniciar o failback.
+. Escolha o snapshot do armazenamento de dados do qual deseja recuperar. O padrão é o mais recente.
+. Para monitorar o progresso da tarefa, selecione *Monitoramento de tarefas* no menu Recuperação de desastres.
 
