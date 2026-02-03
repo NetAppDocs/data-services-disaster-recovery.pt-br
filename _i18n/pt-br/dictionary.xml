@@ -888,54 +888,8 @@
   <block id="dae6a888dd76ab8af615bbd14bb0d970" category="list-text">O nome do site protegido (fonte)</block>
   <block id="faf0d22a90ba1218a90118919579cdab" category="list-text">A lista de grupos de recursos protegidos pelo plano de replicação</block>
   <block id="693eee995124fe1d32610314f6e68c30" category="list-text">O nome do site de failover (destino)</block>
-  <block id="a194677aec5cc4ac6a7ec4c1e23c12f3" category="summary">A conta do vCenter deve ter um conjunto mínimo de privilégios do vCenter para permitir que o NetApp Disaster Recovery execute seus serviços, como registrar e cancelar o registro de datastores, iniciar e parar VMs e reconfigurar máquinas virtuais (VMs).  A tabela a seguir lista todos os privilégios necessários para que o NetApp Disaster Recovery interaja com um cluster vCenter.</block>
   <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">Tipo</block>
-  <block id="f31fadcb7ced5ed0e7fbc3d65d0ab660" category="cell">Nome do privilégio</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Descrição</block>
-  <block id="2051881d2c94079273dde07614b52317" category="cell">*Armazenamento de dados*</block>
-  <block id="39e17557e52f8908bd58f0aa8f90e589" category="paragraph">Datastore.Configurar armazenamento de dados</block>
-  <block id="b0156af1fabe28340f5f515de85b8ba2" category="paragraph">Use para configurar um armazenamento de dados.</block>
-  <block id="16ca70be6373a69d7a7a4054b8740d5f" category="paragraph">Armazenamento de dados. Remover armazenamento de dados</block>
-  <block id="5d7a7f943775e5b9f23c14409254d31f" category="paragraph">Use para remover um armazenamento de dados.</block>
-  <block id="0d710447bc4b3d240dbec4ffdff78d7f" category="cell">*Máquina Virtual*</block>
-  <block id="0d027ba13a066afab0e72091146c32c3" category="paragraph">Máquina virtual.Configuração.Alterar configurações</block>
-  <block id="ac5fed24b3778885bc91821ce7badce7" category="paragraph">Use para alterar as configurações gerais da VM.</block>
-  <block id="877b1c9b324b92cc7eb4c734fa176de9" category="paragraph">Máquina virtual. Configuração. Modificar configurações do dispositivo</block>
-  <block id="a470a1e5aa63361f7bba6f9b3753f58d" category="paragraph">Use para alterar as propriedades de um dispositivo existente.</block>
-  <block id="1c48d7d8b2a2dfea7d4778be6f8adce8" category="paragraph">Máquina virtual.Configuração.Recarregar do caminho</block>
-  <block id="a21bfc06d31dc57593c8038b2c5c0e18" category="paragraph">Use para alterar um patch de configuração de VM, preservando a identidade da VM.  Soluções como o VMware vCenter Site Recovery Manager usam essa operação para manter a identidade da VM durante failover e failback.</block>
-  <block id="936b25ae8b1305df4de41cc7edd3fb3c" category="paragraph">Máquina virtual.Configuração.Renomear</block>
-  <block id="eb6647b772f29fe6d76a2ff596d8da2e" category="paragraph">Use para renomear uma VM ou modificar os nós associados a uma VM.</block>
-  <block id="4553fbef402a1d8731c1816f91ce505e" category="paragraph">Máquina virtual.Configuração.Redefinir informações do convidado</block>
-  <block id="c0acbac48fd78801142c21bfcc2d7f80" category="paragraph">Use para editar as informações do sistema operacional convidado para uma VM.</block>
-  <block id="b7f2f93f9ded16ef0cf42386d0a084de" category="paragraph">Máquina virtual.Configuração.Alterar memória</block>
-  <block id="7e417510f4c5b448e5e913a6e30e26c2" category="paragraph">Use para alterar a quantidade de memória alocada para a VM.</block>
-  <block id="0a90330abb3eb200a7ba0bf8a956104c" category="paragraph">Máquina virtual.Configuração.Alterar contagem de CPU</block>
-  <block id="7099548d8fb2bdd522f5dd68ea188fa2" category="paragraph">Use para alterar o número de CPUs virtuais.</block>
-  <block id="9dea3c37393731c874e9363f748cf20b" category="cell">*Convidado da Máquina Virtual*</block>
-  <block id="5254bee77444f0715c2e30f4220be885" category="paragraph">Máquina virtual. Operações de convidado. Modificações de operação de convidado</block>
-  <block id="864141f9bd9cc6a2551f6a1a984099e3" category="paragraph">Habilita operações de convidado de VM que envolvem alterações em um sistema operacional convidado em uma VM, como transferir um arquivo para a VM.</block>
-  <block id="21cb03054cbe3a67055ca3df7a2ab77b" category="cell">*Interação com Máquina Virtual*</block>
-  <block id="075d18862c516c291ccc18b4ef715fe5" category="paragraph">Máquina virtual.Interação.Desligamento</block>
-  <block id="198a48c49bf020db667c8efb024e757e" category="paragraph">Use para desligar uma VM ligada.  Esta operação desliga o sistema operacional convidado.</block>
-  <block id="10bd34b60a2bda547e4bc8e9973f3e31" category="paragraph">Máquina virtual.Interação.Ligar</block>
-  <block id="3fc8744b9995cd14b4bb7379533c3ba6" category="paragraph">Use para ligar uma VM desligada e retomar uma VM suspensa.</block>
-  <block id="5192d6f694edc454343369b22dbfc5c6" category="paragraph">Máquina virtual.Interação.Instalação de ferramentas VMware</block>
-  <block id="30519066cd3534ef7d314b2c9aacd55d" category="paragraph">Use para montar e desmontar o instalador do CD do VMware Tools como um CD-ROM para o sistema operacional convidado.</block>
-  <block id="66fdc82624c87dcd5ceb484e44a95fdd" category="cell">*Inventário de Máquina Virtual*</block>
-  <block id="bb9a532fb645f8d94cb7c827a61302ea" category="paragraph">Máquina virtual.Inventário.Criar novo</block>
-  <block id="00b57b9dfd38ba20e57b6ef930030e86" category="paragraph">Use para criar uma VM e alocar recursos para sua execução.</block>
-  <block id="c28cfecb65a13c8091d476d8c65457e1" category="paragraph">Máquina virtual.Inventário.Registro</block>
-  <block id="8e8abc11ed45aba5690c57962484db6d" category="paragraph">Use para adicionar uma VM existente a um vCenter Server ou inventário de host.</block>
-  <block id="db6d9006d2f72f5cf22c40fa1220b43a" category="paragraph">Máquina virtual.Inventário.Cancelar registro</block>
-  <block id="fa8ff1e1f1b39d6eb3b65050b2b1d275" category="paragraph">Use para cancelar o registro de uma VM de um vCenter Server ou inventário de host.</block>
-  <block id="3d021ff57844dddc6d9f4674f6934243" category="cell">*Estado da Máquina Virtual*</block>
-  <block id="a9b3b608e7046721eb5ab1e0dbaf0c7d" category="paragraph">Máquina virtual. Gerenciamento de snapshot. Criar snapshot</block>
-  <block id="0386636d5860b389e6185a8e3d1fc157" category="paragraph">Use para criar um instantâneo do estado atual da VM.</block>
-  <block id="18f05db9c4723f1a48e0cddc8e00ec23" category="paragraph">Máquina virtual. Gerenciamento de instantâneos. Remover instantâneo</block>
-  <block id="653c42e482faf281af92e05d3ba79031" category="paragraph">Use para remover um instantâneo do histórico de instantâneos.</block>
-  <block id="d3aa03526082ef556ffca1a6a35a1775" category="paragraph">Máquina virtual. Gerenciamento de instantâneos. Reverter para instantâneos</block>
-  <block id="3817fbf7d76df44f4565ed3cde76a690" category="paragraph">Use para definir a VM para o estado em que estava em um determinado instantâneo.</block>
   <block id="84fa68bdcea2ad5e54b20ac851705b19" category="summary">Limitações conhecidas identificam plataformas, dispositivos ou funções que não são suportados por esta versão do serviço ou que não interoperam corretamente com ele.</block>
   <block id="3d3d2883faed9efeee5c50be2552c33e" category="doc">Limitações na NetApp Disaster Recovery</block>
   <block id="84c20a0b7ce2eb1001004d644d0ca57e" category="section-title">Aguarde até que o failback seja concluído antes de executar a descoberta</block>
@@ -1994,4 +1948,142 @@
   <block id="7019a39846e9a2c7f7a80eaba91e4a41" category="paragraph"><block ref="7019a39846e9a2c7f7a80eaba91e4a41" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">Este é um ID gerado pelo sistema que mapeia para seu e-mail. Na página *NSS Management*, você pode exibir seu e-mail do<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> menu.</block>
   <block id="872eaae7deb6035c20f9bfe6deefd03d" category="list-text">Se você precisar atualizar seus tokens de credenciais de login, também há uma opção *Atualizar credenciais* no<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> menu.</block>
+  <block id="7102eb8b8134f163222e26a148b28643" category="summary">A conta vCenter deve possuir um conjunto mínimo de privilégios vCenter para que o NetApp Disaster Recovery funcione corretamente.</block>
+  <block id="e239f3cf124fb9fe9b97d14be5debcf2" category="doc">Privilégios necessários do vCenter para NetApp Disaster Recovery</block>
+  <block id="f9f5a8cb091b3974f4efdfb4cb8ec9fc" category="paragraph">Para que o NetApp Disaster Recovery execute seus serviços, a conta vCenter deve ter um conjunto mínimo de privilégios vCenter. Esses privilégios incluem registrar e cancelar o registro de datastores, iniciar e parar máquinas virtuais (VMs) e reconfigurar VMs.</block>
+  <block id="bbca177b8f73de5ad1de8c9771bd1ce1" category="paragraph">A tabela a seguir lista todos os privilégios necessários para que o NetApp Disaster Recovery interfira com um cluster vCenter.</block>
+  <block id="484c3cceb97fa36a8403330f3c74a89b" category="cell">Nome do privilégio (vSphere cliente)</block>
+  <block id="a08e86514b21b7a12a5bf45fd2a99a3f" category="cell">Nome do privilégio (API)</block>
+  <block id="8a5227cc82d14862956938caffc1acf2" category="cell">Datastore</block>
+  <block id="ec17e553dd8ab3e19a179f3561a2a6b4" category="cell">Datastore.Config</block>
+  <block id="5313d84436556f72cc3755dd320a3164" category="cell">Configurar datastore</block>
+  <block id="5be4ff66efffd2e4bb8603aa5c2e8590" category="cell">Permite configurar um datastore.</block>
+  <block id="0022868deacb739212d9639f7415cc15" category="cell">Datastore.Delete</block>
+  <block id="3830c0a5f6434510c60784c1f5e4da01" category="cell">Remover datastore</block>
+  <block id="83a2e57b563c5afe8e6894923466c4f0" category="cell">Permite remover um repositório de dados.</block>
+  <block id="520f3822db7a266164374ec6c5c79d62" category="cell">Datastore.Rename</block>
+  <block id="f752200dca9456e48e2aa00ffb67ef79" category="cell">Renomear datastore</block>
+  <block id="eca63b380db21f9c2e05e612529ec2f8" category="cell">Permite renomear um datastore.</block>
+  <block id="b0f2b97dc5d2b76b26e040408bb1d8af" category="cell">Pasta</block>
+  <block id="820282f5bf5c06ec3dca8e6283239318" category="cell">Folder.Create</block>
+  <block id="5dc1e97c14fbe72d8b566ce29c39f010" category="cell">Criar pasta</block>
+  <block id="846d5d4de81b94a5fad10152ec41e854" category="cell">Permite criar uma nova pasta.</block>
+  <block id="6a0ae07e97026b3661b3317a2c7c3885" category="cell">Pasta.Delete</block>
+  <block id="2a2f15300f6f7c81d69860ac1796b517" category="cell">Excluir pasta</block>
+  <block id="8c8b91abb8975c4adc855e59f3483992" category="cell">Permite excluir uma pasta. Requer privilégio tanto no objeto quanto em seu pai.</block>
+  <block id="a25ceea83b384e5569d07f3cb19878fa" category="cell">Folder.Rename</block>
+  <block id="db76034f8218cda07dadb746a5643019" category="cell">Renomear pasta</block>
+  <block id="55669aa32de0a4caa3cb12cc6e67c726" category="cell">Permite modificar o nome de uma pasta.</block>
+  <block id="eec89088ee408b80387155272b113256" category="cell">Rede</block>
+  <block id="64f545a7ab05fb022a1e0cf5be623864" category="cell">Network.Assign</block>
+  <block id="0f2a9e2e169a500cc92684521eaa4a9a" category="cell">Atribuir rede</block>
+  <block id="d72b4c38c00f422618226cbc064a51d7" category="cell">Permite atribuir uma rede a uma VM.</block>
+  <block id="87ccd98a9e9e482e3eb864a195207bb1" category="cell">Network.Config</block>
+  <block id="f1206f9fadc5ce41694f69129aecac26" category="cell">Configurar</block>
+  <block id="299206db7a9b47c95177deb877ede805" category="cell">Permite configurar uma rede.</block>
+  <block id="7ad18a6427a79884889db42cd06453bc" category="cell">Configuração de máquina virtual</block>
+  <block id="01fe355d4f8b7c22a11d6df8e81db631" category="cell">VirtualMachine.Config.AdvancedConfig</block>
+  <block id="119dd5a342e981b13bf0024d5c6a6933" category="cell">Configuração avançada</block>
+  <block id="652e0b7efb978c540ee56162e9da8bea" category="cell">Permite adicionar ou modificar parâmetros avançados no arquivo de configuração da VM.</block>
+  <block id="e5365ae03ae7bd7ee9198b3ab189e6e6" category="cell">VirtualMachine.Config.Settings</block>
+  <block id="1221ff7164cdee8b469096ebf5e997f6" category="cell">Alterar configurações</block>
+  <block id="75a26f99fe3a6b6d8a61fb4358b59180" category="cell">Permite alterar as configurações gerais da máquina virtual.</block>
+  <block id="be14adea066190e0dca0b04a1aadfcc0" category="cell">VirtualMachine.Config.CPUCount</block>
+  <block id="61705f157c64f8c4f27e58eff60b09e2" category="cell">Alterar contagem de CPU</block>
+  <block id="1c794402f18088ed2931b657aa3a7ca6" category="cell">Permite alterar o número de CPUs virtuais.</block>
+  <block id="eb73db3f4d3d6a73d08f27e0ff940e4a" category="cell">VirtualMachine.Config.Memory</block>
+  <block id="8a1ec8c2388ce7768b9961b8c94fcada" category="cell">Alterar memória</block>
+  <block id="3a794fb7cfe9ae081db230025092c225" category="cell">Permite alterar a quantidade de memória alocada à VM.</block>
+  <block id="42e670935b59b432f457d1d1bb0cc863" category="cell">VirtualMachine.Config.Resource</block>
+  <block id="b81398b82bb104abd241c7bce6d3450b" category="cell">Alterar recurso</block>
+  <block id="4eea51541c46771e20020d2fba645141" category="cell">Permite alterar a configuração de recursos dos nós de VM em um pool de recursos.</block>
+  <block id="9717e525e3ba611a4d50e13ef0157cb1" category="cell">VirtualMachine.Config.Rename</block>
+  <block id="904a8304056d77e4547744781b7ceb50" category="cell">Renomear</block>
+  <block id="500e349cb3e3a859b04226bbf3df0449" category="cell">Permite renomear uma VM ou modificar suas notas.</block>
+  <block id="c29fc1cb0067d1dae865aa836ee19187" category="cell">VirtualMachine.Config.EditDevice</block>
+  <block id="7a4d0d96ff85f2e26f1ac8d0a5c42b74" category="cell">Modificar configurações do dispositivo</block>
+  <block id="c90e2a27fcb1467b73c7d4d6a5d72676" category="cell">Permite alterar as propriedades de um dispositivo existente.</block>
+  <block id="ff6abf137f15a4d05161bf897a2ebc4f" category="cell">VirtualMachine.Config.ReloadFromPath</block>
+  <block id="0c0a5841b8cdb1a7f08f5285b81a7d53" category="cell">Recarregar do caminho</block>
+  <block id="bb6d507b674e1e76ad96b52342744ab3" category="cell">Permite alterar o caminho de configuração de uma VM, preservando sua identidade.</block>
+  <block id="706ae466f4d5943aef40d031cda68ef2" category="cell">VirtualMachine.Config.ResetGuestInfo</block>
+  <block id="6c2cadc5f0b182e333bf2dad08ca8ff1" category="cell">Redefinir informações do convidado</block>
+  <block id="27b1854024c5e4f466b740f48b1e26f7" category="cell">Permite editar as informações do sistema operacional convidado para uma VM.</block>
+  <block id="11c63c84421b2667d15eb1d131fea2c9" category="cell">Convidado da máquina virtual</block>
+  <block id="714f42f98e9b8442ac637e0b491d640a" category="cell">VirtualMachine.GuestOperations.ModifyAliases</block>
+  <block id="2b58cb81325f16b777c282fc40fa0f09" category="cell">Modificação do alias da operação guest</block>
+  <block id="11e4ab65bc568de92223e564edfa69f1" category="cell">Permite modificar o alias da VM.</block>
+  <block id="9c54aba6d2a7064878cba907b80a5c20" category="cell">VirtualMachine.GuestOperations.QueryAliases</block>
+  <block id="90c2673e1fbeeed9f7212c78c1517f8b" category="cell">Consulta de alias de operação de guest</block>
+  <block id="ae9c51fb7e5c7e58cf850be99f13b5da" category="cell">Permite consultar o alias de uma VM.</block>
+  <block id="128426b465aa6a76465ac21805664043" category="cell">VirtualMachine.GuestOperations.Modificar</block>
+  <block id="f85a05f8f17b0d5639155ca79f5555bd" category="cell">Modificações na operação do guest</block>
+  <block id="fbbecc3e1eda5ebd1c2be2edf5f64c87" category="cell">Permite operações de modificação, incluindo transferir um arquivo para a VM.</block>
+  <block id="8eb4a874a594ddb8b4f21e1c374b5ed6" category="cell">VirtualMachine.GuestOperations.Executar</block>
+  <block id="8c3ed2222a0f7d02283e04d834525d37" category="cell">Execução do programa de operação guest</block>
+  <block id="ef8404fa8fbdf73e9f20afb7b833d5b9" category="cell">Permite executar um aplicativo dentro da VM.</block>
+  <block id="cdbdc6d1fae0566bf4e2f4c17574ffcb" category="cell">VirtualMachine.GuestOperations.Consulta</block>
+  <block id="f357f7592bf0bdb12c871bc60dc015cd" category="cell">Consultas de operações de guest</block>
+  <block id="1a15045106304cc451100ce1e30219fd" category="cell">Permite consultar o sistema operacional convidado. As operações incluem listar arquivos.</block>
+  <block id="18b5ca89bf955d3de9441c83c69df79e" category="cell">Interação com máquina virtual</block>
+  <block id="9600ac65256b5dbcedcee596a313da71" category="cell">VirtualMachine.Interact.AnswerQuestion</block>
+  <block id="aabd44daaf6ae047b22ccde8dcf27033" category="cell">Responder à pergunta</block>
+  <block id="4c2e0d6c79a8a31cee9a86187cc122fe" category="cell">Permite resolver problemas durante transições de estado da máquina virtual ou erros de tempo de execução.</block>
+  <block id="2082bd369b3fb2e5f2ee6b84de874022" category="cell">VirtualMachine.Interact.PowerOff</block>
+  <block id="1bb202d66fd437a5e7ad355057d3dcb3" category="cell">Desligar</block>
+  <block id="e8d5ebbea01452913dd7e7b6b2746643" category="cell">Permite desligar uma máquina virtual ligada.</block>
+  <block id="50a7f7456e601d5f5868969182a71ab1" category="cell">VirtualMachine.Interact.PowerOn</block>
+  <block id="eb503c4e76174415d5b8c63a4393ee0b" category="cell">Ligar</block>
+  <block id="b91a0a06b8289c36464ea6f963322b5d" category="cell">Permite ligar ou retomar uma VM.</block>
+  <block id="4b6afb10f901dcb368e0da8ca9c161bc" category="cell">VirtualMachine.Interact.ToolsInstall</block>
+  <block id="d090e991c71e10ba45c274b9b1bf8525" category="cell">Instalação do VMware Tools</block>
+  <block id="050f15e7792301746e90f839175ccdaf" category="cell">Permite montar/desmontar o instalador do VMware Tools.</block>
+  <block id="3ce1321655460fdb3e0113cb9436c881" category="cell">VirtualMachine.Inventory.CreateFromExisting</block>
+  <block id="eb420426750166280dc02d6c621c14d0" category="cell">Criar a partir de existente</block>
+  <block id="8b7ea76a046222325068e7d2a20f713a" category="cell">Permite clonagem ou implantação de uma máquina virtual a partir de um modelo.</block>
+  <block id="ab72b5f6ca8ff1ff56266e0e27380236" category="cell">VirtualMachine.Inventory.Create</block>
+  <block id="f7f78b9dfe29752b9e04490253838264" category="cell">Criar novo</block>
+  <block id="194a8967f82d31bf055f0b8457a9330f" category="cell">Permite criar uma VM e alocar recursos.</block>
+  <block id="6bd1805123099938703da4504aa1b397" category="cell">VirtualMachine.Inventory.Register</block>
+  <block id="0ba7583639a274c434bbe6ef797115a4" category="cell">Cadastre-se</block>
+  <block id="ffd52d8132bf8a257137b83b711e1fe1" category="cell">Permite adicionar uma VM existente a um inventário.</block>
+  <block id="113ec0e9dea5dc343fc1b20466b50626" category="cell">VirtualMachine.Inventory.Delete</block>
+  <block id="1063e38cb53d94d386f21227fcd84717" category="cell">Remover</block>
+  <block id="90e62a2b806e2789c4461fa54b9e8a35" category="cell">Permite excluir uma máquina virtual e seus arquivos. Requer privilégios tanto no objeto quanto em seu pai.</block>
+  <block id="1583481191d9003b6525428c8dee442c" category="cell">VirtualMachine.Inventory.Unregister</block>
+  <block id="9d4a8f2dfe3c62f3ce3011035d28fb66" category="cell">Cancelar registro</block>
+  <block id="e947f802786fe9992a2b80860afa85d2" category="cell">Permite cancelar o registro de uma máquina virtual. Essa permissão requer privilégios tanto no objeto quanto em seu pai.</block>
+  <block id="566b6449fc93391a14e69021539d8e60" category="cell">Provisionamento de máquina virtual</block>
+  <block id="611cabc13514750b736417c0751fec59" category="cell">VirtualMachine.Provisioning.Clone</block>
+  <block id="7c6ed64f87d8a584aca0913287d1a6fc" category="cell">Clonagem de máquina virtual</block>
+  <block id="0070d94d066bcfe88273ecbd56757362" category="cell">Permite a clonagem de uma máquina virtual e a alocação de recursos.</block>
+  <block id="a43c309c412138c7cfd54f44d8386bc0" category="cell">VirtualMachine.Provisioning.Personalização</block>
+  <block id="598fbc9a28d6f19e92b27e1a5af7ad0e" category="cell">Personalizar convidado</block>
+  <block id="b2ba191c90041ee971b8ca14a0c92291" category="cell">Permite a personalização do sistema operacional convidado da máquina virtual.</block>
+  <block id="ba74a949d599565a041441fdd39350c5" category="cell">VirtualMachine.Provisionamento.ModifyCustSpecs</block>
+  <block id="3c42b71d77b9e5f83e0ee3f8ed97d8da" category="cell">Modificar especificação de personalização</block>
+  <block id="f81d99e57c5b149a45763b54b000873b" category="cell">Permite criar, modificar ou excluir especificações de personalização.</block>
+  <block id="e09ffc9b87590a5f49710c0533613460" category="cell">VirtualMachine.Provisionamento.ReadCustSpecs</block>
+  <block id="c2578bfe84d0cf1e9df740a50d2613b1" category="cell">Leia as especificações de personalização</block>
+  <block id="ace7edb1ff65bdc40e95eb9487f405e2" category="cell">Permite a leitura de uma especificação de personalização para uma máquina virtual.</block>
+  <block id="fed72266e2f70add575b5566a9cbe4fd" category="cell">Configuração do serviço de máquina virtual</block>
+  <block id="8cb4055c5f9bac1c728e97bda4d4d1f1" category="cell">VirtualMachine.Namespace.Query</block>
+  <block id="69f274d7dd0d3eae6bf59b6048da9fc5" category="cell">Consultar configurações de serviço</block>
+  <block id="2d3affb438272b2e8152acdaca3917d0" category="cell">Permite recuperar uma lista de serviços de VM.</block>
+  <block id="9f269e8cc872deac8ab3d984855702ee" category="cell">VirtualMachine.Namespace.ReadContent</block>
+  <block id="d18a05281343e8e08785e5f87a0e95ca" category="cell">Leia a configuração do serviço</block>
+  <block id="88e3686512c999f4bfaf9eb252166267" category="cell">Permite recuperar a configuração de serviço da máquina virtual existente.</block>
+  <block id="4f055083178fbed3a992b5a889ee6ec6" category="cell">Instantâneo da máquina virtual</block>
+  <block id="a9a656934e6bbd1cf922ff6d20a97d38" category="cell">VirtualMachine.State.CreateSnapshot</block>
+  <block id="bfb2cee5de3a54c30810194a0077e673" category="cell">Criar instantâneo</block>
+  <block id="644696f8a5cf62f2c90b255de195e9e9" category="cell">Permite criar um instantâneo do estado atual da máquina virtual.</block>
+  <block id="e07e04b7522dad3f158b9930e4c91944" category="cell">VirtualMachine.State.RemoveSnapshot</block>
+  <block id="ada1b8fca015644eb0e5c19ee82795da" category="cell">Remover snapshot</block>
+  <block id="9da2025e7ae5b4b4e540a0a98af3a46d" category="cell">Permite remover um instantâneo.</block>
+  <block id="7f7038b0c4bb41aa1afacc8c2806ee73" category="cell">VirtualMachine.State.RenameSnapshot</block>
+  <block id="c3b272eb798aaa11b258a91dbf4ef016" category="cell">Renomear snapshot</block>
+  <block id="842e86f4867d549a938e8038f571fd6b" category="cell">Permite renomear um snapshot ou atualizar sua descrição.</block>
+  <block id="e09864970107f53b95b27d59844fe8a3" category="cell">VirtualMachine.State.RevertToSnapshot</block>
+  <block id="e2a5f777b44916836fdc3739a3964e98" category="cell">Reverter para o snapshot</block>
+  <block id="f82e780d3c4a5f7f4bf54aabdabdd223" category="cell">Permite reverter a máquina virtual para o estado de um determinado snapshot.</block>
 </blocks>
