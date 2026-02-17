@@ -16,6 +16,80 @@ Descubra as novidades em NetApp Disaster Recovery.
 
 
 
+== 16 de fevereiro de 2026
+
+Versão 4.3.0
+
+
+
+=== Interface de usuário aprimorada
+
+A interface de usuário de Recuperação de Desastres foi reformulada para melhorar o desempenho e a experiência do usuário com base no feedback.
+
+
+
+=== Documentação da API Swagger
+
+A documentação Swagger da API de Recuperação de Desastres agora pode ser acessada em um navegador comum; o modo anônimo não é mais necessário. Para acessar a documentação da API, navegue até o painel de Recuperação de Desastres, selecione o menu de contexto no canto superior direito image:../media/use/icon-vertical-dots.png["Ícone de ação"] então **Documentação da API** para abrir a documentação Swagger. Você também pode link:https://api.bluexp.netapp.com/v1/services/draas/api/api-doc/draas["adicione o URL aos seus favoritos"^].
+
+
+
+== 12 de janeiro de 2026
+
+Versão 4.2.9
+
+
+
+=== Suporte para vários agentes do Console em ambientes locais.
+
+Se você utiliza a Recuperação de Desastres localmente, agora pode implantar um agente de console para cada instância do vCenter, melhorando a resiliência.
+
+Por exemplo, se você tiver dois sites (Sites A e B), o Site A pode ter o agente de console A anexado ao vCenter 1, à implantação ONTAP 1 e à implantação ONTAP 2. O Site B pode ter o agente de console B anexado às implantações do vCenter 2 e do ONTAP 3 e 4.
+
+Para obter informações sobre o agente do Console na Recuperação de Desastres, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-prerequisites.html#netapp-console-prerequisites["Crie o agente do Console"^].
+
+
+
+=== Adicionar VMs após failover para planos de replicação usando proteção baseada em armazenamento de dados
+
+Quando o failover é acionado, qualquer plano de replicação que utilize proteção baseada em armazenamento de dados inclui as VMs que foram adicionadas ao armazenamento de dados, desde que tenham sido detectadas. Você deve fornecer os detalhes de mapeamento para as VMs adicionadas antes que o failover seja concluído.
+
+Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Aplicativos de failover"^].
+
+
+
+=== Novas notificações por e-mail
+
+A Recuperação de Desastres agora fornece notificações por e-mail para os seguintes eventos:
+
+* Aproximando-se do limite de utilização da capacidade
+* Geração de relatório concluída
+* Fracassos no trabalho
+* Vencimento da licença ou violações
+
+
+
+
+=== Melhorias no Swagger
+
+Agora você pode acessar a documentação do Swagger diretamente do Disaster Recovery. Na seção Recuperação de Desastres, selecione **Configurações** e, em seguida, **Documentação da API** para acessar o Swagger, ou visite este URL no modo anônimo/privado do seu navegador: link:https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas"^].
+
+
+
+=== Interfaces de usuário aprimoradas
+
+A Recuperação de Desastres agora oferece avisos aprimorados e soluções de erros. Esta versão corrige um erro que impedia a exibição de trabalhos cancelados na interface do usuário. Os trabalhos cancelados agora estão visíveis. Também há um novo aviso quando a mesma rede de destino é mapeada para várias redes de origem diferentes.
+
+
+
+=== Manter a estrutura de pastas da VM adicionada como padrão nos planos de replicação
+
+Ao criar uma réplica, a nova configuração padrão é manter a estrutura de pastas da máquina virtual. Se o destino da recuperação não tiver a hierarquia de pastas original, a Recuperação de Desastres a criará. Você pode desmarcar esta opção para ignorar a hierarquia de pastas original.
+
+Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"^].
+
+
+
 == 12 de janeiro de 2026
 
 Versão 4.2.9

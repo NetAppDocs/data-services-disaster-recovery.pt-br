@@ -2107,4 +2107,12 @@
   <block id="29526e6f5f21e46912fe5e749afaadeb" category="paragraph">Os passos específicos de instalação do agente do Console dependem do seu tipo de implantação. Consulte <block ref="60ce1b0a0c322e03a03b2c2641ba72c3" category="inline-link-macro-rx"></block> para mais informações.</block>
   <block id="1515391ee07716093ddb994cd9906006" category="inline-link">Crie um agente do NetApp Console a partir do AWS Marketplace</block>
   <block id="7f9f446a286afe8acb3ad25ae1a89a13" category="admonition">O método mais simples para instalar o agente do Console com Amazon AWS é usar o AWS Marketplace. Para obter detalhes sobre a instalação do agente do Console usando o AWS Marketplace, consulte <block ref="f267bc5cc8f7e48efa7f9b5434e2039f" category="inline-link-rx"></block>.</block>
+  <block id="83babe62c403f56e76ef6809d4508f91" category="doc">Interface de usuário aprimorada</block>
+  <block id="438ce765c897095715b03fca4b860a61" category="paragraph">A interface de usuário de Recuperação de Desastres foi reformulada para melhorar o desempenho e a experiência do usuário com base no feedback.</block>
+  <block id="c99f25325f86d3f0c79c43f7e35c908e" category="section-title">Documentação da API Swagger</block>
+  <block id="4dc69d78f0442e6b664baa4e0d9bd594" category="inline-image-macro">Ícone de ação</block>
+  <block id="c75d11eee9117155e14ba1fe4d4e9609" category="inline-link-macro">adicione o URL aos seus favoritos</block>
+  <block id="1ed2e3ee9da6a94c882b1fde4a104444" category="paragraph">A documentação Swagger da API de Recuperação de Desastres agora pode ser acessada em um navegador comum; o modo anônimo não é mais necessário. Para acessar a documentação da API, navegue até o painel de Recuperação de Desastres, selecione o menu de contexto no canto superior direito <block ref="9bb01c837d73cae62964f6b5d76c3c64" category="inline-image-macro-rx" type="image"></block> então **Documentação da API** para abrir a documentação Swagger. Você também pode <block ref="1a92440ed6b8c60f65d4cdda7009f427" category="inline-link-macro-rx"></block>.</block>
+  <block id="fb042b7b99959e391eeb7c417511098a" category="section-title">16 de fevereiro de 2026</block>
+  <block id="699554d8d02429739cd0995ec1ec3ab8" category="paragraph">Versão 4.3.0</block>
 </blocks>

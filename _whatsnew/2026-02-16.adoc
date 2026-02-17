@@ -1,0 +1,15 @@
+= Interface de usuário aprimorada
+:allow-uri-read: 
+
+
+
+
+=== Interface de usuário aprimorada
+
+A interface de usuário de Recuperação de Desastres foi reformulada para melhorar o desempenho e a experiência do usuário com base no feedback.
+
+
+
+=== Documentação da API Swagger
+
+A documentação Swagger da API de Recuperação de Desastres agora pode ser acessada em um navegador comum; o modo anônimo não é mais necessário. Para acessar a documentação da API, navegue até o painel de Recuperação de Desastres, selecione o menu de contexto no canto superior direito image:../media/use/icon-vertical-dots.png["Ícone de ação"] então **Documentação da API** para abrir a documentação Swagger. Você também pode link:https://api.bluexp.netapp.com/v1/services/draas/api/api-doc/draas["adicione o URL aos seus favoritos"^].
