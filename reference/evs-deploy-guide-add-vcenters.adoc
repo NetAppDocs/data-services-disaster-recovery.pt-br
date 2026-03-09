@@ -22,12 +22,16 @@ image:evs-add-vcenter-1.png["Adicionar opção vCenter"]
 .. O endereço IP ou FQDN do vCenter a ser adicionado.
 .. Se for diferente, altere o valor da porta para a porta TCP usada pelo gerenciador de cluster do vCenter.
 .. O nome de usuário do vCenter para a conta criada anteriormente que será usada pelo NetApp Disaster Recovery para gerenciar o vCenter.
-.. A senha do vCenter para o nome de usuário fornecido.
-.. Se sua empresa usa uma Autoridade de Certificação (CA) externa ou o vCenter Endpoint Certificate Store para obter acesso aos seus vCenters, desmarque a caixa de seleção *Usar certificados autoassinados*.  Caso contrário, deixe a caixa marcada.
 
 
-. Selecione *Adicionar*.
+
+
+. Se sua empresa usa uma Autoridade de Certificação (CA) externa ou o vCenter Endpoint Certificate Store para obter acesso aos seus vCenters, desmarque a caixa de seleção *Usar certificados autoassinados*.  Caso contrário, deixe a caixa marcada.
++
+.. Selecione *Adicionar*.
 +
 image:evs-add-vcenter-2-3.png["Caixa de diálogo Adicionar vCenter"]
+
+
 
 

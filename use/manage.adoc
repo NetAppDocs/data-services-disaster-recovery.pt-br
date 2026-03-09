@@ -95,7 +95,7 @@ image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
 
 . Retorne à lista de planos selecionando "Planos de replicação" nas trilhas de navegação à esquerda.
-. Para executar ações com o plano, na lista de planos de replicação, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e selecione qualquer uma das opções, como *Editar agendamentos*, *Testar failover*, *Failover*, *Failback*, *Migrar*, *Tirar snapshot agora*, *Limpar snapshots antigos*, *Desativar*, *Ativar* ou *Excluir*.
+. Para executar ações com o plano, na lista de planos de replicação, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e então escolha uma ação: *Editar agendamentos*, *Testar failover*, *Fail over*, *Fail back*, *Migrar*, *Tirar snapshot agora*, *Limpar snapshots antigos*, *Desabilitar*, *Habilitar* ou *Excluir*.
 . Para definir ou alterar um cronograma de failover de teste ou definir a verificação de frequência de conformidade, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e selecione *Editar agendamentos*.
 +
 .. Na página Editar agendamentos, insira a frequência em minutos com que você deseja que a verificação de conformidade de failover ocorra.

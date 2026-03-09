@@ -208,7 +208,7 @@ TIP: Se um vCenter tiver um Distributed Resource Scheduler (DRS) configurado par
 
 === Recursos do mapa > Seção Redes virtuais
 
-As VMs usam NICs virtuais conectadas a redes virtuais.  No processo de failover, o serviço conecta essas NICs virtuais às redes virtuais definidas no ambiente VMware de destino.  Para cada rede virtual de origem usada pelas VMs no grupo de recursos, o serviço requer uma atribuição de rede virtual de destino.
+As VMs usam NICs virtuais conectadas a redes virtuais. No processo de failover, o serviço conecta essas NICs virtuais às redes virtuais definidas no ambiente VMware de destino. Para cada rede virtual de origem usada pelas VMs no grupo de recursos, o serviço requer uma atribuição de rede virtual de destino.
 
 
 NOTE: Você pode atribuir várias redes virtuais de origem à mesma rede virtual de destino.  No entanto, isso pode criar conflitos de configuração de rede IP.  Você pode mapear várias redes de origem para uma única rede de destino para garantir que todas as redes de origem tenham a mesma configuração.
@@ -446,9 +446,9 @@ O plano é adicionado à lista de planos.
 
 
 
-== Editar cronogramas para testar a conformidade e garantir que os testes de failover funcionem
+== Modificar um plano de replicação
 
-Talvez você queira configurar cronogramas para testar a conformidade e os testes de failover para garantir que eles funcionarão corretamente caso você precise deles.
+Você pode modificar o agendamento de um plano de replicação para testar a conformidade e garantir que os testes de failover sejam concluídos com sucesso.
 
 * *Impacto no tempo de conformidade*: quando um plano de replicação é criado, o serviço cria um cronograma de conformidade por padrão.  O tempo de conformidade padrão é de 30 minutos.  Para alterar esse horário, você pode editar o agendamento no plano de replicação.
 * *Impacto do failover de teste*: Você pode testar um processo de failover sob demanda ou por meio de um agendamento.  Isso permite que você teste o failover de máquinas virtuais para um destino especificado em um plano de replicação.

@@ -36,7 +36,7 @@ Este procedimento interrompe o relacionamento de replicação, coloca as VMs de 
 
 Antes de iniciar o failover, você pode testar o processo.  O teste não coloca as máquinas virtuais offline.
 
-Durante um teste de failover, o Disaster Recovery cria máquinas virtuais temporariamente. O Risaster Recovery mapeia um armazenamento de dados temporário que faz backup do volume FlexClone nos hosts ESXi.
+Durante um teste de failover, o Disaster Recovery cria máquinas virtuais temporárias. O Disaster Recovery mapeia um datastore temporário que faz backup do volume FlexClone para os hosts ESXi.
 
 Esse processo não consome capacidade física adicional no armazenamento ONTAP local ou no FSx para armazenamento NetApp ONTAP na AWS. O volume de origem original não é modificado e as tarefas de replicação podem continuar mesmo durante a recuperação de desastres.
 

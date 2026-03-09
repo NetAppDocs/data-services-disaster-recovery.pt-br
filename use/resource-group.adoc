@@ -12,7 +12,7 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 
 [role="lead"]
-Depois de adicionar sites do vCenter, você pode criar grupos de recursos para proteger VMs por VM ou armazenamento de dados como uma única unidade.  Grupos de recursos permitem que você organize um conjunto de VMs dependentes em grupos lógicos que atendem aos seus requisitos.  Por exemplo, você pode agrupar VMs associadas a um aplicativo ou agrupar aplicativos que tenham níveis semelhantes.  Como outro exemplo, grupos podem conter ordens de inicialização atrasadas que podem ser executadas na recuperação.
+Depois de adicionar vCenter sites, você pode criar grupos de recursos para agrupar VMs ou datastores como uma única unidade. Os grupos de recursos permitem que você organize um conjunto de VMs dependentes em grupos lógicos que atendam aos seus requisitos. Por exemplo, você pode agrupar VMs associadas a um aplicativo ou pode agrupar aplicativos que tenham níveis semelhantes. Como outro exemplo, os grupos podem conter ordens de inicialização atrasada que podem ser executadas durante a recuperação.
 
 *Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
@@ -32,7 +32,7 @@ Você pode criar grupos de recursos usando os seguintes métodos:
 TIP: Cada grupo de recursos pode incluir uma ou mais VMs ou armazenamentos de dados.  As VMs serão ligadas com base na sequência em que você as incluir no plano de replicação.  Você pode alterar a ordem arrastando as VMs ou os armazenamentos de dados para cima ou para baixo na lista de grupos de recursos.
 
 .Sobre grupos de recursos
-Grupos de recursos permitem que você combine VMs ou armazenamentos de dados como uma única unidade.
+Os grupos de recursos permitem combinar VMs ou datastores em uma única unidade.
 
 Por exemplo, um aplicativo de ponto de venda pode usar várias VMs para bancos de dados, lógica de negócios e vitrines.  Você pode gerenciar todas essas VMs com um grupo de recursos.  Configure grupos de recursos para aplicar regras de plano de replicação para ordem de inicialização de VM, conexão de rede e recuperação de todas as VMs necessárias para o aplicativo.
 
