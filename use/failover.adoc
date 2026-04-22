@@ -108,7 +108,7 @@ TIP: Após o início do failover, você poderá ver as VMs recuperadas no vCente
 .Passos
 . No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
 . Selecione o plano de replicação.
-. À direita, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] e selecione *Fail over*.
+. À direita, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"], passe o cursor sobre *Recuperar* e selecione *Fail over*.
 +
 image:dr-plan-failover3.png["Página de failover"]
 

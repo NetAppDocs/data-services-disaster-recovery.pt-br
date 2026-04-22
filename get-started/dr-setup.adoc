@@ -12,15 +12,21 @@ summary: Para usar o NetApp Disaster Recovery, siga algumas etapas para configur
 
 
 [role="lead"]
-Para usar o NetApp Disaster Recovery, siga algumas etapas para configurá-lo no Amazon Web Services (AWS) e no NetApp Console.
+Para usar NetApp Disaster Recovery, execute algumas etapas para configurá-lo tanto no NetApp Console quanto no ambiente de recuperação de desastres compatível.
 
 
 TIP: Análiselink:../get-started/dr-prerequisites.html["pré-requisitos"] para garantir que seu sistema esteja pronto.
 
+
+
+== Infraestruturas suportadas
+
 Você pode usar o NetApp Disaster Recovery nas seguintes infraestruturas:
 
-* DR de nuvem híbrida que replica um datacenter VMware mais ONTAP local para uma infraestrutura de DR da AWS baseada no VMware Cloud on AWS e no Amazon FSx for NetApp ONTAP.
+* Recuperação de desastres (DR) em nuvem híbrida que replica um datacenter VMware local com ONTAP para uma infraestrutura de DR da AWS baseada em VMware Cloud on AWS ou Elastic VMware Service (Exchange Virtual Server) e Amazon FSx for NetApp ONTAP.
 * DR de nuvem privada que replica um VMware mais ONTAP vCenter local para outro VMware mais ONTAP vCenter local.
+* Cloud DR que replica uma infraestrutura de DR da AWS baseada em VMware Cloud on AWS ou Exchange Virtual Server para outra infraestrutura de DR baseada na AWS usando FSx for NetApp ONTAP.
+* Recuperação de desastres (DR) em nuvem híbrida que replica um datacenter VMware local com ONTAP para uma infraestrutura de DR do Google baseada no Google Cloud VMware Engine e no Google Cloud NetApp Volumes.
 
 
 
@@ -29,7 +35,7 @@ Você pode usar o NetApp Disaster Recovery nas seguintes infraestruturas:
 
 Este método consiste em uma infraestrutura vCenter de produção local usando datastores hospedados em volumes ONTAP FlexVol usando um protocolo NFS.  O site de DR consiste em uma ou mais instâncias do VMware Cloud SDDC usando armazenamentos de dados hospedados em volumes FlexVol fornecidos por uma ou mais instâncias do FSx for ONTAP usando um protocolo NFS.
 
-Os sites de produção e DR são conectados por uma conexão segura compatível com AWS.  Os tipos comuns de conexão são VPN segura (privada ou fornecida pela AWS), AWS Direct Connect ou outros métodos de interconexão aprovados.
+Os sites de produção e de recuperação de desastres (DR) são conectados por uma conexão segura compatível com a AWS. Os tipos de conexão comuns são uma VPN segura (privada ou fornecida pela AWS), AWS Direct Connect ou outros métodos de interconexão aprovados.
 
 Para recuperação de desastres envolvendo infraestrutura de nuvem da AWS, você deve usar o agente do Console para AWS.  O agente deve ser instalado na mesma VPC que a instância do FSx para ONTAP .  Se instâncias adicionais do FSx for ONTAP foram implantadas em outras VPCs, a VPC que hospeda o agente deve ter acesso às outras VPCs.
 
@@ -51,9 +57,9 @@ A AWS oferece suporte à implantação de soluções em uma ou mais zonas de dis
 
 A AWS fornece os seguintes métodos para conectar datacenters privados à nuvem AWS.  Cada solução tem seus benefícios e considerações de custo.
 
-* *AWS Direct Connect*: Esta é uma interconexão de nuvem da AWS localizada na mesma área geográfica do seu datacenter privado e fornecida por um parceiro da AWS.  Esta solução fornece uma conexão segura e privada entre seu datacenter local e a nuvem AWS sem a necessidade de uma conexão pública com a internet.  Este é o método de conexão mais direto e eficiente oferecido pela AWS.
+* *AWS Direct Connect*: Esta é uma interconexão da nuvem AWS localizada na mesma área geográfica que seu data center privado e fornecida por um parceiro da AWS. Essa solução oferece uma conexão segura e privada entre seu data center local e a nuvem da AWS sem a necessidade de uma conexão pública com a internet. Este é o método de conexão mais direto e eficiente oferecido pela AWS.
 * *AWS Internet Gateway*: fornece conectividade pública entre recursos de nuvem da AWS e recursos de computação externos.  Esse tipo de conexão normalmente é usado para fornecer serviços a clientes externos, como serviços HTTP/HTTPS, onde a segurança não é um requisito.  Não há controle de qualidade de serviço, segurança ou garantia de conectividade.  Por esse motivo, esse método de conexão não é recomendado para conectar um datacenter de produção à nuvem.
-* *AWS Site-Site VPN*: Esta conexão de rede privada virtual pode ser usada para fornecer conexões de acesso seguras junto com um provedor de serviços de Internet público.  A VPN criptografa e descriptografa todos os dados que viajam de e para a nuvem AWS.  VPNs podem ser baseadas em software ou hardware.  Para aplicações empresariais, o provedor de serviços de Internet público (ISP) deve oferecer garantias de qualidade de serviço para assegurar que largura de banda e latência adequadas sejam fornecidas para replicação de DR.
+* *VPN Site-a-Site da AWS*: Essa conexão de rede privada virtual pode ser usada para fornecer conexões de acesso seguras juntamente com um provedor de serviços de internet público. A VPN criptografa e descriptografa todos os dados que trafegam de e para a nuvem da AWS. As VPNs podem ser baseadas em software ou baseadas em hardware. Para aplicações corporativas, o provedor de serviços de internet (ISP) público deve oferecer garantias de qualidade de serviço para assegurar que largura de banda e latência adequadas sejam fornecidas para a replicação de DR.
 
 
 *PRÁTICA RECOMENDADA*: Para configuração de site de DR da AWS, a NetApp recomenda usar o AWS Direct Connect.  Esta solução oferece o mais alto desempenho e segurança para aplicativos corporativos.  Caso não esteja disponível, uma conexão ISP pública de alto desempenho juntamente com uma VPN deve ser usada.  Certifique-se de que o ISP ofereça níveis de serviço de QoS comerciais para garantir um desempenho de rede adequado.
