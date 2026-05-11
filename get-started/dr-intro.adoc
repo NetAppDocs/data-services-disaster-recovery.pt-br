@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: get-started/dr-intro.html 
 keywords: how netapp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back, vmware cloud, netapp intelligent services 
-summary: A recuperação de desastres na nuvem é uma maneira resiliente e econômica de proteger cargas de trabalho contra interrupções do site e eventos de corrupção de dados.  Com o NetApp Disaster Recovery for VMware, você pode replicar suas cargas de trabalho VMware locais executando armazenamento ONTAP para um data center definido por software VMware em uma nuvem pública usando o armazenamento em nuvem NetApp ou para outro ambiente VMware local com armazenamento ONTAP como um site de recuperação de desastres. 
+summary: A recuperação de desastres na nuvem é uma maneira resiliente e econômica de proteger cargas de trabalho contra interrupções no local e eventos de corrupção de dados. Com NetApp Disaster Recovery, você pode replicar suas cargas de trabalho VMware locais que executam armazenamento ONTAP para um data center definido por software em uma nuvem pública usando NetApp storage de nuvem ou para outro ambiente VMware local com armazenamento ONTAP como um site de recuperação de desastres. 
 ---
-= Saiba mais sobre o NetApp Disaster Recovery para VMware
+= Saiba mais sobre a NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,9 +12,9 @@ summary: A recuperação de desastres na nuvem é uma maneira resiliente e econ�
 
 
 [role="lead"]
-A recuperação de desastres na nuvem é uma maneira resiliente e econômica de proteger cargas de trabalho contra interrupções do site e eventos de corrupção de dados.  Com o NetApp Disaster Recovery for VMware, você pode replicar suas cargas de trabalho de VM ou datastore VMware locais executando armazenamento ONTAP para um data center definido por software VMware em uma nuvem pública usando o armazenamento em nuvem NetApp ou para outro ambiente VMware local com armazenamento ONTAP como um site de recuperação de desastres.  Você também pode usar o Disaster Recovery para migrar cargas de trabalho de VM de um site para outro.
+A recuperação de desastres na nuvem é uma maneira resiliente e econômica de proteger cargas de trabalho contra interrupções no site e eventos de corrupção de dados. Com NetApp Disaster Recovery, você pode replicar suas cargas de trabalho de máquina virtual VMware ou datastore locais que executam armazenamento ONTAP para um data center definido por software VMware em uma nuvem pública usando NetApp storage de nuvem ou para outro ambiente VMware local com armazenamento ONTAP como um site de recuperação de desastres. Você também pode usar Disaster Recovery para migrar cargas de trabalho de máquina virtual de um site para outro.
 
-O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres.  Com o NetApp Disaster Recovery, você pode proteger suas cargas de trabalho locais baseadas em NFS e os armazenamentos de dados do sistema de arquivos de máquina virtual (VMFS) VMware vSphere para iSCSI e FC executando o armazenamento NetApp em um dos seguintes locais:
+NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza os fluxos de trabalho de recuperação de desastres. Com o NetApp Disaster Recovery, você pode proteger seus clusters Kubernetes locais, cargas de trabalho baseadas em NFS e datastores do sistema de arquivos de máquina virtual (VMFS) do VMware vSphere para iSCSI e FC executando armazenamento NetApp em uma das seguintes opções:
 
 * Amazon Elastic VMware Service (EVS) com Amazon FSx for NetApp ONTAP Para obter detalhes, consultelink:../reference/evs-deploy-guide-introduction.html["Introdução ao NetApp Disaster Recovery usando o Amazon Elastic VMware Service e o Amazon FSx for NetApp ONTAP"] .
 * VMware Cloud (VMC) na AWS com Amazon FSx for NetApp ONTAP
@@ -25,7 +25,7 @@ O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado 
 
 O NetApp Disaster Recovery usa a tecnologia ONTAP SnapMirror com orquestração VMware nativa integrada para proteger VMs VMware e suas imagens de sistema operacional em disco associadas, mantendo todos os benefícios de eficiência de armazenamento do ONTAP.  A recuperação de desastres usa essas tecnologias como transporte de replicação para o local de recuperação de desastres.  Isso permite a melhor eficiência de armazenamento do setor (compactação e desduplicação) em sites primários e secundários.
 
-image:../use/evs-console-architecture.png["Diagrama mostrando os componentes do NetApp Disaster Recovery para VMware"]
+image:../use/evs-console-architecture.png["Diagrama mostrando os componentes da NetApp Disaster Recovery"]
 
 
 
@@ -35,13 +35,13 @@ O NetApp Disaster Recovery pode ser acessado por meio do NetApp Console.
 
 O NetApp Console fornece gerenciamento centralizado de serviços de armazenamento e dados da NetApp em ambientes locais e na nuvem em nível empresarial. O Console é necessário para acessar e usar os serviços de dados do NetApp . Como uma interface de gerenciamento, ele permite que você gerencie muitos recursos de armazenamento a partir de uma única interface. Os administradores do console podem controlar o acesso ao armazenamento e aos serviços de todos os sistemas da empresa.
 
-Você não precisa de uma licença ou assinatura para começar a usar o NetApp Console e só incorrerá em cobranças quando precisar implantar agentes do Console na sua nuvem para garantir a conectividade com seus sistemas de armazenamento ou serviços de dados do NetApp . No entanto, alguns serviços de dados da NetApp acessíveis pelo Console são licenciados ou baseados em assinatura.
+Você não precisa de licença ou assinatura para começar a usar NetApp Console e só incorre em custos quando precisa implantar agentes do Console em sua nuvem para garantir a conectividade com seus sistemas de armazenamento ou NetApp data services. No entanto, alguns NetApp data services acessíveis pelo Console são licenciados ou baseados em assinatura.
 
 Saiba mais sobre o https://docs.netapp.com/us-en/console-setup-admin/concept-overview.html["NetApp Console"] .
 
 
 
-== Benefícios de usar o NetApp Disaster Recovery para VMware
+== Benefícios de usar NetApp Disaster Recovery
 
 O NetApp Disaster Recovery oferece os seguintes benefícios:
 
@@ -55,22 +55,22 @@ O NetApp Disaster Recovery oferece os seguintes benefícios:
 
 
 
-== O que você pode fazer com o NetApp Disaster Recovery para VMware
+== Capacidades de NetApp Disaster Recovery
 
 O NetApp Disaster Recovery oferece a você o uso completo de diversas tecnologias da NetApp para atingir os seguintes objetivos:
 
 * Replique aplicativos VMware em seu site de produção local para um site remoto de recuperação de desastres na nuvem ou no local usando a replicação do SnapMirror .
 * Migre cargas de trabalho do VMware do seu site original para outro site.
-* Realize um teste de failover.  Quando você faz isso, o serviço cria máquinas virtuais temporárias.  A Recuperação de Desastres cria um novo volume FlexClone a partir do snapshot selecionado, e um armazenamento de dados temporário, que é apoiado pelo volume FlexClone , é mapeado para os hosts ESXi.  Este processo não consome capacidade física adicional no armazenamento ONTAP local ou no FSx para armazenamento ONTAP da NetApp na AWS.  O volume de origem original não é modificado e os trabalhos de réplica podem continuar mesmo durante a recuperação de desastres.
+* Realize um teste de failover. Ao fazer isso, o serviço cria máquinas virtuais temporárias. O Disaster Recovery cria um novo FlexClone volume a partir do snapshot selecionado, e um datastore temporário, com backup nesse volume FlexClone, é mapeado para os hosts ESXi. Esse processo não consome capacidade física adicional no armazenamento ONTAP local ou no FSx for NetApp ONTAP storage na AWS. O volume de origem original não é modificado e os trabalhos de replicação podem continuar mesmo durante a recuperação de desastres.
 * Em caso de desastre, faça failover do seu site principal sob demanda para o site de recuperação de desastres, que pode ser o VMware Cloud on AWS com Amazon FSx for NetApp ONTAP ou um ambiente VMware local com ONTAP.
 * Após a resolução do desastre, faça o failback sob demanda do site de recuperação de desastres para o site principal.
 * Agrupe VMs ou armazenamentos de dados em grupos de recursos lógicos para um gerenciamento eficiente.
 
 
-image:../use/evs-use-cases.png["Diagrama mostrando casos de uso do NetApp Disaster Recovery para VMware"]
+image:../use/evs-use-cases.png["Diagrama mostrando casos de uso para NetApp Disaster Recovery"]
 
 
-NOTE: A configuração do servidor vSphere é feita fora do NetApp Disaster Recovery no vSphere Server.
+NOTE: Você deve configurar o servidor vSphere fora do NetApp Disaster Recovery no vSphere Server.
 
 
 
@@ -96,7 +96,7 @@ Você pode usar os seguintes tipos de licença:
 
 As licenças para todos os serviços de dados do NetApp são gerenciadas por meio de assinaturas no NetApp Console.  Depois de configurar seu BYOL, você poderá ver uma licença ativa para o serviço no Console.
 
-O serviço é licenciado com base na quantidade de dados hospedados em volumes ONTAP protegidos.  O serviço determina quais volumes devem ser considerados para fins de licenciamento mapeando VMs protegidas para seus armazenamentos de dados do vCenter.  Cada armazenamento de dados é hospedado em um volume ONTAP ou LUN.  A capacidade usada relatada pelo ONTAP para esse volume ou LUN é usada para determinações de licenciamento.
+O Disaster Recovery é licenciado com base na quantidade de dados hospedados em volumes ONTAP protegidos. O serviço determina quais volumes devem ser considerados para fins de licenciamento mapeando as VMs protegidas aos seus vCenter datastores. Cada datastore é hospedado em um volume ONTAP ou LUN. A capacidade utilizada relatada pelo ONTAP para esse volume ou LUN é usada para determinações de licenciamento.
 
 Volumes protegidos podem hospedar muitas VMs.  Alguns podem não fazer parte de um grupo de recursos de NetApp Disaster Recovery .  Independentemente disso, o armazenamento consumido por todas as VMs naquele volume ou LUN é usado em relação à capacidade máxima da licença.
 
@@ -109,9 +109,9 @@ Para obter detalhes sobre a configuração do licenciamento para o NetApp Disast
 
 == Teste gratuito de 30 dias
 
-Você pode experimentar o NetApp Disaster Recovery usando uma avaliação gratuita de 30 dias.
+Você pode experimentar NetApp Disaster Recovery com um período de teste gratuito de 30 dias.
 
-Para continuar após o teste de 30 dias, você precisará obter uma assinatura pré-paga (PAYGO) do seu provedor de nuvem ou comprar uma licença BYOL da NetApp.
+Para continuar após o período de avaliação de 30 dias, você precisa obter uma assinatura Pay-as-you-go (PAYGO) do seu provedor de nuvem ou comprar uma licença BYOL da NetApp.
 
 Você pode comprar uma licença a qualquer momento e não será cobrado até o término do teste de 30 dias.
 
@@ -123,7 +123,7 @@ O NetApp Disaster Recovery é um serviço hospedado no ambiente de software como
 
 O NetApp Disaster Recovery usa a tecnologia ONTAP SnapMirror , que fornece replicação altamente eficiente e preserva as eficiências de snapshot incremental e permanente do ONTAP .  A replicação do SnapMirror garante que cópias de snapshot consistentes com o aplicativo estejam sempre sincronizadas e que os dados possam ser usados ​​imediatamente após um failover.
 
-image:dr-architecture-diagram-70-2.png["Diagrama mostrando a arquitetura da infraestrutura de serviço NetApp Disaster Recovery for VMware"]
+image:dr-architecture-diagram-70-2.png["Diagrama que mostra a arquitetura da infraestrutura do serviço NetApp Disaster Recovery"]
 
 Quando ocorre um desastre, este serviço ajuda você a recuperar máquinas virtuais no outro ambiente VMware local ou VMC, interrompendo os relacionamentos do SnapMirror e tornando o site de destino ativo.
 
@@ -134,7 +134,7 @@ Quando ocorre um desastre, este serviço ajuda você a recuperar máquinas virtu
 
 *Componentes da Recuperação de Desastres*
 
-A recuperação de desastres usa os seguintes componentes para fornecer recuperação de desastres para cargas de trabalho do VMware:
+A Recuperação de Desastres utiliza os seguintes componentes para fornecer cargas de trabalho de disaster Recovery:
 
 * * NetApp Console*: A interface do usuário para gerenciar seus planos de recuperação de desastres.  Você pode usar o NetApp Console para criar e gerenciar planos de replicação, grupos de recursos e operações de failover em seus ambientes locais e na nuvem.
 * *Agente de console*: Um componente de software leve que é executado na sua rede hospedada na nuvem ou no seu ambiente VMware local.  Ele se comunica com o NetApp Console e gerencia a replicação de dados entre seu ambiente local e o site de recuperação de desastres.  O agente do Console é instalado em uma máquina virtual no seu ambiente VMware.

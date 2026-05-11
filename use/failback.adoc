@@ -42,11 +42,40 @@ Se você estiver usando proteção baseada em armazenamento de dados, as VMs que
 
 == Passos
 
-. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
+[role="tabbed-block"]
+====
+.vCenter
+--
+.Passos
 . No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
-. Selecione o plano de replicação.
-. À direita, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] e selecione *Fail back*.
-. Insira o nome do plano de replicação para iniciar o failback.
-. Escolha o snapshot do armazenamento de dados do qual deseja recuperar. O padrão é o mais recente.
-. Para monitorar o progresso da tarefa, selecione *Monitoramento de tarefas* no menu Recuperação de desastres.
+. No menu suspenso, defina o filtro para *vCenter* planos de replicação.
++
+image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
 
+. Identifique o plano de replicação para o qual deseja reverter. Selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"], passe o cursor sobre *Recuperar* e selecione *Reverter*.
+. Escolha o snapshot do datastore a partir do qual deseja recuperar. Selecione *Take snapshot now* para iniciar um novo snapshot ou *Select* para escolher entre os snapshots disponíveis.
++
+image:failback.png["Captura de tela da caixa de diálogo de failback"]
+
+. Digite "Failback" para confirmar a operação e selecione *Failback*.
+
+
+Para monitorar o progresso da tarefa, selecione *Monitoramento de tarefas* no menu Recuperação de desastres.
+
+--
+.Kubernetes
+--
+. No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
+. No menu suspenso, filtre para planos de replicação do *Kubernetes*.
++
+image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
+
+. Identifique o plano de replicação para o qual deseja reverter. Selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"], passe o cursor sobre *Recuperar* e selecione *Reverter*.
+. Escolha o snapshot do datastore a partir do qual deseja recuperar. Selecione *Criar snapshot agora* para iniciar um novo snapshot ou *Usar o snapshot mais recente* para usar o snapshot mais recente e bem-sucedido.
+. Digite "Failback" para confirmar a operação e selecione *Failback*.
+
+
+Para monitorar o progresso da tarefa, selecione *Monitoramento de tarefas* no menu Recuperação de desastres.
+
+--
+====

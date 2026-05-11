@@ -34,13 +34,13 @@ Este procedimento interrompe o relacionamento de replicação, coloca as VMs de 
 
 == Teste o processo de failover
 
-Antes de iniciar o failover, você pode testar o processo.  O teste não coloca as máquinas virtuais offline.
+Antes de iniciar o failover, você pode testar o processo. O teste não coloca as VMs offline.
 
-Durante um teste de failover, o Disaster Recovery cria máquinas virtuais temporárias. O Disaster Recovery mapeia um datastore temporário que faz backup do volume FlexClone para os hosts ESXi.
+Durante um teste de failover, o Disaster Recovery cria VMs temporariamente. O Disaster Recovery mapeia um datastore temporário que oferece suporte ao volume FlexClone para os hosts ESXi.
 
 Esse processo não consome capacidade física adicional no armazenamento ONTAP local ou no FSx para armazenamento NetApp ONTAP na AWS. O volume de origem original não é modificado e as tarefas de replicação podem continuar mesmo durante a recuperação de desastres.
 
-Quando terminar o teste, você deve redefinir as máquinas virtuais com a opção *Limpar teste*.  Embora isso seja recomendado, não é obrigatório.
+Ao concluir o teste, você deve reiniciar as VMs com a opção *Limpar teste*. Embora isso seja recomendado, não é obrigatório.
 
 Uma operação de failover de teste _não_ afeta as cargas de trabalho de produção, o relacionamento SnapMirror usado no site de teste e as cargas de trabalho protegidas que devem continuar operando normalmente.
 
@@ -49,8 +49,8 @@ Para um failover de teste, o Disaster Recovery executa as seguintes operações:
 * Execute pré-verificações no cluster de destino e no relacionamento do SnapMirror .
 * Crie um novo volume FlexClone a partir do snapshot selecionado para cada volume ONTAP protegido no cluster ONTAP do site de destino.
 * Se algum armazenamento de dados for VMFS, crie e mapeie um iGroup para cada LUN.
-* Registre as máquinas virtuais de destino no vCenter como novos armazenamentos de dados.
-* Ligue as máquinas virtuais de destino com base na ordem de inicialização capturada na página Grupos de recursos.
+* Registre as VMs de destino no vCenter como novos datastores.
+* Ligue as VMs de destino com base na ordem de inicialização registrada na página Resource groups.
 * Desative todos os aplicativos de banco de dados suportados em VMs indicadas como "consistentes com o aplicativo".
 * Se os clusters vCenter e ONTAP de origem ainda estiverem ativos, crie um relacionamento SnapMirror de direção reversa para replicar quaisquer alterações durante o estado de failover de volta ao site de origem original.
 
@@ -88,25 +88,32 @@ O processo de failover envolve as seguintes operações:
 
 * O Disaster Recovery executa pré-verificações no cluster de destino e no relacionamento do SnapMirror .
 * Se você selecionou o snapshot mais recente, a atualização do SnapMirror será executada para replicar as últimas alterações.
-* As máquinas virtuais de origem são desligadas.
-* O relacionamento SnapMirror é quebrado e o volume de destino é tornado leitura/gravação.
+* As máquinas virtuais de origem foram desligadas.
+* A relação do SnapMirror é quebrada e o volume de destino passa a ser leitura/gravação.
 * Com base na seleção do instantâneo, o sistema de arquivos ativo é restaurado para o instantâneo especificado (mais recente ou selecionado).
 * Os armazenamentos de dados são criados e montados no cluster ou host VMware ou VMC com base nas informações capturadas no plano de replicação.  Se algum armazenamento de dados for VMFS, crie e mapeie um iGroup para cada LUN.
-* As máquinas virtuais de destino são registradas no vCenter como novos armazenamentos de dados.
-* As máquinas virtuais de destino são ligadas com base na ordem de inicialização capturada na página Grupos de recursos.
+* As VMs de destino são registradas no vCenter como novos datastores.
+* As máquinas virtuais de destino são ligadas com base na ordem de inicialização registrada na página Resource groups.
 * Se o vCenter de origem ainda estiver ativo, desligue todas as VMs do lado de origem que estão sofrendo failover.
 * Desative todos os aplicativos de banco de dados suportados em VMs indicadas como "consistentes com o aplicativo".
 * Se os clusters vCenter e ONTAP de origem ainda estiverem ativos, crie um relacionamento SnapMirror de direção reversa para replicar quaisquer alterações durante o estado de failover de volta para o site de origem original.  O relacionamento do SnapMirror é revertido da máquina virtual de destino para a de origem.
 
 
 
-NOTE: Para planos de replicação baseados em armazenamento de dados, se você adicionou e descobriu alguma máquina virtual, mas não forneceu detalhes de mapeamento, essas máquinas virtuais serão incluídas no failover. A operação de failover falhará e uma notificação será exibida nos trabalhos. Você precisa fornecer os detalhes do mapeamento para concluir o failover com sucesso.
+TIP: Após o início do failover, você poderá visualizar as VMs recuperadas no vCenter do site de recuperação de desastres (VMs, redes e datastores). Por padrão, as VMs são recuperadas para a pasta Workload.
 
-
-TIP: Após o início do failover, você poderá ver as VMs recuperadas no vCenter do site de recuperação de desastres (máquinas virtuais, redes e armazenamentos de dados).  Por padrão, as máquinas virtuais são recuperadas para a pasta Carga de trabalho.
+[role="tabbed-block"]
+====
+.vCenter
+--
+Para planos de replicação baseados em armazenamento de dados, se você adicionou e descobriu alguma máquina virtual, mas não forneceu detalhes de mapeamento, essas máquinas virtuais serão incluídas no failover. A operação de failover falhará e uma notificação será exibida nos trabalhos. Você precisa fornecer os detalhes do mapeamento para concluir o failover com sucesso.
 
 .Passos
 . No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
+. No menu suspenso, filtre para os planos de replicação *vCenter*.
++
+image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
+
 . Selecione o plano de replicação.
 . À direita, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"], passe o cursor sobre *Recuperar* e selecione *Fail over*.
 +
@@ -116,8 +123,8 @@ image:dr-plan-failover3.png["Página de failover"]
 +
 Um instantâneo da origem atual será tirado e replicado para o destino atual antes que o failover ocorra.
 
-. Opcionalmente, selecione *Forçar failover* se quiser que o failover ocorra mesmo se for detectado um erro que normalmente impediria a ocorrência do failover.
-. Opcionalmente, selecione *Ignorar proteção* se desejar que o serviço não crie automaticamente um relacionamento de proteção reversa do SnapMirror após um failover do plano de replicação.  Isso é útil se você quiser executar operações adicionais no site restaurado antes de colocá-lo novamente online no NetApp Disaster Recovery.
+. Selecione *Forçar failover* se desejar que o failover ocorra mesmo se for detectado um erro que normalmente impediria o failover de ocorrer.
+. Selecione *Ignorar proteção* se desejar que o serviço não crie automaticamente uma relação de proteção reversa do SnapMirror após uma falha no plano de replicação. Isso é útil se você quiser executar operações adicionais no site restaurado antes de colocá-lo online novamente dentro do NetApp Disaster Recovery.
 +
 
 TIP: Você pode estabelecer proteção reversa selecionando *Proteger recursos* no menu Ações do plano de replicação.  Isso tenta criar um relacionamento de replicação reversa para cada volume no plano.  Você pode executar esta tarefa repetidamente até que a proteção seja restaurada.  Quando a proteção for restaurada, você poderá iniciar um failback da maneira usual.
@@ -126,3 +133,22 @@ TIP: Você pode estabelecer proteção reversa selecionando *Proteger recursos* 
 . Selecione *Fail over*.
 . Para verificar o progresso, no menu, selecione *Monitoramento de tarefas*.
 
+
+--
+.Kubernetes
+--
+. No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
+. No menu suspenso, filtre para planos de replicação do *Kubernetes*.
++
+image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
+
+. Selecione o plano de replicação.
+. À direita, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"], passe o cursor sobre *Recuperar* e selecione *Fail over*.
+. Escolha a cópia do snapshot que deseja usar para o failover. Você pode *Criar snapshot agora* para criar um snapshot totalmente novo que será copiado para o cluster de destino ou *Usar o snapshot mais recente* para usar o snapshot mais recente disponível no cluster de destino.
+. Digite "Failover" para confirmar a ação e selecione *Failover*.
+
+
+Você pode monitorar o status da tarefa em *Monitoramento de tarefas* ou *Planos de replicação*.
+
+--
+====

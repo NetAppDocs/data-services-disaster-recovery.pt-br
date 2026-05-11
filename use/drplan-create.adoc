@@ -12,7 +12,7 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 
 [role="lead"]
-Depois de adicionar os sites do vCenter, você estará pronto para criar um plano de recuperação de desastres ou de replicação. Os planos de replicação gerenciam a proteção de dados da infraestrutura VMware. Selecione os vCenters de origem e destino, escolha os grupos de recursos e agrupe como os aplicativos devem ser restaurados e ligados. Por exemplo, você pode agrupar máquinas virtuais (VMs) associadas a um aplicativo ou pode agrupar aplicativos que tenham camadas semelhantes. Esses planos são às vezes chamados de _projetos_.
+Depois de adicionar recursos e sites, você estará pronto para criar um _plano de replicação_. Os planos de replicação gerenciam a proteção de dados. A criação da replicação envolve designar os sites de origem e destino, selecionar os grupos de recursos e escolher como os aplicativos devem ser restaurados e ligados. Por exemplo, você pode agrupar máquinas virtuais (VMs) associadas a um aplicativo ou pode agrupar aplicativos que tenham níveis semelhantes.
 
 *Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
@@ -24,7 +24,7 @@ Você pode criar um plano de replicação e também editar cronogramas para conf
 
 Você pode proteger várias VMs em vários armazenamentos de dados.  O NetApp Disaster Recovery cria grupos de consistência ONTAP para todos os volumes ONTAP que hospedam armazenamentos de dados de VM protegidos.
 
-As VMs podem ser protegidas somente se o plano de replicação estiver em um dos seguintes estados:
+Você só pode ativar a proteção se o plano de replicação estiver em um dos seguintes estados:
 
 * Preparar
 * Failback confirmado
@@ -57,7 +57,7 @@ O serviço executa verificações de simetria de instantâneos a cada 24 horas.
 
 
 
-TIP: Organize suas máquinas virtuais antes de implantar o NetApp Disaster Recovery para minimizar a "proliferação descontrolada de datastores". Coloque as VMs que precisam de proteção em um subconjunto de armazenamentos de dados e coloque as VMs que não serão protegidas em um subconjunto diferente de armazenamentos de dados. Use proteção baseada em armazenamento de dados para garantir que as VMs em qualquer armazenamento de dados estejam protegidas.
+TIP: Organize suas VMs ou clusters Kubernetes antes de implantar NetApp Disaster Recovery para minimizar a proliferação. Coloque os recursos que precisam de proteção em um subconjunto de datastores e os recursos que não serão protegidos em outro subconjunto de datastores. Para organizar os grupos de recursos antes de criar o plano de replicação, consulte link:resource-group.html["Criar um grupo de recursos"].
 
 
 
@@ -66,7 +66,7 @@ TIP: Organize suas máquinas virtuais antes de implantar o NetApp Disaster Recov
 Um assistente guia você por estas etapas:
 
 * Selecione servidores vCenter.
-* Selecione as VMs ou armazenamentos de dados que você deseja replicar e atribua grupos de recursos.
+* Selecione os recursos (VMs, datastore, namespaces) que deseja replicar e atribua grupos de recursos.
 * Mapeie como os recursos do ambiente de origem são mapeados para o destino.
 * Defina a frequência com que o plano é executado, execute um script hospedado pelo convidado, defina a ordem de inicialização e selecione o objetivo do ponto de recuperação.
 * Revise o plano.
@@ -74,9 +74,9 @@ Um assistente guia você por estas etapas:
 
 Ao criar o plano, siga estas diretrizes:
 
-* Use as mesmas credenciais para todas as VMs no plano.
-* Use o mesmo script para todas as VMs no plano.
-* Use a mesma sub-rede, DNS e gateway para todas as VMs no plano.
+* Use as mesmas credenciais para todas as VMs ou clusters Kubernetes no plano.
+* Use o mesmo script para todas as VMs ou clusters Kubernetes no plano.
+* Use a mesma sub-rede, DNS e gateway para todas as VMs ou clusters Kubernetes no plano.
 
 
 
@@ -87,9 +87,15 @@ Primeiro, selecione o vCenter de origem e depois selecione o vCenter de destino.
 
 .Passos
 . Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
-. No menu NetApp Disaster Recovery, selecione *Planos de replicação* e selecione *Adicionar*. Se esta for a primeira vez que você está criando um plano de replicação, no Dashboard, selecione *Adicionar plano de replicação*.
+. No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
+. No menu suspenso, escolha o tipo de recurso para o qual deseja criar um plano de replicação: *Kubernetes* ou *vCenter*.
++
+image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
+
+. Selecione *Adicionar*.
 . Insira um nome para o plano de replicação.
-. Em *Origem vCenter*, selecione o vCenter onde os dados existem no menu suspenso. Em *Destino vCenter*, selecione o vCenter para o qual os dados serão replicados no menu suspenso.
+. Para *Origem*, selecione o vCenter ou cluster Kubernetes a ser designado como origem.
+. Em *Origem vCenter*, selecione o vCenter onde os dados existem no menu suspenso. Em *Destino*, selecione o vCenter ou cluster Kubernetes a ser usado como destino de recuperação de desastres.
 +
 image:dr-plan-create-name2.png["Captura de tela mostrando a página do servidor vCenter"]
 
@@ -107,21 +113,24 @@ TIP: Cada grupo de recursos pode incluir uma ou mais VMs ou armazenamentos de da
 
 Ao criar grupos de recursos, considere as seguintes questões:
 
-* Antes de adicionar armazenamentos de dados a grupos de recursos, inicie primeiro uma descoberta manual ou uma descoberta agendada das VMs.  Isso garante que as VMs sejam descobertas e listadas no grupo de recursos.  Se você não acionar uma descoberta manual, as VMs poderão não ser listadas no grupo de recursos.
-* Certifique-se de que haja pelo menos uma máquina virtual (VM) no armazenamento de dados. Se não houver VMs no armazenamento de dados, o armazenamento de dados não será detectado.
+* Antes de adicionar recursos a grupos de recursos, inicie uma descoberta manual ou uma descoberta agendada primeiro. Isso garante que os recursos sejam descobertos e listados no grupo de recursos.
+* Certifique-se de que haja pelo menos uma máquina virtual (VM) no armazenamento de dados. Se não houver VMs no armazenamento de dados, o armazenamento de dados não será descoberto.
 * Um único armazenamento de dados não deve hospedar VMs protegidas por mais de um plano de replicação.
-* Não hospede VMs protegidas e não protegidas no mesmo datastore. Se VMs protegidas e não protegidas forem hospedadas no mesmo datastore, você poderá encontrar estes problemas:
+* Não hospede recursos protegidos e não protegidos no mesmo datastore. Se recursos protegidos e não protegidos forem hospedados no mesmo datastore, você poderá encontrar estes problemas:
 +
-** A capacidade utilizada desse volume pode contribuir para o cálculo do licenciamento porque o Disaster Recovery usa SnapMirror, o que significa que o sistema replica volumes ONTAP inteiros. Nesse caso, o espaço do volume consumido tanto por VMs protegidas quanto por VMs não protegidas seria incluído nesse cálculo.
-** Se o grupo de recursos e seus armazenamentos de dados associados precisarem ser transferidos para o site de recuperação de desastres, quaisquer VMs desprotegidas (VMs que não fazem parte do grupo de recursos, mas hospedadas no volume ONTAP ) não existirão mais no site de origem a partir do processo de failover, resultando em falha de VMs desprotegidas no site de origem.  Além disso, o NetApp Disaster Recovery não iniciará essas VMs desprotegidas no site do vCenter de failover.
-
-
-* Para ter uma VM protegida, ela deve ser incluída em um grupo de recursos.
+** A capacidade utilizada desse volume pode contribuir para o cálculo do licenciamento porque o Disaster Recovery utiliza SnapMirror, ou seja, o sistema replica volumes ONTAP inteiros. Nesse caso, o espaço do volume consumido por recursos protegidos e não protegidos seria incluído nesse cálculo.
+** Se o grupo de recursos e seus recursos associados precisarem ser transferidos para o site de recuperação de desastres, quaisquer recursos desprotegidos deixarão de existir no site de origem após o processo de failover, resultando na falha das VMs desprotegidas no site de origem. Além disso, NetApp Disaster Recovery não iniciará essas VMs desprotegidas no site de failover vCenter.
 
 
 
-TIP: Crie um conjunto separado e dedicado de mapeamentos para seus testes de failover, a fim de evitar que as VMs sejam conectadas a redes de produção usando os mesmos endereços IP.
 
+
+TIP: Crie um conjunto separado de mapeamentos dedicados para seus testes de failover a fim de evitar que os recursos sejam conectados às redes de produção usando os mesmos endereços IP.
+
+[role="tabbed-block"]
+====
+.vCenter
+--
 .Passos
 . Se você já possui grupos de recursos, selecione **Resource groups**, escolha o grupo de recursos e clique em **Next**.
 +
@@ -143,6 +152,25 @@ image:dr-plan-create-apps-datastores.png["Captura de tela mostrando a página Ad
 . Selecione *Avançar*.
 
 
+--
+.Kubernetes
+--
+Ao criar um plano de replicação para clusters Kubernetes, os namespaces do Kubernetes em um grupo de recursos devem pertencer ao mesmo cluster ONTAP.
+
+.Passos
+. Se você já possui grupos de recursos, selecione os grupos na lista.
++
+Se você não tiver grupos de recursos existentes ou precisar adicionar recursos a um, selecione *+ Criar novo grupo de recursos*. Siga as instruções para link:resource-group.html["Adicionar namespaces a um grupo de recursos"].
+
++
+Ao nomear um grupo de recursos, os únicos caracteres suportados são letras minúsculas e números.
+
+. Na coluna alternativa, revise os grupos de recursos selecionados.
+. Selecione **Próximo**.
+
+
+--
+====
 
 
 === Mapear recursos de origem para o destino
@@ -154,6 +182,10 @@ Se você planeja executar failovers de teste como parte do seu plano de DR, forn
 .Antes de começar
 Se você quiser criar um relacionamento SnapMirror neste serviço, o cluster e seu peering SVM já deverão ter sido configurados fora do NetApp Disaster Recovery.
 
+[role="tabbed-block"]
+====
+.vCenter
+--
 .Passos
 . Na página de mapeamento de recursos, marque a caixa para usar os mesmos mapeamentos tanto para operações de failover quanto para operações de teste.
 +
@@ -168,6 +200,43 @@ image:dr-plan-resource-mapping2.png["Plano de replicação, guia Mapeamento de r
 
 
 
+
+--
+.Kubernetes
+--
+.Passos
+. Escolha os mapeamentos de namespace para cada namespace em cada grupo de recursos. Por padrão, o Disaster Recovery seleciona o destino para ser o mesmo que a origem. Você pode escolher um namespace diferente no cluster de destino.
+. Defina o mapeamento da classe de armazenamento para cada grupo de recursos. A classe de armazenamento deve estar vinculada a uma VM de armazenamento ONTAP emparelhada com o ambiente de origem. A classe de armazenamento padrão do cluster é usada se você não definir uma.
++
+
+TIP: Execute o comando da CLI `kubectl get pvc -n <namespace>` no namespace para visualizar a classe de armazenamento.
+
+. Defina a programação de snapshots:
++
+Escolha o *Horário de início dos Snapshots e da retenção* (data e hora do calendário), a *Frequência de Snapshots e retenção* (com que frequência os snapshots são iniciados) e a *Quantidade de retenção de Snapshots* (quantos snapshots são salvos).
+
++
+Ao definir a frequência de Snapshot, o mínimo permitido é de cinco minutos.
+
+. Selecione *Adicionar AppVault* para criar o AppVault onde os dados de proteção serão salvos.
++
+.. Insira um *Nome* e selecione o *Agente do Console* ao qual o AppVault deve ser conectado.
+.. Selecione o provedor de nuvem para hospedar o *AppVault*.
+.. Com base no provedor selecionado, o Disaster Recovery preenche as assinaturas de cloud configuradas existentes. Escolha a *Subscription*, o *Resource group* e a *Storage account* para o cloud provider.
+.. Selecione **Adicionar**.
+
+
+. Selecione **Próximo**.
+. Analise os mapeamentos de failover e selecione **Add** para criar o plano de replicação.
++
+Após selecionar Adicionar, você poderá monitorar as diferentes tarefas em **Monitoramento de tarefas**.
+
+
+
+--
+====
+
+NOTE: Para o Kubernetes, este é o passo final para criar uma replicação. Para vCenters, continue para o <<Seção de recursos computacionais>>.
 
 
 
@@ -195,6 +264,9 @@ TIP: Se um vCenter tiver um Distributed Resource Scheduler (DRS) configurado par
 ==== Redes virtuais
 
 As VMs usam NICs virtuais conectadas a redes virtuais. No processo de failover, o serviço conecta essas NICs virtuais às redes virtuais definidas no ambiente VMware de destino. Para cada rede virtual de origem usada pelas VMs no grupo de recursos, o serviço requer uma atribuição de rede virtual de destino.
+
+
+NOTE: Esta seção é obrigatória apenas para vCenters. Você não precisa preenchê-la para Kubernetes.
 
 
 NOTE: Você pode atribuir várias redes virtuais de origem à mesma rede virtual de destino.  No entanto, isso pode criar conflitos de configuração de rede IP.  Você pode mapear várias redes de origem para uma única rede de destino para garantir que todas as redes de origem tenham a mesma configuração.
@@ -233,7 +305,7 @@ Você pode aumentar ou diminuir o número de CPUs virtuais atribuídas a cada VM
 
 NOTE: Alterne as configurações avançadas para adicionar as configurações *Scripts* e *Consistência do aplicativo*.
 
-*Configurações de rede* O Disaster Recovery oferece suporte a um amplo conjunto de opções de configuração para redes de VMs.  Pode ser necessário alterá-las se o site de destino tiver redes virtuais que usam configurações TCP/IP diferentes das redes virtuais de produção no site de origem.
+*Configurações de rede* O Disaster Recovery oferece suporte a um amplo conjunto de opções de configuração para redes de máquinas virtuais. Pode ser necessário alterar essas opções se o site de destino tiver redes virtuais que utilizam configurações TCP/IP diferentes das redes virtuais de produção no site de origem.
 
 No nível mais básico (e padrão), as configurações simplesmente usam as mesmas configurações de rede TCP/IP para cada VM no site de destino usadas no site de origem.  Isso requer que você configure as mesmas configurações de TCP/IP nas redes virtuais de origem e destino.
 
@@ -254,7 +326,7 @@ image:dr-plan-vm-subnet-option2.png["Captura de tela mostrando Adicionar plano d
 
 * *Scripts*: Você pode incluir scripts personalizados hospedados no sistema operacional convidado nos formatos .sh, .bat ou .ps1 como pós-processos. Com scripts personalizados, a Recuperação de Desastres pode executar seu script após processos de failover, failback e migração. Por exemplo, você pode usar um script personalizado para retomar todas as transações do banco de dados após a conclusão do failover. O serviço pode executar scripts em máquinas virtuais com Microsoft Windows ou qualquer variante Linux compatível com parâmetros de linha de comando. Você pode atribuir um script a VMs individuais ou a todas as VMs no plano de replicação.
 +
-Para habilitar a execução do script com o sistema operacional convidado da VM, as seguintes condições devem ser atendidas:
+Para habilitar a execução de scripts com o sistema operacional convidado da máquina virtual, as seguintes condições devem ser atendidas:
 
 +
 ** O VMware Tools deve ser instalado na VM.
@@ -277,7 +349,7 @@ Desmarque esta caixa para ignorar a hierarquia de pastas original.
 +
 Você pode usar o método alternativo de definir a pasta da VM de destino na seção Recursos de computação.
 
-* *CPU* e *Memória (GB)*: nas configurações da máquina virtual, você pode opcionalmente redimensionar a CPU e a memória da VM.
+* *CPU* e *Memória (GB)*: nas configurações da máquina virtual, você pode, opcionalmente, redimensionar a CPU e memória.
 +
 
 NOTE: Você pode configurar a DRAM em gigabytes (GiB) ou megabytes (MiB).  Embora cada VM exija pelo menos um MiB de RAM, a quantidade real deve garantir que o sistema operacional convidado da VM e quaisquer aplicativos em execução possam operar com eficiência.

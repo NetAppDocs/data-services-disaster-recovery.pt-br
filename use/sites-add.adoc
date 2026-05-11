@@ -4,7 +4,7 @@ permalink: use/sites-add.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
 summary: Antes de criar um plano de recuperação de desastres, você precisa adicionar um site principal do vCenter e um site de recuperação de desastres do vCenter de destino no NetApp Disaster Recovery. 
 ---
-= Adicionar vCenters a um site no NetApp Disaster Recovery
+= Adicionar locais em NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,10 +12,10 @@ summary: Antes de criar um plano de recuperação de desastres, você precisa ad
 
 
 [role="lead"]
-Antes de criar um plano de recuperação de desastres, você precisa adicionar um servidor vCenter primário a um site e um site de recuperação de desastres do vCenter de destino no NetApp Console.
+Antes de criar um plano de recuperação de desastres, você precisa adicionar sites ao Disaster Recovery. Um site é uma coleção de vCenter servers ou clusters Kubernetes (locais ou na nuvem). Você deve adicionar o site primário ou de produção e o site de recuperação de desastres.
 
 
-TIP: Certifique-se de que os vCenters de origem e de destino usem o mesmo agente do NetApp Console .
+TIP: Certifique-se de que tanto a origem quanto o destino utilizem o mesmo agente do NetApp Console.
 
 Após a adição dos vCenters, o NetApp Disaster Recovery realiza uma descoberta profunda dos ambientes do vCenter, incluindo clusters do vCenter, hosts ESXi, datastores, área de armazenamento, detalhes da máquina virtual, réplicas do SnapMirror e redes de máquinas virtuais.
 
@@ -23,12 +23,33 @@ Após a adição dos vCenters, o NetApp Disaster Recovery realiza uma descoberta
 
 link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
-*Sobre esta tarefa*
+
+
+== Adicionar um site
+
+Ao adicionar um site ao Disaster Recovery, você deve diferenciá-lo com base no tipo de recursos presentes no site. Você pode adicionar vCenters ou clusters Kubernetes.
+
+.Passos
+. Em NetApp Disaster Recovery, selecione **Sites** na barra lateral.
+. No menu suspenso, selecione o tipo de site: **vCenter** ou **Kubernetes**.
++
+image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
+
+. Selecione **Adicionar**.
+. Atribua um **Nome** ao site. Para vCenters, você também deve selecionar uma localização para o site.
+. Selecione **Adicionar**.
+
+
+Após adicionar um site ao NetApp Disaster Recovery, você deve associar recursos a esse site.
+
+
+
+== Adicionar recursos a um site
 
 Se você adicionou vCenters em versões anteriores e deseja personalizar o agendamento de descoberta, edite o site do servidor vCenter e defina o agendamento.
 
 
-TIP: O NetApp Disaster Recovery realiza a descoberta uma vez a cada 24 horas.  Depois de configurar um site, você pode editar o vCenter para personalizar o cronograma de descoberta que atenda às suas necessidades.  Por exemplo, se você tiver um grande número de VMs, poderá definir o agendamento de descoberta para ser executado a cada 23 horas e 59 minutos.  Se você tiver um pequeno número de VMs, poderá definir o agendamento de descoberta para ser executado a cada 12 horas.  O intervalo mínimo é de 30 minutos e o máximo é de 24 horas.
+TIP: NetApp Disaster Recovery realiza a descoberta uma vez a cada 24 horas. Após configurar um site, você pode editar posteriormente o vCenter ou o cluster Kubernetes para personalizar a programação da descoberta conforme suas necessidades. Por exemplo, se você tiver um grande número de VMs, pode configurar a programação da descoberta para ser executada a cada 23 horas e 59 minutos. Se você tiver um número pequeno de VMs, pode configurar a programação da descoberta para ser executada a cada 12 horas. O intervalo mínimo é de 30 minutos e o máximo é de 24 horas.
 
 Primeiro, você deve executar algumas descobertas manuais para obter as informações mais atualizadas sobre seu ambiente.  Depois disso, você pode definir a programação para ser executada automaticamente.
 
@@ -36,16 +57,20 @@ Se você tiver vCenters de versões anteriores e quiser alterar quando a descobe
 
 VMs recém-adicionadas ou excluídas são reconhecidas na próxima descoberta agendada ou durante uma descoberta manual imediata.
 
-As VMs podem ser protegidas somente se o plano de replicação estiver em um dos seguintes estados:
+Os recursos só podem ser protegidos se o plano de replicação estiver em um dos seguintes estados:
 
 * Preparar
 * Failback confirmado
 * Falha de teste confirmada
 
 
+[role="tabbed-block"]
+====
+.vCenter
+--
 *Clusters vCenter em um site* Cada site contém um ou mais vCenters.  Esses vCenters usam um ou mais clusters de armazenamento ONTAP para hospedar armazenamentos de dados NFS ou VMFS.
 
-Um cluster do vCenter pode residir em apenas um site.  Você precisa das seguintes informações para adicionar um cluster vCenter a um site:
+Você precisa das seguintes informações para adicionar um vCenter cluster a um site:
 
 * O endereço IP de gerenciamento do vCenter ou FQDN
 * Credenciais para uma conta do vCenter com os privilégios necessários para executar operações. Verlink:../reference/vcenter-privileges.html["privilégios necessários do vCenter"] para mais informações.
@@ -58,33 +83,24 @@ NOTE: O serviço oferece suporte a certificados de segurança autoassinados ou c
 
 
 .Passos
-. Faça login no https://console.netapp.com/["NetApp Console"^] .
-. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
+. Em NetApp Disaster Recovery, selecione **Sites** na barra lateral.
+. No menu suspenso, defina o filtro para *Kubernetes*.
 +
-Se esta for a sua primeira vez usando NetApp Disaster recovery, você precisa adicionar informações do vCenter. Se você já adicionou informações do vCenter, verá o painel.
+image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
 
+. Escolha o site ao qual deseja adicionar um cluster Kubernetes. Selecione o menu de ações do site e, em seguida, **Adicionar cluster**.
+. Na página Sites, selecione o menu de ações de um site e clique em *Adicionar vCenter*.
+. Verifique se o *Site* está correto. Selecione o *Agente do Console* no menu suspenso.
+. Adicione o endereço IP do vCenter, o número da porta, o nome de usuário do vCenter e a senha do vCenter.
 +
+** Para o Google Cloud VMware Engine, selecione *Projeto*, *Zona*, *Private cloud* e *Subnet* nos menus suspensos.
+** Para a AWS, forneça o *token da API* e o *ID organizacional longo* do VMC.
 
-NOTE: Campos diferentes aparecem dependendo do tipo de site que você está adicionando.
 
-. Se alguns sites do vCenter já existirem e você quiser adicionar mais, no menu, selecione *Sites* e depois selecione *Adicionar*.
-. Na página Sites, selecione o site e selecione *Adicionar vCenter*.
-. *Origem*: Selecione *Descobrir servidores vCenter* para inserir informações sobre o site de origem do vCenter.
-+
-
-TIP: Para adicionar mais sites do vCenter, selecione *Sites* e depois *Adicionar*.
-
-+
-image:vcenter-add.png["Captura de tela de adicionar servidor vCenter"]
-
-+
-** Selecione um site, depois o agente do NetApp Console e forneça as credenciais do vCenter.
-** **Apenas para sites locais:** Para aceitar certificados autoassinados para o vCenter de origem, marque a caixa.
+. Para aceitar certificados autoassinados para a origem vCenter, marque a caixa.
 +
 
 NOTE: Certificados autoassinados não são tão seguros quanto outros certificados.  Se o seu vCenter *NÃO* estiver configurado com certificados de autoridade de certificação (CA), você deve marcar esta caixa; caso contrário, a conexão com o vCenter não funcionará.
-
-
 
 . Selecione *Adicionar*.
 +
@@ -109,8 +125,33 @@ image:sites-list2.png["Captura de tela da página do site"]
 
 
 
-. Para ver o progresso da operação, no menu, selecione *Monitoramento de tarefas*.
 
+
+--
+.Kubernetes
+--
+. Em NetApp Disaster Recovery, selecione **Sites** na barra lateral.
+. No menu suspenso, defina o filtro para *Kubernetes*.
++
+image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
+
+. Escolha o site ao qual deseja adicionar um cluster Kubernetes. Selecione o menu de ações do site e, em seguida, **Adicionar cluster**.
+. Verifique se a opção **Site** está correta. Selecione o **Console agent** apropriado no menu suspenso e, em seguida, atribua um **Cluster name**.
++
+Ao nomear o cluster, você só pode usar letras minúsculas (a-z), números (0-9) e hífens (-). O nome deve começar com uma letra.
+
++
+image:add-kubernetes-cluster.png["Captura de tela das opções de adição de cluster Kubernetes."]
+
+. Se você instalou Trident Protect no cluster ou se o cluster é gerenciado por Backup and Recovery, selecione **Adicionar**.
++
+Se não, xref:../get-started/task-kubernetes-requirements.html[Instalar Trident Protect]
+
+
+
+--
+====
+Após adicionar recursos, selecione *Monitoramento de Tarefas* para acompanhar o progresso.
 
 
 

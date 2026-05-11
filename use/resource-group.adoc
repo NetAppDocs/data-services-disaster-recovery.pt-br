@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/resource-group.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
-summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres.  Depois de adicionar sites do vCenter, você estará pronto para criar um plano de recuperação de desastres ou replicação. 
+summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres. Depois de adicionar os sites do vCenter, você estará pronto para criar um plano de recuperação de desastres ou de replicação. 
 ---
 = Crie um grupo de recursos para organizar VMs no NetApp Disaster Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 
 [role="lead"]
-Depois de adicionar vCenter sites, você pode criar grupos de recursos para agrupar VMs ou datastores como uma única unidade. Os grupos de recursos permitem que você organize um conjunto de VMs dependentes em grupos lógicos que atendam aos seus requisitos. Por exemplo, você pode agrupar VMs associadas a um aplicativo ou pode agrupar aplicativos que tenham níveis semelhantes. Como outro exemplo, os grupos podem conter ordens de inicialização atrasada que podem ser executadas durante a recuperação.
+Depois de adicionar sites de recursos, você pode criar grupos de recursos para agrupar VMs, datastores ou clusters Kubernetes como uma única unidade. Os grupos de recursos permitem que você organize um conjunto de recursos dependentes em grupos lógicos que atendam aos seus requisitos. Por exemplo, você pode agrupar VMs associadas a um aplicativo ou pode agrupar aplicativos que tenham níveis semelhantes. Como outro exemplo, os grupos podem conter ordens de inicialização atrasada que podem ser executadas durante a recuperação.
 
 *Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
@@ -25,14 +25,14 @@ Você pode agrupar VMs em si ou VMs em armazenamentos de dados.
 Você pode criar grupos de recursos usando os seguintes métodos:
 
 * Na opção Grupos de recursos
-* Enquanto você cria um plano de recuperação de desastres ou _replicação_.  Se você tiver muitas VMs hospedadas por um cluster vCenter de origem, pode ser mais fácil criar os grupos de recursos enquanto cria o plano de replicação.  Para obter instruções sobre como criar grupos de recursos enquanto você cria um plano de replicação, consultelink:drplan-create.html["Crie um plano de replicação"] .
+* Ao criar um plano de recuperação de desastres ou de replicação. Se você tiver muitas VMs hospedadas em um cluster de origem vCenter, pode ser mais fácil criar os grupos de recursos enquanto estiver criando o plano de replicação. Para obter instruções sobre como criar grupos de recursos enquanto estiver criando um plano de replicação, consulte link:drplan-create.html["Crie um plano de replicação"].
 
 
 
-TIP: Cada grupo de recursos pode incluir uma ou mais VMs ou armazenamentos de dados.  As VMs serão ligadas com base na sequência em que você as incluir no plano de replicação.  Você pode alterar a ordem arrastando as VMs ou os armazenamentos de dados para cima ou para baixo na lista de grupos de recursos.
+TIP: Cada grupo de recursos pode incluir uma ou mais VMs, datastore ou cluster Kubernetes. As VMs serão ligadas de acordo com a sequência em que você as incluir no plano de replicação. Você pode alterar a ordem arrastando as VMs ou datastores para cima ou para baixo na lista do grupo de recursos.
 
 .Sobre grupos de recursos
-Os grupos de recursos permitem combinar VMs ou datastores em uma única unidade.
+Os grupos de recursos permitem combinar máquinas virtuais, datastores ou aplicações Kubernetes em uma única unidade.
 
 Por exemplo, um aplicativo de ponto de venda pode usar várias VMs para bancos de dados, lógica de negócios e vitrines.  Você pode gerenciar todas essas VMs com um grupo de recursos.  Configure grupos de recursos para aplicar regras de plano de replicação para ordem de inicialização de VM, conexão de rede e recuperação de todas as VMs necessárias para o aplicativo.
 
@@ -55,7 +55,7 @@ Se as VMs no grupo de recursos estiverem hospedadas em diferentes armazenamentos
 
 
 | Vários armazenamentos de dados - volumes FlexVol em *vários SVMs*  a| 
-* API ONTAP : `cg_start` .  Silencia todos os volumes para que instantâneos possam ser tirados e inicia instantâneos com escopo de volume de todos os volumes do grupo de recursos.
+* API do ONTAP: `cg_start`. Suspende todos os volumes para que os snapshots possam ser criados e inicia snapshots com escopo de volume de todos os volumes do grupo de recursos.
 * API ONTAP : `cg_end` .  Retoma a E/S em todos os volumes e habilita a replicação do SnapMirror no escopo do volume após os snapshots serem tirados.
 
 
@@ -74,11 +74,18 @@ Ao criar grupos de recursos, considere as seguintes questões:
 * Para ter uma VM protegida, ela deve ser incluída em um grupo de recursos.
 
 
-*PRÁTICA RECOMENDADA*: Organize suas VMs antes de implantar o NetApp Disaster Recovery para minimizar a "dispersão do armazenamento de dados".  Coloque as VMs que precisam de proteção em um subconjunto de armazenamentos de dados e coloque as VMs que não serão protegidas em um subconjunto diferente de armazenamentos de dados.  Certifique-se de que as VMs em qualquer armazenamento de dados não estejam protegidas por diferentes planos de replicação.
+*MELHOR PRÁTICA*: Organize suas VMs antes de implantar NetApp Disaster Recovery para minimizar a proliferação de datastores. Coloque as VMs que precisam de proteção em um subconjunto de datastores e as VMs que não serão protegidas em outro subconjunto de datastores. Certifique-se de que as VMs em um determinado datastore não estejam protegidas por planos de replicação diferentes.
 
+[role="tabbed-block"]
+====
+.vCenters
+--
 .Passos
-. Faça login no https://console.netapp.com/["NetApp Console"^] .
-. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
+. Em Disaster Recovery, selecione **Grupos de recursos** na barra lateral.
+. No menu suspenso, filtre por *vCenter* grupos de recursos.
++
+image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
+
 . No menu NetApp Disaster Recovery , selecione *Grupos de recursos*.
 . Selecione *Adicionar*.
 . Insira um nome para o grupo de recursos.
@@ -95,3 +102,26 @@ image:dr-resource-groups-datastores-add.png["Captura de tela mostrando a página
 . Opcionalmente, altere a ordem das VMs à direita arrastando cada VM para cima ou para baixo na lista.  As VMs serão ligadas com base na sequência em que você as incluir.
 . Selecione *Adicionar*.
 
+
+--
+.Kubernetes
+--
+.Passos
+. Em Disaster Recovery, selecione **Grupos de recursos** na barra lateral.
+. No menu suspenso, filtre por sites *Kubernetes*.
++
+image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
+
+. Selecione *Adicionar*.
+. Insira um **Nome** para o grupo de recursos e selecione o **Cluster** do Kubernetes no menu suspenso.
+. Selecione os *Namespaces* a serem adicionados ao grupo de recursos.
+. Opcionalmente, inclua quaisquer *seletores de rótulo*.
++
+image:kubernetes-resource-group.png["Adicionar um grupo de recursos do Kubernetes"]
+
+. Opcionalmente, selecione *+ Recursos com escopo de cluster* para adicionar recursos que não estão vinculados a um namespace. Se escolher esta opção, selecione o *Grupo*, *Versão*, *Tipo* e, opcionalmente, adicione quaisquer seletores de rótulo. Selecione **Adicionar recurso**.
+. Selecione **Adicionar**.
+
+
+--
+====

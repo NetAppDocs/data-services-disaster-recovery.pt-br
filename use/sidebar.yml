@@ -6,7 +6,7 @@ entries:
   url: "/use/use-overview.html"
 - title: Veja a integridade dos seus planos de recuperação de desastres no Painel
   url: "/use/dashboard-view.html"
-- title: Adicionar vCenters a um site
+- title: Adicionar recursos a um site
   url: "/use/sites-add.html"
 - title: Criar um grupo de recursos
   url: "/use/resource-group.html"
