@@ -2219,7 +2219,6 @@
   <block id="ec83ded0a983071f5ddfe6288e7832c9" category="list-text"><block ref="ec83ded0a983071f5ddfe6288e7832c9" category="inline-link-macro-rx"></block></block>
   <block id="56b24cdd5dc24570f7e1dd2ee03d39ca" category="paragraph">Para uma visão geral completa da solução NetApp Disaster Recovery, consulte <block ref="ccfb532d2846c6e621e9709f67d9a040" category="inline-link-macro-rx"></block>.</block>
   <block id="264f41f7fda3caccf98196e21418201c" category="summary">NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza os fluxos de trabalho de recuperação de desastres. Com o NetApp Disaster Recovery, você pode replicar suas cargas de trabalho VMware locais que executam armazenamento ONTAP para um data center definido por software em nuvens públicas como um site de recuperação de desastres usando NetApp storage de nuvem.</block>
-  <block id="e26c1e1448bd5f685a679ff49e20338a" category="section-title">15 de maio de 2026</block>
   <block id="12af18005a606ba97f9e606aa2b596b8" category="paragraph">Versão 4.3.3</block>
   <block id="1c42a04ac798111ed2c9388b25e2c237" category="paragraph">Depois de adicionar recursos e sites, você estará pronto para criar um _plano de replicação_. Os planos de replicação gerenciam a proteção de dados. A criação da replicação envolve designar os sites de origem e destino, selecionar os grupos de recursos e escolher como os aplicativos devem ser restaurados e ligados. Por exemplo, você pode agrupar máquinas virtuais (VMs) associadas a um aplicativo ou pode agrupar aplicativos que tenham níveis semelhantes.</block>
   <block id="e6301bcb4d20444817b4b66020da65f2" category="paragraph">Você só pode ativar a proteção se o plano de replicação estiver em um dos seguintes estados:</block>
@@ -2351,4 +2350,5 @@
   <block id="a79ae1fa6b9efc331842efa8d96937c5" category="sidebar">Pré-requisitos do VMware</block>
   <block id="ffc29f7e69eb606c4fc0ff797755e240" category="sidebar">Pré-requisitos do Kubernetes</block>
   <block id="e5d56575e494e873c5ded63467d12e44" category="paragraph">O suporte para cargas de trabalho baseadas em Kubernetes está atualmente em versão prévia. Para começar a proteger cargas de trabalho baseadas em Kubernetes, consulte <block ref="d1415fee440f8c1c4acbcf4ee7535778" category="inline-link-macro-rx"></block>.</block>
+  <block id="9b70df306d1f1719fd9d70e02911394c" category="section-title">11 de maio de 2026</block>
 </blocks>
