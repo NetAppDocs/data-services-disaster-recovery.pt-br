@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/resource-group.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
-summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres. Depois de adicionar os sites do vCenter, você estará pronto para criar um plano de recuperação de desastres ou de replicação. 
+summary: Os grupos de recursos permitem que você organize um conjunto de recursos dependentes em grupos lógicos que atendam aos seus requisitos. 
 ---
 = Crie um grupo de recursos para organizar VMs no NetApp Disaster Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 
 [role="lead"]
-Depois de adicionar sites de recursos, você pode criar grupos de recursos para agrupar VMs, datastores ou clusters Kubernetes como uma única unidade. Os grupos de recursos permitem que você organize um conjunto de recursos dependentes em grupos lógicos que atendam aos seus requisitos. Por exemplo, você pode agrupar VMs associadas a um aplicativo ou pode agrupar aplicativos que tenham níveis semelhantes. Como outro exemplo, os grupos podem conter ordens de inicialização atrasada que podem ser executadas durante a recuperação.
+Depois de adicionar recursos aos sites, você pode criar grupos de recursos para organizar VMs, datastores ou clusters Kubernetes como uma única unidade. Os grupos de recursos permitem organizar um conjunto de recursos dependentes em grupos lógicos que atendam às suas necessidades. Por exemplo, você pode agrupar VMs associadas a um aplicativo ou aplicativos que tenham tiers semelhantes. Como outro exemplo, os grupos podem conter ordens de inicialização atrasadas que podem ser executadas durante a recuperação.
 
 *Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
@@ -25,7 +25,7 @@ Você pode agrupar VMs em si ou VMs em armazenamentos de dados.
 Você pode criar grupos de recursos usando os seguintes métodos:
 
 * Na opção Grupos de recursos
-* Ao criar um plano de recuperação de desastres ou de replicação. Se você tiver muitas VMs hospedadas em um cluster de origem vCenter, pode ser mais fácil criar os grupos de recursos enquanto estiver criando o plano de replicação. Para obter instruções sobre como criar grupos de recursos enquanto estiver criando um plano de replicação, consulte link:drplan-create.html["Crie um plano de replicação"].
+* Ao criar um plano de recuperação de desastres ou de replicação. Se você tiver muitas VMs hospedadas em um cluster vCenter de origem, pode ser mais fácil criar os grupos de recursos enquanto estiver criando o plano de replicação. Para obter instruções sobre como criar grupos de recursos enquanto estiver criando um plano de replicação, consulte link:drplan-create.html["Crie um plano de replicação"].
 
 
 
@@ -82,7 +82,7 @@ Ao criar grupos de recursos, considere as seguintes questões:
 --
 .Passos
 . Em Disaster Recovery, selecione **Grupos de recursos** na barra lateral.
-. No menu suspenso, filtre por *vCenter* grupos de recursos.
+. No menu suspenso, filtre por *VMware*.
 +
 image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
 
@@ -108,18 +108,22 @@ image:dr-resource-groups-datastores-add.png["Captura de tela mostrando a página
 --
 .Passos
 . Em Disaster Recovery, selecione **Grupos de recursos** na barra lateral.
-. No menu suspenso, filtre por sites *Kubernetes*.
+. No menu suspenso, filtre por *Kubernetes*.
 +
 image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
 
 . Selecione *Adicionar*.
 . Insira um **Nome** para o grupo de recursos e selecione o **Cluster** do Kubernetes no menu suspenso.
 . Selecione os *Namespaces* a serem adicionados ao grupo de recursos.
+. Classifique os *Tipos de recursos*. Por padrão, a seleção é "Inclui todos", que indica vários tipos de recursos.
 . Opcionalmente, inclua quaisquer *seletores de rótulo*.
 +
-image:kubernetes-resource-group.png["Adicionar um grupo de recursos do Kubernetes"]
+image:kubernetes-resource-group.png["Captura de tela da adição de um grupo de recursos do Kubernetes"]
 
 . Opcionalmente, selecione *+ Recursos com escopo de cluster* para adicionar recursos que não estão vinculados a um namespace. Se escolher esta opção, selecione o *Grupo*, *Versão*, *Tipo* e, opcionalmente, adicione quaisquer seletores de rótulo. Selecione **Adicionar recurso**.
++
+image:kubernetes-cluster-scoped.png["Captura de tela da adição de recursos do Kubernetes com escopo de cluster"]
+
 . Selecione **Adicionar**.
 
 

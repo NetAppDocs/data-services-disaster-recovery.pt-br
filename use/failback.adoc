@@ -48,7 +48,7 @@ Se você estiver usando proteção baseada em armazenamento de dados, as VMs que
 --
 .Passos
 . No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
-. No menu suspenso, defina o filtro para *vCenter* planos de replicação.
+. No menu suspenso, defina o filtro para *VMware*.
 +
 image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
 
@@ -71,7 +71,7 @@ Para monitorar o progresso da tarefa, selecione *Monitoramento de tarefas* no me
 image::site-type-toggle.png[Captura de tela da opção de alternância do tipo de site]
 
 . Identifique o plano de replicação para o qual deseja reverter. Selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"], passe o cursor sobre *Recuperar* e selecione *Reverter*.
-. Escolha o snapshot do datastore a partir do qual deseja recuperar. Selecione *Criar snapshot agora* para iniciar um novo snapshot ou *Usar o snapshot mais recente* para usar o snapshot mais recente e bem-sucedido.
+. Escolha o snapshot do cluster a partir do qual deseja realizar a recuperação. Selecione *Criar snapshot agora* para iniciar um novo snapshot ou *Usar o snapshot mais recente* para usar o snapshot mais recente e bem-sucedido.
 . Digite "Failback" para confirmar a operação e selecione *Failback*.
 
 

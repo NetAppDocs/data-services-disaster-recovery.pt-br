@@ -12,7 +12,7 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 
 [role="lead"]
-Depois de adicionar recursos e sites, você estará pronto para criar um _plano de replicação_. Os planos de replicação gerenciam a proteção de dados. A criação da replicação envolve designar os sites de origem e destino, selecionar os grupos de recursos e escolher como os aplicativos devem ser restaurados e ligados. Por exemplo, você pode agrupar máquinas virtuais (VMs) associadas a um aplicativo ou pode agrupar aplicativos que tenham níveis semelhantes.
+Depois de adicionar recursos e sites, você estará pronto para criar um . Os planos de replicação gerenciam a proteção de dados. A criação da replicação envolve designar os sites de origem e destino, selecionar os grupos de recursos e escolher como os aplicativos devem ser restaurados e ligados. Por exemplo, você pode agrupar máquinas virtuais (VMs) associadas a um aplicativo ou pode agrupar aplicativos que tenham níveis semelhantes.
 
 *Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
 
@@ -57,7 +57,7 @@ O serviço executa verificações de simetria de instantâneos a cada 24 horas.
 
 
 
-TIP: Organize suas VMs ou clusters Kubernetes antes de implantar NetApp Disaster Recovery para minimizar a proliferação. Coloque os recursos que precisam de proteção em um subconjunto de datastores e os recursos que não serão protegidos em outro subconjunto de datastores. Para organizar os grupos de recursos antes de criar o plano de replicação, consulte link:resource-group.html["Criar um grupo de recursos"].
+TIP: Organize suas VMs ou clusters Kubernetes antes de implantar NetApp Disaster Recovery para minimizar a dispersão. Coloque os recursos que precisam de proteção em um subconjunto de datastores e os recursos que não serão protegidos em outro subconjunto de datastores. Para organizar os grupos de recursos antes de criar o plano de replicação, consulte link:resource-group.html["Criar um grupo de recursos"].
 
 
 
@@ -94,7 +94,7 @@ image::site-type-toggle.png[Captura de tela da opção de alternância do tipo d
 
 . Selecione *Adicionar*.
 . Insira um nome para o plano de replicação.
-. Para *Origem*, selecione o vCenter ou cluster Kubernetes a ser designado como origem.
+. Para *Origem*, selecione o vCenter ou o cluster Kubernetes para designar como origem.
 . Em *Origem vCenter*, selecione o vCenter onde os dados existem no menu suspenso. Em *Destino*, selecione o vCenter ou cluster Kubernetes a ser usado como destino de recuperação de desastres.
 +
 image:dr-plan-create-name2.png["Captura de tela mostrando a página do servidor vCenter"]
@@ -106,10 +106,7 @@ image:dr-plan-create-name2.png["Captura de tela mostrando a página do servidor 
 
 === Selecione aplicativos para replicar e atribuir grupos de recursos
 
-A próxima etapa é agrupar as VMs ou armazenamentos de dados necessários em grupos de recursos funcionais.  Grupos de recursos permitem que você proteja um conjunto de VMs ou armazenamentos de dados com um snapshot comum.
-
-
-TIP: Cada grupo de recursos pode incluir uma ou mais VMs ou armazenamentos de dados.
+O próximo passo é agrupar as VMs, datastores ou clusters Kubernetes necessários em grupos de recursos funcionais. Os grupos de recursos permitem proteger um conjunto de recursos, como um cluster Kubernetes ou uma VM, com um snapshot comum.
 
 Ao criar grupos de recursos, considere as seguintes questões:
 
@@ -119,7 +116,7 @@ Ao criar grupos de recursos, considere as seguintes questões:
 * Não hospede recursos protegidos e não protegidos no mesmo datastore. Se recursos protegidos e não protegidos forem hospedados no mesmo datastore, você poderá encontrar estes problemas:
 +
 ** A capacidade utilizada desse volume pode contribuir para o cálculo do licenciamento porque o Disaster Recovery utiliza SnapMirror, ou seja, o sistema replica volumes ONTAP inteiros. Nesse caso, o espaço do volume consumido por recursos protegidos e não protegidos seria incluído nesse cálculo.
-** Se o grupo de recursos e seus recursos associados precisarem ser transferidos para o site de recuperação de desastres, quaisquer recursos desprotegidos deixarão de existir no site de origem após o processo de failover, resultando na falha das VMs desprotegidas no site de origem. Além disso, NetApp Disaster Recovery não iniciará essas VMs desprotegidas no site de failover vCenter.
+** Caso o grupo de recursos e seus recursos associados precisem ser transferidos para o site de recuperação de desastres, quaisquer recursos desprotegidos deixarão de existir no site de origem após o processo de failover, resultando na falha desses recursos no site de origem. Além disso, NetApp Disaster Recovery não iniciará esses recursos desprotegidos no site de failover.
 
 
 
@@ -158,7 +155,7 @@ image:dr-plan-create-apps-datastores.png["Captura de tela mostrando a página Ad
 Ao criar um plano de replicação para clusters Kubernetes, os namespaces do Kubernetes em um grupo de recursos devem pertencer ao mesmo cluster ONTAP.
 
 .Passos
-. Se você já possui grupos de recursos, selecione os grupos na lista.
+. Se você já possui grupos de recursos, selecione-os na lista.
 +
 Se você não tiver grupos de recursos existentes ou precisar adicionar recursos a um, selecione *+ Criar novo grupo de recursos*. Siga as instruções para link:resource-group.html["Adicionar namespaces a um grupo de recursos"].
 
@@ -224,6 +221,9 @@ Ao definir a frequência de Snapshot, o mínimo permitido é de cinco minutos.
 .. Selecione o provedor de nuvem para hospedar o *AppVault*.
 .. Com base no provedor selecionado, o Disaster Recovery preenche as assinaturas de cloud configuradas existentes. Escolha a *Subscription*, o *Resource group* e a *Storage account* para o cloud provider.
 .. Selecione **Adicionar**.
++
+image:kubernetes-mapping.png["Captura de tela do mapeamento de classes de armazenamento para Kubernetes"]
+
 
 
 . Selecione **Próximo**.

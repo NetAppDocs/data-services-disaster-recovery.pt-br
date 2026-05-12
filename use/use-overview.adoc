@@ -20,7 +20,7 @@ Usando o NetApp Disaster Recovery, você pode atingir os seguintes objetivos:
 * link:../use/drplan-create.html["Crie um plano de recuperação de desastres"]
 * link:../use/replicate.html["Replicar aplicativos VMware"] do seu site principal para um local remoto de recuperação de desastres na nuvem usando a replicação SnapMirror
 * link:../use/migrate.html["Migrar aplicativos"] no seu site principal para outro site
-* link:../use/failover.html["Teste o fail over"]sem interromper recursos
+* link:../use/failover.html["Teste o fail over"]sem interromper os recursos
 * Em caso de desastre, link:../use/failover.html["falha no seu site principal"]
 * Após a resolução do desastre, link:../use/failback.html["falha de retorno"] do local de recuperação de desastres para o local principal
 * link:../use/monitor-jobs.html["Monitorar operações de recuperação de desastres"] na página de Monitoramento de Tarefas
