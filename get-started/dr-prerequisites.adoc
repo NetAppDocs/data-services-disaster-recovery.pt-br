@@ -140,6 +140,9 @@ Para obter uma lista de privilégios do vCenter necessários, consultelink:../re
 
 
 
+TIP: Para usar a Recuperação de Desastres com Amazon Elastic VMware Service (Exchange Virtual Server), consulte o link:../reference/evs-deploy-guide-config-prereqs.html["Pré-requisitos adicionais e orientações de configuração"^].
+
+
 
 === Crie o agente do NetApp Console
 
