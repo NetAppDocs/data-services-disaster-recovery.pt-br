@@ -45,7 +45,7 @@ Você pode editar o nome do site do vCenter e o tipo de site (local ou AWS).
 
 Você pode criar grupos de recursos por máquinas virtuais ou por datastores.  Eles podem ser adicionados ao criar o plano de replicação ou posteriormente.
 
-*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+*Função de console NetApp necessária* A função de Super admin, Disaster recovery admin ou Disaster recovery application admin é necessária para executar esta tarefa.
 
 Você pode criar um grupo de recursos por armazenamentos de dados das seguintes maneiras:
 
@@ -75,7 +75,7 @@ Para obter detalhes sobre como criar um grupo de recursos, consultelink:resource
 
 Você pode desabilitar, habilitar e excluir planos de replicação.  Você pode alterar horários.
 
-*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+*Função de console NetApp necessária* Superadministrador, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativos de recuperação de desastres.
 
 * Se quiser pausar um plano de replicação temporariamente, você pode desativá-lo e habilitá-lo depois.
 * Se você não precisar mais do plano, poderá excluí-lo.
@@ -112,7 +112,7 @@ image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
 A Recuperação de Desastres exclui automaticamente os snapshots na origem a cada 24 horas.  Se você descobrir que os snapshots estão dessincronizados entre a origem e o destino, precisará resolver a discrepância entre os snapshots para garantir a consistência entre os sites.
 
-*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+*Função de console NetApp necessária* Superadministrador, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativos de recuperação de desastres.
 
 .Passos
 . No menu, selecione *Planos de replicação*.
@@ -130,7 +130,7 @@ image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
 Se você excluir um plano de replicação, também poderá excluir os snapshots primários e secundários criados pelo plano.
 
-*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+*Função de console NetApp necessária* Superadministrador, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativos de recuperação de desastres.
 
 .Passos
 . No menu, selecione *Planos de replicação*.
@@ -146,7 +146,7 @@ Se você excluir um plano de replicação, também poderá excluir os snapshots 
 
 Alterar o número de retenções permite aumentar ou diminuir a quantidade de dados armazenados.
 
-*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativo de recuperação de desastres.
+*Função de console NetApp necessária* A função de Super admin, Disaster recovery admin, Disaster recovery failover admin ou Disaster recovery application admin é necessária para executar esta tarefa.
 
 .Passos
 . No menu, selecione *Planos de replicação*.
@@ -165,7 +165,7 @@ image:../use/dr-plan-failover-edit.png["Editar página de mapeamentos de failove
 
 Você pode visualizar informações sobre quantos armazenamentos de dados existem na origem e no destino.
 
-*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres, administrador de aplicativo de recuperação de desastres ou função de visualizador de recuperação de desastres.
+*Função de NetApp Console necessária* Superadministrador, administrador de recuperação de desastres, administrador de failover de recuperação de desastres, administrador de aplicativos de recuperação de desastres ou visualizador de recuperação de desastres.
 
 .Passos
 . No menu, selecione *Painel*.
@@ -180,7 +180,7 @@ Você pode visualizar informações sobre quantos armazenamentos de dados existe
 
 Você pode visualizar informações sobre quantas máquinas virtuais existem na origem e no destino, juntamente com CPU, memória e capacidade disponível.
 
-*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto, administrador de recuperação de desastres, administrador de failover de recuperação de desastres, administrador de aplicativo de recuperação de desastres ou função de visualizador de recuperação de desastres.
+*Função de NetApp Console necessária* Superadministrador, administrador de recuperação de desastres, administrador de failover de recuperação de desastres, administrador de aplicativos de recuperação de desastres ou visualizador de recuperação de desastres.
 
 .Passos
 . No menu, selecione *Painel*.

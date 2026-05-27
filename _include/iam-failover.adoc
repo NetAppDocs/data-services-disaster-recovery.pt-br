@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+*Função de console NetApp necessária* A função de Super admin, Disaster recovery admin ou Disaster recovery failover admin é necessária para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
