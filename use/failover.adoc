@@ -32,7 +32,7 @@ Este procedimento interrompe o relacionamento de replicação, coloca as VMs de 
 
 == Teste o processo de failover
 
-Antes de iniciar o failover, você pode testar o processo. O teste não coloca as VMs offline.
+Antes de realizar um failover em produção, você pode executar um teste para verificar se está tudo pronto. As cargas de trabalho permanecem online durante o processo de teste.
 
 Durante um teste de failover, o Disaster Recovery cria VMs temporariamente. O Disaster Recovery mapeia um datastore temporário que oferece suporte ao volume FlexClone para os hosts ESXi.
 
@@ -59,7 +59,10 @@ Para um failover de teste, o Disaster Recovery executa as seguintes operações:
 . No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
 . Selecione o plano de replicação.
 . À direita, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] e selecione *Testar failover*.
-. Na página Test failover, insira “Test failover” e selecione *Test fail over*.
+. Na página Test failover, escolha o snapshot para o teste de failover: selecione **Take snapshot now** ou **Select** para escolher um snapshot existente. Se você escolher **Select**, escolha o snapshot existente.
++
+Em seguida, digite “Test failover” e selecione *Test fail over*.
+
 . Após a conclusão do teste, limpe o ambiente de teste.
 
 
@@ -105,6 +108,9 @@ TIP: Após o início do failover, você poderá visualizar as VMs recuperadas no
 .vCenter
 --
 Para planos de replicação baseados em armazenamento de dados, se você adicionou e descobriu alguma máquina virtual, mas não forneceu detalhes de mapeamento, essas máquinas virtuais serão incluídas no failover. A operação de failover falhará e uma notificação será exibida nos trabalhos. Você precisa fornecer os detalhes do mapeamento para concluir o failover com sucesso.
+
+
+IMPORTANT: Se o plano de replicação incluir um datastore vazio, você deve primeiro remover o datastore vazio do plano ou usar a opção **Forçar failover**, que ignora os datastores vazios.
 
 .Passos
 . No menu NetApp Disaster Recovery , selecione *Planos de replicação*.

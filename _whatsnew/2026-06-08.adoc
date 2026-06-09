@@ -1,0 +1,61 @@
+= Atualizações do Kubernetes
+:allow-uri-read: 
+
+
+
+
+=== Atualizações do Kubernetes
+
+A Recuperação de Desastres introduziu as seguintes alterações para cargas de trabalho baseadas em Kubernetes:
+
+
+
+==== Teste o suporte a failover para cargas de trabalho do Kubernetes
+
+O recurso de Recuperação de Desastres agora oferece suporte ao teste do processo de failover para cargas de trabalho do Kubernetes. Testar o failover permite validar os planos de recuperação de desastres. Ao concluir o teste, você pode limpar o failover de teste para que o sistema limpe automaticamente os recursos de teste, reduzindo a sobrecarga e garantindo a consistência do seu ambiente.
+
+Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html#test-the-failover-process["Teste o processo de failover"^].
+
+
+
+==== Falhas de teste programadas
+
+Agora você pode automatizar os testes de recuperação de desastres agendando failovers de teste. Você pode definir agendamentos para failovers de teste recorrentes para validar continuamente os planos de recuperação sem intervenção manual, ajudando a manter a confiança nos objetivos de recuperação e a atender aos requisitos de conformidade.
+
+Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html#manage-replication-plans["Gerenciar planos de replicação"^].
+
+
+
+==== Descoberta agendada de cargas de trabalho do Kubernetes
+
+Com a descoberta agendada, você pode controlar a frequência com que o Disaster Recovery verifica novas cargas de trabalho do Kubernetes. Você pode configurar os intervalos de descoberta para alinhar com sua cadência operacional, reduzindo a sobrecarga desnecessária do sistema enquanto garante que novas cargas de trabalho sejam detectadas e protegidas em tempo hábil.
+
+Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html#edit-the-site-and-customize-the-discovery-schedule["Personalize o cronograma de descoberta"^].
+
+
+
+=== Atualizações da VMware
+
+
+
+==== Proteção para datastores vazios
+
+A Recuperação de Desastres agora permite configurar a proteção para armazenamentos de dados que não contêm máquinas virtuais (VMs). Quaisquer VMs adicionadas posteriormente ao armazenamento de dados são detectadas automaticamente pela Recuperação de Desastres, momento em que você precisa fornecer link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html#add-subnet-mapping-for-a-vcenter-site["informações de mapeamento"^].
+
+Ao adicionar um datastore vazio a um plano de proteção, você deve remover o datastore do plano de proteção antes de executar um failover ou executar um failover forçado. Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Failover para um local remoto"^].
+
+
+
+==== Restaurar armazenamentos de dados previamente excluídos para um plano de proteção
+
+Os armazenamentos de dados que antes eram excluídos da proteção agora podem ser reincluídos. Essa melhoria proporciona maior flexibilidade no gerenciamento e na atualização das suas configurações de recuperação de desastres ao longo do tempo.
+
+Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["Gerenciar sites, grupos de recursos e planos de replicação"^].
+
+
+
+==== Failover mais rápido para datastores baseados em VMFS
+
+A Recuperação de Desastres aprimorou o desempenho de failover para datastores baseados em VMFS. As operações de reescaneamento do Host Bus Adapter (HBA) e montagem do datastore agora são executadas em paralelo, reduzindo os tempos gerais de failover e minimizando o tempo de inatividade durante eventos de recuperação.
+
+Para obter mais informações sobre failover, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Fail over com recuperação de desastres"^].

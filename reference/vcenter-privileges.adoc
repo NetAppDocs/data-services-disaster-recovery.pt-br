@@ -30,6 +30,15 @@ A tabela a seguir lista todos os privilégios necessários para que o NetApp Dis
 | Datastore.Rename | Renomear datastore | Permite renomear um datastore. 
 
 
+.2+| Host | Host.Config.AdvancedConfig | Configurações avançadas | Permite definir opções avançadas de configuração do host. 
+
+
+| Host.Config.Storage | Configuração da partição de armazenamento | Permite a verificação de novos dispositivos de armazenamento e o gerenciamento de iSCSI. 
+
+
+| Recurso | Recurso.AtribuirVMAoPool | Pools de recursos | Permite a atribuição de máquinas virtuais a um pool de recursos 
+
+
 .3+| Pasta | Folder.Create | Criar pasta | Permite criar uma nova pasta. 
 
 
@@ -45,7 +54,16 @@ A tabela a seguir lista todos os privilégios necessários para que o NetApp Dis
 | Network.Config | Configurar | Permite configurar uma rede. 
 
 
-.9+| Configuração de máquina virtual | VirtualMachine.Config.AdvancedConfig | Configuração avançada | Permite adicionar ou modificar parâmetros avançados no arquivo de configuração da VM. 
+.12+| Configuração de máquina virtual | VirtualMachine.Config.AdvancedConfig | Configuração avançada | Permite adicionar ou modificar parâmetros avançados no arquivo de configuração da VM. 
+
+
+| VirtualMachine.Config.AddExistingDisk | Adicionar disco existente | Permite adicionar um disco virtual existente a uma máquina virtual. 
+
+
+| VirtualMachine.Config.AddNewDisk | Adicionar novo disco | Permite criar um novo disco virtual para adicionar a uma máquina virtual. 
+
+
+| VirtualMachine.Config.RemoveDisk | Remover disco | Permite a remoção de um dispositivo de disco virtual. 
 
 
 | VirtualMachine.Config.Settings | Alterar configurações | Permite alterar as configurações gerais da máquina virtual. 

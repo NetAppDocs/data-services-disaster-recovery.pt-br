@@ -1254,7 +1254,6 @@
   <block id="0e00f106592672a761fa0dcf1949901f" category="list-text">Desative todos os aplicativos de banco de dados suportados em VMs indicadas como "consistentes com o aplicativo".</block>
   <block id="89b3318439959d14598bf04d917486ea" category="list-text">Se os clusters vCenter e ONTAP de origem ainda estiverem ativos, crie um relacionamento SnapMirror de direção reversa para replicar quaisquer alterações durante o estado de failover de volta ao site de origem original.</block>
   <block id="262b346523c2b98a9b37923882f4fa94" category="list-text">À direita, selecione a opção *Ações*<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> e selecione *Testar failover*.</block>
-  <block id="b5a4a47da1665893dbfd001a41980991" category="list-text">Na página Test failover, insira “Test failover” e selecione *Test fail over*.</block>
   <block id="625033464ccff58d2815930ae362a422" category="list-text">Após a conclusão do teste, limpe o ambiente de teste.</block>
   <block id="302bf3ef5d8e942b185e4b4d03884ff4" category="section-title">Limpe o ambiente de teste após um teste de failover</block>
   <block id="b22e9cc3eebab01136ffe8d3f7e201ca" category="paragraph">Após a conclusão do teste de failover, você deve limpar o ambiente de teste.  Este processo remove as VMs temporárias do local de teste, os FlexClones e os armazenamentos de dados temporários.</block>
@@ -1280,7 +1279,6 @@
   <block id="41629e76e0d378b59baf8095f22e3e66" category="paragraph">As tarefas exigem funções diferentes do NetApp Console .  Para obter detalhes, consulte a seção *Função necessária do NetApp Console * em cada tarefa.</block>
   <block id="0acfc5a5ce6523c8fad77ea0b4d65862" category="section-title">Gerenciar sites do vCenter</block>
   <block id="f6384b4b10f3ca7cfac8402cfb23ef7f" category="paragraph">Você pode editar o nome do site do vCenter e o tipo de site (local ou AWS).</block>
-  <block id="ee96f26f36e356a1f6ec9037ad76ba51" category="paragraph">*Função necessária do NetApp Console * Administrador da organização, administrador de pasta ou projeto ou administrador de recuperação de desastres.</block>
   <block id="d11708747a513e148a12f02e4e603105" category="list-text">No menu, selecione *Sites*.</block>
   <block id="b2209ab446f654c29ab1bfca5d8d2693" category="list-text">Selecione a opção *Ações*<block ref="b571b46a13691830124ae7cdd5a7ca96" category="inline-image-macro-rx" type="image"></block> à direita do nome do vCenter e selecione *Editar*.</block>
   <block id="c4b621211240f640df1e2cfcc6cc5bec" category="list-text">Edite o nome e o local do site do vCenter.</block>
@@ -1342,7 +1340,6 @@
   <block id="a2628e207373ba02728e8a48a677eca6" category="list-text">Para visualizar detalhes de um trabalho específico, selecione essa linha.</block>
   <block id="19a2cef623f0e702dd97e37e1bddd114" category="list-text">Para atualizar as informações, selecione *Atualizar*.</block>
   <block id="24391a0c4e58147fa07febdb32887a1a" category="section-title">Cancelar um trabalho</block>
-  <block id="eead8518396b0c1b849be084fbe4f31a" category="paragraph">Se um trabalho estiver em andamento ou em estado de fila e você não quiser que ele continue, você pode cancelá-lo.  Talvez você queira cancelar um trabalho se ele estiver travado no mesmo estado e você quiser liberar a próxima operação na fila.  Talvez você queira cancelar um trabalho antes que ele expire.</block>
   <block id="860b70267867fe6caf0f4adfd247b3e2" category="list-text">Na barra de navegação esquerda do NetApp Console , selecione *Proteção* &gt; *Recuperação de desastres*.</block>
   <block id="26abc41be60bda806b144bd6ecedad10" category="list-text">Na página Monitor de tarefas, anote o ID da tarefa que você deseja cancelar.</block>
   <block id="49e474835558193a9bed54c7dadf777e" category="paragraph">O trabalho deve estar no estado "Em andamento" ou "Na fila".</block>
@@ -1532,7 +1529,6 @@
   <block id="3c843649a94855e3901bd423ac9ca414" category="paragraph">Se você excluir um plano de replicação, também poderá excluir os snapshots primários e secundários criados pelo plano.</block>
   <block id="75c34b3422e5baaae429a2d21a62a9d8" category="list-text">Selecione se deseja excluir os snapshots primários, os snapshots secundários ou apenas os metadados criados pelo plano.</block>
   <block id="8e15489db6e2853bdefe4e39cf285c3d" category="list-text">Digite "excluir" para confirmar a exclusão.</block>
-  <block id="c1ba23522836b9d395a79f30f4da96b4" category="paragraph">Alterar o número de retenções permite aumentar ou diminuir a quantidade de dados armazenados.</block>
   <block id="506d82cb3cd3b9175af419eb19bc5740" category="list-text">Selecione o plano de replicação e, em seguida, a guia *Mapeamento de failover*. Selecione o ícone de lápis *Editar*.</block>
   <block id="58777a5460ab56ac04a8fc9d5cb1b259" category="list-text">Selecione a seta para baixo na linha *Datastores* para expandi-la.</block>
   <block id="2d3c0c55028659ea4dd39b2fd1ee9a30" category="list-text">Altere o valor da **Contagem de retenção para todos os armazenamentos de dados**.</block>
@@ -2244,7 +2240,6 @@
   <block id="fe2070975262fdb1507084ad02d139e7" category="paragraph"><block ref="fe2070975262fdb1507084ad02d139e7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ec5c6f08ada454e9670285c835649f45" category="list-text">Digite "Failback" para confirmar a operação e selecione *Failback*.</block>
   <block id="2d518d2a0701e8e4560cbcf883ee4f3a" category="list-text">No menu suspenso, filtre para planos de replicação do *Kubernetes*.</block>
-  <block id="cf3a1b459cc4424970f17bd247150364" category="paragraph">Antes de iniciar o failover, você pode testar o processo. O teste não coloca as VMs offline.</block>
   <block id="1125e3b29e278ae1d41547291cfcb9fb" category="paragraph">Durante um teste de failover, o Disaster Recovery cria VMs temporariamente. O Disaster Recovery mapeia um datastore temporário que oferece suporte ao volume FlexClone para os hosts ESXi.</block>
   <block id="1d235eca89fa1ce9ae2c129b3459f24d" category="paragraph">Ao concluir o teste, você deve reiniciar as VMs com a opção *Limpar teste*. Embora isso seja recomendado, não é obrigatório.</block>
   <block id="1ce56da10e5d8a1c98a950af6b3aa8f0" category="list-text">Registre as VMs de destino no vCenter como novos datastores.</block>
@@ -2281,7 +2276,6 @@
   <block id="7abaaec8330e6093848e8ad2b5fc55ad" category="admonition">NetApp Disaster Recovery realiza a descoberta uma vez a cada 24 horas. Após configurar um site, você pode editar posteriormente o vCenter ou o cluster Kubernetes para personalizar a programação da descoberta conforme suas necessidades. Por exemplo, se você tiver um grande número de VMs, pode configurar a programação da descoberta para ser executada a cada 23 horas e 59 minutos. Se você tiver um número pequeno de VMs, pode configurar a programação da descoberta para ser executada a cada 12 horas. O intervalo mínimo é de 30 minutos e o máximo é de 24 horas.</block>
   <block id="3df06dfecbba3cf48d3e0f796002cd30" category="paragraph">Os recursos só podem ser protegidos se o plano de replicação estiver em um dos seguintes estados:</block>
   <block id="3feb9d576508e0f0d5b31b94130afff9" category="paragraph">Você precisa das seguintes informações para adicionar um vCenter cluster a um site:</block>
-  <block id="95a40723328d7973d1b42377e4a9279b" category="list-text">No menu suspenso, defina o filtro para *Kubernetes*.</block>
   <block id="6ec607d90131ba368742b9a99a146722" category="list-text">Escolha o site ao qual deseja adicionar um cluster Kubernetes. Selecione o menu de ações do site e, em seguida, **Adicionar cluster**.</block>
   <block id="7e592170164af97cef86b80a254c840b" category="list-text">Na página Sites, selecione o menu de ações de um site e clique em *Adicionar vCenter*.</block>
   <block id="ff3b9c54386661390d0a394f4a1d50c4" category="list-text">Verifique se o *Site* está correto. Selecione o *Agente do Console* no menu suspenso.</block>
@@ -2356,10 +2350,64 @@
   <block id="78a1d5987eca33284817a9dca555eece" category="paragraph">*Função de console NetApp necessária* A função de Super admin, Disaster recovery admin ou Disaster recovery failover admin é necessária para executar esta tarefa. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
   <block id="6505512d1e3705256403aea56cc17f65" category="paragraph">*Função de console NetApp necessária* A função de Super admin, Disaster recovery admin ou Disaster recovery application admin é necessária para executar esta tarefa. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
   <block id="16f190cf7635b199438ae35b0fe59f2c" category="paragraph">*Função de NetApp Console necessária* É necessário ter a função de Super admin, Disaster recovery admin, Disaster recovery application admin ou Disaster recovery viewer para executar esta tarefa. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
-  <block id="471f9859d1f2a18f91bcac6a9a7a7cdf" category="paragraph">*Função de console NetApp necessária* Superadministrador, administrador de recuperação de desastres, administrador de failover de recuperação de desastres ou administrador de aplicativos de recuperação de desastres.</block>
-  <block id="1f78a1c33aa4c1ac6fb7d77efb19a5f4" category="paragraph">*Função de console NetApp necessária* A função de Super admin, Disaster recovery admin ou Disaster recovery application admin é necessária para executar esta tarefa.</block>
-  <block id="bf857d514ad33034eb60ee79c8a3aa99" category="paragraph">*Função de console NetApp necessária* A função de Super admin, Disaster recovery admin, Disaster recovery failover admin ou Disaster recovery application admin é necessária para executar esta tarefa.</block>
-  <block id="be5c474e990158548482b3a953022881" category="paragraph">*Função de NetApp Console necessária* Superadministrador, administrador de recuperação de desastres, administrador de failover de recuperação de desastres, administrador de aplicativos de recuperação de desastres ou visualizador de recuperação de desastres.</block>
-  <block id="8e745eb6a2225b985f69a165c4ffe3a6" category="paragraph">*Função de console NetApp necessária* Superadministrador, administrador de recuperação de desastres, administrador de aplicativos de recuperação de desastres ou visualizador de recuperação de desastres.</block>
-  <block id="e509f2e4181583fe783409b5fef67c2d" category="paragraph">*Função de NetApp Console necessária* O Super admin ou Disaster recovery admin é necessário para executar esta tarefa. <block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
+  <block id="612649a00367a8c0d47c862b2609f91a" category="paragraph">*Função de console NetApp necessária* A função de Super admin ou Disaster recovery admin é necessária para executar esta tarefa. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
+  <block id="84673f07cefbab42e915cbd959f8f20f" category="paragraph">*Função de console NetApp necessária* A função de Super admin, Disaster recovery admin, Disaster recovery failover admin ou Disaster recovery application admin é necessária para executar esta tarefa. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
+  <block id="f30e78142cdfb38729492098fb4e8de0" category="paragraph">*Função de console NetApp necessária* É necessário ter a função de administrador da organização, administrador de pasta ou projeto ou administrador de recuperação de desastres para executar esta tarefa. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
+  <block id="a986e84430ee60de89573d632903e271" category="paragraph">*Função de console NetApp necessária* É necessário ter a função de Super admin, Disaster recovery admin, Disaster recovery failover admin, Disaster recovery application admin ou Disaster recovery viewer para executar esta tarefa. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
+  <block id="332fe49e1772f15dfec47321d1f86499" category="doc">Atualizações do Kubernetes</block>
+  <block id="c0471f20c72304b23fb6eb762ed470b8" category="paragraph">A Recuperação de Desastres introduziu as seguintes alterações para cargas de trabalho baseadas em Kubernetes:</block>
+  <block id="b1f52bc1b1d4ff2b36103a44b4128f19" category="section-title">Teste o suporte a failover para cargas de trabalho do Kubernetes</block>
+  <block id="7e284075cd571fe0081cd386d1d3493c" category="paragraph">O recurso de Recuperação de Desastres agora oferece suporte ao teste do processo de failover para cargas de trabalho do Kubernetes. Testar o failover permite validar os planos de recuperação de desastres. Ao concluir o teste, você pode limpar o failover de teste para que o sistema limpe automaticamente os recursos de teste, reduzindo a sobrecarga e garantindo a consistência do seu ambiente.</block>
+  <block id="6031837c36096c58788ef48c962f6ff8" category="paragraph">Para obter mais informações, consulte <block ref="a8818044286b10a3ca635d0b39faff78" category="inline-link-macro-rx"></block>.</block>
+  <block id="9be7f1264301a801add3868ed7829904" category="section-title">Falhas de teste programadas</block>
+  <block id="2cb1fc25b0b81893e3832eea3384812d" category="paragraph">Agora você pode automatizar os testes de recuperação de desastres agendando failovers de teste. Você pode definir agendamentos para failovers de teste recorrentes para validar continuamente os planos de recuperação sem intervenção manual, ajudando a manter a confiança nos objetivos de recuperação e a atender aos requisitos de conformidade.</block>
+  <block id="35bd874c9b191a5ec4ef2620bcba1d01" category="paragraph">Para obter mais informações, consulte <block ref="5e1f430868dd2493a6125e8cf919005e" category="inline-link-macro-rx"></block>.</block>
+  <block id="61a19574e3bdebdbc07d7daaaf8f76e1" category="section-title">Descoberta agendada de cargas de trabalho do Kubernetes</block>
+  <block id="d45fce8600e6e092745f48fddf5cd172" category="paragraph">Com a descoberta agendada, você pode controlar a frequência com que o Disaster Recovery verifica novas cargas de trabalho do Kubernetes. Você pode configurar os intervalos de descoberta para alinhar com sua cadência operacional, reduzindo a sobrecarga desnecessária do sistema enquanto garante que novas cargas de trabalho sejam detectadas e protegidas em tempo hábil.</block>
+  <block id="d5500e4522bde3536eb21086a6278cb6" category="inline-link-macro">Personalize o cronograma de descoberta</block>
+  <block id="58b54ef9bb1184e1a76831a4c8532cdf" category="paragraph">Para obter mais informações, consulte <block ref="00c64813bfb7d5f31a94dc7f7401aec7" category="inline-link-macro-rx"></block>.</block>
+  <block id="49bc059dcf19f0a0115deba3b42c6932" category="section-title">Atualizações da VMware</block>
+  <block id="239000f59be4987b700a238e8ca4cbac" category="section-title">Proteção para datastores vazios</block>
+  <block id="9a870179d2b3e04319fde1e2148bdde1" category="inline-link-macro">informações de mapeamento</block>
+  <block id="386068b3c8ab30655c493a434548a956" category="paragraph">A Recuperação de Desastres agora permite configurar a proteção para armazenamentos de dados que não contêm máquinas virtuais (VMs). Quaisquer VMs adicionadas posteriormente ao armazenamento de dados são detectadas automaticamente pela Recuperação de Desastres, momento em que você precisa fornecer <block ref="96f22499fac7fb5ec06f64e20472e919" category="inline-link-macro-rx"></block>.</block>
+  <block id="8ea79c5d84513219216b19fc3aa62033" category="inline-link-macro">Failover para um local remoto</block>
+  <block id="fcf6f6ded14457afdca64680218d849c" category="paragraph">Ao adicionar um datastore vazio a um plano de proteção, você deve remover o datastore do plano de proteção antes de executar um failover ou executar um failover forçado. Para mais informações, consulte <block ref="a16180f75826879573c72d14ccfccc18" category="inline-link-macro-rx"></block>.</block>
+  <block id="2d2e356e77ef22acf218ffb017d91233" category="section-title">Restaurar armazenamentos de dados previamente excluídos para um plano de proteção</block>
+  <block id="1453aa4dc117cbab5d75827143b273ea" category="paragraph">Os armazenamentos de dados que antes eram excluídos da proteção agora podem ser reincluídos. Essa melhoria proporciona maior flexibilidade no gerenciamento e na atualização das suas configurações de recuperação de desastres ao longo do tempo.</block>
+  <block id="0f76cabceee2286086c65391269ec324" category="paragraph">Para obter mais informações, consulte <block ref="37d0eb884ec50ead320898709eb6d605" category="inline-link-macro-rx"></block>.</block>
+  <block id="05c185480595feac79a02ae4a685fcc6" category="section-title">Failover mais rápido para datastores baseados em VMFS</block>
+  <block id="e63830ec714a620621135f51c7c84114" category="paragraph">A Recuperação de Desastres aprimorou o desempenho de failover para datastores baseados em VMFS. As operações de reescaneamento do Host Bus Adapter (HBA) e montagem do datastore agora são executadas em paralelo, reduzindo os tempos gerais de failover e minimizando o tempo de inatividade durante eventos de recuperação.</block>
+  <block id="69aa1f50c340d05c0f749dc51b5d5737" category="inline-link-macro">Fail over com recuperação de desastres</block>
+  <block id="bda5d94c4f296d65baa89f57187dafbd" category="paragraph">Para obter mais informações sobre failover, consulte <block ref="6f81e5aa1c9b02c34c5ec309d5755115" category="inline-link-macro-rx"></block>.</block>
+  <block id="c2ca16d048ec66e04bca283eab048ec2" category="cell">Host</block>
+  <block id="c558a0155ca880ce7651092b8d34bdda" category="cell">Host.Config.AdvancedConfig</block>
+  <block id="fe4c6a5e7bd6793b37370e4e46daf998" category="cell">Configurações avançadas</block>
+  <block id="bfc4aca9e679b5e54fe1e06ec1a2fdae" category="cell">Permite definir opções avançadas de configuração do host.</block>
+  <block id="b65acfdfa8b200521132554a2bf785c1" category="cell">Host.Config.Storage</block>
+  <block id="a327173237d5e04189c770059b93c5b8" category="cell">Configuração da partição de armazenamento</block>
+  <block id="8d1a22575f27ac05ff7b4dbaa3e07dd0" category="cell">Permite a verificação de novos dispositivos de armazenamento e o gerenciamento de iSCSI.</block>
+  <block id="be8545ae7ab0276e15898aae7acfbd7a" category="cell">Recurso</block>
+  <block id="a7e4bee1172f5ae98efff7f374c7c442" category="cell">Recurso.AtribuirVMAoPool</block>
+  <block id="4a80639450ebfdba618d1bb0d7fd4bc9" category="cell">Pools de recursos</block>
+  <block id="467e9c87035095663a3dab61ee7fa11f" category="cell">Permite a atribuição de máquinas virtuais a um pool de recursos</block>
+  <block id="1c47c283c10eb040185d834c1d4f570f" category="cell">VirtualMachine.Config.AddExistingDisk</block>
+  <block id="c629a65bf0cad09db50b338d3b22ceaa" category="cell">Adicionar disco existente</block>
+  <block id="c77e1221a533a8ee299fde02b09ab63e" category="cell">Permite adicionar um disco virtual existente a uma máquina virtual.</block>
+  <block id="826a9b0bd0c5de4d98b547fcc69301ff" category="cell">VirtualMachine.Config.AddNewDisk</block>
+  <block id="290f3ac3e6b4bd78ff9a9070bb2c965a" category="cell">Adicionar novo disco</block>
+  <block id="04195979ac94ef25dd5acd4ddb6f6d46" category="cell">Permite criar um novo disco virtual para adicionar a uma máquina virtual.</block>
+  <block id="87a51990ea0f64db3976bc03be144283" category="cell">VirtualMachine.Config.RemoveDisk</block>
+  <block id="175d3bc37a203b0e58c2d1bb572971de" category="cell">Remover disco</block>
+  <block id="23f63c2f1d737c005d58d613f81f3d37" category="cell">Permite a remoção de um dispositivo de disco virtual.</block>
+  <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">08 de junho de 2026</block>
+  <block id="0926e17414694f3b4201b416c6c4a6ca" category="paragraph">Versão 4.3.4</block>
+  <block id="7aa7ac5ef00e37e99f8bb57b253d37ed" category="paragraph">Antes de realizar um failover em produção, você pode executar um teste para verificar se está tudo pronto. As cargas de trabalho permanecem online durante o processo de teste.</block>
+  <block id="f5fa15f6901bb980064f0a1e081fbfb7" category="list-text">Na página Test failover, escolha o snapshot para o teste de failover: selecione **Take snapshot now** ou **Select** para escolher um snapshot existente. Se você escolher **Select**, escolha o snapshot existente.</block>
+  <block id="0a07084d59200e5f62afd96db98a68b5" category="paragraph">Em seguida, digite “Test failover” e selecione *Test fail over*.</block>
+  <block id="962e92831673929912f04cd68819059b" category="admonition">Se o plano de replicação incluir um datastore vazio, você deve primeiro remover o datastore vazio do plano ou usar a opção **Forçar failover**, que ignora os datastores vazios.</block>
+  <block id="919dfe02d5a57784fd83bb645e8f8b8e" category="paragraph">Alterar a contagem de retenção permite aumentar ou diminuir o número de snapshots salvos.</block>
+  <block id="e363882b79ccd237ac1f4dd679c679c2" category="paragraph">Você pode cancelar uma tarefa em andamento ou que esteja na fila se estiver travada ou para priorizar uma operação pendente.</block>
+  <block id="caf5841d5a0afa8a150bf6da9c22fc2f" category="list-text">No menu suspenso de carga de trabalho, defina o filtro para *Kubernetes*.</block>
+  <block id="86839797735bfc02dea42929601e887a" category="list-text">Na janela Configurações, edite os campos conforme necessário.</block>
+  <block id="83cfc8bb47b46515d41842fa32fa608b" category="list-text">Para personalizar a programação da descoberta, marque a caixa *Ativar descoberta agendada*. Selecione a data de início da descoberta e o intervalo de descoberta em horas e minutos.</block>
 </blocks>
