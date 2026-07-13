@@ -4,6 +4,7 @@
 
 
 
+[[support-for-multiple-console-agents-in-on-premises-environments]]
 === Suporte para vários agentes do Console em ambientes locais.
 
 Se você utiliza a Recuperação de Desastres localmente, agora pode implantar um agente de console para cada instância do vCenter, melhorando a resiliência.
@@ -14,6 +15,7 @@ Para obter informações sobre o agente do Console na Recuperação de Desastres
 
 
 
+[[add-vms-after-failover-for-replication-plans-using-datastore-based-protection]]
 === Adicionar VMs após failover para planos de replicação usando proteção baseada em armazenamento de dados
 
 Quando o failover é acionado, qualquer plano de replicação que utilize proteção baseada em armazenamento de dados inclui as VMs que foram adicionadas ao armazenamento de dados, desde que tenham sido detectadas. Você deve fornecer os detalhes de mapeamento para as VMs adicionadas antes que o failover seja concluído.
@@ -22,6 +24,7 @@ Para mais informações, consulte link:https://docs.netapp.com/us-en/data-servic
 
 
 
+[[new-email-notifications]]
 === Novas notificações por e-mail
 
 A Recuperação de Desastres agora fornece notificações por e-mail para os seguintes eventos:
@@ -34,18 +37,21 @@ A Recuperação de Desastres agora fornece notificações por e-mail para os seg
 
 
 
+[[swagger-improvements]]
 === Melhorias no Swagger
 
 Agora você pode acessar a documentação do Swagger diretamente do Disaster Recovery. No Disaster Recovery, selecione **Configurações** e depois **Documentação da API**. Você deve estar no modo privado ou anônimo para acessar link:https://api.bluexp.netapp.com/v1/services/draas/api/api-doc/draas["o link"^].
 
 
 
+[[improved-user-interfaces]]
 === Interfaces de usuário aprimoradas
 
 A Recuperação de Desastres agora oferece avisos aprimorados e soluções de erros. Esta versão corrige um erro que impedia a exibição de trabalhos cancelados na interface do usuário. Os trabalhos cancelados agora estão visíveis. Também há um novo aviso quando a mesma rede de destino é mapeada para várias redes de origem diferentes.
 
 
 
+[[retain-vm-folder-structure-added-as-default-in-replication-plans]]
 === Manter a estrutura de pastas da VM adicionada como padrão nos planos de replicação
 
 Ao criar uma réplica, a nova configuração padrão é manter a estrutura de pastas da máquina virtual. Se o destino da recuperação não tiver a hierarquia de pastas original, a Recuperação de Desastres a criará. Você pode desmarcar esta opção para ignorar a hierarquia de pastas original.

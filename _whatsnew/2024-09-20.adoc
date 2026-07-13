@@ -4,6 +4,7 @@
 
 
 
+[[support-for-on-premises-to-on-premises-vmware-vmfs-datastores]]
 === Suporte para datastores VMware VMFS locais para locais
 
 Esta versão inclui suporte para VMs montadas em datastores do sistema de arquivos de máquina virtual VMware vSphere (VMFS) para iSCSI e FC protegidos para armazenamento local.  Anteriormente, o serviço fornecia uma _prévia de tecnologia_ com suporte a armazenamentos de dados VMFS para iSCSI e FC.

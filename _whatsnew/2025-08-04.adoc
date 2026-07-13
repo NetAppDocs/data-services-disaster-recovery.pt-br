@@ -4,6 +4,7 @@
 
 
 
+[[netapp-disaster-recovery-updates]]
 === Atualizações do NetApp Disaster Recovery
 
 Esta versão inclui as seguintes atualizações:

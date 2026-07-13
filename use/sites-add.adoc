@@ -21,6 +21,7 @@ TIP: Certifique-se de que tanto a origem quanto o destino utilizem o mesmo agent
 
 
 
+[[add-a-site]]
 == Adicionar um site
 
 Ao adicionar um site ao Disaster Recovery, você deve diferenciá-lo com base no tipo de recursos presentes no site. Você pode adicionar vCenters ou clusters Kubernetes.
@@ -40,6 +41,7 @@ Após adicionar um site ao NetApp Disaster Recovery, você deve associar recurso
 
 
 
+[[add-resources-to-a-site]]
 == Adicionar recursos a um site
 
 Se você adicionou vCenters em versões anteriores e deseja personalizar o agendamento de descoberta, edite o site do servidor vCenter e defina o agendamento.
@@ -153,6 +155,7 @@ Após adicionar recursos, selecione *Monitoramento de Tarefas* para acompanhar o
 
 
 
+[[add-subnet-mapping-for-a-vcenter-site]]
 == Adicionar mapeamento de sub-rede para um site vCenter
 
 Você pode gerenciar endereços IP em operações de failover usando o mapeamento de sub-redes, que permite adicionar sub-redes para cada vCenter.  Ao fazer isso, você define o CIDR IPv4, o gateway padrão e o DNS para cada rede virtual.
@@ -205,6 +208,7 @@ TIP: A notação CIDR é um método de especificação de endereços IP e suas m
 
 
 
+[[select-subnet-mapping-for-a-replication-plan]]
 === Selecione o mapeamento de sub-rede para um plano de replicação
 
 Ao criar um plano de replicação, você pode selecionar o mapeamento de sub-rede para o plano de replicação.
@@ -233,6 +237,7 @@ NOTE: Se houver duas VMs (por exemplo, uma é Linux e a outra é Windows), as cr
 
 
 
+[[edit-the-vcenter-server-site-and-customize-the-discovery-schedule]]
 == Edite o site do servidor vCenter e personalize o cronograma de descoberta
 
 Você pode editar o site do servidor vCenter para personalizar o agendamento de descoberta.  Por exemplo, se você tiver um grande número de VMs, poderá definir o agendamento de descoberta para ser executado a cada 23 horas e 59 minutos.  Se você tiver um pequeno número de VMs, poderá definir o agendamento de descoberta para ser executado a cada 12 horas.
@@ -257,6 +262,7 @@ image:sites-edit-schedule.png["Captura de tela da edição do cronograma de desc
 
 
 
+[[refresh-discovery-manually]]
 == Atualizar descoberta manualmente
 
 Você pode atualizar a descoberta manualmente a qualquer momento.  Isso é útil se você adicionou ou removeu VMs e deseja atualizar as informações no NetApp Disaster Recovery.

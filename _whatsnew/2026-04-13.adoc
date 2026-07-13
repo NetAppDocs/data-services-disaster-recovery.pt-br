@@ -4,6 +4,7 @@
 
 
 
+[[google-cloud-vmware-engine-gcve-support-is-now-generally-available-ga]]
 === O suporte do Google Cloud VMware Engine (GCVE) agora está disponível para o público em geral (GA)
 
 NetApp Disaster Recovery para GCVE agora está disponível para o público em geral (GA). Com o suporte GA, Disaster Recovery para GCVE agora oferece suporte a:

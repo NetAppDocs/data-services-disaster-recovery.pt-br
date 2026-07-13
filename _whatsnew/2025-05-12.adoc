@@ -4,6 +4,7 @@
 
 
 
+[[subnet-mapping]]
 === Mapeamento de sub-rede
 
 Com esta versão, você pode gerenciar endereços IP em failover de uma nova maneira usando o mapeamento de sub-redes, que permite adicionar sub-redes para cada vCenter.  Ao fazer isso, você define o CIDR IPv4, o gateway padrão e o DNS para cada rede virtual.
@@ -26,6 +27,7 @@ Para obter detalhes sobre como incluir o mapeamento de sub-redes em seus sites, 
 
 
 
+[[skip-protection]]
 === Proteção contra pulos
 
 Agora você pode pular a proteção para que o serviço não crie automaticamente um relacionamento de proteção reversa após um failover do plano de replicação.  Isso é útil se você quiser executar operações adicionais no site restaurado antes de colocá-lo novamente online no NetApp Disaster Recovery.
@@ -40,6 +42,7 @@ Para obter detalhes sobre a proteção contra saltos, consulte https://docs.neta
 
 
 
+[[snapmirror-schedule-updates-in-the-replication-plan]]
 === Atualizações de agendamento do SnapMirror no plano de replicação
 
 O NetApp Disaster Recovery agora oferece suporte ao uso de soluções externas de gerenciamento de snapshots, como o agendador de políticas nativo ONTAP SnapMirror ou integrações de terceiros com o ONTAP.  Se cada armazenamento de dados (volume) no plano de replicação já tiver um relacionamento SnapMirror que esteja sendo gerenciado em outro lugar, você poderá usar esses instantâneos como pontos de recuperação no NetApp Disaster Recovery.

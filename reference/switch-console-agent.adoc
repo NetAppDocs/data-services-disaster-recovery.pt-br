@@ -16,6 +16,7 @@ O NetApp Console suporta o uso de vários agentes de console em um único ambien
 
 
 
+[[before-you-begin]]
 == Antes de começar
 
 * Você deve terxref:../get-started/dr-prerequisites.html#create-the-netapp-console-agent[Adicionou pelo menos dois agentes de console ao seu ambiente de trabalho.] .
@@ -24,6 +25,7 @@ O NetApp Console suporta o uso de vários agentes de console em um único ambien
 
 
 
+[[steps]]
 == Passos
 
 . Em Recuperação de Desastres, selecione **Sites**.
@@ -43,6 +45,7 @@ image:edit-vcenter.png["Captura de tela da alteração do agente do console"]
 
 
 
+[[more-information]]
 == Mais informações
 
 * link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-on-prem.html["Saiba mais sobre os agentes do Console"^]

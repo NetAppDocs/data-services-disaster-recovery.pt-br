@@ -27,6 +27,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 
 
+[[manage-vcenter-sites]]
 == Gerenciar sites do vCenter
 
 Você pode editar o nome do site do vCenter e o tipo de site (local ou AWS).
@@ -41,6 +42,7 @@ Você pode editar o nome do site do vCenter e o tipo de site (local ou AWS).
 
 
 
+[[manage-resource-groups]]
 == Gerenciar grupos de recursos
 
 Você pode criar grupos de recursos por máquinas virtuais ou por datastores.  Eles podem ser adicionados ao criar o plano de replicação ou posteriormente.
@@ -71,6 +73,7 @@ Para obter detalhes sobre como criar um grupo de recursos, consultelink:resource
 
 
 
+[[manage-replication-plans]]
 == Gerenciar planos de replicação
 
 Você pode desabilitar, habilitar e excluir planos de replicação.  Você pode alterar horários.
@@ -108,6 +111,7 @@ image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
 
 
+[[reconcile-snapshots-on-demand]]
 === Reconciliar instantâneos sob demanda
 
 A Recuperação de Desastres exclui automaticamente os snapshots na origem a cada 24 horas.  Se você descobrir que os snapshots estão dessincronizados entre a origem e o destino, precisará resolver a discrepância entre os snapshots para garantir a consistência entre os sites.
@@ -126,6 +130,7 @@ image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
 
 
+[[delete-a-replication-plan]]
 === Excluir um plano de replicação
 
 Se você excluir um plano de replicação, também poderá excluir os snapshots primários e secundários criados pelo plano.
@@ -142,6 +147,7 @@ Se você excluir um plano de replicação, também poderá excluir os snapshots 
 
 
 
+[[change-retention-count-for-failover-schedules]]
 === Alterar contagem de retenção para agendamentos de failover
 
 Alterar a contagem de retenção permite aumentar ou diminuir o número de snapshots salvos.
@@ -161,7 +167,38 @@ image:../use/dr-plan-failover-edit.png["Editar página de mapeamentos de failove
 
 
 
-== Exibir informações dos armazenamentos de dados
+[[manage-trident-protect]]
+== Gerenciar Trident Protect
+
+Na interface de recuperação de desastres, você pode atualizar ou remover Trident Protect.
+
+.Atualizar Trident Protect
+. Em Recuperação de Desastres, selecione **Sites** na barra lateral.
+. Selecione **Kubernetes** no menu suspenso.
+. No menu de ações do cluster que você deseja modificar, selecione **Upgrade cluster**.
+. Na lista suspensa **Selecionar versão de destino**, escolha a versão do Trident Protect para a qual você deseja atualizar. Você deve revisar a link:https://docs.netapp.com/us-en/trident/trident-rn.html["Notas de lançamento do Trident"^] antes de atualizar para entender as nuances das diferentes versões e seu impacto no seu cluster.
+. Selecione **Upgrade** para iniciar a atualização.
+
+
+.Remover Trident Protect
+. Em Recuperação de Desastres, selecione **Sites** na barra lateral.
+. Selecione **Kubernetes** no menu suspenso.
+. No menu de ações do site que você deseja modificar, selecione **Remove cluster**.
+. Analise a caixa de diálogo e execute o comando de desinstalação no cluster do qual você deseja remover o Trident Protect: `helm uninstall trident-protect -n trident-protect`.
+. Para concluir a remoção do Trident Protect, volte para a interface de usuário de Recuperação de Desastres e selecione **Remover site**.
+
+
+.Remover um cluster de um site
+. Em Recuperação de Desastres, selecione **Sites** na barra lateral.
+. Selecione **Kubernetes** no menu suspenso.
+. No menu de ações do site que você deseja modificar, selecione **Remove cluster**.
+. Analise o menu de diálogo e selecione **Remover do site**. Certifique-se de escolher a opção correta para continuar a operação do Trident Protect.
+
+
+
+
+[[view-datastore-information]]
+== Visualizar informações do armazenamento de dados
 
 Você pode visualizar informações sobre quantos armazenamentos de dados existem na origem e no destino.
 
@@ -176,6 +213,7 @@ Você pode visualizar informações sobre quantos armazenamentos de dados existe
 
 
 
+[[view-virtual-machines-information]]
 == Exibir informações das máquinas virtuais
 
 Você pode visualizar informações sobre quantas máquinas virtuais existem na origem e no destino, juntamente com CPU, memória e capacidade disponível.

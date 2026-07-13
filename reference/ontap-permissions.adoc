@@ -16,6 +16,7 @@ Ao utilizar NetApp Disaster Recovery, certifique-se de ter as permissões corret
 
 
 
+[[minimum-ontap-permissions]]
 == Permissões mínimas do ONTAP
 
 As seguintes permissões do ONTAP são necessárias para NetApp Disaster Recovery:
@@ -107,6 +108,7 @@ As seguintes permissões do ONTAP são necessárias para NetApp Disaster Recover
 |===
 
 
+[[add-permissions-in-ontap]]
 == Adicionar permissões no ONTAP
 
 Adicionar permissões no ONTAP requer a criação de uma função com as permissões necessárias e a atribuição dessa função a um usuário. Você pode realizar essa tarefa no ONTAP usando System Manager ou a CLI do ONTAP.
@@ -207,6 +209,7 @@ security login create -vserver <SVM> -user-or-group-name <user-name> -applicatio
 ====
 
 
+[[configure-disaster-recovery]]
 == Configurar NetApp Disaster Recovery
 
 Após criar as funções do ONTAP, você precisa link:https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html#step-3-discover-a-cluster["descubra o cluster ONTAP no Console"^]. Ao descobrir o cluster, você precisará do endereço IP do cluster ONTAP, do nome do usuário que você criou e da senha para esta etapa. Para NetApp Disaster Recovery, você deve realizar a descoberta tanto no cluster de origem quanto no cluster de destino.

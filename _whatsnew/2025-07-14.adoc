@@ -4,6 +4,7 @@
 
 
 
+[[user-roles-in-netapp-disaster-recovery]]
 === Funções de usuário no NetApp Disaster Recovery
 
 O NetApp Disaster Recovery agora emprega funções para controlar o acesso que cada usuário tem a recursos e ações específicos.
@@ -24,6 +25,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles
 
 
 
+[[other-updates-in-netapp-disaster-recovery]]
 === Outras atualizações no NetApp Disaster Recovery
 
 * Descoberta de rede aprimorada

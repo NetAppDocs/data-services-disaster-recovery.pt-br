@@ -30,6 +30,7 @@ Este procedimento interrompe o relacionamento de replicação, coloca as VMs de 
 
 
 
+[[test-the-failover-process]]
 == Teste o processo de failover
 
 Antes de realizar um failover em produção, você pode executar um teste para verificar se está tudo pronto. As cargas de trabalho permanecem online durante o processo de teste.
@@ -68,6 +69,7 @@ Em seguida, digite “Test failover” e selecione *Test fail over*.
 
 
 
+[[clean-up-the-test-environment-after-a-failover-test]]
 == Limpe o ambiente de teste após um teste de failover
 
 Após a conclusão do teste de failover, você deve limpar o ambiente de teste.  Este processo remove as VMs temporárias do local de teste, os FlexClones e os armazenamentos de dados temporários.
@@ -81,6 +83,7 @@ Após a conclusão do teste de failover, você deve limpar o ambiente de teste. 
 
 
 
+[[fail-over-the-source-site-to-a-disaster-recovery-site]]
 == Fazer failover do site de origem para um site de recuperação de desastres
 
 Em caso de desastre, faça failover do seu site VMware local principal sob demanda para outro site VMware local ou VMware Cloud on AWS com FSx para NetApp ONTAP.
@@ -108,9 +111,6 @@ TIP: Após o início do failover, você poderá visualizar as VMs recuperadas no
 .vCenter
 --
 Para planos de replicação baseados em armazenamento de dados, se você adicionou e descobriu alguma máquina virtual, mas não forneceu detalhes de mapeamento, essas máquinas virtuais serão incluídas no failover. A operação de failover falhará e uma notificação será exibida nos trabalhos. Você precisa fornecer os detalhes do mapeamento para concluir o failover com sucesso.
-
-
-IMPORTANT: Se o plano de replicação incluir um datastore vazio, você deve primeiro remover o datastore vazio do plano ou usar a opção **Forçar failover**, que ignora os datastores vazios.
 
 .Passos
 . No menu NetApp Disaster Recovery , selecione *Planos de replicação*.

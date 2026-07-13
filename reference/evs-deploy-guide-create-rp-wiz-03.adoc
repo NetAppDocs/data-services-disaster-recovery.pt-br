@@ -36,6 +36,7 @@ image:evs-create-rp-wiz-c0.png["Criar plano de replicação, página de mapeamen
 
 
 
+[[compute-resource-mapping]]
 == Mapeamento de recursos de computação
 
 Como um site pode hospedar vários datacenters virtuais e vários clusters vCenter, você precisa identificar em qual cluster vCenter recuperar as VMs no caso de um failover.
@@ -58,6 +59,7 @@ image:evs-create-rp-wiz-c-compute-resources-1-4.png["Criar plano de replicação
 
 
 
+[[map-virtual-network-resources]]
 == Mapear recursos de rede virtual
 
 Cada VM pode ter uma ou mais NICs virtuais conectadas a redes virtuais dentro da infraestrutura de rede do vCenter.  Para garantir que cada VM esteja conectada corretamente às redes desejadas ao reiniciar no site de DR, identifique em quais redes virtuais do site de DR essas VMs serão conectadas.  Faça isso mapeando cada rede virtual no site local para uma rede associada no site de DR.
@@ -72,6 +74,7 @@ image:evs-create-rp-wiz-c-network-resources-1-2.png["Criar plano de replicação
 
 
 
+[[define-options-for-vm-reconfiguration-during-failover]]
 == Definir opções para reconfiguração de VM durante failover
 
 Cada VM pode exigir modificações para funcionar corretamente no site do DR vCenter.  A seção Máquinas virtuais permite que você forneça as alterações necessárias.
@@ -80,6 +83,7 @@ Por padrão, o NetApp Disaster Recovery usa as mesmas configurações para cada 
 
 
 
+[[network-reconfiguration]]
 === Reconfiguração de rede
 
 Os tipos de endereços IP suportados são estáticos e DHCP.  Para endereços IP estáticos, você tem as seguintes configurações de IP de destino:
@@ -103,6 +107,7 @@ image:evs-create-rp-wiz-c-vm-resources-network-1-2.png["Criar plano de replicaç
 
 
 
+[[vm-compute-resource-reconfiguration]]
 === Reconfiguração de recursos de computação de VM
 
 Há várias opções para reconfigurar recursos de computação de VM.  O NetApp Disaster Recovery oferece suporte à alteração do número de CPUs virtuais, da quantidade de DRAM virtual e do nome da VM.
@@ -117,6 +122,7 @@ image:evs-create-rp-wiz-c-vm-resources-cpu-mem-1-2.png["Criar plano de replicaç
 
 
 
+[[boot-order]]
 === Ordem de inicialização
 
 O NetApp Disaster Recovery oferece suporte a uma reinicialização ordenada de VMs com base em um campo de ordem de inicialização.  O campo Ordem de inicialização indica como as VMs em cada grupo de recursos são iniciadas.  As VMs com o mesmo valor no campo Ordem de inicialização inicializam em paralelo.
@@ -131,6 +137,7 @@ image:evs-create-rp-wiz-c-vm-resources-boot-delay-1-2.png["Criar plano de replic
 
 
 
+[[custom-guest-os-operations]]
 === Operações personalizadas do sistema operacional convidado
 
 O NetApp Disaster Recovery oferece suporte à execução de algumas operações de sistema operacional convidado para cada VM:
@@ -154,6 +161,7 @@ image:evs-create-rp-wiz-c-vm-resources-ac-scripts-creds-1-2.png["Criar plano de 
 
 
 
+[[map-datastores]]
 == Armazenamentos de dados de mapas
 
 A etapa final na criação de um plano de replicação é identificar como o ONTAP deve proteger os armazenamentos de dados.  Essas configurações definem o objetivo do ponto de recuperação (RPO) dos planos de replicação, quantos backups devem ser mantidos e onde replicar os volumes ONTAP de hospedagem de cada armazenamento de dados do vCenter.

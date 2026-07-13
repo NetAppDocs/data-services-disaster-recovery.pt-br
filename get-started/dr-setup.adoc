@@ -19,6 +19,7 @@ TIP: Análiselink:../get-started/dr-prerequisites.html["pré-requisitos"] para g
 
 
 
+[[supported-infrastructures]]
 == Infraestruturas suportadas
 
 Você pode usar o NetApp Disaster Recovery nas seguintes infraestruturas:
@@ -31,6 +32,7 @@ Você pode usar o NetApp Disaster Recovery nas seguintes infraestruturas:
 
 
 
+[[hybrid-cloud-with-vmware-cloud-and-amazon-fsx-for-netapp-ontap]]
 == Nuvem híbrida com VMware Cloud e Amazon FSx for NetApp ONTAP
 
 Este método consiste em uma infraestrutura vCenter de produção local usando datastores hospedados em volumes ONTAP FlexVol usando um protocolo NFS.  O site de DR consiste em uma ou mais instâncias do VMware Cloud SDDC usando armazenamentos de dados hospedados em volumes FlexVol fornecidos por uma ou mais instâncias do FSx for ONTAP usando um protocolo NFS.
@@ -41,6 +43,7 @@ Para recuperação de desastres envolvendo infraestrutura de nuvem da AWS, você
 
 
 
+[[aws-availability-zones]]
 === Zonas de disponibilidade da AWS
 
 A AWS oferece suporte à implantação de soluções em uma ou mais zonas de disponibilidade (AZ) dentro de uma determinada região.  O Disaster Recovery usa dois serviços hospedados na AWS: VMware Cloud para AWS e AWS FSx para NetApp ONTAP.
@@ -53,6 +56,7 @@ A AWS oferece suporte à implantação de soluções em uma ou mais zonas de dis
 
 
 
+[[on-premises-to-aws]]
 === No local para AWS
 
 A AWS fornece os seguintes métodos para conectar datacenters privados à nuvem AWS.  Cada solução tem seus benefícios e considerações de custo.
@@ -66,6 +70,7 @@ A AWS fornece os seguintes métodos para conectar datacenters privados à nuvem 
 
 
 
+[[vpc-to-vpc-interconnections]]
 === Interconexões VPC para VPC
 
 A AWS oferece os seguintes tipos de interconexões de VPC para VPC.  Cada solução tem seus benefícios e considerações de custo.
@@ -79,6 +84,7 @@ A AWS oferece os seguintes tipos de interconexões de VPC para VPC.  Cada soluç
 
 
 
+[[get-ready-for-on-premises-to-cloud-protection-using-aws]]
 === Prepare-se para a proteção local para a nuvem usando a AWS
 
 Para configurar o NetApp Disaster Recovery para proteção local para a nuvem usando a AWS, você precisa configurar o seguinte:
@@ -114,6 +120,7 @@ Para configurar um ambiente VMware Cloud na AWS, siga as etapas em https://docs.
 
 
 
+[[private-cloud]]
 == Nuvem privada
 
 Você pode usar o NetApp Disaster Recovery para proteger VMs VMware hospedadas em um ou mais clusters vCenter replicando datastores de VM para outro cluster vCenter no mesmo datacenter privado ou em um datacenter privado ou colocalizado remoto.
@@ -124,6 +131,7 @@ O Disaster Recovery oferece suporte à replicação de site para site usando Eth
 
 
 
+[[get-ready-for-on-premises-to-on-premises-protection]]
 === Prepare-se para proteção local para local
 
 Certifique-se de que os seguintes requisitos sejam atendidos antes de configurar o NetApp Disaster Recovery para proteção local para local:
@@ -147,6 +155,7 @@ Certifique-se de que os seguintes requisitos sejam atendidos antes de configurar
 
 
 
+[[intelligent-proxy-support]]
 === Suporte a proxy inteligente
 
 O agente do NetApp Console oferece suporte ao proxy inteligente.  O proxy inteligente é uma maneira leve, segura e eficiente de conectar seu ambiente local ao NetApp Console.  Ele fornece uma conexão segura entre seu sistema e o serviço do Console sem exigir uma VPN ou acesso direto à Internet.  Essa implementação de proxy otimizada descarrega o tráfego de API dentro da rede local.

@@ -1,0 +1,55 @@
+= Atualizações do Kubernetes
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-updates]]
+=== Atualizações do Kubernetes
+
+A Recuperação de Desastres introduziu as seguintes alterações para cargas de trabalho baseadas em Kubernetes:
+
+
+
+==== Gerencie Trident Protect no menu Sites
+
+O Disaster Recovery agora permite gerenciar o Trident Protect diretamente do menu Sites na interface do usuário do Disaster Recovery. Você pode atualizar o Trident Protect ou removê-lo do Disaster Recovery, simplificando o gerenciamento dos seus recursos do Kubernetes.
+
+Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["Gerenciar sites"^].
+
+
+
+[[vmware-updates]]
+=== Atualizações da VMware
+
+A Recuperação de Desastres introduziu as seguintes alterações para cargas de trabalho baseadas em VMware:
+
+
+
+==== Failover em datastores vazios
+
+Os planos de replicação que incluem datastores vazios agora podem ser submetidos a failover com sucesso, sem a necessidade de excluí-los do plano ou forçar o failover. Durante o failover, o Disaster Recovery monta automaticamente o datastore vazio no site de recuperação de desastres, permitindo que as VMs sejam adicionadas e protegidas para operações de failback.
+
+Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Failover para um local remoto"^].
+
+
+
+==== vCenter automapeamento de rede
+
+Agora você pode configurar relações de mapeamento de rede no nível do vCenter (ou seja, fora da caixa de diálogo do plano de replicação). Depois de configurados, o Disaster Recovery aplica automaticamente esses mapeamentos de rede quando você adiciona ou edita um plano de replicação, simplificando o gerenciamento do plano de replicação.
+
+A Recuperação de Desastres continua a suportar substituições por plano. Os mapeamentos de rede existentes definidos em um plano de replicação ainda podem ser editados por rede; esses mapeamentos têm precedência sobre as definições de nível vCenter.
+
+
+
+[[disaster-recovery-viewer-role-tightening]]
+=== Reforço do papel do visualizador de disaster recovery
+
+A funcionalidade de visualizar a aba "Upgrade System" foi removida da função de visualizador de Disaster Recovery. Essa alteração alinha a função com a experiência mais adequada para usuários com permissão somente de leitura. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^].
+
+
+
+[[system-performance-enhancements]]
+=== Melhorias no desempenho do sistema
+
+A Recuperação de Desastres introduziu mudanças para reduzir o consumo de recursos do sistema e melhorar o desempenho em todas as operações.

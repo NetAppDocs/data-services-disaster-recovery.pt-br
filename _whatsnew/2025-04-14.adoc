@@ -4,6 +4,7 @@
 
 
 
+[[scheduled-discovery-for-vms]]
 === Descoberta agendada para VMs
 
 O NetApp Disaster Recovery realiza a descoberta uma vez a cada 24 horas.  Com esta versão, agora você pode personalizar o cronograma de descoberta para atender às suas necessidades e reduzir o impacto no desempenho quando precisar.  Por exemplo, se você tiver um grande número de VMs, poderá definir o agendamento de descoberta para ser executado a cada 48 horas.  Se você tiver um pequeno número de VMs, poderá definir o agendamento de descoberta para ser executado a cada 12 horas.
@@ -14,6 +15,7 @@ Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 
 
+[[resource-group-datastore-support]]
 === Suporte ao armazenamento de dados do grupo de recursos
 
 Anteriormente, você só podia criar grupos de recursos por VMs.  Com esta versão, você pode criar um grupo de recursos por armazenamentos de dados.  Ao criar um plano de replicação e um grupo de recursos para esse plano, todas as VMs em um armazenamento de dados serão listadas.  Isso é útil se você tiver um grande número de VMs e quiser agrupá-las por armazenamento de dados.
@@ -28,12 +30,14 @@ Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 
 
+[[notifications-of-free-trial-or-license-expiration]]
 === Notificações de teste gratuito ou expiração de licença
 
 Esta versão fornece notificações de que o teste gratuito irá expirar em 60 dias para garantir que você tenha tempo de obter uma licença.  Esta versão também fornece notificações sobre o dia em que a licença expira.
 
 
 
+[[notification-of-service-updates]]
 === Notificação de atualizações de serviço
 
 Com esta versão, um banner aparece na parte superior para indicar que os serviços estão sendo atualizados e que o serviço foi colocado em modo de manutenção.  O banner aparece quando o serviço está sendo atualizado e desaparece quando a atualização é concluída.  Embora você possa continuar trabalhando na interface do usuário enquanto a atualização estiver em andamento, não será possível enviar novos trabalhos.  Os trabalhos agendados serão executados após a conclusão da atualização e o serviço retornar ao modo de produção.

@@ -4,6 +4,7 @@
 
 
 
+[[folder-hierarchy-retention]]
 === Retenção da hierarquia de pastas
 
 Por padrão, a Recuperação de Desastres mantém a hierarquia de inventário da VM (estrutura de pastas) em caso de failover.  Se o destino da recuperação não tiver a pasta necessária, a Recuperação de Desastres a criará.
@@ -14,6 +15,7 @@ Para mais informações, consulte link:https://docs.netapp.com/us-en/data-servic
 
 
 
+[[streamlined-console-agent-updating]]
 === Atualização simplificada do agente do console
 
 A Recuperação de Desastres agora oferece suporte a um processo simplificado para o uso de vários agentes do Console em um ambiente de trabalho.  Para alternar entre agentes do Console, você deve editar a configuração do vCenter, redescobrir as credenciais e atualizar os planos de replicação para usar o novo agente do Console.

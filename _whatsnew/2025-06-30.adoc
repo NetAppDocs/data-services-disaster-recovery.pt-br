@@ -4,6 +4,7 @@
 
 
 
+[[discovery-improvements]]
 === Melhorias na descoberta
 
 Esta atualização melhora o processo de descoberta, o que reduz o tempo necessário para a descoberta.

@@ -4,12 +4,14 @@
 
 
 
+[[bluexp-disaster-recovery-is-now-netapp-disaster-recovery]]
 === A BlueXP disaster recovery agora é NetApp Disaster Recovery
 
 A BlueXP disaster recovery foi renomeada para NetApp Disaster Recovery.
 
 
 
+[[bluexp-is-now-netapp-console]]
 === BlueXP agora é NetApp Console
 
 O NetApp Console, criado com base na base aprimorada e reestruturada do BlueXP , fornece gerenciamento centralizado do armazenamento NetApp e do NetApp Data Services em ambientes locais e na nuvem em nível empresarial, fornecendo insights em tempo real, fluxos de trabalho mais rápidos e administração simplificada, que é altamente segura e compatível.
@@ -18,6 +20,7 @@ Para obter detalhes sobre o que mudou, consulte o link:https://docs.netapp.com/u
 
 
 
+[[other-updates]]
 === Outras atualizações
 
 * O suporte para o Amazon Elastic VMware Service (EVS) com o Amazon FSx for NetApp ONTAP estava em uma prévia pública. Com este lançamento, ele agora está disponível para o público em geral. Para mais detalhes, consultelink:../reference/evs-deploy-guide-introduction.html["Introdução ao NetApp Disaster Recovery usando o Amazon Elastic VMware Service e o Amazon FSx for NetApp ONTAP"] .

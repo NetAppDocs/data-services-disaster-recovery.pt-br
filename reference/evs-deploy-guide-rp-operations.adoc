@@ -13,6 +13,7 @@ Use o NetApp Disaster Recovery com Amazon EVS e Amazon FSx for NetApp ONTAP para
 
 
 
+[[fail-over]]
 == Falha
 
 A principal operação que você pode precisar executar é aquela que você espera que nunca aconteça: fazer failover para o datacenter de DR (destino) no caso de uma falha catastrófica no site de produção local.
@@ -43,6 +44,7 @@ image:evs-rp-failover-dialog.png["Caixa de diálogo de failover"]
 
 
 
+[[test-failover]]
 == Teste de failover
 
 Um failover de teste é semelhante a um failover, exceto por duas diferenças.
@@ -72,6 +74,7 @@ image:evs-test-failover-dialog.png["Caixa de diálogo de failover de teste"]
 
 
 
+[[run-a-compliance-check]]
 == Execute uma verificação de conformidade
 
 As verificações de conformidade são executadas a cada três horas, por padrão.  A qualquer momento, você pode querer executar manualmente uma verificação de conformidade.
@@ -87,6 +90,7 @@ image:evs-rp-menu-compliance-check.png["Opção de menu Executar verificação d
 
 
 
+[[refresh-resources]]
 == Atualizar recursos
 
 Sempre que você fizer alterações na sua infraestrutura virtual — como adicionar ou excluir VMs, adicionar ou excluir datastores ou mover VMs entre datastores — será necessário executar uma atualização dos clusters do vCenter afetados no serviço NetApp Disaster Recovery .  O serviço faz isso automaticamente uma vez a cada 24 horas por padrão, mas uma atualização manual garante que as informações mais recentes da infraestrutura virtual estejam disponíveis e sejam levadas em consideração para proteção de DR.
@@ -101,6 +105,7 @@ image::evs-rp-menu-refresh-resources.png[Opção de menu Atualizar recursos]
 
 
 
+[[migrate]]
 == Migrar
 
 Embora o NetApp Disaster Recovery seja usado principalmente para casos de recuperação de desastres, ele também pode permitir movimentações únicas de um conjunto de VMs do site de origem para o site de destino.  Isso poderia ser para uma migração planejada para um projeto de nuvem ou poderia ser usado para evitar desastres — como mau tempo, conflitos políticos ou outros possíveis eventos catastróficos temporários.
@@ -115,6 +120,7 @@ image::evs-rp-menu-migrate.png[Opção de menu Migrar]
 
 
 
+[[take-a-snapshot-now]]
 == Tire uma foto agora
 
 A qualquer momento, você pode tirar um instantâneo imediato do plano de replicação.  Este instantâneo está incluído nas considerações de NetApp Disaster Recovery definidas pela contagem de retenção de instantâneos do plano de replicação.
@@ -128,6 +134,7 @@ image::evs-rp-menu-take-snapshot-now.png[Opção de menu Tirar instantâneo agor
 
 
 
+[[disable-or-enable-replication-plan]]
 == Desabilitar ou habilitar o plano de replicação
 
 Pode ser necessário interromper temporariamente o plano de replicação para executar alguma operação ou manutenção que possa impactar o processo de replicação.  O serviço fornece um método para parar e iniciar a replicação.
@@ -144,6 +151,7 @@ image::evs-rp-menu-disable-enable.png[Desativar/ativar opção de menu]
 
 
 
+[[clean-up-old-snapshots]]
 == Limpar instantâneos antigos
 
 Talvez você queira limpar instantâneos mais antigos que foram retidos nos sites de origem e destino.  Isso pode acontecer se a contagem de retenção de snapshots do plano de replicação for alterada.
@@ -157,6 +165,7 @@ image::evs-rp-menu-cleanup-old-snapshots.png[Opção de menu Limpar instantâneo
 
 
 
+[[reconcile-snapshots]]
 == Reconciliar instantâneos
 
 Como o serviço orquestra instantâneos de volume ONTAP , é possível que um administrador de armazenamento ONTAP exclua instantâneos diretamente usando o ONTAP System Manager, a CLI do ONTAP ou as APIs REST do ONTAP sem o conhecimento do serviço.  O serviço exclui automaticamente todos os snapshots na origem que não estão no cluster de destino a cada 24 horas.  No entanto, você pode fazer isso sob demanda.  Esse recurso permite que você garanta que os instantâneos sejam consistentes em todos os sites.
@@ -170,6 +179,7 @@ image::evs-rp-menu-reconcile-snapshots.png[Opção de menu Reconciliar instantâ
 
 
 
+[[delete-replication-plan]]
 == Excluir plano de replicação
 
 Se o plano de replicação não for mais necessário, você poderá excluí-lo.
@@ -183,6 +193,7 @@ image::evs-rp-menu-delete.png[Excluir opção de menu]
 
 
 
+[[edit-schedules]]
 == Editar agendamentos
 
 Duas operações são executadas automaticamente em um cronograma regular: failovers de teste e verificações de conformidade.
@@ -196,6 +207,7 @@ image::evs-rp-menu-edit-schedules.png[Opção de menu Editar agendamentos]
 
 
 
+[[change-compliance-check-interval]]
 === Alterar intervalo de verificação de conformidade
 
 Por padrão, as verificações de conformidade são realizadas a cada três horas.  Você pode alterar isso para qualquer intervalo entre 30 minutos e 24 horas.
@@ -206,6 +218,7 @@ image::evs-rp-edit-compliance-check-schedule.png[Cronograma de verificação de 
 
 
 
+[[schedule-automated-test-failovers]]
 === Agendar failovers de testes automatizados
 
 Os failovers de teste são executados manualmente por padrão.  Você pode agendar failovers de teste automáticos, o que ajuda a garantir que seus planos de replicação funcionem conforme o esperado.  Para saber mais sobre o processo de failover de teste, consultelink:../use/failover.html["Teste o processo de failover"] .

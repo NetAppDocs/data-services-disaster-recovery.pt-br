@@ -37,6 +37,7 @@ Após o término do teste gratuito ou a licença expirar, você ainda poderá fa
 
 
 
+[[try-it-out-using-a-30-day-free-trial]]
 == Experimente usando um teste gratuito de 30 dias
 
 Você pode experimentar o NetApp Disaster Recovery usando um teste gratuito de 30 dias.
@@ -70,6 +71,7 @@ Para obter detalhes, consulte link:../use/sites-add.html["Adicionar sites"].
 
 
 
+[[after-the-trial-ends-subscribe-through-one-of-the-marketplaces]]
 == Após o término do teste, assine através de um dos Marketplaces
 
 Após o término do teste gratuito, você pode comprar uma licença da NetApp ou assinar pelo AWS Marketplace ou Microsoft Azure Marketplace. Este procedimento fornece uma visão geral de alto nível de como assinar diretamente em um dos Marketplaces.
@@ -92,6 +94,7 @@ Você pode visualizar os detalhes da assinatura na página de assinatura do NetA
 
 
 
+[[after-the-trial-ends-purchase-a-byol-license-through-netapp]]
 == Após o término do teste, adquira uma licença BYOL através da NetApp
 
 Após o término do teste, você poderá comprar uma licença por meio do seu representante de vendas da NetApp .
@@ -104,6 +107,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 
 
 
+[[update-your-license-when-it-expires]]
 == Atualize sua licença quando ela expirar
 
 Se o prazo da sua licença estiver próximo da data de expiração ou se a capacidade da sua licença estiver atingindo o limite, você será notificado na interface do usuário do NetApp Disaster Recovery .  Você pode atualizar sua licença do NetApp Disaster Recovery antes que ela expire para que não haja interrupção na sua capacidade de acessar seus dados digitalizados.
@@ -115,6 +119,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 
 
 
+[[end-the-free-trial]]
 == Encerrar o teste gratuito
 
 Você pode interromper o teste gratuito a qualquer momento ou esperar até que ele expire.
