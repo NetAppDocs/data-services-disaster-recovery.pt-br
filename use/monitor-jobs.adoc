@@ -26,7 +26,11 @@ Você pode monitorar todos os trabalhos de NetApp Disaster Recovery e determinar
 . Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 . No menu, selecione *Monitoramento de tarefas*.
 . Explore todos os trabalhos relacionados às operações e revise seus registros de data e hora e status.
-. Para visualizar detalhes de um trabalho específico, selecione essa linha.
+. Para visualizar os detalhes de uma tarefa específica, selecione a linha correspondente. Você pode baixar os detalhes da tarefa para revisão offline selecionando o menu de ações e então **Baixar detalhes da tarefa**.
++
+
+TIP: Ao analisar os detalhes da tarefa, o NetApp Disaster Recovery informa o usuário que a iniciou. Se o responsável estiver listado como "system", isso significa que o NetApp Disaster Recovery iniciou a tarefa.
+
 . Para atualizar as informações, selecione *Atualizar*.
 
 
@@ -46,5 +50,5 @@ Você pode cancelar uma tarefa em andamento ou que esteja na fila se estiver tra
 +
 O trabalho deve estar no estado "Em andamento" ou "Na fila".
 
-. Na coluna Ações, selecione *Cancelar trabalho*.
+. Selecione o menu de ações e, em seguida, **Cancel job**.
 

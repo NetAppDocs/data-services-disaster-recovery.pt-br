@@ -16,6 +16,56 @@ Descubra as novidades em NetApp Disaster Recovery.
 
 
 
+[[10-august-2026]]
+== 10 de agosto de 2026
+
+Versão 4.3.6
+
+
+
+[[improved-dashboard]]
+=== Painel aprimorado
+
+O painel de controle de NetApp Disaster Recovery foi atualizado com uma experiência aprimorada que oferece uma visão abrangente e imediata de todo o seu ambiente de NetApp Disaster Recovery. O novo painel inclui:
+
+* *Visibilidade unificada das cargas de trabalho* — Monitore as cargas de trabalho do VMware e do Kubernetes juntamente com a integridade da infraestrutura subjacente a partir de um painel único.
+* *Detecção proativa de problemas* — O painel agora destaca automaticamente os problemas ambientais, permitindo diagnósticos mais rápidos e reduzindo o tempo de resolução.
+* *Utilização da capacidade* — métricas de capacidade agora são apresentadas diretamente no painel, facilitando a compreensão do consumo de recursos.
+
+
+Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/dashboard-view.html["Veja a integridade dos seus planos de NetApp Disaster Recovery no ​​painel"^].
+
+
+
+[[improved-reports]]
+=== Relatórios aprimorados
+
+As funcionalidades de geração de relatórios foram ampliadas para fornecer uma visão mais detalhada das atividades de Disaster Recovery em todo o seu ambiente:
+
+* Gere relatórios com escopo definido para cargas de trabalho VMware, cargas de trabalho Kubernetes ou ambas, oferecendo a flexibilidade de personalizar os relatórios para seu público.
+* Cada relatório fornece um resumo completo das atividades durante um período específico, garantindo total visibilidade dos eventos em seu ambiente de NetApp Disaster Recovery.
+
+
+Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/reports.html["Crie relatórios de NetApp Disaster Recovery"^].
+
+
+
+[[user-job-logging]]
+=== Registro de tarefas do usuário
+
+O NetApp Disaster Recovery aprimorou a responsabilidade e a auditabilidade das tarefas com o registro de tarefas em nível de usuário. Cada tarefa executada agora registra o usuário que a iniciou, fornecendo uma trilha de auditoria clara para fins de conformidade e solução de problemas. As tarefas acionadas automaticamente pelo NetApp Disaster Recovery são identificadas como "system", facilitando a distinção entre atividades iniciadas pelo usuário e atividades iniciadas pelo serviço.
+
+Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["Monitorar trabalhos de NetApp Disaster Recovery"^].
+
+
+
+[[performance-and-resource-optimization]]
+=== Otimização de desempenho e recursos
+
+Diversas melhorias internas foram implementadas para reduzir o consumo geral de recursos do sistema e aumentar o desempenho nas operações de NetApp Disaster Recovery.
+
+
+
 [[13-july-2026]]
 == 13 de julho de 2026
 
