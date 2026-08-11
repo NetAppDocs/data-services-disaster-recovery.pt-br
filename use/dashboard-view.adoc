@@ -4,7 +4,7 @@ permalink: use/dashboard-view.html
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
 summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres. 
 ---
-= Veja a integridade dos seus planos de NetApp Disaster Recovery no ​​painel
+= Veja o estado dos seus planos de recuperação de desastres em NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

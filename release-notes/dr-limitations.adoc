@@ -4,7 +4,7 @@ permalink: release-notes/dr-limitations.html
 keywords: disaster recovery, bluexp 
 summary: Limitações conhecidas identificam plataformas, dispositivos ou funções que não são suportados por esta versão do serviço ou que não interoperam corretamente com ele. 
 ---
-= Limitações na NetApp Disaster Recovery
+= Limitações conhecidas no NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

@@ -56,6 +56,42 @@ A Recuperação de Desastres realiza verificações de simetria de snapshots a c
 
 
 
+[[considerations-for-platform-managed-backups]]
+=== Considerações sobre backups gerenciados pela plataforma
+
+Se você planeja usar backups gerenciados pela plataforma (ou seja, snapshots gerenciados pelo ONTAP), é recomendável que você use a política de replicação *MirrorAll*. Consulte a tabela para entender o impacto das diferentes políticas de replicação do SnapMirror e por que *MirrorAll* é a opção recomendada.
+
+[cols="10,10,80"]
+|===
+
+
+| Política | Recomendação | Notas 
+
+
+| *MirrorAll* | Recomendado | Não utilize snapshots de transferência do SnapMirror para operações de failover ou failback. 
+
+
+| *MirrorVault* .2+| Recomendação alternativa .2+| Certifique-se de que os snapshots selecionados durante o failover ou failback estejam presentes tanto nos volumes de origem quanto nos volumes de destino. Caso contrário, ocorrerá o erro: "Falha na transição para o estado 'snapmirrored'. Motivo: Nenhum snapshot comum encontrado." 
+
+
+| *Assíncrono* 
+
+
+| *MirrorLatest* | _NÃO_ recomendado | Essa política resulta em o destino ter efetivamente apenas um snapshot comum para failover, o que é subótimo para cenários de recuperação de desastres. 
+|===
+
+
+[[considerations-for-disaster-recovery-managed-backups]]
+=== Considerações sobre backups gerenciados pelo NetApp Disaster Recovery
+
+Ao usar backups gerenciados do NetApp Disaster Recovery, as seguintes diretrizes se aplicam a relações do SnapMirror criadas fora do NetApp Disaster Recovery:
+
+* As relações do SnapMirror podem suportar as políticas de replicação MirrorAll, MirrorVault, MirrorLatest e assíncrona.
+* Não agende atualizações para esses relacionamentos, pois eles serão gerenciados pelo serviço de NetApp Disaster Recovery.
+
+
+
+
 [[before-you-begin]]
 == Antes de começar
 
@@ -437,7 +473,10 @@ Esta seção pode ser ativada ou desativada dependendo da sua seleção.
 
 image:dr-plan-datastore-platform.png["Captura de tela mostrando Adicionar plano de replicação > Mapeamento de recursos > armazenamentos de dados"]
 
-* *Usar backups gerenciados pela plataforma e agendamentos de retenção*: se estiver usando uma solução externa de gerenciamento de snapshots, marque esta caixa.  O NetApp Disaster Recovery oferece suporte ao uso de soluções externas de gerenciamento de snapshots, como o agendador de políticas nativo ONTAP SnapMirror ou integrações de terceiros.  Se cada armazenamento de dados (volume) no plano de replicação já tiver um relacionamento SnapMirror que esteja sendo gerenciado em outro lugar, você poderá usar esses instantâneos como pontos de recuperação no NetApp Disaster Recovery.
+
+TIP: Analise o <<Considerações sobre backups gerenciados pela plataforma>> antes de fazer essas seleções.
+
+* *Use backups gerenciados pela plataforma e cronogramas de retenção*: se você estiver usando uma solução externa de gerenciamento de snapshots, marque esta caixa. O Disaster Recovery oferece suporte ao uso de soluções externas de gerenciamento de snapshots, como o agendador de políticas nativo do ONTAP SnapMirror ou integrações de terceiro. Se cada datastore (volume) no plano de replicação já tiver uma relação do SnapMirror que está sendo gerenciada em outro local, você pode usar esses snapshots como pontos de recuperação no NetApp Disaster Recovery.
 +
 Quando esta opção é selecionada, o NetApp Disaster Recovery não configura um agendamento de backup.  No entanto, você ainda precisa configurar um cronograma de retenção porque snapshots ainda podem ser tirados para operações de teste, failover e failback.
 

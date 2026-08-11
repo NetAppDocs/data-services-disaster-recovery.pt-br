@@ -4,7 +4,7 @@ permalink: get-started/reference-vmware-prerequisites.html
 keywords: vmware cluster prerequisites, vmware, vcenter, requirements 
 summary: Antes de usar NetApp Disaster Recovery, certifique-se de que seu ambiente atenda aos requisitos do cluster VMware vCenter. 
 ---
-= Pré-requisitos de clusters VMware vCenter em NetApp Disaster Recovery
+= Pré-requisitos do cluster VMware vCenter para o NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

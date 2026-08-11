@@ -145,7 +145,6 @@
   <block id="58077d66ee3ca42d6d7732854dac2714" category="list-text">Suporte ao Gerenciamento de Identidade e Acesso (IAM), incluindo controle de acesso baseado em função (RBAC) e permissões de usuário aprimoradas</block>
   <block id="ef31873b640af7e0e4300d5282baffe4" category="list-text">Suporte de visualização privada para solução Azure VMware e Cloud Volumes ONTAP. Com esse suporte, agora você pode configurar a proteção de recuperação de desastres do local para a solução Azure VMware usando o armazenamento Cloud Volumes ONTAP .</block>
   <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">Estas perguntas frequentes podem ajudar se você estiver apenas procurando uma resposta rápida para uma pergunta.</block>
-  <block id="5b1ed750574c9635d9a647519f1a5d2c" category="doc">Perguntas frequentes sobre NetApp Disaster Recovery</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
   <block id="0d6e5faf80b288a1d3277954d0b55ae8" category="inline-link"><block ref="0d6e5faf80b288a1d3277954d0b55ae8" category="inline-link-rx"></block></block>
   <block id="608e4777418fc3c48801c19842213f36" category="paragraph">*Qual é o URL do NetApp Disaster Recovery ?*  Para o URL, em um navegador, digite:<block ref="50afa4cc4e54d55b53b9cfffe1bc930c" category="inline-link-rx"></block> para acessar o console do NetApp .</block>
@@ -494,7 +493,6 @@
   <block id="0f5cc47067a5c4b536ab91f1a843de82" category="inline-link">Introdução ao Amazon FSx for NetApp ONTAP</block>
   <block id="ca098fd032be41af7e2c6add5e270ac2" category="inline-link">Documentação do NetApp Disaster Recovery</block>
   <block id="7f28f59c47464c242d6442ba13026efb" category="summary">Antes de usar o NetApp Disaster Recovery, você deve adicionar instâncias de armazenamento locais e hospedadas na nuvem ao sistema NetApp Console .</block>
-  <block id="db931cab7409f85dc1d9775949614f0a" category="doc">Adicione matrizes locais ao sistema NetApp Console para Amazon EVS com NetApp Disaster Recovery</block>
   <block id="110cf9f49141b2330ac27d9a9baedd2f" category="paragraph">Você precisa fazer o seguinte:</block>
   <block id="2adcb79ca69cc0b79677659aac14aa9c" category="list-text">Adicione matrizes locais ao seu sistema NetApp Console .</block>
   <block id="a7f121e2d8348452d8cf09574062389e" category="list-text">Adicione instâncias do Amazon FSx for NetApp ONTAP (FSx para ONTAP) ao seu sistema NetApp Console .</block>
@@ -526,24 +524,9 @@
   <block id="8d4ff1357f113705b6f30662ff7b14aa" category="list-text">Selecione um ou mais sistemas de arquivos FSx para ONTAP a serem adicionados.</block>
   <block id="9962f3e4666f59e6d6d1ad94b007e75f" category="paragraph"><block ref="9962f3e4666f59e6d6d1ad94b007e75f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7de461c253e2cd429a574e5ca48a6fa4" category="list-text">Repita as etapas 1 a 6 para cada instância do FSx for ONTAP que hospedará os armazenamentos de dados do vCenter.</block>
-  <block id="1503059987c6fe99f2376011b4b7880b" category="summary">Após a instalação do agente do NetApp Console , você precisa integrar todos os recursos de armazenamento ONTAP e VMware vCenter que participarão do processo de DR.</block>
-  <block id="670af43e9d1381c9b2f6568e9a8bc0d6" category="doc">Visão geral da configuração do NetApp Disaster Recovery para Amazon EVS</block>
-  <block id="bda90b7e1d319149388d93b1b8c3bf7b" category="paragraph">Depois de instalar o agente do NetApp Console , você precisa integrar todos os recursos de armazenamento ONTAP e VMware vCenter que participarão do processo de recuperação de desastres com o NetApp Disaster Recovery.</block>
   <block id="59cc5bbc9dd84af3fd3287ecf87e4546" category="inline-link-macro">Pré-requisitos para Amazon EVS com NetApp Disaster Recovery</block>
-  <block id="3d49a9699e82eb74a079a0b4b08ff9cc" category="list-text"><block ref="3d49a9699e82eb74a079a0b4b08ff9cc" category="inline-link-macro-rx"></block></block>
-  <block id="503cceeae37991265b70e7ed92031eec" category="inline-link-macro">Adicionar matrizes de armazenamento ONTAP ao NetApp Disaster Recovery</block>
-  <block id="e53a77c629cb2c8071fe14fafc33c99d" category="list-text"><block ref="e53a77c629cb2c8071fe14fafc33c99d" category="inline-link-macro-rx"></block></block>
-  <block id="8a2b24aad0ebfb72d49c88c7b37f14cf" category="inline-link-macro">Habilitar a NetApp Disaster Recovery para Amazon EVS</block>
-  <block id="0d3b053a785f31d7d6078b40a55a84fe" category="list-text"><block ref="0d3b053a785f31d7d6078b40a55a84fe" category="inline-link-macro-rx"></block></block>
-  <block id="45a1469632597a3880bb506abdb1bf70" category="inline-link-macro">Adicionar sites do vCenter ao NetApp Disaster Recovery</block>
-  <block id="f28381551e7e1066d0092705dd38d359" category="list-text"><block ref="f28381551e7e1066d0092705dd38d359" category="inline-link-macro-rx"></block></block>
-  <block id="370a8ca7e6b2cca92199c233522a1698" category="inline-link-macro">Adicionar clusters do vCenter ao NetApp Disaster Recovery</block>
-  <block id="80b788a7dab3609635ead698a8ecf978" category="list-text"><block ref="80b788a7dab3609635ead698a8ecf978" category="inline-link-macro-rx"></block></block>
   <block id="6345fa92d7a42c074c54b52f4c7ab432" category="summary">Você deve garantir que vários pré-requisitos sejam atendidos antes de continuar a configurar o Amazon EVS com o NetApp Disaster Recovery.</block>
   <block id="c054f75f836c29b129413caadf92e76a" category="list-text">Crie uma conta de usuário do vCenter com os privilégios específicos do VMware necessários para que o NetApp Disaster Recovery execute as operações necessárias.</block>
-  <block id="17c945d2315cf61f16352ef1cfbd5558" category="summary">Primeiro, usando o NetApp Disaster Recovery, forneça um nome de plano de replicação e selecione os vCenters de origem e destino para a replicação.</block>
-  <block id="528a5f3a334edc5d0050d997c54ff6d3" category="doc">Crie um plano de replicação: Etapa 1 - Selecione vCenters no NetApp Disaster Recovery</block>
-  <block id="4b7711bd320359bdedba0eba611c4063" category="paragraph">Primeiro, usando o NetApp Disaster Recovery, forneça um nome de plano de replicação e selecione os vCenters de origem e destino para a replicação.</block>
   <block id="3d5a9945f1a8ed1fc9f6c0e5c4eee4f6" category="list-text">Insira um nome exclusivo para o plano de replicação.</block>
   <block id="31e93095cb1f78296c5a4bfdd4647cd5" category="paragraph">Somente caracteres alfanuméricos e sublinhados (_) são permitidos para nomes de planos de replicação.</block>
   <block id="431ee8ca0b3802786f62aed1da9220ed" category="list-text">Selecione um cluster vCenter de origem.</block>
@@ -551,65 +534,36 @@
   <block id="e6cd86d61f4639c8a27006c6c29b3e9f" category="list-text">Selecione *Avançar*.</block>
   <block id="ecced8ecd9dc616f00d9f567714d6265" category="inline-image-macro">Crie um plano de replicação, selecione vCenters</block>
   <block id="d35b9c993df2e12890476ca19b659441" category="paragraph"><block ref="d35b9c993df2e12890476ca19b659441" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b191b6f49b0765d360681184e8222444" category="inline-link-macro">Assistente para criar plano de replicação Etapa 2</block>
-  <block id="5003f822127ac9a9c7547da6e214573c" category="paragraph">Continuar com<block ref="517e532aa0c56fe7f6a8ea55b263a992" category="inline-link-macro-rx"></block> .</block>
-  <block id="3bf344849b279fc2fb2c37fb502858bc" category="summary">Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx for NetApp ONTAP.  Selecione as máquinas virtuais a serem protegidas usando o NetApp Disaster Recovery.</block>
-  <block id="67c9d520ed8a3d8b0171f8bfb1f17994" category="doc">Criar um plano de replicação: Etapa 2 - Selecionar recursos de VM no NetApp Disaster Recovery</block>
-  <block id="6405ab5aaa1cd7c35f34d86c9e283bdc" category="paragraph">Selecione as máquinas virtuais a serem protegidas usando o NetApp Disaster Recovery.</block>
-  <block id="610fc4dc6e77d6a138be8851cd39ce5a" category="paragraph">Existem várias maneiras de selecionar VMs para proteção:</block>
-  <block id="ce621c7003512f5ad0a4858f15d9be63" category="list-text">*Selecionar VMs individuais*: clicar no botão *Máquinas virtuais* permite que você selecione VMs individuais para proteger.  Conforme você seleciona cada VM, o serviço a adiciona a um grupo de recursos padrão localizado no lado direito da tela.</block>
-  <block id="b2ecd432d419c7d817817f6f12122724" category="list-text">*Selecionar grupos de recursos criados anteriormente*: Você pode criar grupos de recursos personalizados com antecedência usando a opção Grupo de recursos no menu NetApp Disaster Recovery .  Isso não é um requisito, pois você pode usar os outros dois métodos para criar um grupo de recursos como parte do processo de plano de replicação. Para obter detalhes, consulte <block ref="8aa3c94c171b2c9d7252afb28ee019a7" category="inline-link-macro-rx"></block> .</block>
-  <block id="0d8a2edf7362f3571587d9585ead0a6b" category="list-text">*Selecionar datastores inteiros do vCenter*: se você tiver muitas VMs para proteger com este plano de replicação, pode não ser tão eficiente selecionar VMs individuais.  Como o NetApp Disaster Recovery usa replicação SnapMirror baseada em volume para proteger as VMs, todas as VMs que residem em um armazenamento de dados serão replicadas como parte do volume.  Na maioria dos casos, você deve fazer com que o NetApp Disaster Recovery proteja e reinicie quaisquer VMs localizadas no armazenamento de dados.  Use esta opção para informar ao serviço para adicionar quaisquer VMs hospedadas em um armazenamento de dados selecionado à lista de VMs protegidas.</block>
-  <block id="28da8b5b38656ce6567ddf373453c269" category="paragraph">Para esta instrução guiada, selecionamos todo o armazenamento de dados do vCenter.</block>
   <block id="7b9830c740b374eb20e5c17ea81bb1ab" category="list-title">Passos para acessar esta página</block>
   <block id="fc85d703602655afa214ccfc6b2ef4af" category="list-text">Na página *Plano de replicação*, continue para a seção *Aplicativos*.</block>
   <block id="32f270bdb81f946e928264e11584d291" category="list-text">Revise as informações na página *Inscrições* que é aberta.</block>
   <block id="adea8c3ade175d7b99a99a269bb1b136" category="inline-image-macro">Plano de replicação, página de aplicativos</block>
   <block id="a66155ae2edcdc831993816e795e2cb4" category="paragraph"><block ref="a66155ae2edcdc831993816e795e2cb4" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a538750f5afffe988fa99e8ccc24c31a" category="list-title">Etapas para selecionar o armazenamento de dados ou armazenamentos de dados:</block>
   <block id="c553b552a9a8ba818b60c47b2f8a317c" category="list-text">Selecione *Datastores*.</block>
   <block id="950f1daebd3c43f88a40dc7c475d8bf9" category="list-text">Marque as caixas de seleção ao lado de cada armazenamento de dados que você deseja proteger.</block>
-  <block id="256c31a6dcdbd7ede927d725d062abd1" category="list-text">(Opcionalmente) Renomeie o grupo de recursos para um nome adequado selecionando o ícone de lápis ao lado do nome do grupo de recursos.</block>
-  <block id="5cdb6865395a5a7c648eec3a4bfdc0cf" category="inline-link-macro">Assistente para criar plano de replicação Etapa 3</block>
-  <block id="97ff8b16c5655b92ed53df0dd71843fa" category="paragraph">Continuar com<block ref="adffaab82c54ec90442b4418979dfb11" category="inline-link-macro-rx"></block> .</block>
-  <block id="52d152a6a290a15f392a9a69d206f0a7" category="summary">Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx for NetApp ONTAP.  Depois de ter uma lista de VMs a serem protegidas, o NetApp Disaster Recovery exige que você forneça informações de mapeamento de failover e configuração de VM para usar durante um failover.</block>
-  <block id="7b8cba8cda149b5894b574658f5c54c9" category="doc">Criar um plano de replicação: Etapa 3 - Mapear recursos no NetApp Disaster Recovery</block>
-  <block id="a4b150dcdb55a1099e5dafdc68c62f0e" category="paragraph">Depois de ter uma lista de VMs que você deseja proteger usando o NetApp Disaster Recovery, forneça o mapeamento de failover e as informações de configuração da VM para usar durante um failover.</block>
-  <block id="d2ff096b4d4a2f5f4848cf23e9c25e0d" category="paragraph">Você precisa mapear quatro tipos principais de informações:</block>
   <block id="9cdd09a5b2d217b34fdab06b6438a3ea" category="list-text">Recursos de computação</block>
   <block id="30c53d4188dc7e116970e74000c9c914" category="list-text">Redes virtuais</block>
   <block id="99060ab16c8117b10834f3ad1dd732c8" category="list-text">Reconfiguração de VM</block>
   <block id="f443508dbf8673a0459dd93afb702a1c" category="list-text">Mapeamento de armazenamento de dados</block>
   <block id="76e8c836ee964f4fa864d6333268999a" category="paragraph">Cada VM requer os três primeiros tipos de informações.  O mapeamento do armazenamento de dados é necessário para cada armazenamento de dados que hospeda as VMs a serem protegidas.</block>
-  <block id="daa6be73716dc44624a55224ae2ed0af" category="inline-image-macro">25,25</block>
-  <block id="35939d9e04d73376eda45b2b13922f28" category="list-text">As seções com o ícone de cuidado (<block ref="8bb617320337469159947c2ee9a52889" category="inline-image-macro-rx" type="image"></block> ) exigem que você forneça informações de mapeamento.</block>
-  <block id="5574c8f31b4cf0921b32111194d0542a" category="list-text">A seção marcada com o ícone de verificação (<block ref="61783be3aca45cad43d97d02f3268d3c" category="inline-image-macro-rx" type="image"></block> ) foram mapeados ou têm mapeamentos padrão.  Revise-os para ter certeza de que a configuração atual atende aos seus requisitos.</block>
   <block id="6028265a3b574aed8497e66443fac28c" category="list-text">Na página *Plano de replicação*, continue para a seção *Mapeamento de recursos*.</block>
   <block id="c983acef9845cc75bd306109d8a52c00" category="list-text">Revise as informações na página *Mapeamento de recursos* que é aberta.</block>
   <block id="fa1610ddfa2152b9e8f5778144e74473" category="inline-image-macro">Criar plano de replicação, página de mapeamento de recursos</block>
   <block id="fe4f9d685407c3d061ae56d4bb07c056" category="paragraph"><block ref="fe4f9d685407c3d061ae56d4bb07c056" category="inline-image-macro-rx" type="image"></block></block>
   <block id="740199b79705af0b0465a7ac59ab8f62" category="list-text">Para abrir cada categoria de mapeamentos necessários, selecione a seta para baixo (*v*) ao lado da seção.</block>
-  <block id="1d695da8be5a808b287d79de335b03ee" category="section-title">Mapeamento de recursos de computação</block>
   <block id="0a235ac401a30cfb7078a7aa681d6763" category="paragraph">Como um site pode hospedar vários datacenters virtuais e vários clusters vCenter, você precisa identificar em qual cluster vCenter recuperar as VMs no caso de um failover.</block>
-  <block id="bf6fa7ffbe6eb7d1755d6cbf9113608e" category="list-title">Etapas para mapear recursos de computação</block>
   <block id="5f284173a4e05543b1d3f4f96396fe44" category="list-text">Selecione o datacenter virtual na lista de datacenters localizados no site de DR.</block>
   <block id="98b8fc331440708a4300daf2feca158c" category="list-text">Selecione o cluster para hospedar os datastores e VMs na lista de clusters dentro do datacenter virtual selecionado.</block>
-  <block id="26101477fa982299ccdcb9317d953d1f" category="list-text">(Opcional) Selecione um host de destino no cluster de destino.</block>
-  <block id="00ccee3f063c0eb4d8572dd65690cc4c" category="paragraph">Esta etapa não é necessária porque o NetApp Disaster Recovery seleciona o primeiro host adicionado ao cluster no vCenter.  Nesse ponto, as VMs continuam a ser executadas naquele host ESXi ou o VMware DRS move a VM para um host ESXi diferente, conforme necessário, com base nas regras do DRS configuradas.</block>
-  <block id="6604b6a796234e71213e8532c2e0ac4d" category="list-text">(Opcional) Forneça o nome de uma pasta de nível superior do vCenter para colocar os registros de VM.</block>
-  <block id="19ec7913efad483c20da5162901ba76d" category="paragraph">Isso é para suas necessidades organizacionais e não é obrigatório.</block>
   <block id="b98800e8cefd33a1732635723a78893e" category="inline-image-macro">Criar plano de replicação, calcular recursos</block>
   <block id="7e7f922d36944c2c720506b1664eb3a6" category="paragraph"><block ref="7e7f922d36944c2c720506b1664eb3a6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5bb09905caece74967f31a8b9acdfec6" category="section-title">Mapear recursos de rede virtual</block>
   <block id="735422ecadbce7a10ea51451e2684498" category="paragraph">Cada VM pode ter uma ou mais NICs virtuais conectadas a redes virtuais dentro da infraestrutura de rede do vCenter.  Para garantir que cada VM esteja conectada corretamente às redes desejadas ao reiniciar no site de DR, identifique em quais redes virtuais do site de DR essas VMs serão conectadas.  Faça isso mapeando cada rede virtual no site local para uma rede associada no site de DR.</block>
-  <block id="8a498354f2b10b57cd6a21abef44b84b" category="list-title">Selecione qual rede virtual de destino mapear cada rede virtual de origem</block>
   <block id="be8a0f52b3f89ec52898a687a46d98d3" category="list-text">Selecione o segmento de destino na lista suspensa.</block>
   <block id="ffbce16aa92393c36f22c436fb54ba16" category="list-text">Repita a etapa anterior para cada rede virtual de origem listada.</block>
   <block id="579a4f796bf2b17e04e79c92ced90e7c" category="inline-image-macro">Criar plano de replicação, recursos de rede</block>
   <block id="b7e6f42742ecf3f82ee5efd7c340a0c4" category="paragraph"><block ref="b7e6f42742ecf3f82ee5efd7c340a0c4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="101a1653e9b88e3b9342a8d62b2a73b7" category="section-title">Definir opções para reconfiguração de VM durante failover</block>
   <block id="6d53be845ac6f380dbbdf61cb744f18f" category="paragraph">Cada VM pode exigir modificações para funcionar corretamente no site do DR vCenter.  A seção Máquinas virtuais permite que você forneça as alterações necessárias.</block>
-  <block id="2b0d3537dca3b872e11c351fad98b03a" category="paragraph">Por padrão, o NetApp Disaster Recovery usa as mesmas configurações para cada VM usadas no site local de origem.  Isso pressupõe que as VMs usarão o mesmo endereço IP, CPU virtual e configuração de DRAM virtual.</block>
   <block id="50fca5dd60bc7595c14d877fcc09a35b" category="section-title">Reconfiguração de rede</block>
   <block id="7e7f909a784ac97b548d1c0c896ffda7" category="paragraph">Os tipos de endereços IP suportados são estáticos e DHCP.  Para endereços IP estáticos, você tem as seguintes configurações de IP de destino:</block>
   <block id="7ab1e4417fd162d1f894cc7ff7d92781" category="list-text">*Igual à origem*: como o nome sugere, o serviço usa o mesmo endereço IP na VM de destino que foi usado na VM no site de origem.  Isso requer que você configure as redes virtuais que foram mapeadas na etapa anterior para as mesmas configurações de sub-rede.</block>
@@ -617,65 +571,34 @@
   <block id="d435df5e27b24704914a2630c0742190" category="list-text">*Mapeamento de sub-rede*: esta opção reconfigura o endereço IP de cada VM com base na configuração CIDR da rede virtual de destino.  Para usar esse recurso, certifique-se de que cada rede virtual do vCenter tenha uma configuração CIDR definida dentro do serviço, conforme alterado nas informações do vCenter na página Sites.</block>
   <block id="9878b8f9706d43985e2e2c7735cc56d9" category="paragraph">Depois de configurar sub-redes, o mapeamento de sub-redes usa o mesmo componente de unidade do endereço IP para a configuração da VM de origem e de destino, mas substitui o componente de sub-rede do endereço IP com base nas informações CIDR fornecidas.  Este recurso também requer que as redes virtuais de origem e de destino tenham a mesma classe de endereço IP (o<block ref="0b93165f79d16271b738282c36905f88" prefix=" " category="inline-code"></block> componente do CIDR).  Isso garante que haja endereços IP suficientes disponíveis no site de destino para hospedar todas as VMs protegidas.</block>
   <block id="ae5627da5802cb3e1a62f67e6b52b520" category="paragraph">Para esta configuração do EVS, assumimos que as configurações de IP de origem e destino são as mesmas e não exigem nenhuma reconfiguração adicional.</block>
-  <block id="7df032e1e3b26bcc6394803e16ee36e3" category="list-title">Faça alterações na reconfiguração das configurações de rede</block>
   <block id="8faacc5c62c7b4f41379c86745cf1320" category="list-text">Selecione o tipo de endereçamento IP a ser usado para VMs com failover.</block>
-  <block id="bd65c978b90114c74862fa1e6c2fb3a0" category="list-text">(Opcional) Forneça um esquema de renomeação de VM para VMs reiniciadas, fornecendo um valor de prefixo e sufixo opcional.</block>
   <block id="ee8fa5ed67895f2bd56b15818f6ba9db" category="paragraph"><block ref="ee8fa5ed67895f2bd56b15818f6ba9db" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a31bffcdbc06bba08556f1bcdb9efd4e" category="section-title">Reconfiguração de recursos de computação de VM</block>
-  <block id="8f91fdc6e53b178095ebff10f00b0483" category="paragraph">Há várias opções para reconfigurar recursos de computação de VM.  O NetApp Disaster Recovery oferece suporte à alteração do número de CPUs virtuais, da quantidade de DRAM virtual e do nome da VM.</block>
-  <block id="b84568179180e997fe88daef837b9e44" category="list-title">Especifique quaisquer alterações de configuração da VM</block>
-  <block id="cbcc2cf21c1cabd12aef3bdc6989b58a" category="list-text">(Opcional) Modifique o número de CPUs virtuais que cada VM deve usar.  Isso pode ser necessário se os hosts do cluster DR vCenter não tiverem tantos núcleos de CPU quanto o cluster vCenter de origem.</block>
-  <block id="f99ff1887350d7bcdc532d81459bbcba" category="list-text">(Opcional) Modifique a quantidade de DRAM virtual que cada VM deve usar.  Isso pode ser necessário se os hosts do cluster DR vCenter não tiverem tanta DRAM física quanto os hosts do cluster vCenter de origem.</block>
   <block id="cb1cacde7ecdf6468ab80da9dc29aeaf" category="inline-image-macro">Criar plano de replicação, recursos de VM</block>
   <block id="b7de53c41bbac8d240c11204a8336fe6" category="paragraph"><block ref="b7de53c41bbac8d240c11204a8336fe6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="41500e64be223d1286ec9ed56e434a6b" category="section-title">Ordem de inicialização</block>
-  <block id="7244840cf5169124c226469fb1f736b5" category="paragraph">O NetApp Disaster Recovery oferece suporte a uma reinicialização ordenada de VMs com base em um campo de ordem de inicialização.  O campo Ordem de inicialização indica como as VMs em cada grupo de recursos são iniciadas.  As VMs com o mesmo valor no campo Ordem de inicialização inicializam em paralelo.</block>
   <block id="c2aa8df176e82c22e3798ddeaf162829" category="list-title">Modificar as configurações da ordem de inicialização</block>
-  <block id="31699a9c346129c577f6f1b77d96ae96" category="list-text">(Opcionalmente) Modifique a ordem em que você gostaria que suas VMs fossem reiniciadas.  Este campo aceita qualquer valor numérico.  O NetApp Disaster Recovery tenta reiniciar VMs que têm o mesmo valor numérico em paralelo.</block>
-  <block id="c6abc4f53ac73ee608655639d83b459e" category="list-text">(Opcionalmente) Forneça um atraso a ser usado entre cada reinicialização da VM.  O tempo é injetado após a reinicialização desta VM ser concluída e antes das VMs com o próximo número de ordem de inicialização mais alto.  Este número está em minutos.</block>
   <block id="146293c3e8323d5de7fab758380284c9" category="inline-image-macro">Criar plano de replicação, ordem de inicialização</block>
   <block id="2285aa38909854998b9c1f6afd655df5" category="paragraph"><block ref="2285aa38909854998b9c1f6afd655df5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e1dc360c00065acba449e872783c58c4" category="section-title">Operações personalizadas do sistema operacional convidado</block>
-  <block id="f2d074d5304055ae8675d0593ecc60c9" category="paragraph">O NetApp Disaster Recovery oferece suporte à execução de algumas operações de sistema operacional convidado para cada VM:</block>
-  <block id="5cf2ce8d77610481c4b3cd72782cf3a3" category="list-text">O NetApp Disaster Recovery pode fazer backups consistentes de aplicativos de VMs que executam bancos de dados Oracle e Microsoft SQL Server.</block>
-  <block id="1e07046056d3e387617e7a10b45ae57b" category="list-text">O NetApp Disaster Recovery pode executar scripts personalizados definidos adequados para o sistema operacional convidado de cada VM.  A execução desses scripts requer credenciais de usuário aceitáveis ​​para o sistema operacional convidado, com amplos privilégios para executar as operações listadas no script.</block>
   <block id="abe3fe6dfef4ae381fe90e2ed48d5c00" category="list-title">Modificar as operações personalizadas do sistema operacional convidado de cada VM</block>
-  <block id="014767c5a4f585d6656d983919cb2c72" category="list-text">(Opcional) Marque a caixa de seleção *Criar réplicas consistentes de aplicativos* se a VM estiver hospedando um banco de dados Oracle ou SQL Server.</block>
-  <block id="763e27fb652b34b1adbac7f8f2a991a8" category="list-text">(Opcional) Para executar ações personalizadas no sistema operacional convidado como parte do processo de inicialização, carregue um script para qualquer VM.  Para executar um único script em todas as VMs, use a caixa de seleção destacada e preencha os campos.</block>
   <block id="52e6c6e94ae36e19143bcae9a858c5f5" category="list-text">Certas alterações de configuração exigem credenciais de usuário com permissões adequadas para executar as operações.  Forneça credenciais nos seguintes casos:</block>
   <block id="4527e376733ff2c1c7e7ff3c53308fea" category="list-text">Um script será executado dentro da VM pelo sistema operacional convidado.</block>
   <block id="b81b7d3cf119376fc1e91c8228a69fc7" category="list-text">É necessário executar um snapshot consistente com o aplicativo.</block>
   <block id="035c4fd259e9e7ca1c071c63887a2ee9" category="inline-image-macro">Criar plano de replicação, operações personalizadas do sistema operacional convidado</block>
   <block id="7535f841f34db2e7c20c7c0a70d45f9d" category="paragraph"><block ref="7535f841f34db2e7c20c7c0a70d45f9d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bde5353b2d9b0eb001221c6d160f86dd" category="section-title">Armazenamentos de dados de mapas</block>
-  <block id="d22d2b8c7fff83090c0de04eabc1fd68" category="paragraph">A etapa final na criação de um plano de replicação é identificar como o ONTAP deve proteger os armazenamentos de dados.  Essas configurações definem o objetivo do ponto de recuperação (RPO) dos planos de replicação, quantos backups devem ser mantidos e onde replicar os volumes ONTAP de hospedagem de cada armazenamento de dados do vCenter.</block>
-  <block id="d2e02b58f0bdc06bb76a23d44ab75a68" category="paragraph">Por padrão, o NetApp Disaster Recovery gerencia seu próprio agendamento de replicação de snapshots; no entanto, opcionalmente, você pode especificar que gostaria de usar o agendamento de política de replicação existente do SnapMirror para proteção do repositório de dados.</block>
-  <block id="982884cfc2fc19d0c0071a3afce57b92" category="paragraph">Além disso, você pode personalizar opcionalmente quais LIFs de dados (interfaces lógicas) e política de exportação usar.  Se você não fornecer essas configurações, o NetApp Disaster Recovery usará todos os LIFs de dados associados ao protocolo apropriado (NFS, iSCSI ou FC) e usará a política de exportação padrão para volumes NFS.</block>
-  <block id="000dc760e354ae9b58065262bae7e919" category="list-title">Para configurar o mapeamento do armazenamento de dados (volume)</block>
-  <block id="156382e2a0dba523d75d31a3a2c59930" category="list-text">(Opcional) Decida se você deseja usar um agendamento de replicação ONTAP SnapMirror existente ou se deseja que o NetApp Disaster Recovery gerencie a proteção de suas VMs (padrão).</block>
   <block id="eb315e77d04175ba27a28688bbf3625b" category="list-text">Forneça um ponto de partida para quando o serviço deve começar a fazer backups.</block>
   <block id="2f8abd67ba85ff243c7fd1a96e395c01" category="list-text">Especifique com que frequência o serviço deve fazer um backup e replicá-lo no cluster Amazon FSx for NetApp ONTAP de destino de DR.</block>
   <block id="fe0f24f024a5d540c8832cca7b543154" category="list-text">Especifique quantos backups históricos devem ser mantidos.  O serviço mantém o mesmo número de backups no cluster de armazenamento de origem e de destino.</block>
-  <block id="b9ddc614a5fc5a45bff5e0c4ae6d66f8" category="list-text">(Opcional) Selecione uma interface lógica padrão (LIFs de dados) para cada volume.  Se nenhuma opção for selecionada, todos os LIFs de dados no SVM de destino que suportam o protocolo de acesso ao volume serão configurados.</block>
-  <block id="a367507541752e287e151e706fb73880" category="list-text">(Opcional) Selecione uma política de exportação para qualquer volume NFS.  Se não for selecionado, a política de exportação padrão será usada</block>
   <block id="0aca0237d66ff2a0ecd9688925663da8" category="inline-image-macro">Criar plano de replicação, mapeamento de armazenamento de dados</block>
   <block id="3e9f2fba72a59f060462aaf417bde827" category="paragraph"><block ref="3e9f2fba72a59f060462aaf417bde827" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4f3c7993b4a0eec366f6c0122e605a04" category="inline-link-macro">Assistente para criar plano de replicação Etapa 4</block>
-  <block id="850540557deea1ebe75231ef329e63e0" category="paragraph">Continuar com<block ref="63ce8d54120138184ac6b85905fdfc39" category="inline-link-macro-rx"></block> .</block>
-  <block id="10eb2a15716cf51f3ce2b2eff245d0c5" category="summary">Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx for NetApp ONTAP.  Depois de adicionar todas as informações do plano de replicação no NetApp Disaster Recovery, verifique se as informações inseridas estão corretas.</block>
-  <block id="eab6bcb6cb07f7756075d729c4b964c6" category="doc">Criar um plano de replicação: Etapa 4 - Verificar as configurações no NetApp Disaster Recovery</block>
-  <block id="dba40250f1d50e0d495580be149e8865" category="paragraph">Depois de adicionar as informações do plano de replicação no NetApp Disaster Recovery, verifique se as informações inseridas estão corretas.</block>
   <block id="1ec333fbe816bd59b32c3043688dce3a" category="list-text">Selecione *Salvar* para revisar suas configurações antes de ativar o plano de replicação.</block>
   <block id="eaf1d2a5a85db51c895eec091024fcdb" category="paragraph">Você pode selecionar cada guia para revisar as configurações e fazer alterações em qualquer guia selecionando o ícone de lápis.</block>
   <block id="02a14a8411578842546f29f1aa48aa03" category="inline-image-macro">Revisão das configurações do plano de replicação</block>
   <block id="a6028cc77f12edef30126bf564d7e12c" category="paragraph">Revisão das configurações do plano de replicação<block ref="039af1de0de6af1a755c0ff0c52a0bf3" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b25ad10e439d0b73b0ace76c8b82f32e" category="list-text">Quando estiver satisfeito com todas as configurações, selecione *Adicionar plano* na parte inferior da tela.</block>
-  <block id="5b8fe5ae3c38b512fafe1a0eda3235b7" category="inline-link-macro">Verifique o plano de replicação</block>
-  <block id="d3137afd2501d96b6f91fb0cd319a97e" category="paragraph">Continuar com<block ref="9b042902ca8b7f8d8a3f6659df0dd9bf" category="inline-link-macro-rx"></block> .</block>
   <block id="757cef28e3476de7d28c90536bc73e0f" category="summary">Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx for NetApp ONTAP.  Depois de ter vCenters para proteger no site local e ter um site Amazon EVS configurado para usar o Amazon FSx for NetApp ONTAP que você pode usar como um destino de DR, agora você pode criar um plano de replicação (RP) para proteger qualquer conjunto de VMs hospedadas no cluster vCenter dentro do seu site local.</block>
-  <block id="d0505c9f93f8dfc240f568058eec35f1" category="doc">Criar planos de replicação na visão geral do NetApp Disaster Recovery</block>
   <block id="fef9019000b5b750b8ceb6b358e2b27d" category="paragraph">Depois de ter vCenters para proteger no site local e ter um site Amazon EVS configurado para usar o Amazon FSx for NetApp ONTAP que você pode usar como um destino de DR, você pode criar um plano de replicação (RP) para proteger qualquer conjunto de VMs hospedadas no cluster vCenter dentro do seu site local.</block>
-  <block id="70d88db53e9d0a0893575ab9645014d9" category="list-title">Para iniciar o processo de criação do plano de replicação:</block>
   <block id="36de448f666bdfe4bd89443569f9f5b9" category="list-text">Em qualquer tela do NetApp Disaster Recovery , selecione a opção *Planos de replicação*.</block>
   <block id="a26e72d9112ba38f2aeaa80403f2d3b7" category="inline-image-macro">opção de planos de replicação</block>
   <block id="fc5423008088d428d5d5288b6d926901" category="paragraph"><block ref="fc5423008088d428d5d5288b6d926901" category="inline-image-macro-rx" type="image"></block></block>
@@ -683,8 +606,6 @@
   <block id="990690bbac7cce3d6ec74f7ad2092ce9" category="inline-image-macro">Tela de planos de replicação</block>
   <block id="6304a64bfb4ed5a846d90fa245489b8b" category="paragraph"><block ref="6304a64bfb4ed5a846d90fa245489b8b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="001c8602fd8350b7fdcf0372ede572df" category="paragraph">Isso abre o assistente Criar plano de replicação.</block>
-  <block id="172e660321773233c788b5ea98a12f2b" category="inline-link-macro">Assistente para criação de plano de replicação Etapa 1</block>
-  <block id="16a01d811080f0448945a1a3745c6964" category="paragraph">Continuar com<block ref="2602b8e50a671483fcbb79c7b3fae673" category="inline-link-macro-rx"></block> .</block>
   <block id="f466a98ba79b084b022c8d01ccf0a661" category="summary">Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx for NetApp ONTAP.  O NetApp Disaster Recovery é um produto licenciado que deve ser adquirido antes de poder ser usado.  Existem vários tipos de licenças e várias maneiras de adquiri-las.</block>
   <block id="c5cbd001e119ae16f6983ee7f6a8698a" category="doc">Adicione o serviço NetApp Disaster Recovery à sua conta do NetApp Console para Amazon EVS</block>
   <block id="9c090b43ef184efb8e3c3ddd37e6f441" category="paragraph">O NetApp Disaster Recovery é um produto licenciado que deve ser adquirido antes de poder ser usado.  Existem vários tipos de licenças e várias maneiras de adquiri-las.  Uma licença lhe dá o direito de proteger uma quantidade específica de dados por um período de tempo específico.</block>
@@ -811,7 +732,6 @@
   <block id="10492389e94efdebbb66f7b0cd8a1324" category="list-text">Selecione *Salvar*.</block>
   <block id="fd859d2ad3a0f7f4658b9ab4b3f761a3" category="image-alt">Editar failover de teste de agendamento</block>
   <block id="899e8836a0df2f53c58c4f92eeeb3ab0" category="summary">Visão geral da solução de NetApp Disaster Recovery usando Amazon EVS e Amazon FSxN.</block>
-  <block id="2628b4207ed13a7d7671ac67472c5d72" category="doc">Visão geral da solução de NetApp Disaster Recovery usando Amazon EVS e Amazon FSs para NetApp ONTAP</block>
   <block id="9249112d594032957a419aea4d7bd42e" category="paragraph">O NetApp Disaster Recovery é um serviço de valor agregado hospedado no ambiente de software como serviço do NetApp Console , que depende da arquitetura principal do NetApp Console .  Vários componentes principais compõem o serviço DR para proteção do VMware no Console.</block>
   <block id="dcf4eaae5b7bdb68e0250499844bbcb5" category="paragraph">Se você quiser proteger suas máquinas virtuais VMware locais hospedadas no Amazon AWS, use o serviço para fazer backup no Amazon EVS com o Amazon FSx for NetApp ONTAP .</block>
   <block id="562f4ec7d85420cef97dbbe985cc8083" category="paragraph">A figura a seguir mostra como o serviço funciona para proteger suas VMs com o Amazon EVS.</block>
@@ -841,7 +761,6 @@
   <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">Tipo</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Descrição</block>
   <block id="84fa68bdcea2ad5e54b20ac851705b19" category="summary">Limitações conhecidas identificam plataformas, dispositivos ou funções que não são suportados por esta versão do serviço ou que não interoperam corretamente com ele.</block>
-  <block id="3d3d2883faed9efeee5c50be2552c33e" category="doc">Limitações na NetApp Disaster Recovery</block>
   <block id="84c20a0b7ce2eb1001004d644d0ca57e" category="section-title">Aguarde até que o failback seja concluído antes de executar a descoberta</block>
   <block id="a59aaedc864081e6c1a7bd46bcdf9813" category="paragraph">Após a conclusão de um failover, não inicie a descoberta no vCenter de origem manualmente.  Aguarde até que o failback seja concluído e inicie a descoberta no vCenter de origem.</block>
   <block id="231f953e37931ddef1cd6a0415328a8b" category="section-title">O NetApp Console pode não detectar o Amazon FSx for NetApp ONTAP</block>
@@ -1176,7 +1095,6 @@
   <block id="210dfd955522333f74e13d0843ab02ff" category="paragraph">Esta seção pode ser ativada ou desativada dependendo da sua seleção.</block>
   <block id="c4c09b507b4da4a281d7ce6c068b6a88" category="inline-image-macro">Captura de tela mostrando Adicionar plano de replicação &amp;gt; Mapeamento de recursos &amp;gt; armazenamentos de dados</block>
   <block id="7b6735057ec599457ce14b0629d098bf" category="paragraph"><block ref="383fd741f178abe8be4920d498113a6c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="66567f18828dfaf896a5c34da4af6cbb" category="list-text">*Usar backups gerenciados pela plataforma e agendamentos de retenção*: se estiver usando uma solução externa de gerenciamento de snapshots, marque esta caixa.  O NetApp Disaster Recovery oferece suporte ao uso de soluções externas de gerenciamento de snapshots, como o agendador de políticas nativo ONTAP SnapMirror ou integrações de terceiros.  Se cada armazenamento de dados (volume) no plano de replicação já tiver um relacionamento SnapMirror que esteja sendo gerenciado em outro lugar, você poderá usar esses instantâneos como pontos de recuperação no NetApp Disaster Recovery.</block>
   <block id="d22ee3234903873cb3dfd07b3999a93c" category="paragraph">Quando esta opção é selecionada, o NetApp Disaster Recovery não configura um agendamento de backup.  No entanto, você ainda precisa configurar um cronograma de retenção porque snapshots ainda podem ser tirados para operações de teste, failover e failback.</block>
   <block id="a7cb9d7cf359ecc9e5cef81ecdd91cd1" category="admonition">O número de instantâneos retidos, juntamente com a taxa de alteração de dados entre cada instantâneo, determina a quantidade de espaço de armazenamento consumido na origem e no destino.  Quanto mais instantâneos você retém, mais espaço de armazenamento é consumido.</block>
   <block id="63882377431b20b814641f0190aa1986" category="list-text">*Datastores de origem e destino*: Se houver vários relacionamentos SnapMirror (fan-out), você poderá selecionar o destino a ser usado.  Se um volume já tiver um relacionamento SnapMirror estabelecido, os armazenamentos de dados de origem e destino correspondentes serão exibidos.  Se um volume não tiver um relacionamento SnapMirror , você poderá criar um agora selecionando um cluster de destino, selecionando um SVM de destino e fornecendo um nome de volume.  O serviço criará o volume e o relacionamento do SnapMirror .</block>
@@ -1254,7 +1172,6 @@
   <block id="c446892b6c8669077c04a02123055cec" category="admonition">Você pode estabelecer proteção reversa selecionando *Proteger recursos* no menu Ações do plano de replicação.  Isso tenta criar um relacionamento de replicação reversa para cada volume no plano.  Você pode executar esta tarefa repetidamente até que a proteção seja restaurada.  Quando a proteção for restaurada, você poderá iniciar um failback da maneira usual.</block>
   <block id="544bb990c26b075198ab3593eb235cab" category="list-text">Digite "failover" na caixa.</block>
   <block id="d84be8f4bd42528d316284b904e45288" category="summary">Você pode dar uma olhada rápida em todos os seus recursos do NetApp Disaster Recovery e gerenciar sites do vCenter, grupos de recursos e planos de replicação.</block>
-  <block id="06804fd9ef3d874a22951c7ab07ff304" category="doc">Gerencie sites, grupos de recursos, planos de replicação, repositórios de dados e informações de máquinas virtuais com o NetApp Disaster Recovery</block>
   <block id="3faa64303d5f5bcd043bb88f6768e603" category="list-text">Locais</block>
   <block id="769b718779fbe38c65b122b69e0271a3" category="list-text">Grupos de recursos</block>
   <block id="a8fc43ecd23ee9eb5e9efa5c60cb20b9" category="list-text">Planos de replicação</block>
@@ -1428,14 +1345,7 @@
   <block id="18e2ce6101a73dea18d6093a4137fc98" category="paragraph">Você pode atualizar a descoberta manualmente a qualquer momento.  Isso é útil se você adicionou ou removeu VMs e deseja atualizar as informações no NetApp Disaster Recovery.</block>
   <block id="5196afaaa8fb34fc7153a30daf14514e" category="list-text">Selecione o site que você deseja atualizar.</block>
   <block id="c87fc74cb4f8f9196e191287a96f80dd" category="list-text">Selecione as Ações<block ref="145ad72607e9a3c177918d31007a191e" category="inline-image-macro-rx" type="image"></block> ícone à direita e selecione *Atualizar*.</block>
-  <block id="0a13c13f2e21dfad18fe114c73576fce" category="doc">Visão geral do uso do NetApp Disaster Recovery</block>
-  <block id="07e1d0f6e00d901ca9ce64b9a8e00b58" category="paragraph">Usando o NetApp Disaster Recovery, você pode atingir os seguintes objetivos:</block>
-  <block id="9d8650f8b712e42ae65b817a2d362674" category="inline-link-macro">Veja a saúde dos seus planos de recuperação de desastres</block>
   <block id="9a0ab11cd9364c5c2dae1c85f73f88bc" category="inline-link-macro">Crie um plano de recuperação de desastres</block>
-  <block id="975bd51387ba647a2ec64ceadc877674" category="inline-link-macro">Replicar aplicativos VMware</block>
-  <block id="ce73dc7b29306446e29ef94fab241864" category="inline-link-macro">Teste o fail over</block>
-  <block id="b1f0bf46829b4c6beb14d50bf487d856" category="inline-link-macro">falha no seu site principal</block>
-  <block id="e89ad820b169dd69e140ee0cd12bfc40" category="inline-link-macro">falha de retorno</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Começar</block>
   <block id="06ad314b340900d226b1196e1fe289e9" category="sidebar">Início rápido</block>
   <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="sidebar">Pré-requisitos</block>
@@ -1464,11 +1374,6 @@
   <block id="479fc46c2a30414e29c61a5efe993bd4" category="sidebar">Adicionar NetApp Disaster Recovery para Amazon EVS</block>
   <block id="456d07ca1e92ff93932f43241f478198" category="sidebar">Adicionar clusters vCenter para Amazon EVS</block>
   <block id="ad115bee9be4ef501777f6719a0fe513" category="sidebar">Crie planos de replicação para o Amazon EVS</block>
-  <block id="46942b0e0b0069545de09c85b8d0a7fb" category="sidebar">Criar planos de replicação para a visão geral do Amazon EVS</block>
-  <block id="7b797e6e5b968f50231b064bf226a71c" category="sidebar">Crie um plano de replicação Etapa 1 para o Amazon EVS</block>
-  <block id="c881eec8e2a2e7f61032f79bd49b2dce" category="sidebar">Crie um plano de replicação Etapa 2 para o Amazon EVS</block>
-  <block id="9f67090f69f4143c82e2283b43a86ad9" category="sidebar">Crie um plano de replicação Etapa 3 para o Amazon EVS</block>
-  <block id="3a83143b77a0b90d82bf03cbf43e4443" category="sidebar">Crie um plano de replicação Etapa 4 para o Amazon EVS</block>
   <block id="5a72de72f8b0ba4525e25ce937621889" category="sidebar">Verifique o plano de replicação do Amazon EVS</block>
   <block id="f260d0f12b515f0ab789c0349e49a0fc" category="sidebar">Executar operações de plano de replicação</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">Notas de lançamento</block>
@@ -2264,17 +2169,6 @@
   <block id="dc84984abc7de0d1dfdb34895d0f13bc" category="inline-xref-macro">Instalar Trident Protect</block>
   <block id="71408a294bd14cd790febbcdccc485eb" category="paragraph">Se não, <block ref="d6c8ef5049a779fa4709e8cc671d455c" category="inline-xref-macro-rx"></block></block>
   <block id="c6636f0b1251e0847f9e5a79b45791e4" category="paragraph">Após adicionar recursos, selecione *Monitoramento de Tarefas* para acompanhar o progresso.</block>
-  <block id="baed892bed9a88570cd5a5931581b00c" category="list-text"><block ref="baed892bed9a88570cd5a5931581b00c" category="inline-link-macro-rx"></block></block>
-  <block id="5aeb73bd1cb8fb257e125a72bd8075b0" category="list-text"><block ref="5aeb73bd1cb8fb257e125a72bd8075b0" category="inline-link-macro-rx"></block></block>
-  <block id="f9887dec2d60dc74a69f0aa774dab58f" category="inline-link-macro">Crie grupos de recursos para organizar as fontes de dados</block>
-  <block id="c3768d294cd69953c1bdab7e12690597" category="list-text"><block ref="c3768d294cd69953c1bdab7e12690597" category="inline-link-macro-rx"></block></block>
-  <block id="5b9b6af71405b6088e90ae43f67c7803" category="list-text"><block ref="5b9b6af71405b6088e90ae43f67c7803" category="inline-link-macro-rx"></block></block>
-  <block id="5008ed36813c93ca58d7adc268d7e9c8" category="list-text"><block ref="bc45819eee68deaddfdb62979db4ed0b" category="inline-link-macro-rx"></block> do seu site principal para um local remoto de recuperação de desastres na nuvem usando a replicação SnapMirror</block>
-  <block id="5d23a9c0c55a80ece74daa65c04f1d66" category="inline-link-macro">Migrar aplicativos</block>
-  <block id="9385503dc8066e1d324cd4976b5581ad" category="list-text"><block ref="304f948cd52821579c2211010250c9bb" category="inline-link-macro-rx"></block> no seu site principal para outro site</block>
-  <block id="74771557228a2ccd6f4426626cddc198" category="list-text">Em caso de desastre, <block ref="c6aafe8fbf5a24cb8116bdae71eb6c66" category="inline-link-macro-rx"></block></block>
-  <block id="6ee3c81b815a19f7a6df65064752bcf3" category="list-text">Após a resolução do desastre, <block ref="34c4a51d8bf8a64dde44adbfd1be3850" category="inline-link-macro-rx"></block> do local de recuperação de desastres para o local principal</block>
-  <block id="5588146c6fdf71a9e99382d108ca2b8d" category="list-text"><block ref="698cc22cc758157d8f18359f8b528216" category="inline-link-macro-rx"></block> na página de Monitoramento de Tarefas</block>
   <block id="618dae2a240d24c2d00107a4853378a9" category="sidebar">A recuperação de desastres na nuvem é uma maneira resiliente e econômica de proteger cargas de trabalho contra interrupções no local e eventos de corrupção de dados (por exemplo, ransomware). Com NetApp Disaster Recovery, você pode replicar suas cargas de trabalho VMware locais que executam armazenamento ONTAP para um data center definido por software em uma nuvem pública ou para outro local local como um site de recuperação de desastres.</block>
   <block id="5adb1db4b988933a0c482d9652abcd2a" category="sidebar">Com o NetApp Disaster Recovery, você pode replicar suas cargas de trabalho VMware locais que executam armazenamento ONTAP para um data center definido por software em uma nuvem pública como um site de recuperação de desastres usando NetApp storage de nuvem.</block>
   <block id="5069d199ba6ca379f339c144214cb9f0" category="sidebar">Pré-requisitos do sistema</block>
@@ -2286,7 +2180,6 @@
   <block id="26f7347ecc3b1295fe31090cb112bdb5" category="paragraph">Agora você pode acessar a documentação do Swagger diretamente do Disaster Recovery. No Disaster Recovery, selecione **Configurações** e depois **Documentação da API**. Você deve estar no modo privado ou anônimo para acessar <block ref="8cdb7c51b5c45fe08a1b8d62e1d74e33" category="inline-link-macro-rx"></block>.</block>
   <block id="b5239b8cd4669d32ae59552af8c49683" category="paragraph">A recuperação de desastres na nuvem é uma maneira resiliente e econômica de proteger cargas de trabalho contra interrupções no site e eventos de corrupção de dados. NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza os fluxos de trabalho de recuperação de desastres. Com o NetApp Disaster Recovery, você pode proteger seus clusters Kubernetes locais, cargas de trabalho baseadas em NFS e datastores do sistema de arquivos de máquina virtual (VMFS) do VMware vSphere para iSCSI e FC executando armazenamento NetApp em uma das seguintes opções:</block>
   <block id="657a981b21b02b21fc3db30667df960f" category="paragraph">A recuperação de desastres utiliza os seguintes componentes:</block>
-  <block id="ab049a02d3fa173979253b98a8351c47" category="doc">Pré-requisitos de clusters VMware vCenter em NetApp Disaster Recovery</block>
   <block id="433e2600c60703529973a0e64aad73fc" category="paragraph">Após verificar o status de todos os recursos, implante ou <block ref="68347541ed049f893da85c888edbed6b" category="inline-link-macro-rx"></block> suas cargas de trabalho usando seu Trident StorageClass. Quando você <block ref="66e946638b4e178eb6fcb04a7d9c48bb" category="inline-link-macro-rx"></block>, o Disaster Recovery fornece instruções para instalar o Trident Protect em um cluster e registrá-lo em seu ambiente do Disaster Recovery.</block>
   <block id="a826d76dfc673a7582fc47b877c0294c" category="list-text">Crie um namespace Trident Protect:</block>
   <block id="fd41d6f681fcde1d5668de60a04c0563" category="paragraph"><block ref="fa5ae6d9db1798cb96b18ea5809b60d9" prefix="" category="inline-code"></block></block>
@@ -2316,7 +2209,6 @@
   <block id="124be83325d64e9c766bbde1f52f7b93" category="inline-image-macro">Captura de tela da adição de recursos do Kubernetes com escopo de cluster</block>
   <block id="839097294e2dbfd7824e255a28981f0a" category="paragraph"><block ref="839097294e2dbfd7824e255a28981f0a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fe0436b2b4ffe08414ea0169e1f3e16f" category="list-text">No menu suspenso, selecione o tipo de site: **VMware** ou **Kubernetes**.</block>
-  <block id="c5e2dee9838723e4e75bbdc5c8ddc473" category="list-text"><block ref="1eb384da451aa1014bf5aa632cfa3987" category="inline-link-macro-rx"></block>sem interromper os recursos</block>
   <block id="4904de7cc7c0f1a816fec7d3ebe0ebbe" category="inline-link-macro">Pré-requisitos adicionais e orientações de configuração</block>
   <block id="01f7a8c5d879230e93f04122b4ac55bb" category="admonition">Para usar a Recuperação de Desastres com Amazon Elastic VMware Service (Exchange Virtual Server), consulte o <block ref="343db214761569ec52fb96e38ea0c2fa" category="inline-link-macro-rx"></block>.</block>
   <block id="78a1d5987eca33284817a9dca555eece" category="paragraph">*Função de console NetApp necessária* A função de Super admin, Disaster recovery admin ou Disaster recovery failover admin é necessária para executar esta tarefa. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
@@ -2461,4 +2353,82 @@
   <block id="3d5401fc3d8a7a798c226379efd0e54a" category="list-text">Selecione *Criar* para gerar o relatório.</block>
   <block id="c7752461db4ae72d9cab16a4731fae88" category="admonition">A geração do relatório pode levar alguns minutos.</block>
   <block id="570cb7369470f1ec54ee8b421baca86e" category="list-text">No painel de planos de replicação, selecione *Baixar relatório*.</block>
+  <block id="2f8af923c7683f0c888657eba937b099" category="doc">Perguntas frequentes sobre NetApp Disaster Recovery</block>
+  <block id="041a3a2b2f9bf657e7a05d1a38b12168" category="doc">Pré-requisitos do cluster VMware vCenter para o NetApp Disaster Recovery</block>
+  <block id="d13a07dadb09b8c862c9e6c958b7f6bd" category="doc">Avisos legais para NetApp Disaster Recovery</block>
+  <block id="9954251f577fe77c051d3a982c652063" category="doc">Adicione arrays locais ao NetApp Console para Amazon Exchange Virtual Server com NetApp Disaster Recovery</block>
+  <block id="359510d580d2527a4e46375b95268d71" category="doc">Crie planos de replicação no NetApp Disaster Recovery para Amazon Exchange Virtual Server</block>
+  <block id="6fec06276146c70a7a05bb5e6d3afe94" category="section-title">Inicie o assistente de plano de replicação</block>
+  <block id="73d967450f10f13278437132d4cb0661" category="section-title">Selecione vCenters</block>
+  <block id="9d53e3e062f307bbb17738485cd6463c" category="section-title">Selecione os recursos da VM para proteção</block>
+  <block id="667b950c66ec5238ca6fff8f3c48c6c6" category="paragraph">Existem várias maneiras de selecionar máquinas virtuais para proteção. Os passos a seguir mostram como proteger os datastores inteiros do vCenter, mas você deve escolher o método que melhor se adapte às suas necessidades.</block>
+  <block id="126d953ce220133258b7a58131031eb4" category="list-text">*Selecionar VMs individuais*: Selecionar o botão *Virtual machines* permite que você selecione VMs individuais para proteger. À medida que você seleciona cada VM, o serviço a adiciona a um grupo de recursos padrão localizado no lado direito da tela.</block>
+  <block id="0c33e768499cbef6bd2e25498c6d8ae0" category="list-text">*Selecione grupos de recursos criados anteriormente*: Você pode criar grupos de recursos personalizados antecipadamente usando a opção Grupo de recursos no menu NetApp Disaster Recovery. Isso não é obrigatório, pois você pode usar os outros dois métodos para criar um grupo de recursos como parte do processo de plano de replicação. Para obter detalhes, consulte <block ref="8aa3c94c171b2c9d7252afb28ee019a7" category="inline-link-macro-rx"></block>.</block>
+  <block id="48b9ef7f729168b7f56d7a1c10fd43f1" category="list-text">*Selecionar datastores inteiros do vCenter*: Se você tiver muitas VMs para proteger com este plano de replicação, pode não ser tão eficiente selecionar VMs individuais. Como o NetApp Disaster Recovery usa a replicação baseada em volume do SnapMirror para proteger as VMs, todas as VMs residentes em um datastore serão replicadas como parte do volume. Na maioria dos casos, você deve configurar o NetApp Disaster Recovery para proteger e reiniciar todas as VMs localizadas no datastore. Use esta opção para instruir o serviço a adicionar todas as VMs hospedadas em um datastore selecionado à lista de VMs protegidas.</block>
+  <block id="6a9ad2fb807955122e3d7197c383f842" category="list-text">Opcionalmente, renomeie o grupo de recursos para um nome adequado selecionando o ícone de lápis ao lado do nome do grupo de recursos.</block>
+  <block id="b12e2cc8ccedb2d7fa48d398d66b40d0" category="section-title">Mapear recursos</block>
+  <block id="b1e5a14d73152372a2f84f7374118db9" category="paragraph">Após selecionar as VMs para proteção, você deve realizar o mapeamento de rede. O mapeamento de rede abrange quatro áreas:</block>
+  <block id="87bd8f99883f9c35edff3a256ea36921" category="inline-image-macro">20,20</block>
+  <block id="5e196ec310096e08b0b54d207418ff50" category="list-text">As seções com o ícone de aviso (<block ref="74ca4987fc979f01749ba054e9b5eb9d" category="inline-image-macro-rx" type="image"></block>) exigem que você forneça informações de mapeamento.</block>
+  <block id="9303be731aa0c82e0b1787f8bb52799f" category="list-text">As seções marcadas com o ícone de visto (<block ref="b6227c7fd70a2d5c9ad9bd2ab002dc96" category="inline-image-macro-rx" type="image"></block>) foram mapeadas ou possuem mapeamentos padrão. Revise-as para garantir que a configuração atual atenda às suas necessidades.</block>
+  <block id="400943a5b6d32b75f6db148c48672392" category="list-title">Mapeamento de acesso a recursos</block>
+  <block id="fbb82fdd08993c05060b83654da39246" category="section-title">Mapeamento de recursos computacionais</block>
+  <block id="18daba455efe3cbca30237efaa3fe041" category="list-text">Opcionalmente, selecione um host de destino no cluster de destino.</block>
+  <block id="e840940eda6adffdacdc879001961052" category="paragraph">Esta etapa não é necessária porque o NetApp Disaster Recovery seleciona o primeiro host adicionado ao cluster no vCenter. Nesse ponto, as VMs continuam a ser executadas nesse host ESXi ou o VMware DRS move a VM para um host ESXi diferente, conforme necessário, com base nas regras do DRS configuradas.</block>
+  <block id="514bb139449c90b48b32bc9d959132c7" category="list-text">Opcionalmente, forneça o nome de uma pasta de nível superior do vCenter para colocar os registros das VMs. Esta etapa pode atender às necessidades da organização, mas não é obrigatória.</block>
+  <block id="e0674048365d95ca72db3eee850572e1" category="paragraph">Por padrão, o NetApp Disaster Recovery utiliza as mesmas configurações para cada máquina virtual que as usadas no site local de origem. Isso pressupõe que as máquinas virtuais usarão o mesmo endereço IP, CPU virtual e configuração de DRAM virtual.</block>
+  <block id="8ea2553b27f1d6b34e28df398c876c11" category="list-title">Alterar a reconfiguração das configurações de rede</block>
+  <block id="b2be746ec2c4a8e4b868997a9eb3910d" category="list-text">Opcionalmente, forneça um esquema de renomeação de VMs para VMs reiniciadas, fornecendo um prefixo e um sufixo opcionais.</block>
+  <block id="8c5f4c8ab41d1621a52fc1631ddd6dd2" category="paragraph">Existem diversas opções para reconfigurar os recursos de computação de uma máquina virtual. O NetApp Disaster Recovery permite alterar o número de CPUs virtuais, a quantidade de DRAM virtual e o nome da máquina virtual.</block>
+  <block id="ade2c824f4d08d7fcae5404dd258a1c7" category="admonition">Esses passos são opcionais.</block>
+  <block id="977ac76265a4d54fb6f667d6d98744f3" category="list-title">Alterar configurações de VM</block>
+  <block id="ead1a24099865ec14c32ff0ae0002570" category="list-text">Opcionalmente, modifique o número de CPUs virtuais que cada VM deve usar. Isso pode ser necessário se os hosts do seu cluster de DR vCenter não tiverem tantos núcleos de CPU quanto o cluster de origem vCenter.</block>
+  <block id="4dbf15df187ee3f7e134d535f588ee01" category="list-text">Opcionalmente, modifique a quantidade de DRAM virtual que cada VM deve usar. Isso pode ser necessário se os hosts do seu cluster de recuperação de desastres vCenter não tiverem tanta DRAM física quanto os hosts do cluster de origem vCenter.</block>
+  <block id="ad23ef41705430e0991bba4afbf9c4f0" category="paragraph">O NetApp Disaster Recovery oferece suporte à reinicialização ordenada de VMs com base em um campo de ordem de inicialização. O campo de ordem de inicialização indica como as VMs em cada grupo de recursos são iniciadas. As VMs com o mesmo valor no campo de ordem de inicialização são inicializadas em paralelo.</block>
+  <block id="080f4821c5a9a25ec1fff910bf2a0362" category="admonition">Definir a ordem de inicialização é opcional</block>
+  <block id="c12b091a1368f42303dec39bfc9fc388" category="list-text">Opcionalmente, modifique a ordem em que você deseja que suas VMs sejam reiniciadas. Este campo aceita qualquer valor numérico. O NetApp Disaster Recovery tenta reiniciar as VMs que possuem o mesmo valor numérico em paralelo.</block>
+  <block id="61e580496b602cb5f536fb10be855093" category="list-text">Opcionalmente, forneça um atraso a ser usado entre cada reinicialização da VM. O tempo é inserido após a reinicialização desta VM ser concluída e antes da(s) VM(s) com o próximo número de ordem de inicialização superior. Esse número está em minutos.</block>
+  <block id="5da60ca1e4dab36a6c71df1d560a2227" category="paragraph">O NetApp Disaster Recovery permite executar algumas operações do sistema operacional convidado para cada máquina virtual:</block>
+  <block id="e0b38f33c7a8ada147d88c0c0bf934c6" category="list-text">O NetApp Disaster Recovery pode fazer backups consistentes com a aplicação de máquinas virtuais para máquinas virtuais que executam bancos de dados Oracle e Microsoft SQL Server.</block>
+  <block id="08e6090cd415877dfaa3efe4f5e5ae95" category="list-text">O NetApp Disaster Recovery pode executar scripts personalizados adequados ao sistema operacional convidado de cada máquina virtual. A execução desses scripts requer credenciais de usuário aceitas pelo sistema operacional convidado, com privilégios suficientes para executar as operações listadas no script.</block>
+  <block id="1dbb0069d4d63f8e24c63448be1bf8f5" category="list-text">Opcionalmente, marque a caixa de seleção *Criar réplicas consistentes com o aplicativo* se a VM estiver hospedando um banco de dados Oracle ou Microsoft SQL Server.</block>
+  <block id="1714db5d674206e35649fdb12eb303ed" category="list-text">Opcionalmente, para executar ações personalizadas no sistema operacional convidado como parte do processo de inicialização, carregue um script para qualquer VM. Para executar um único script em todas as VMs, use a caixa de seleção destacada e preencha os campos.</block>
+  <block id="dd0685633c27a3c85dd734cdd68c1224" category="paragraph">A etapa final na criação de um plano de replicação é identificar como o ONTAP deve proteger os datastores. Essas configurações definem o objetivo de ponto de recuperação (RPO) do plano de replicação, quantos backups devem ser mantidos e onde replicar os volumes ONTAP que hospedam cada datastore do vCenter.</block>
+  <block id="3a0f24e5e7210137a18af44e6c9941f0" category="paragraph">Por padrão, o Disaster Recovery gerencia seu próprio cronograma de replicação de snapshots; no entanto, opcionalmente, você pode especificar que deseja usar o cronograma de política de replicação SnapMirror existente para proteção do datastore.</block>
+  <block id="44aaa0be508b78275977f2bc707c953e" category="paragraph">Além disso, você pode opcionalmente personalizar quais LIFs (interfaces lógicas) de dados e política de exportação usar. Se você não fornecer essas configurações, o NetApp Disaster Recovery usará todas as LIFs de dados associadas ao protocolo apropriado (NFS, iSCSI ou FC) e usará a política de exportação padrão para volumes NFS.</block>
+  <block id="b6105c030b2f70ecdf4ebb23a57cb9cd" category="list-title">Configurar o mapeamento do datastore (volume)</block>
+  <block id="452baddafff9746d82a2f3b19c968922" category="list-text">Opcionalmente, decida se você deseja usar um agendamento de replicação ONTAP SnapMirror existente ou se prefere que o NetApp Disaster Recovery gerencie a proteção das suas VMs (padrão).</block>
+  <block id="d790a60e0381ca9697e5f047cdbda2bc" category="list-text">Opcionalmente, selecione uma interface lógica padrão (LIFs de dados) para cada volume. Se nenhuma for selecionada, todas as LIFs de dados na SVM de destino que suportam o protocolo de acesso do volume serão configuradas.</block>
+  <block id="7c34729c9b98940ad8fb5c494bffd270" category="list-text">Opcionalmente, selecione uma política de exportação para quaisquer volumes NFS. Caso não seja selecionada, a política de exportação padrão é usada.</block>
+  <block id="4411787c745c8470c7bb85a4ec2dbd28" category="section-title">Verificar configurações</block>
+  <block id="3688fe611e74893c27ab7006b6bd97e7" category="paragraph">Após adicionar as informações do plano de replicação no NetApp Disaster Recovery, verifique se as informações que você inseriu estão corretas. Esta é a etapa final.</block>
+  <block id="271046534df5da752dedbc8b0fd06af0" category="list-text">Quando você estiver satisfeito que todas as configurações estão corretas, selecione *Adicionar plano*.</block>
+  <block id="61f16c889ca58897f90488a8fe458c35" category="doc">Saiba mais sobre o NetApp Disaster Recovery com o Amazon Elastic VMware Service e Amazon FSx for NetApp ONTAP</block>
+  <block id="4cf4fb9d66b90b251c926e3120ac232e" category="doc">Saiba mais sobre o NetApp Disaster Recovery com o Amazon Exchange Virtual Server e Amazon FSx for NetApp ONTAP</block>
+  <block id="8cf422e39411f64922f6e7b56df0988d" category="doc">Limitações conhecidas no NetApp Disaster Recovery</block>
+  <block id="4006aef0e12f6e6a8f76fac2493b1aa0" category="doc">Obtenha ajuda com o NetApp Disaster Recovery</block>
+  <block id="4ef6e0e4253cddc748bf185525f9336c" category="doc">Cadastre-se para receber suporte para NetApp Disaster Recovery</block>
+  <block id="cd7dd69275c233a0aca2416e527772b7" category="doc">Veja o estado dos seus planos de recuperação de desastres em NetApp Disaster Recovery</block>
+  <block id="3170dc6a174d938f4c289f1e858b170d" category="section-title">Considerações sobre backups gerenciados pela plataforma</block>
+  <block id="c280b50217ed2e6036a0f0c326ef823a" category="paragraph">Se você planeja usar backups gerenciados pela plataforma (ou seja, snapshots gerenciados pelo ONTAP), é recomendável que você use a política de replicação *MirrorAll*. Consulte a tabela para entender o impacto das diferentes políticas de replicação do SnapMirror e por que *MirrorAll* é a opção recomendada.</block>
+  <block id="51359e8b51c63b87d50cb1bab73380e2" category="cell">Política</block>
+  <block id="c76e3867213cff8946148c6510af0736" category="cell">Recomendação</block>
+  <block id="4dfd7a652c53f28aea7c5aa3d3510076" category="cell">*MirrorAll*</block>
+  <block id="654866693fd91ce8e9764a218f569918" category="cell">Recomendado</block>
+  <block id="f2489988adcc83c8328b64c01b5308d6" category="cell">Não utilize snapshots de transferência do SnapMirror para operações de failover ou failback.</block>
+  <block id="8635bfe3dfd0446a5bc45f3c73546984" category="cell">*MirrorVault*</block>
+  <block id="40cfffad2f3d0e318535cd9e00394b01" category="cell">Recomendação alternativa</block>
+  <block id="1c03e501e1cc5d812343e62be1c30caf" category="cell">Certifique-se de que os snapshots selecionados durante o failover ou failback estejam presentes tanto nos volumes de origem quanto nos volumes de destino. Caso contrário, ocorrerá o erro: "Falha na transição para o estado 'snapmirrored'. Motivo: Nenhum snapshot comum encontrado."</block>
+  <block id="bca192e71c231d6ab9a907fd44cc17f3" category="cell">*Assíncrono*</block>
+  <block id="e03f6f41d6ba74d93a81feb52f770dea" category="cell">*MirrorLatest*</block>
+  <block id="3ccbb106bb4a2ad8ae674a099a17e670" category="cell">_NÃO_ recomendado</block>
+  <block id="db6db2f154930f790d293973e2882ba0" category="cell">Essa política resulta em o destino ter efetivamente apenas um snapshot comum para failover, o que é subótimo para cenários de recuperação de desastres.</block>
+  <block id="83f0283696eff1f9eab860f1a82fda46" category="section-title">Considerações sobre backups gerenciados pelo NetApp Disaster Recovery</block>
+  <block id="9f9eadcdc7cac034dbeb3338c94761fb" category="paragraph">Ao usar backups gerenciados do NetApp Disaster Recovery, as seguintes diretrizes se aplicam a relações do SnapMirror criadas fora do NetApp Disaster Recovery:</block>
+  <block id="82400eeb8e951b5cfdd2520a1366d9d8" category="list-text">As relações do SnapMirror podem suportar as políticas de replicação MirrorAll, MirrorVault, MirrorLatest e assíncrona.</block>
+  <block id="41ddd30e134cb56e18d994f5a3e0693b" category="list-text">Não agende atualizações para esses relacionamentos, pois eles serão gerenciados pelo serviço de NetApp Disaster Recovery.</block>
+  <block id="2cbacdb7dc034331114df119f87af006" category="admonition">Analise o <block ref="57d30211ed7c7c68fbef46e6feb64d22" category="inline-xref-macro-rx"></block> antes de fazer essas seleções.</block>
+  <block id="05823e82f50bb96f9783ed51efa47a1c" category="list-text">*Use backups gerenciados pela plataforma e cronogramas de retenção*: se você estiver usando uma solução externa de gerenciamento de snapshots, marque esta caixa. O Disaster Recovery oferece suporte ao uso de soluções externas de gerenciamento de snapshots, como o agendador de políticas nativo do ONTAP SnapMirror ou integrações de terceiro. Se cada datastore (volume) no plano de replicação já tiver uma relação do SnapMirror que está sendo gerenciada em outro local, você pode usar esses snapshots como pontos de recuperação no NetApp Disaster Recovery.</block>
+  <block id="18dcf9b091544785104de7fe70a61388" category="doc">Gerencie sites, grupos de recursos e planos de replicação com o NetApp Disaster Recovery</block>
+  <block id="8f2bfb22b13c9aac8af0825753fd1e67" category="sidebar">Configure planos de replicação para o Amazon Exchange Virtual Server</block>
 </blocks>

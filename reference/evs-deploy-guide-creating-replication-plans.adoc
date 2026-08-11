@@ -4,14 +4,18 @@ permalink: reference/evs-deploy-guide-creating-replication-plans.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
 summary: 'Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx for NetApp ONTAP.  Depois de ter vCenters para proteger no site local e ter um site Amazon EVS configurado para usar o Amazon FSx for NetApp ONTAP que você pode usar como um destino de DR, agora você pode criar um plano de replicação (RP) para proteger qualquer conjunto de VMs hospedadas no cluster vCenter dentro do seu site local.' 
 ---
-= Criar planos de replicação na visão geral do NetApp Disaster Recovery
+= Crie planos de replicação no NetApp Disaster Recovery para Amazon Exchange Virtual Server
 :allow-uri-read: 
 
 
 [role="lead"]
 Depois de ter vCenters para proteger no site local e ter um site Amazon EVS configurado para usar o Amazon FSx for NetApp ONTAP que você pode usar como um destino de DR, você pode criar um plano de replicação (RP) para proteger qualquer conjunto de VMs hospedadas no cluster vCenter dentro do seu site local.
 
-.Para iniciar o processo de criação do plano de replicação:
+
+
+[[initiate-the-replication-plan-wizard]]
+== Inicie o assistente de plano de replicação
+
 . Em qualquer tela do NetApp Disaster Recovery , selecione a opção *Planos de replicação*.
 +
 image:evs-create-rp-1.png["opção de planos de replicação"]
@@ -24,4 +28,241 @@ image:evs-create-rp-2.png["Tela de planos de replicação"]
 
 Isso abre o assistente Criar plano de replicação.
 
-Continuar comlink:evs-deploy-guide-create-rp-wiz-01.html["Assistente para criação de plano de replicação Etapa 1"] .
+
+
+[[select-vcenters]]
+== Selecione vCenters
+
+.Passos
+. Insira um nome exclusivo para o plano de replicação.
++
+Somente caracteres alfanuméricos e sublinhados (_) são permitidos para nomes de planos de replicação.
+
+. Selecione um cluster vCenter de origem.
+. Selecione um cluster vCenter de destino.
+. Selecione *Avançar*.
++
+image:evs-create-rp-wiz-a-1-4.png["Crie um plano de replicação, selecione vCenters"]
+
+
+
+
+
+[[select-vm-resources-for-protection]]
+== Selecione os recursos da VM para proteção
+
+Existem várias maneiras de selecionar máquinas virtuais para proteção. Os passos a seguir mostram como proteger os datastores inteiros do vCenter, mas você deve escolher o método que melhor se adapte às suas necessidades.
+
+* *Selecionar VMs individuais*: Selecionar o botão *Virtual machines* permite que você selecione VMs individuais para proteger. À medida que você seleciona cada VM, o serviço a adiciona a um grupo de recursos padrão localizado no lado direito da tela.
+* *Selecione grupos de recursos criados anteriormente*: Você pode criar grupos de recursos personalizados antecipadamente usando a opção Grupo de recursos no menu NetApp Disaster Recovery. Isso não é obrigatório, pois você pode usar os outros dois métodos para criar um grupo de recursos como parte do processo de plano de replicação. Para obter detalhes, consulte link:../use/drplan-create.html["Crie um plano de replicação"].
+* *Selecionar datastores inteiros do vCenter*: Se você tiver muitas VMs para proteger com este plano de replicação, pode não ser tão eficiente selecionar VMs individuais. Como o NetApp Disaster Recovery usa a replicação baseada em volume do SnapMirror para proteger as VMs, todas as VMs residentes em um datastore serão replicadas como parte do volume. Na maioria dos casos, você deve configurar o NetApp Disaster Recovery para proteger e reiniciar todas as VMs localizadas no datastore. Use esta opção para instruir o serviço a adicionar todas as VMs hospedadas em um datastore selecionado à lista de VMs protegidas.
+
+
+.Passos para acessar esta página
+. Na página *Plano de replicação*, continue para a seção *Aplicativos*.
+. Revise as informações na página *Inscrições* que é aberta.
++
+image:evs-create-rp-wiz-b-1-4.png["Plano de replicação, página de aplicativos"]
+
+. Selecione *Datastores*.
+. Marque as caixas de seleção ao lado de cada armazenamento de dados que você deseja proteger.
+. Opcionalmente, renomeie o grupo de recursos para um nome adequado selecionando o ícone de lápis ao lado do nome do grupo de recursos.
+. Selecione *Avançar*.
+
+
+
+
+[[map-resources]]
+== Mapear recursos
+
+Após selecionar as VMs para proteção, você deve realizar o mapeamento de rede. O mapeamento de rede abrange quatro áreas:
+
+* Recursos de computação
+* Redes virtuais
+* Reconfiguração de VM
+* Mapeamento de armazenamento de dados
+
+
+Cada VM requer os três primeiros tipos de informações.  O mapeamento do armazenamento de dados é necessário para cada armazenamento de dados que hospeda as VMs a serem protegidas.
+
+* As seções com o ícone de aviso (image:evs-caution-icon.png["20,20"]) exigem que você forneça informações de mapeamento.
+* As seções marcadas com o ícone de visto (image:evs-check-icon.png["20,20"]) foram mapeadas ou possuem mapeamentos padrão. Revise-as para garantir que a configuração atual atenda às suas necessidades.
+
+
+.Mapeamento de acesso a recursos
+. Na página *Plano de replicação*, continue para a seção *Mapeamento de recursos*.
+. Revise as informações na página *Mapeamento de recursos* que é aberta.
++
+image:evs-create-rp-wiz-c0.png["Criar plano de replicação, página de mapeamento de recursos"]
+
+. Para abrir cada categoria de mapeamentos necessários, selecione a seta para baixo (*v*) ao lado da seção.
+
+
+
+
+[[compute-resources-mapping]]
+=== Mapeamento de recursos computacionais
+
+Como um site pode hospedar vários datacenters virtuais e vários clusters vCenter, você precisa identificar em qual cluster vCenter recuperar as VMs no caso de um failover.
+
+.Passos
+. Selecione o datacenter virtual na lista de datacenters localizados no site de DR.
+. Selecione o cluster para hospedar os datastores e VMs na lista de clusters dentro do datacenter virtual selecionado.
+. Opcionalmente, selecione um host de destino no cluster de destino.
++
+Esta etapa não é necessária porque o NetApp Disaster Recovery seleciona o primeiro host adicionado ao cluster no vCenter. Nesse ponto, as VMs continuam a ser executadas nesse host ESXi ou o VMware DRS move a VM para um host ESXi diferente, conforme necessário, com base nas regras do DRS configuradas.
+
+. Opcionalmente, forneça o nome de uma pasta de nível superior do vCenter para colocar os registros das VMs. Esta etapa pode atender às necessidades da organização, mas não é obrigatória.
++
+image:evs-create-rp-wiz-c-compute-resources-1-4.png["Criar plano de replicação, calcular recursos"]
+
+
+
+
+
+[[map-virtual-network-resources]]
+=== Mapear recursos de rede virtual
+
+Cada VM pode ter uma ou mais NICs virtuais conectadas a redes virtuais dentro da infraestrutura de rede do vCenter.  Para garantir que cada VM esteja conectada corretamente às redes desejadas ao reiniciar no site de DR, identifique em quais redes virtuais do site de DR essas VMs serão conectadas.  Faça isso mapeando cada rede virtual no site local para uma rede associada no site de DR.
+
+. Selecione o segmento de destino na lista suspensa.
+. Repita a etapa anterior para cada rede virtual de origem listada.
++
+image:evs-create-rp-wiz-c-network-resources-1-2.png["Criar plano de replicação, recursos de rede"]
+
+
+
+
+
+[[define-options-for-vm-reconfiguration-during-failover]]
+=== Definir opções para reconfiguração de VM durante failover
+
+Cada VM pode exigir modificações para funcionar corretamente no site do DR vCenter.  A seção Máquinas virtuais permite que você forneça as alterações necessárias.
+
+Por padrão, o NetApp Disaster Recovery utiliza as mesmas configurações para cada máquina virtual que as usadas no site local de origem. Isso pressupõe que as máquinas virtuais usarão o mesmo endereço IP, CPU virtual e configuração de DRAM virtual.
+
+
+
+[[network-reconfiguration]]
+=== Reconfiguração de rede
+
+Os tipos de endereços IP suportados são estáticos e DHCP.  Para endereços IP estáticos, você tem as seguintes configurações de IP de destino:
+
+* *Igual à origem*: como o nome sugere, o serviço usa o mesmo endereço IP na VM de destino que foi usado na VM no site de origem.  Isso requer que você configure as redes virtuais que foram mapeadas na etapa anterior para as mesmas configurações de sub-rede.
+* *Diferente da origem*: O serviço fornece um conjunto de campos de endereço IP para cada VM que deve ser configurado para a sub-rede apropriada usada na rede virtual de destino, que você mapeou na seção anterior.  Para cada VM, você deve fornecer um endereço IP, máscara de sub-rede, DNS e valores de gateway padrão.  Opcionalmente, use a mesma máscara de sub-rede, DNS e configurações de gateway para todas as VMs para simplificar o processo quando todas as VMs estiverem conectadas à mesma sub-rede.
+* *Mapeamento de sub-rede*: esta opção reconfigura o endereço IP de cada VM com base na configuração CIDR da rede virtual de destino.  Para usar esse recurso, certifique-se de que cada rede virtual do vCenter tenha uma configuração CIDR definida dentro do serviço, conforme alterado nas informações do vCenter na página Sites.
+
+
+Depois de configurar sub-redes, o mapeamento de sub-redes usa o mesmo componente de unidade do endereço IP para a configuração da VM de origem e de destino, mas substitui o componente de sub-rede do endereço IP com base nas informações CIDR fornecidas.  Este recurso também requer que as redes virtuais de origem e de destino tenham a mesma classe de endereço IP (o `/xx` componente do CIDR).  Isso garante que haja endereços IP suficientes disponíveis no site de destino para hospedar todas as VMs protegidas.
+
+Para esta configuração do EVS, assumimos que as configurações de IP de origem e destino são as mesmas e não exigem nenhuma reconfiguração adicional.
+
+.Alterar a reconfiguração das configurações de rede
+. Selecione o tipo de endereçamento IP a ser usado para VMs com failover.
+. Opcionalmente, forneça um esquema de renomeação de VMs para VMs reiniciadas, fornecendo um prefixo e um sufixo opcionais.
++
+image:evs-create-rp-wiz-c-vm-resources-network-1-2.png["Criar plano de replicação, recursos de rede"]
+
+
+
+
+
+[[vm-compute-resource-reconfiguration]]
+=== Reconfiguração de recursos de computação de VM
+
+Existem diversas opções para reconfigurar os recursos de computação de uma máquina virtual. O NetApp Disaster Recovery permite alterar o número de CPUs virtuais, a quantidade de DRAM virtual e o nome da máquina virtual.
+
+
+NOTE: Esses passos são opcionais.
+
+.Alterar configurações de VM
+. Opcionalmente, modifique o número de CPUs virtuais que cada VM deve usar. Isso pode ser necessário se os hosts do seu cluster de DR vCenter não tiverem tantos núcleos de CPU quanto o cluster de origem vCenter.
+. Opcionalmente, modifique a quantidade de DRAM virtual que cada VM deve usar. Isso pode ser necessário se os hosts do seu cluster de recuperação de desastres vCenter não tiverem tanta DRAM física quanto os hosts do cluster de origem vCenter.
++
+image:evs-create-rp-wiz-c-vm-resources-cpu-mem-1-2.png["Criar plano de replicação, recursos de VM"]
+
+
+
+
+
+[[boot-order]]
+=== Ordem de inicialização
+
+O NetApp Disaster Recovery oferece suporte à reinicialização ordenada de VMs com base em um campo de ordem de inicialização. O campo de ordem de inicialização indica como as VMs em cada grupo de recursos são iniciadas. As VMs com o mesmo valor no campo de ordem de inicialização são inicializadas em paralelo.
+
+
+NOTE: Definir a ordem de inicialização é opcional
+
+.Modificar as configurações da ordem de inicialização
+. Opcionalmente, modifique a ordem em que você deseja que suas VMs sejam reiniciadas. Este campo aceita qualquer valor numérico. O NetApp Disaster Recovery tenta reiniciar as VMs que possuem o mesmo valor numérico em paralelo.
+. Opcionalmente, forneça um atraso a ser usado entre cada reinicialização da VM. O tempo é inserido após a reinicialização desta VM ser concluída e antes da(s) VM(s) com o próximo número de ordem de inicialização superior. Esse número está em minutos.
++
+image:evs-create-rp-wiz-c-vm-resources-boot-delay-1-2.png["Criar plano de replicação, ordem de inicialização"]
+
+
+
+
+
+[[custom-guest-os-operations]]
+=== Operações personalizadas do sistema operacional convidado
+
+O NetApp Disaster Recovery permite executar algumas operações do sistema operacional convidado para cada máquina virtual:
+
+* O NetApp Disaster Recovery pode fazer backups consistentes com a aplicação de máquinas virtuais para máquinas virtuais que executam bancos de dados Oracle e Microsoft SQL Server.
+* O NetApp Disaster Recovery pode executar scripts personalizados adequados ao sistema operacional convidado de cada máquina virtual. A execução desses scripts requer credenciais de usuário aceitas pelo sistema operacional convidado, com privilégios suficientes para executar as operações listadas no script.
+
+
+.Modificar as operações personalizadas do sistema operacional convidado de cada VM
+. Opcionalmente, marque a caixa de seleção *Criar réplicas consistentes com o aplicativo* se a VM estiver hospedando um banco de dados Oracle ou Microsoft SQL Server.
+. Opcionalmente, para executar ações personalizadas no sistema operacional convidado como parte do processo de inicialização, carregue um script para qualquer VM. Para executar um único script em todas as VMs, use a caixa de seleção destacada e preencha os campos.
+. Certas alterações de configuração exigem credenciais de usuário com permissões adequadas para executar as operações.  Forneça credenciais nos seguintes casos:
++
+** Um script será executado dentro da VM pelo sistema operacional convidado.
+** É necessário executar um snapshot consistente com o aplicativo.
++
+image:evs-create-rp-wiz-c-vm-resources-ac-scripts-creds-1-2.png["Criar plano de replicação, operações personalizadas do sistema operacional convidado"]
+
+
+
+
+
+
+
+[[map-datastores]]
+=== Armazenamentos de dados de mapas
+
+A etapa final na criação de um plano de replicação é identificar como o ONTAP deve proteger os datastores. Essas configurações definem o objetivo de ponto de recuperação (RPO) do plano de replicação, quantos backups devem ser mantidos e onde replicar os volumes ONTAP que hospedam cada datastore do vCenter.
+
+Por padrão, o Disaster Recovery gerencia seu próprio cronograma de replicação de snapshots; no entanto, opcionalmente, você pode especificar que deseja usar o cronograma de política de replicação SnapMirror existente para proteção do datastore.
+
+Além disso, você pode opcionalmente personalizar quais LIFs (interfaces lógicas) de dados e política de exportação usar. Se você não fornecer essas configurações, o NetApp Disaster Recovery usará todas as LIFs de dados associadas ao protocolo apropriado (NFS, iSCSI ou FC) e usará a política de exportação padrão para volumes NFS.
+
+.Configurar o mapeamento do datastore (volume)
+. Opcionalmente, decida se você deseja usar um agendamento de replicação ONTAP SnapMirror existente ou se prefere que o NetApp Disaster Recovery gerencie a proteção das suas VMs (padrão).
+. Forneça um ponto de partida para quando o serviço deve começar a fazer backups.
+. Especifique com que frequência o serviço deve fazer um backup e replicá-lo no cluster Amazon FSx for NetApp ONTAP de destino de DR.
+. Especifique quantos backups históricos devem ser mantidos.  O serviço mantém o mesmo número de backups no cluster de armazenamento de origem e de destino.
+. Opcionalmente, selecione uma interface lógica padrão (LIFs de dados) para cada volume. Se nenhuma for selecionada, todas as LIFs de dados na SVM de destino que suportam o protocolo de acesso do volume serão configuradas.
+. Opcionalmente, selecione uma política de exportação para quaisquer volumes NFS. Caso não seja selecionada, a política de exportação padrão é usada.
++
+image:evs-create-rp-wiz-c-datastore-mapping.png["Criar plano de replicação, mapeamento de armazenamento de dados"]
+
+
+
+
+
+[[verify-settings]]
+== Verificar configurações
+
+Após adicionar as informações do plano de replicação no NetApp Disaster Recovery, verifique se as informações que você inseriu estão corretas. Esta é a etapa final.
+
+.Passos
+. Selecione *Salvar* para revisar suas configurações antes de ativar o plano de replicação.
++
+Você pode selecionar cada guia para revisar as configurações e fazer alterações em qualquer guia selecionando o ícone de lápis.
+
++
+Revisão das configurações do plano de replicaçãoimage:evs-create-rp-wiz-c-verify.png["Revisão das configurações do plano de replicação"]
+
+. Quando você estiver satisfeito que todas as configurações estão corretas, selecione *Adicionar plano*.
+
