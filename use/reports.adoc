@@ -12,7 +12,7 @@ summary: Analisar relatórios de recuperação de desastres pode ajudar você a 
 
 
 [role="lead"]
-NetApp Disaster Recovery pode ajudar você a analisar sua preparação para recuperação de desastres. Os relatórios fornecem informações sobre os planos de replicação, incluindo o número de grupos de recursos, VMs ou clusters Kubernetes e datastores cobertos pelo plano. Eles também exibem o status de conformidade, um resumo das tarefas e as configurações de backup, incluindo o objetivo de ponto de recuperação (RPO) e a contagem de retenção.
+Use os relatórios do NetApp Disaster Recovery para avaliar a preparação para recuperação de desastres. Os relatórios fornecem detalhes sobre os planos de replicação, incluindo o número de grupos de recursos, VMs, clusters do Kubernetes e armazenamentos de dados que cada plano cobre. Os relatórios também mostram o status de conformidade, resumos de tarefas e configurações de backup, como o objetivo de ponto de recuperação (RPO) e a contagem de retenção.
 
 Você pode baixar relatórios em formato PDF, HTML ou JSON.
 
@@ -24,7 +24,7 @@ O link para download do relatório é válido por seis horas após você gerá-l
 . Na barra de navegação esquerda do NetApp Console , selecione *Planos de replicação*.
 . Selecione *Criar relatório*.
 . Escolha a *Carga de Trabalho* para a qual deseja direcionar o relatório: Kubernetes, VMware ou todas.
-. Selecione o *Tipo de arquivo* (PDF, HTML ou JSON) e o *Período de tempo* (entre um e sete dias anteriores) que o relatório deve abranger.
+. Selecione o *Tipo de arquivo* (PDF, HTML ou JSON) e o *Período de tempo* (dos últimos um a sete dias) para o relatório.
 +
 image::report.png[Captura de tela da criação de relatório]
 

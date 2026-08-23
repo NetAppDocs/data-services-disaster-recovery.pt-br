@@ -54,6 +54,6 @@ A Recuperação de Desastres agora oferece avisos aprimorados e soluções de er
 [[retain-vm-folder-structure-added-as-default-in-replication-plans]]
 === Manter a estrutura de pastas da VM adicionada como padrão nos planos de replicação
 
-Ao criar uma réplica, a nova configuração padrão é manter a estrutura de pastas da máquina virtual. Se o destino da recuperação não tiver a hierarquia de pastas original, a Recuperação de Desastres a criará. Você pode desmarcar esta opção para ignorar a hierarquia de pastas original.
+Ao criar um plano de replicação, a nova configuração padrão é manter a estrutura de pastas da máquina virtual. Se o destino da recuperação não tiver a hierarquia de pastas original, o Disaster Recovery a criará. Você pode desmarcar essa opção para ignorar a hierarquia de pastas original.
 
 Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"^].

@@ -12,9 +12,7 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 
 [role="lead"]
-Após adicionar recursos e sites, crie um plano de replicação para gerenciar a proteção de dados. A criação do plano de replicação envolve designar os sites de origem e destino, selecionar os grupos de recursos e escolher como os aplicativos devem ser restaurados e ligados. Por exemplo, você pode agrupar máquinas virtuais (VMs) associadas a um aplicativo ou pode agrupar aplicativos que tenham níveis semelhantes.
-
-Ao criar um plano de replicação, você também pode editar agendamentos para conformidade e testes, realizando testes de failover sem impactar seus dados de produção.
+Após adicionar recursos e sites, crie um plano de replicação para proteger seus dados. O plano define os sites de origem e destino, os grupos de recursos, os mapeamentos de recuperação e o comportamento de inicialização dos seus aplicativos. Você também pode configurar agendamentos de conformidade e teste, além de realizar testes de failover sem afetar os dados de produção.
 
 *Função de console NetApp necessária* A função de Super admin, Disaster recovery admin, Disaster recovery failover admin ou Disaster recovery application admin é necessária para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
@@ -23,7 +21,7 @@ Ao criar um plano de replicação, você também pode editar agendamentos para c
 [[about-replication-plans]]
 == Sobre planos de replicação
 
-Você pode proteger várias VMs em vários armazenamentos de dados.  O NetApp Disaster Recovery cria grupos de consistência ONTAP para todos os volumes ONTAP que hospedam armazenamentos de dados de VM protegidos.
+Você pode proteger várias VMs em vários datastores. NetApp Disaster Recovery cria grupos de consistência ONTAP para todos os volumes ONTAP que hospedam datastores de VMs protegidas.
 
 Você só pode ativar a proteção se o plano de replicação estiver em um dos seguintes estados:
 
@@ -44,7 +42,7 @@ As seguintes situações podem fazer com que o número de instantâneos seja dif
 * Algumas situações podem fazer com que operações ONTAP fora da Recuperação de Desastres adicionem ou removam instantâneos do volume:
 +
 ** Se houver snapshots ausentes no site de origem, os snapshots correspondentes no site de destino poderão ser excluídos, dependendo da política padrão do SnapMirror para o relacionamento.
-** Se houver instantâneos ausentes no site de destino, o serviço poderá excluir os instantâneos correspondentes no site de origem durante o próximo processo de reconciliação de instantâneos agendado, dependendo da política padrão do SnapMirror para o relacionamento.
+** Se houver snapshots ausentes no site de destino, o serviço pode excluir os snapshots correspondentes no site de origem durante o próximo processo de reconciliação de snapshots agendado, dependendo da política padrão do SnapMirror para a relação.
 
 
 * Uma redução na contagem de retenção de snapshots do plano de replicação pode fazer com que o serviço exclua os snapshots mais antigos nos sites de origem e de destino para atender ao número de retenção recém-reduzido.
@@ -108,7 +106,7 @@ TIP: Organize suas VMs ou clusters Kubernetes antes de implantar NetApp Disaster
 [[create-the-replication-plan]]
 == Crie o plano de replicação
 
-Um assistente guia você por estas etapas:
+O assistente guia você por estas etapas:
 
 * Selecione servidores vCenter.
 * Selecione os recursos (VMs, datastore, namespaces) que deseja replicar e atribua grupos de recursos.
@@ -160,10 +158,10 @@ Ao criar grupos de recursos, considere as seguintes questões:
 * Antes de adicionar recursos a grupos de recursos, inicie uma descoberta manual ou uma descoberta agendada primeiro. Isso garante que os recursos sejam descobertos e listados no grupo de recursos.
 * Certifique-se de que haja pelo menos uma máquina virtual (VM) no armazenamento de dados. Se não houver VMs no armazenamento de dados, o armazenamento de dados não será descoberto.
 * Um único armazenamento de dados não deve hospedar VMs protegidas por mais de um plano de replicação.
-* Não hospede recursos protegidos e não protegidos no mesmo datastore. Se recursos protegidos e não protegidos forem hospedados no mesmo datastore, você poderá encontrar estes problemas:
+* Não hospede recursos protegidos e não protegidos no mesmo datastore. Se recursos protegidos e não protegidos forem hospedados no mesmo datastore, você pode encontrar estes problemas:
 +
 ** A capacidade utilizada desse volume pode contribuir para o cálculo do licenciamento porque o Disaster Recovery utiliza SnapMirror, ou seja, o sistema replica volumes ONTAP inteiros. Nesse caso, o espaço do volume consumido por recursos protegidos e não protegidos seria incluído nesse cálculo.
-** Caso o grupo de recursos e seus recursos associados precisem ser transferidos para o site de recuperação de desastres, quaisquer recursos desprotegidos deixarão de existir no site de origem após o processo de failover, resultando na falha desses recursos no site de origem. Além disso, NetApp Disaster Recovery não iniciará esses recursos desprotegidos no site de failover.
+** Caso o grupo de recursos e seus recursos associados precisem ser transferidos para o site de recuperação de desastres, quaisquer recursos desprotegidos deixarão de existir no site de origem após o processo de failover, resultando na falha desses recursos no site de origem. Além disso, o NetApp Disaster Recovery não iniciará esses recursos desprotegidos no site de failover.
 
 
 
@@ -186,8 +184,8 @@ image:dr-plan-create-apps-vms6.png["Captura de tela mostrando a página Adiciona
 
 . Na metade direita da página, revise as VMs ou datastores selecionados.
 +
-** Para remover uma VM ou datastore, passe o cursor sobre o nome da data source e selecione *X*.
-** Para organizar os recursos em vários grupos de recursos, selecione *Clique para adicionar outro grupo de recursos*. Depois de adicionar o grupo de recursos, você pode arrastar e soltar recursos entre grupos. Selecione o ícone de lápis* para editar o nome do grupo de recursos.
+** Para remover uma máquina virtual ou um datastore, passe o cursor sobre o nome do recurso e selecione *X*.
+** Para organizar os recursos em vários grupos de recursos, selecione *Clique para adicionar outro grupo de recursos*. Depois de adicionar o grupo de recursos, você pode arrastar e soltar recursos entre os grupos. Selecione o ícone de lápis para editar o nome do grupo de recursos.
 +
 image:dr-plan-create-apps-datastores.png["Captura de tela mostrando a página Adicionar plano de replicação > Aplicativos para replicar"]
 
@@ -290,11 +288,11 @@ NOTE: Para o Kubernetes, este é o passo final para criar uma replicação. Para
 
 ==== Seção de recursos computacionais
 
-A seção Recursos de computação define onde as VMs serão restauradas após um failover.  Mapeie o data center e o cluster do vCenter de origem para um data center e cluster de destino.
+A seção Recursos de computação define onde as VMs são restauradas após o failover. Mapeie o data center e o cluster de origem do vCenter para um data center e um cluster de destino.
 
-Opcionalmente, as VMs podem ser reiniciadas em um host vCenter ESXi específico.  Se o VMWare DRS estiver habilitado, você poderá mover a VM para um host alternativo automaticamente, se necessário, para atender à política de DR configurada.
+Opcionalmente, as VMs podem ser reiniciadas em um host ESXi específico do vCenter. Se o VMware DRS estiver habilitado, você pode mover a VM para um host alternativo automaticamente, se necessário, para atender à política de DR configurada.
 
-Opcionalmente, você pode colocar todas as VMs neste plano de replicação em uma pasta exclusiva com o vCenter.  Isso fornece uma maneira fácil de organizar rapidamente VMs com failover no vCenter.
+Opcionalmente, você pode colocar todas as VMs neste plano de replicação em uma pasta exclusiva dentro do inventário do vCenter. Isso oferece uma maneira fácil de organizar rapidamente as VMs em failover dentro do vCenter.
 
 Selecione a seta para baixo ao lado de *Recursos de computação*.
 
@@ -319,7 +317,7 @@ NOTE: Esta seção é obrigatória apenas para vCenters. Você não precisa pree
 
 NOTE: Você pode atribuir várias redes virtuais de origem à mesma rede virtual de destino.  No entanto, isso pode criar conflitos de configuração de rede IP.  Você pode mapear várias redes de origem para uma única rede de destino para garantir que todas as redes de origem tenham a mesma configuração.
 
-Na guia Mapeamentos de failover, selecione a seta para baixo ao lado de *Redes virtuais*.  Selecione a LAN virtual de origem e a LAN virtual de destino.
+Na guia Mapeamentos de failover, selecione a seta para baixo ao lado de *Redes virtuais*. Selecione a rede virtual de origem e a rede virtual de destino.
 
 Selecione o mapeamento de rede para a LAN virtual apropriada.  As LANs virtuais já devem estar provisionadas, então selecione a LAN virtual apropriada para mapear a VM.
 
@@ -351,7 +349,7 @@ Esta seção pode exibir campos diferentes dependendo da sua seleção.
 Você pode aumentar ou diminuir o número de CPUs virtuais atribuídas a cada VM com failover.  No entanto, cada VM requer pelo menos uma CPU virtual.  Você pode alterar o número de CPUs virtuais e DRAM virtuais atribuídas a cada VM.  O motivo mais comum pelo qual você pode querer alterar as configurações padrão da CPU virtual e da DRAM virtual é se os nós do cluster vCenter de destino não tiverem tantos recursos disponíveis quanto o cluster vCenter de origem.
 
 
-NOTE: Alterne as configurações avançadas para adicionar as configurações *Scripts* e *Consistência do aplicativo*.
+NOTE: Ative as *Configurações avançadas* para configurar *Scripts* e *Consistência do aplicativo*.
 
 *Configurações de rede* O Disaster Recovery oferece suporte a um amplo conjunto de opções de configuração para redes de máquinas virtuais. Pode ser necessário alterar essas opções se o site de destino tiver redes virtuais que utilizam configurações TCP/IP diferentes das redes virtuais de produção no site de origem.
 
@@ -360,7 +358,7 @@ No nível mais básico (e padrão), as configurações simplesmente usam as mesm
 O serviço oferece suporte a configurações de rede de IP estático ou DHCP (Dynamic Host Configuration Protocol) para VMs.  O DHCP fornece um método baseado em padrões para configurar dinamicamente as configurações TCP/IP de uma porta de rede host.  O DHCP deve fornecer, no mínimo, um endereço TCP/IP e também pode fornecer um endereço de gateway padrão (para roteamento para uma conexão de internet externa), uma máscara de sub-rede e um endereço de servidor DNS.  O DHCP é comumente usado para dispositivos de computação de usuários finais, como desktops, laptops e conexões de celulares de funcionários, mas também pode ser usado para qualquer dispositivo de computação em rede, como servidores.
 
 * Opção *Usar a mesma máscara de sub-rede, DNS e configurações de gateway*: como essas configurações geralmente são as mesmas para todas as VMs conectadas às mesmas redes virtuais, pode ser mais fácil configurá-las uma vez e deixar que o Disaster Recovery use as configurações para todas as VMs no grupo de recursos protegido pelo plano de replicação.  Se algumas VMs usarem configurações diferentes, você precisará desmarcar esta caixa e fornecer essas configurações para cada VM.
-* *Tipo de endereço IP*: Reconfigure as VMs para corresponder aos requisitos da rede virtual de destino.  O NetApp Disaster Recovery oferece duas opções: DHCP ou IP estático.  Para IPs estáticos, configure a máscara de sub-rede, o gateway e os servidores DNS.  Além disso, insira credenciais para VMs.
+* *Tipo de endereço IP*: reconfigure a configuração da máquina virtual para corresponder aos requisitos da rede virtual de destino. O NetApp Disaster Recovery oferece duas opções: DHCP ou IP estático. Para IPs estáticos, configure a máscara de sub-rede, o gateway e os servidores DNS. Além disso, insira as credenciais para as máquinas virtuais.
 +
 ** *DHCP*: Selecione esta configuração se quiser que suas VMs obtenham informações de configuração de rede de um servidor DHCP.  Se você escolher esta opção, fornecerá apenas as credenciais para a VM.
 ** *IP estático*: selecione esta configuração se quiser especificar informações de configuração de IP manualmente.  Você pode selecionar uma das seguintes opções: igual à origem, diferente da origem ou mapeamento de sub-rede.  Se você escolher o mesmo que a fonte, não precisará inserir credenciais.  Por outro lado, se você optar por usar informações diferentes da fonte, poderá fornecer as credenciais, o endereço IP da VM, a máscara de sub-rede, o DNS e as informações do gateway.  As credenciais do sistema operacional convidado da VM devem ser fornecidas no nível global ou em cada nível de VM.
@@ -381,7 +379,7 @@ Para habilitar a execução de scripts com o sistema operacional convidado da m�
 ** Credenciais de usuário apropriadas devem ser fornecidas com privilégios adequados do sistema operacional convidado para executar o script.
 ** Opcionalmente, inclua um valor de tempo limite em segundos para o script.
 +
-*VMs executando Microsoft Windows*: podem executar scripts em lote do Windows (.bat) ou do PowerShell (ps1).  Os scripts do Windows podem usar argumentos de linha de comando.  Formate cada argumento no `arg_name$value` formato, onde `arg_name` é o nome do argumento e `$value` é o valor do argumento e um ponto e vírgula separa cada `argument$value` par.
+*VMs executando Microsoft Windows*: podem executar scripts em lote (.bat) ou PowerShell (ps1). Os scripts do Windows podem usar argumentos de linha de comando. Formate cada argumento no formato  `arg_name$value`, onde  `arg_name` é o nome do argumento e  `$value` é o valor do argumento, e um ponto e vírgula separa cada par  `argument$value`.
 
 +
 *VMs executando Linux*: podem executar qualquer script de shell (.sh) suportado pela versão do Linux usada pela VM.  Os scripts do Linux podem usar argumentos de linha de comando.  Forneça argumentos em uma lista de valores separados por ponto e vírgula.  Argumentos nomeados não são suportados.  Adicione cada argumento ao `Arg[x]` lista de argumentos e faz referência a cada valor usando um ponteiro para `Arg[x]` matriz, por exemplo, `value1;value2;value3` .
@@ -407,7 +405,7 @@ NOTE: Você pode configurar a DRAM em gigabytes (GiB) ou megabytes (MiB).  Embor
 A Recuperação de Desastres inicializa em paralelo quaisquer máquinas virtuais com o mesmo número de ordem de inicialização.
 
 +
-** Inicialização sequencial: atribua a cada VM um número exclusivo para inicializar na ordem atribuída, por exemplo, 1,2,3,4,5.
+** Inicialização sequencial: atribua a cada máquina virtual um número único para inicializá-las na ordem atribuída, por exemplo, 1,2,3,4,5.
 ** Inicialização simultânea: atribua o mesmo número a todas as VMs para inicializá-las ao mesmo tempo, por exemplo, 1,1,1,1,2,2,3,4,4.
 
 
@@ -428,7 +426,7 @@ Muitas VMs hospedam servidores de banco de dados como Oracle ou Microsoft SQL Se
 
 Snapshots consistentes com o aplicativo garantem que o banco de dados esteja em um estado consistente quando o snapshot é tirado.  Isso é importante porque garante que o banco de dados possa ser restaurado para um estado consistente após uma operação de failover ou failback.
 
-Os dados gerenciados pelo servidor de banco de dados podem ser hospedados no mesmo armazenamento de dados que a VM que hospeda o servidor de banco de dados ou podem ser hospedados em um armazenamento de dados diferente.  A tabela a seguir mostra as configurações suportadas para snapshots consistentes com o aplicativo na Recuperação de Desastres:
+Os dados gerenciados pelo servidor de banco de dados podem estar no mesmo datastore que a máquina virtual que hospeda o servidor de banco de dados ou em um datastore diferente. A tabela a seguir mostra as configurações compatíveis para snapshots consistentes com o aplicativo no NetApp Disaster Recovery:
 
 [cols="20,20,40a"]
 |===
@@ -455,7 +453,7 @@ Embora os dados do banco de dados não possam ser replicados, o serviço garante
 |===
 Durante um backup agendado, o Disaster Recovery desativa o servidor de banco de dados e, em seguida, tira um instantâneo da VM que hospeda o servidor de banco de dados.  Isso garante que o banco de dados esteja em um estado consistente quando o instantâneo for tirado.
 
-* Para VMs do Windows, o serviço usa o Microsoft Volume Shadow Copy Service (VSS) para coordenar com qualquer servidor de banco de dados.
+* Para máquinas virtuais Windows, o serviço utiliza o Microsoft Volume Shadow Copy Service (VSS) para coordenar com qualquer tipo de servidor de banco de dados.
 * Para VMs Linux, o serviço usa um conjunto de scripts para colocar o servidor Oracle no modo de backup.
 
 
@@ -478,7 +476,7 @@ TIP: Analise o <<Considerações sobre backups gerenciados pela plataforma>> ant
 
 * *Use backups gerenciados pela plataforma e cronogramas de retenção*: se você estiver usando uma solução externa de gerenciamento de snapshots, marque esta caixa. O Disaster Recovery oferece suporte ao uso de soluções externas de gerenciamento de snapshots, como o agendador de políticas nativo do ONTAP SnapMirror ou integrações de terceiro. Se cada datastore (volume) no plano de replicação já tiver uma relação do SnapMirror que está sendo gerenciada em outro local, você pode usar esses snapshots como pontos de recuperação no NetApp Disaster Recovery.
 +
-Quando esta opção é selecionada, o NetApp Disaster Recovery não configura um agendamento de backup.  No entanto, você ainda precisa configurar um cronograma de retenção porque snapshots ainda podem ser tirados para operações de teste, failover e failback.
+Quando esta opção é selecionada, o NetApp Disaster Recovery não configura um agendamento de backup. No entanto, você ainda precisa configurar um cronograma de retenção, pois snapshots podem ser criados para testes, failover e failback.
 
 +
 Depois que isso for configurado, o serviço não fará nenhum snapshot agendado regularmente, mas dependerá da entidade externa para tirar e atualizar esses snapshots.
@@ -490,7 +488,7 @@ Depois que isso for configurado, o serviço não fará nenhum snapshot agendado 
 
 TIP: O número de instantâneos retidos, juntamente com a taxa de alteração de dados entre cada instantâneo, determina a quantidade de espaço de armazenamento consumido na origem e no destino.  Quanto mais instantâneos você retém, mais espaço de armazenamento é consumido.
 
-* *Datastores de origem e destino*: Se houver vários relacionamentos SnapMirror (fan-out), você poderá selecionar o destino a ser usado.  Se um volume já tiver um relacionamento SnapMirror estabelecido, os armazenamentos de dados de origem e destino correspondentes serão exibidos.  Se um volume não tiver um relacionamento SnapMirror , você poderá criar um agora selecionando um cluster de destino, selecionando um SVM de destino e fornecendo um nome de volume.  O serviço criará o volume e o relacionamento do SnapMirror .
+* *Datastores de origem e destino*: Se existirem vários relacionamentos SnapMirror (fan-out), você pode selecionar o destino a ser usado. Se um volume já tiver um relacionamento SnapMirror estabelecido, os datastores de origem e destino correspondentes serão exibidos. Se um volume não tiver um relacionamento SnapMirror, você pode criar um agora selecionando um cluster de destino, selecionando uma SVM de destino e fornecendo um nome de volume. O serviço criará o volume e o relacionamento SnapMirror.
 +
 
 NOTE: Se você quiser criar um relacionamento SnapMirror neste serviço, o cluster e seu peering SVM já deverão ter sido configurados fora do NetApp Disaster Recovery.
@@ -499,7 +497,7 @@ NOTE: Se você quiser criar um relacionamento SnapMirror neste serviço, o clust
 ** Se as VMs forem do mesmo volume e do mesmo SVM, o serviço executará um snapshot ONTAP padrão e atualizará os destinos secundários.
 ** Se as VMs forem de volumes diferentes e do mesmo SVM, o serviço criará um instantâneo do grupo de consistência incluindo todos os volumes e atualizará os destinos secundários.
 ** Se as VMs forem de volumes diferentes e SVMs diferentes, o serviço executará um instantâneo da fase de início do grupo de consistência e da fase de confirmação, incluindo todos os volumes no mesmo cluster ou em um cluster diferente e atualizando os destinos secundários.
-** Durante o failover, você pode selecionar qualquer snapshot.  Se você selecionar o snapshot mais recente, o serviço criará um backup sob demanda, atualizará o destino e usará esse snapshot para o failover.
+** Durante o failover, você pode selecionar qualquer snapshot. Se você selecionar o snapshot mais recente, o serviço cria um backup sob demanda, atualiza o destino e usa esse snapshot para o failover.
 
 
 

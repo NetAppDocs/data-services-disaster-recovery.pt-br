@@ -230,7 +230,7 @@ NetApp Disaster Recovery para GCVE agora está disponível para o público em ge
 * *Snapshots gerenciados pela plataforma:* Gerencie backups e políticas de retenção de forma integrada por meio do ONTAP ou do Google Cloud Platform (GCP).
 * *Vários datastores por plano de replicação:* Simplifique seus planos de NetApp Disaster Recovery consolidando vários datastores em uma única estratégia de replicação.
 * *Forçar failover para sites de origem indisponíveis:* Alternar para um site de recuperação de desastres se a origem estiver indisponível.
-* *Adiar a resincronização do SnapMirror e restaurar a replicação sob demanda:* Adie as resincronizações do SnapMirror para evitar impacto nas cargas de trabalho de produção durante períodos de pico de operação usando a opção "ignorar proteção" e, posteriormente, restaure a replicação sob demanda com a opção de reproteção
+* *Adie a resincronização do SnapMirror e restaure a replicação sob demanda:* Adie as resincronizações do SnapMirror para evitar impacto nas cargas de trabalho de produção durante períodos de pico de operação usando a opção "ignorar proteção" e, posteriormente, restaure a replicação sob demanda com a opção de reproteção.
 
 
 Para obter mais informações sobre o suporte ao GCVE, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/release-notes/dr-limitations.html["Configurações suportadas para Disaster Recovery"^].
@@ -247,7 +247,7 @@ Versão 4.3.1
 [[exclude-a-datastore-from-replication-plans]]
 === Excluir um datastore dos planos de replicação
 
-Ao criar um plano de replicação no Disaster, agora você pode excluir datastores específicos da replicação. Para situações em que uma VM está configurar para usar vários datastore, isso permite limitar quais serão replicados.
+Ao criar um plano de replicação no NetApp Disaster Recovery, agora você pode excluir datastores específicos da replicação. Para situações em que uma máquina virtual está configurada para usar vários datastores, isso permite limitar quais deles serão replicados.
 
 Para obter detalhes, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"^].
 
@@ -265,7 +265,7 @@ Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-
 [[new-replication-plan-submenu]]
 === Novo submenu de plano de replicação
 
-O recurso de Recuperação de Desastres agora inclui novas opções de menu para acionar atualizações do vCenter a partir do painel do plano de replicação. Você pode acessar o submenu no menu de ações do painel do plano de replicação: selecione **Integridade do Plano** e, em seguida, **Atualizar origem vCenter / Atualizar destino vCenter**.
+A Recuperação de Desastres agora inclui novas opções de menu para acionar atualizações do vCenter a partir do painel do plano de replicação. Você pode acessar o submenu no menu de ações do painel do plano de replicação: selecione **Integridade do Plano** e, em seguida, **Atualizar Origem vCenter / Atualizar Destino vCenter**.
 
 Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#modify-a-replication-plan["Modificar um plano de replicação"^].
 
@@ -356,7 +356,7 @@ A Recuperação de Desastres agora oferece avisos aprimorados e soluções de er
 [[retain-vm-folder-structure-added-as-default-in-replication-plans]]
 === Manter a estrutura de pastas da VM adicionada como padrão nos planos de replicação
 
-Ao criar uma réplica, a nova configuração padrão é manter a estrutura de pastas da máquina virtual. Se o destino da recuperação não tiver a hierarquia de pastas original, a Recuperação de Desastres a criará. Você pode desmarcar esta opção para ignorar a hierarquia de pastas original.
+Ao criar um plano de replicação, a nova configuração padrão é manter a estrutura de pastas da máquina virtual. Se o destino da recuperação não tiver a hierarquia de pastas original, o Disaster Recovery a criará. Você pode desmarcar essa opção para ignorar a hierarquia de pastas original.
 
 Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"^].
 
@@ -461,7 +461,7 @@ A BlueXP disaster recovery foi renomeada para NetApp Disaster Recovery.
 [[bluexp-is-now-netapp-console]]
 === BlueXP agora é NetApp Console
 
-O NetApp Console, criado com base na base aprimorada e reestruturada do BlueXP , fornece gerenciamento centralizado do armazenamento NetApp e do NetApp Data Services em ambientes locais e na nuvem em nível empresarial, fornecendo insights em tempo real, fluxos de trabalho mais rápidos e administração simplificada, que é altamente segura e compatível.
+O NetApp Console, construído sobre a base aprimorada e reestruturada do BlueXP, oferece gerenciamento centralizado do armazenamento NetApp e dos NetApp Data Services em ambientes locais e em nuvem com nível empresarial, fornecendo insights em tempo real, fluxos de trabalho mais rápidos e administração simplificada, altamente segura e em conformidade.
 
 Para obter detalhes sobre o que mudou, consulte o link:https://docs.netapp.com/us-en/console-relnotes/index.html["Notas de versão do NetApp Console"].
 
@@ -628,7 +628,7 @@ Por exemplo:
 
 A VM1 tem uma vNIC (10.1.1.50) que está conectada à RedeA.  A RedeA é mapeada para a RedeB nas configurações do plano de replicação.
 
-No failover, o NetApp Disaster Recovery substitui a parte de rede do endereço IP original (10.1.1) e mantém o endereço de host (.50) do endereço IP original (10.1.1.50).  Para VM1, o NetApp Disaster Recovery analisa as configurações CIDR da NetworkB e usa a parte da rede NetworkB 192.168.1, mantendo a parte do host (.50) para criar o novo endereço IP para VM1.  O novo IP se torna 192.168.1.50.
+Em caso de failover, o NetApp Disaster Recovery substitui a porção de rede do endereço IP original (10.1.1) e mantém o endereço do host (.50) do endereço IP original (10.1.1.50). Para a VM1, o NetApp Disaster Recovery analisa as configurações CIDR da NetworkB e usa a porção de rede da NetworkB, 192.168.1, mantendo a porção do host (.50) para criar o novo endereço IP para a VM1. O novo IP passa a ser 192.168.1.50.
 
 Em resumo, o endereço do host permanece o mesmo, enquanto o endereço de rede é substituído pelo que estiver configurado no mapeamento de sub-rede do site.  Isso permite que você gerencie a reatribuição de endereços IP em caso de failover com mais facilidade, especialmente se você tiver centenas de redes e milhares de VMs para gerenciar.
 
@@ -647,7 +647,7 @@ Ao iniciar um failover, agora você pode escolher a opção *Ignorar proteção*
 
 Depois que o site de origem estiver online novamente, você poderá estabelecer a proteção reversa selecionando *Proteger recursos* no menu Ações do plano de replicação.  Isso tenta criar um relacionamento de replicação reversa para cada volume no plano.  Você pode executar esta tarefa repetidamente até que a proteção seja restaurada.  Quando a proteção for restaurada, você poderá iniciar um failback da maneira usual.
 
-Para obter detalhes sobre a proteção contra saltos, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Falha na execução de aplicativos para um site remoto"] .
+Para obter detalhes sobre ignorar a proteção, consulte  https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Falha na execução de aplicativos para um site remoto"].
 
 
 
@@ -754,7 +754,7 @@ Versão 4.2
 [[asa-r2-support-for-vms-and-datastores-on-vmfs-storage]]
 === Suporte ASA r2 para VMs e datastores em armazenamento VMFS
 
-Esta versão do NetApp Disaster Recovery oferece suporte ao ASA r2 para VMs e datastores no armazenamento VMFS.  Em um sistema ASA r2, o software ONTAP oferece suporte à funcionalidade SAN essencial e remove recursos não suportados em ambientes SAN.
+Esta versão do NetApp Disaster Recovery oferece suporte para o ASA r2 para máquinas virtuais e datastores em armazenamento VMFS. Em um sistema ASA r2, o ONTAP oferece suporte à funcionalidade SAN essencial, removendo recursos não suportados em ambientes SAN.
 
 Esta versão oferece suporte aos seguintes recursos para ASA r2:
 
@@ -845,7 +845,7 @@ Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-disaste
 [[vm-name-aliasing]]
 === Alias de nome de VM
 
-Ao criar um plano de replicação, agora você pode adicionar um prefixo e um sufixo aos nomes de VM no local de recuperação de desastres.  Isso permite que você use um nome mais descritivo para as VMs no plano.
+Ao criar um plano de replicação, agora você pode adicionar um prefixo e um sufixo aos nomes das máquinas virtuais no site de recuperação de desastres. Isso permite que você use um nome mais descritivo para as máquinas virtuais no plano.
 
 Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .
 

@@ -30,7 +30,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 [[manage-vcenter-sites]]
 == Gerenciar sites do vCenter
 
-Você pode editar o nome do site do vCenter e o tipo de site (local ou AWS).
+Você pode editar o nome e o tipo do site do vCenter (local ou AWS).
 
 *Função de console NetApp necessária* É necessário ter a função de administrador da organização, administrador de pasta ou projeto ou administrador de recuperação de desastres para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
@@ -45,7 +45,7 @@ Você pode editar o nome do site do vCenter e o tipo de site (local ou AWS).
 [[manage-resource-groups]]
 == Gerenciar grupos de recursos
 
-Você pode criar grupos de recursos por máquinas virtuais ou por datastores.  Eles podem ser adicionados ao criar o plano de replicação ou posteriormente.
+Você pode criar grupos de recursos por máquinas virtuais ou datastores. Você pode adicioná-los ao criar o plano de replicação ou posteriormente.
 
 *Função de console NetApp necessária* A função de Super admin, Disaster recovery admin ou Disaster recovery application admin é necessária para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
@@ -76,7 +76,7 @@ Para obter detalhes sobre como criar um grupo de recursos, consultelink:resource
 [[manage-replication-plans]]
 == Gerenciar planos de replicação
 
-Você pode desabilitar, habilitar e excluir planos de replicação.  Você pode alterar horários.
+Você pode desativar, ativar e excluir planos de replicação. Você pode alterar os agendamentos.
 
 *Função de console NetApp necessária* A função de Super admin, Disaster recovery admin, Disaster recovery failover admin ou Disaster recovery application admin é necessária para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
@@ -150,13 +150,13 @@ Se você excluir um plano de replicação, também poderá excluir os snapshots 
 [[change-retention-count-for-failover-schedules]]
 === Alterar contagem de retenção para agendamentos de failover
 
-Alterar a contagem de retenção permite aumentar ou diminuir o número de snapshots salvos.
+Alterar a contagem de retenção permite que você aumente ou diminua o número de snapshots salvos.
 
 *Função de console NetApp necessária* A função de Super admin, Disaster recovery admin, Disaster recovery failover admin ou Disaster recovery application admin é necessária para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu, selecione *Planos de replicação*.
-. Selecione o plano de replicação e, em seguida, a guia *Mapeamento de failover*. Selecione o ícone de lápis *Editar*.
+. Selecione o plano de replicação e, em seguida, selecione a guia *Mapeamento de failover*. Selecione o ícone de lápis *Editar*.
 . Selecione a seta para baixo na linha *Datastores* para expandi-la.
 +
 image:../use/dr-plan-failover-edit.png["Editar página de mapeamentos de failover"]
@@ -192,7 +192,7 @@ Na interface de recuperação de desastres, você pode atualizar ou remover Trid
 . Em Recuperação de Desastres, selecione **Sites** na barra lateral.
 . Selecione **Kubernetes** no menu suspenso.
 . No menu de ações do site que você deseja modificar, selecione **Remove cluster**.
-. Analise o menu de diálogo e selecione **Remover do site**. Certifique-se de escolher a opção correta para continuar a operação do Trident Protect.
+. Analise a caixa de diálogo e selecione **Remover do site**. Certifique-se de escolher a opção correta para continuar a operação do Trident Protect.
 
 
 
@@ -200,7 +200,7 @@ Na interface de recuperação de desastres, você pode atualizar ou remover Trid
 [[view-datastore-information]]
 == Visualizar informações do armazenamento de dados
 
-Você pode visualizar informações sobre quantos armazenamentos de dados existem na origem e no destino.
+Você pode visualizar quantos datastores existem nos sites de origem e de destino.
 
 *Função de console NetApp necessária* É necessário ter a função de Super admin, Disaster recovery admin, Disaster recovery failover admin, Disaster recovery application admin ou Disaster recovery viewer para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
@@ -216,7 +216,7 @@ Você pode visualizar informações sobre quantos armazenamentos de dados existe
 [[view-virtual-machines-information]]
 == Exibir informações das máquinas virtuais
 
-Você pode visualizar informações sobre quantas máquinas virtuais existem na origem e no destino, juntamente com CPU, memória e capacidade disponível.
+Você pode visualizar quantas máquinas virtuais existem nos sites de origem e destino, juntamente com CPU, memória e capacidade disponível.
 
 *Função de console NetApp necessária* É necessário ter a função de Super admin, Disaster recovery admin, Disaster recovery failover admin, Disaster recovery application admin ou Disaster recovery viewer para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 

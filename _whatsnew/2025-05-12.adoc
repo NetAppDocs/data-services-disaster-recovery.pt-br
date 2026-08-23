@@ -19,7 +19,7 @@ Por exemplo:
 
 A VM1 tem uma vNIC (10.1.1.50) que está conectada à RedeA.  A RedeA é mapeada para a RedeB nas configurações do plano de replicação.
 
-No failover, o NetApp Disaster Recovery substitui a parte de rede do endereço IP original (10.1.1) e mantém o endereço de host (.50) do endereço IP original (10.1.1.50).  Para VM1, o NetApp Disaster Recovery analisa as configurações CIDR da NetworkB e usa a parte da rede NetworkB 192.168.1, mantendo a parte do host (.50) para criar o novo endereço IP para VM1.  O novo IP se torna 192.168.1.50.
+Em caso de failover, o NetApp Disaster Recovery substitui a porção de rede do endereço IP original (10.1.1) e mantém o endereço do host (.50) do endereço IP original (10.1.1.50). Para a VM1, o NetApp Disaster Recovery analisa as configurações CIDR da NetworkB e usa a porção de rede da NetworkB, 192.168.1, mantendo a porção do host (.50) para criar o novo endereço IP para a VM1. O novo IP passa a ser 192.168.1.50.
 
 Em resumo, o endereço do host permanece o mesmo, enquanto o endereço de rede é substituído pelo que estiver configurado no mapeamento de sub-rede do site.  Isso permite que você gerencie a reatribuição de endereços IP em caso de failover com mais facilidade, especialmente se você tiver centenas de redes e milhares de VMs para gerenciar.
 
@@ -38,7 +38,7 @@ Ao iniciar um failover, agora você pode escolher a opção *Ignorar proteção*
 
 Depois que o site de origem estiver online novamente, você poderá estabelecer a proteção reversa selecionando *Proteger recursos* no menu Ações do plano de replicação.  Isso tenta criar um relacionamento de replicação reversa para cada volume no plano.  Você pode executar esta tarefa repetidamente até que a proteção seja restaurada.  Quando a proteção for restaurada, você poderá iniciar um failback da maneira usual.
 
-Para obter detalhes sobre a proteção contra saltos, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Falha na execução de aplicativos para um site remoto"] .
+Para obter detalhes sobre ignorar a proteção, consulte  https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Falha na execução de aplicativos para um site remoto"].
 
 
 

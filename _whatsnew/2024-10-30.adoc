@@ -76,7 +76,7 @@ Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-disaste
 [[vm-name-aliasing]]
 === Alias de nome de VM
 
-Ao criar um plano de replicação, agora você pode adicionar um prefixo e um sufixo aos nomes de VM no local de recuperação de desastres.  Isso permite que você use um nome mais descritivo para as VMs no plano.
+Ao criar um plano de replicação, agora você pode adicionar um prefixo e um sufixo aos nomes das máquinas virtuais no site de recuperação de desastres. Isso permite que você use um nome mais descritivo para as máquinas virtuais no plano.
 
 Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .
 

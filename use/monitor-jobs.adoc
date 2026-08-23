@@ -12,7 +12,7 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 
 [role="lead"]
-Você pode monitorar todos os trabalhos de NetApp Disaster Recovery e determinar seu progresso.
+Monitore os trabalhos do NetApp Disaster Recovery para acompanhar seu status e progresso.
 
 
 
@@ -25,11 +25,11 @@ Você pode monitorar todos os trabalhos de NetApp Disaster Recovery e determinar
 . Faça login no https://console.netapp.com/["NetApp Console"^] .
 . Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 . No menu, selecione *Monitoramento de tarefas*.
-. Explore todos os trabalhos relacionados às operações e revise seus registros de data e hora e status.
-. Para visualizar os detalhes de uma tarefa específica, selecione a linha correspondente. Você pode baixar os detalhes da tarefa para revisão offline selecionando o menu de ações e então **Baixar detalhes da tarefa**.
+. Analise as tarefas, incluindo seus registros de data e hora e status.
+. Para visualizar os detalhes de um trabalho, selecione a linha correspondente. Para baixar os detalhes do trabalho para revisão offline, selecione o menu de ações e, em seguida, selecione **Baixar detalhes do trabalho**.
 +
 
-TIP: Ao analisar os detalhes da tarefa, o NetApp Disaster Recovery informa o usuário que a iniciou. Se o responsável estiver listado como "system", isso significa que o NetApp Disaster Recovery iniciou a tarefa.
+TIP: Ao revisar os detalhes da tarefa, o NetApp Disaster Recovery mostra o usuário que iniciou a tarefa. Se o responsável estiver listado como "system", o NetApp Disaster Recovery iniciou a tarefa.
 
 . Para atualizar as informações, selecione *Atualizar*.
 
@@ -46,7 +46,7 @@ Você pode cancelar uma tarefa em andamento ou que esteja na fila se estiver tra
 .Passos
 . Na barra de navegação esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 . No menu, selecione *Monitoramento de tarefas*.
-. Na página Monitor de tarefas, anote o ID da tarefa que você deseja cancelar.
+. Na página de monitoramento de tarefas, anote o ID da tarefa que você deseja cancelar.
 +
 O trabalho deve estar no estado "Em andamento" ou "Na fila".
 
