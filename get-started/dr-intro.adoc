@@ -93,7 +93,7 @@ IMPORTANT: Alguns lançamentos incluem uma prévia da tecnologia.  A NetApp não
 Você pode usar os seguintes tipos de licença:
 
 * Inscreva-se para um teste gratuito de 30 dias.
-* Compre uma assinatura pré-paga (PAYGO) com o Amazon Web Services (AWS) Marketplace ou o Microsoft Azure Marketplace.  Esta licença permite que você compre uma licença de capacidade protegida fixa sem nenhum compromisso de longo prazo.
+* Adquira uma assinatura de pagamento conforme o uso (PAYGO) no Amazon Web Services (AWS) Marketplace, Azure Marketplace ou Google Cloud Marketplace. Essa licença permite que você adquira uma licença de capacidade protegida fixa sem qualquer compromisso de longo prazo.
 * Traga sua própria licença (BYOL), que é um arquivo de licença NetApp (NLF) que você obtém do seu representante de vendas NetApp . Você pode usar o número de série da licença para ativar o BYOL no NetApp Console.
 
 
@@ -104,7 +104,7 @@ O Disaster Recovery é licenciado com base na quantidade de dados hospedados em 
 Volumes protegidos podem hospedar muitas VMs.  Alguns podem não fazer parte de um grupo de recursos de NetApp Disaster Recovery .  Independentemente disso, o armazenamento consumido por todas as VMs naquele volume ou LUN é usado em relação à capacidade máxima da licença.
 
 
-NOTE: As cobranças do NetApp Disaster Recovery são baseadas na capacidade usada dos armazenamentos de dados no site de origem quando há pelo menos uma VM com um plano de replicação.  A capacidade para um armazenamento de dados com failover não está incluída na capacidade permitida.  Para um BYOL, se os dados excederem a capacidade permitida, as operações no serviço serão limitadas até que você obtenha uma licença de capacidade adicional ou atualize a licença no NetApp Console.
+NOTE: NetApp Disaster Recovery cobra com base na capacidade utilizada dos datastores no site de origem quando há pelo menos uma VM ou recurso Kubernetes com um plano de replicação. A capacidade de um datastore em failover não está incluída na franquia de capacidade. Para um BYOL, se os dados excederem a capacidade permitida, as operações no serviço serão limitadas até que você obtenha uma licença de capacidade adicional ou atualize a licença no NetApp Console.
 
 Para obter detalhes sobre a configuração do licenciamento para o NetApp Disaster Recovery, consultelink:../get-started/dr-licensing.html["Configurar o licenciamento do NetApp Disaster Recovery"] .
 
