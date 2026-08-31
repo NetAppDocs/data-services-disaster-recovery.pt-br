@@ -101,9 +101,9 @@ O processo de failover envolve as seguintes operações:
 * Os armazenamentos de dados são criados e montados no cluster ou host VMware ou VMC com base nas informações capturadas no plano de replicação.  Se algum armazenamento de dados for VMFS, crie e mapeie um iGroup para cada LUN.
 * As VMs de destino são registradas no vCenter como novos datastores.
 * As máquinas virtuais de destino são ligadas com base na ordem de inicialização registrada na página Resource groups.
-* Se o vCenter de origem ainda estiver ativo, desligue todas as VMs do lado de origem que estão sofrendo failover.
+* Se a origem vCenter ainda estiver ativa, desligue todas as máquinas virtuais do lado da origem que estão sendo transferidas.
 * Desative todos os aplicativos de banco de dados suportados em VMs indicadas como "consistentes com o aplicativo".
-* Se os clusters vCenter e ONTAP de origem ainda estiverem ativos, crie um relacionamento SnapMirror de direção reversa para replicar quaisquer alterações durante o estado de failover de volta para o site de origem original.  O relacionamento do SnapMirror é revertido da máquina virtual de destino para a de origem.
+* Se os clusters de origem vCenter e ONTAP ainda estiverem ativos, crie uma relação do SnapMirror em direção reversa para replicar quaisquer alterações feitas durante o estado de failover de volta para o site de origem original. A relação do SnapMirror é invertida do destino para a máquina virtual de origem.
 
 
 
@@ -126,9 +126,16 @@ image::site-type-toggle.png[Captura de tela da opção de alternância do tipo d
 +
 image:dr-plan-failover3.png["Página de failover"]
 
-. Na página de Failover, crie um novo snapshot agora ou escolha um snapshot existente para o armazenamento de dados usar como base para a recuperação. A versão padrão é a mais recente.
+. Escolha a cópia instantânea que você deseja usar para o failover:
 +
-Um instantâneo do cluster de origem atual será capturado e replicado para o cluster de destino atual antes que a transição ocorra.
+** Selecione *Criar instantâneo agora* para criar um novo instantâneo que será copiado para o cluster de destino antes do failover.
+** Selecione *Usar snapshot mais recente* para usar o snapshot mais recente disponível no cluster de destino.
+** Escolha *Selecionar* para revisar uma lista de instantâneos classificados por data mais recente.
++
+
+NOTE: Ao selecionar uma linha de base de snapshot específica, os snapshots de transferência do SnapMirror ficam ocultos por padrão, pois podem ser excluídos durante um failover. Essa exclusão impede a reproteção da carga de trabalho após o failover devido a um erro de "nenhum snapshot comum encontrado". Você ainda pode usar snapshots de transferência do SnapMirror, mas precisará concluir uma confirmação adicional para reconhecer o risco.
+
+
 
 . Selecione *Forçar failover* se você quiser que o failover continue mesmo quando o serviço detectar um erro que normalmente o bloquearia.
 . Selecione *Ignorar proteção* se desejar que o serviço não crie automaticamente uma relação de proteção reversa do SnapMirror após uma falha no plano de replicação. Isso é útil se você quiser executar operações adicionais no site restaurado antes de colocá-lo online novamente dentro do NetApp Disaster Recovery.
@@ -151,8 +158,18 @@ image::site-type-toggle.png[Captura de tela da opção de alternância do tipo d
 
 . Selecione o plano de replicação.
 . À direita, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"], passe o cursor sobre *Recuperar* e selecione *Fail over*.
-. Escolha a cópia do snapshot que deseja usar para o failover. Você pode *Criar snapshot agora* para criar um snapshot totalmente novo que será copiado para o cluster de destino ou *Usar o snapshot mais recente* para usar o snapshot mais recente disponível no cluster de destino.
-. Selecione *Ignorar proteção* se desejar que o serviço não crie automaticamente uma relação de proteção reversa do SnapMirror após uma falha no plano de replicação. Isso é útil se você quiser executar operações adicionais no site restaurado antes de colocá-lo online novamente dentro do NetApp Disaster Recovery.
+. Escolha a cópia instantânea que você deseja usar para o failover:
++
+** Selecione *Tirar instantâneo agora* para criar um novo instantâneo que será copiado para o cluster de destino.
+** Selecione *Usar snapshot mais recente* para usar o snapshot mais recente disponível no cluster de destino.
+** Escolha *Selecionar* para revisar uma lista de instantâneos classificados por data mais recente.
++
+
+NOTE: Ao selecionar uma linha de base de snapshot específica, os snapshots de transferência do SnapMirror ficam ocultos por padrão, pois podem ser excluídos durante um failover. Essa exclusão impede a reproteção da carga de trabalho após o failover devido a um erro de "nenhum snapshot comum encontrado". Você ainda pode usar snapshots de transferência do SnapMirror, mas precisará concluir uma confirmação adicional para reconhecer o risco.
+
+
+
+. Selecione *Skip protection* se você não quiser que o Disaster Recovery crie automaticamente uma relação de proteção reversa do SnapMirror após um failover do plano de replicação. Isso é útil se você quiser realizar operações adicionais no site restaurado antes de colocá-lo online novamente no NetApp Disaster Recovery.
 . Digite "Failover" para confirmar a ação e selecione *Failover*.
 
 

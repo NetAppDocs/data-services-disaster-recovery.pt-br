@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+
+NOTE: Ao selecionar uma linha de base de snapshot específica, os snapshots de transferência do SnapMirror ficam ocultos por padrão, pois podem ser excluídos durante um failover. Essa exclusão impede a reproteção da carga de trabalho após o failover devido a um erro de "nenhum snapshot comum encontrado". Você ainda pode usar snapshots de transferência do SnapMirror, mas precisará concluir uma confirmação adicional para reconhecer o risco.

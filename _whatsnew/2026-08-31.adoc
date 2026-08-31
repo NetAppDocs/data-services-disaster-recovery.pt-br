@@ -1,0 +1,23 @@
+= Gerenciamento de snapshots aprimorado do SnapMirror
+:allow-uri-read: 
+
+
+
+
+[[improved-snapmirror-snapshot-management]]
+=== Gerenciamento de snapshots aprimorado do SnapMirror
+
+Agora você pode acionar o failover usando o snapshot mais recente, que é o método preferido quando você não está criando um novo snapshot.
+
+Ao selecionar uma linha de base de snapshot específica, os snapshots de transferência do SnapMirror ficam ocultos por padrão. Isso ocorre porque eles podem ser excluídos durante um failover, o que impossibilita reproteger a carga de trabalho após o failover devido a um erro de "nenhum snapshot comum encontrado". Você ainda pode usar esses snapshots, mas precisará concluir uma confirmação adicional para reconhecer o risco.
+
+Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Failover para um site remoto"^].
+
+
+
+[[other-improvements]]
+=== Outras melhorias
+
+* Pequenas melhorias foram feitas para aumentar a resiliência do fluxo de trabalho de failover de teste.
+* Um erro de validação ao adicionar um script foi corrigido.
+
