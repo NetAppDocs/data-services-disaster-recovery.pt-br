@@ -2406,7 +2406,6 @@
   <block id="57428a711cfa3bd5fc08ccca3ebd74d1" category="admonition">Após criar o plano de replicação, definir a recorrência no assistente e iniciar a migração, o NetApp Disaster Recovery realiza uma verificação a cada 30 minutos para garantir que a migração esteja progredindo conforme o plano. Você pode monitorar o progresso na página Job Monitor.</block>
   <block id="0e00059b7ae89bb2943107122795d39b" category="paragraph">Antes de iniciar a migração, crie um plano de replicação e configure-o para migração. Em seguida, a opção *Migrar* aparece no menu Ações.</block>
   <block id="c3ddf9c129ec78b8669259e50ef2b80b" category="list-text">Digite "Migrar" na caixa de texto para confirmar a operação e selecione *Migrar*.</block>
-  <block id="f1f2884d80fd0cf77d91665857fb19fd" category="paragraph">Monitore os trabalhos do NetApp Disaster Recovery para acompanhar seu status e progresso.</block>
   <block id="119ecc97f4025cf7e813b10479d31164" category="list-text">Analise as tarefas, incluindo seus registros de data e hora e status.</block>
   <block id="3fe84e5e3b6ca68b66ef1e1ff0d7b114" category="list-text">Para visualizar os detalhes de um trabalho, selecione a linha correspondente. Para baixar os detalhes do trabalho para revisão offline, selecione o menu de ações e, em seguida, selecione **Baixar detalhes do trabalho**.</block>
   <block id="f917d3f114d10bd11fbc835ef9241353" category="admonition">Ao revisar os detalhes da tarefa, o NetApp Disaster Recovery mostra o usuário que iniciou a tarefa. Se o responsável estiver listado como "system", o NetApp Disaster Recovery iniciou a tarefa.</block>
@@ -2567,4 +2566,5 @@
   <block id="3402d8d43abf71995137392eb9b660bc" category="list-text">Escolha *Selecionar* para revisar uma lista de instantâneos classificados por data mais recente.</block>
   <block id="2c9e00774620c5f83c48800d39a8e3a1" category="list-text">Selecione *Tirar instantâneo agora* para criar um novo instantâneo que será copiado para o cluster de destino.</block>
   <block id="15816348d7ed6eb8ac7c5354e5a1aa49" category="list-text">Selecione *Skip protection* se você não quiser que o Disaster Recovery crie automaticamente uma relação de proteção reversa do SnapMirror após um failover do plano de replicação. Isso é útil se você quiser realizar operações adicionais no site restaurado antes de colocá-lo online novamente no NetApp Disaster Recovery.</block>
+  <block id="d4fd90d5c03a49a34d58a0210e1f6a1b" category="paragraph">Monitore os trabalhos de NetApp Disaster Recovery para visualizar seu histórico, status e detalhes. Acompanhar o status e o progresso dos trabalhos permite que você identifique operações com falha ou paralisadas antes que elas afetem a prontidão para a recuperação.</block>
 </blocks>
