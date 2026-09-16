@@ -9,14 +9,12 @@ summary: Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx
 
 
 [role="lead"]
-Use o NetApp Disaster Recovery com Amazon EVS e Amazon FSx for NetApp ONTAP para executar as seguintes operações: failover, failover de teste, atualizar recursos, migrar, tirar um snapshot agora, desabilitar/habilitar plano de replicação, limpar snapshots antigos, reconciliar snapshots, excluir plano de replicação e editar agendamentos.
+Após configurar o plano de replicação no NetApp Disaster Recovery, você pode realizar failovers, testar o failover, atualizar recursos, migrar e gerenciar snapshots e planos de replicação. A principal ação a ser executada, além da manutenção, é o failover em caso de falha.
 
 
 
 [[fail-over]]
 == Falha
-
-A principal operação que você pode precisar executar é aquela que você espera que nunca aconteça: fazer failover para o datacenter de DR (destino) no caso de uma falha catastrófica no site de produção local.
 
 O failover é um processo iniciado manualmente.
 
@@ -63,8 +61,7 @@ As etapas para executar um failover de teste são idênticas às usadas para exe
 +
 image:evs-rp-menu-test-failover.png["Opção de menu de failover de teste"]
 
-. Decida se você deseja obter o estado mais recente do ambiente de produção (Tirar um instantâneo agora) ou usar um backup de plano de replicação criado anteriormente (Selecionar)
-. Se você escolheu um backup criado anteriormente, selecione o backup a ser usado para a recuperação.
+. Escolha qual instantâneo usar. Para criar a cópia mais atualizada do ambiente de produção, escolha *Criar instantâneo agora*. Para usar um instantâneo capturado anteriormente, escolha *Selecionar* e depois escolha o instantâneo existente.
 . Digite a palavra “Test failover” para verificar se você deseja prosseguir.
 . Selecione *Testar failover*.
 +
@@ -93,7 +90,7 @@ image:evs-rp-menu-compliance-check.png["Opção de menu Executar verificação d
 [[refresh-resources]]
 == Atualizar recursos
 
-Sempre que você fizer alterações na sua infraestrutura virtual — como adicionar ou excluir VMs, adicionar ou excluir datastores ou mover VMs entre datastores — será necessário executar uma atualização dos clusters do vCenter afetados no serviço NetApp Disaster Recovery .  O serviço faz isso automaticamente uma vez a cada 24 horas por padrão, mas uma atualização manual garante que as informações mais recentes da infraestrutura virtual estejam disponíveis e sejam levadas em consideração para proteção de DR.
+Sempre que você fizer alterações em sua infraestrutura virtual, como adicionar ou excluir VMs, adicionar ou excluir datastores ou mover VMs entre datastores, é necessário atualizar os clusters vCenter afetados no Disaster Recovery. O Disaster Recovery atualiza automaticamente uma vez a cada 24 horas por padrão, mas uma atualização manual garante que as informações mais recentes da infraestrutura virtual estejam disponíveis e sejam consideradas para a proteção contra desastres.
 
 Há dois casos em que uma atualização é necessária:
 
@@ -108,7 +105,7 @@ image::evs-rp-menu-refresh-resources.png[Opção de menu Atualizar recursos]
 [[migrate]]
 == Migrar
 
-Embora o NetApp Disaster Recovery seja usado principalmente para casos de recuperação de desastres, ele também pode permitir movimentações únicas de um conjunto de VMs do site de origem para o site de destino.  Isso poderia ser para uma migração planejada para um projeto de nuvem ou poderia ser usado para evitar desastres — como mau tempo, conflitos políticos ou outros possíveis eventos catastróficos temporários.
+Além de usar o NetApp Disaster Recovery para gerenciar a replicação e o failover em caso de desastres, ele também pode suportar migrações únicas de máquinas virtuais (VMs) do site de origem para o site de destino. Você pode realizar uma migração única como parte de uma migração para a nuvem ou como um procedimento de prevenção de desastres ao responder a eventos catastróficos, como condições climáticas extremas ou instabilidade política.
 
 . Selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] ao lado do plano de replicação.
 . Para mover as VMs em um plano de replicação para o cluster Amazon EVS de destino, selecione *Migrar* no menu Ações do plano de replicação:
@@ -168,7 +165,7 @@ image::evs-rp-menu-cleanup-old-snapshots.png[Opção de menu Limpar instantâneo
 [[reconcile-snapshots]]
 == Reconciliar instantâneos
 
-Como o serviço orquestra instantâneos de volume ONTAP , é possível que um administrador de armazenamento ONTAP exclua instantâneos diretamente usando o ONTAP System Manager, a CLI do ONTAP ou as APIs REST do ONTAP sem o conhecimento do serviço.  O serviço exclui automaticamente todos os snapshots na origem que não estão no cluster de destino a cada 24 horas.  No entanto, você pode fazer isso sob demanda.  Esse recurso permite que você garanta que os instantâneos sejam consistentes em todos os sites.
+Como o NetApp Disaster Recovery orquestra snapshots de volumes do ONTAP, um administrador de storage do ONTAP pode excluir snapshots diretamente usando o System Manager do ONTAP, a CLI do ONTAP ou as APIs REST do ONTAP, sem que o serviço tenha conhecimento disso. O NetApp Disaster Recovery exclui automaticamente, a cada 24 horas, quaisquer snapshots na origem que não estejam presentes no cluster de destino. Você pode excluir snapshots manualmente, conforme necessário. Esse recurso permite que você garanta que os snapshots sejam consistentes em todos os sites.
 
 . Selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] ao lado do plano de replicação.
 . Para excluir instantâneos do cluster de origem que não existem no cluster de destino, selecione *Reconciliar instantâneos* no menu Ações do plano de replicação.

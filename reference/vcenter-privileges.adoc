@@ -12,9 +12,9 @@ summary: A conta vCenter deve possuir um conjunto mínimo de privilégios vCente
 
 
 [role="lead"]
-Para que o NetApp Disaster Recovery execute seus serviços, a conta vCenter deve ter um conjunto mínimo de privilégios vCenter. Esses privilégios incluem registrar e cancelar o registro de datastores, iniciar e parar máquinas virtuais (VMs) e reconfigurar VMs.
+A conta do vCenter para o NetApp Disaster Recovery deve ter um conjunto mínimo de privilégios para registrar e cancelar o registro de datastores, iniciar e parar máquinas virtuais (VMs) e reconfigurar VMs.
 
-A tabela a seguir lista todos os privilégios necessários para que o NetApp Disaster Recovery interfira com um cluster vCenter.
+A tabela a seguir lista os privilégios necessários para que o NetApp Disaster Recovery funcione com um vCenter cluster.
 
 [cols="1,2,2,3"]
 |===

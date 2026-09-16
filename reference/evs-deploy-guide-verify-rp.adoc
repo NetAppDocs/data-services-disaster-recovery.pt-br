@@ -9,13 +9,13 @@ summary: Introdução ao NetApp Disaster Recovery usando Amazon EVS e Amazon FSx
 
 
 [role="lead"]
-Depois de adicionar o plano de replicação no NetApp Disaster Recovery, você retorna à página Planos de replicação, onde pode visualizar seus planos de replicação e seus status.  Você deve verificar se o plano de replicação está no estado *Saudável*.  Caso contrário, você deve verificar o status do plano de replicação e corrigir quaisquer problemas antes de prosseguir.
+Após adicionar um plano de replicação no NetApp Disaster Recovery, verifique se o plano está no estado *Healthy* antes de continuar.
 
 Figura: Página de planos de replicaçãoimage:evs-replication-plan-post-create.png["Página de planos de replicação"]
 
-O NetApp Disaster Recovery executa uma série de testes para verificar se todos os componentes (cluster ONTAP , clusters vCenter e VMs) estão acessíveis e no estado adequado para que o serviço proteja as VMs.  Isso é chamado de verificação de conformidade e é executado regularmente.
+NetApp Disaster Recovery executa uma série de testes para verificar se todos os componentes, incluindo o cluster ONTAP, os clusters vCenter e as VMs, estão acessíveis e prontos para proteção. Isso é chamado de verificação de conformidade e é executado regularmente.
 
-Na página Planos de replicação, você pode ver as seguintes informações:
+A página de planos de replicação exibe as seguintes informações:
 
 * Status da última verificação de conformidade
 * O estado de replicação do plano de replicação

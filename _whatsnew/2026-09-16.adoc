@@ -1,0 +1,55 @@
+= O suporte do Kubernetes em NetApp Disaster Recovery agora está disponível para todos (GA)
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-support-in-netapp-disaster-recovery-is-now-generally-available-ga]]
+=== O suporte do Kubernetes em NetApp Disaster Recovery agora está disponível para todos (GA)
+
+O suporte para cargas de trabalho baseadas em Kubernetes no NetApp Disaster Recovery agora está disponível para o público em geral (GA). Com o suporte para cargas de trabalho baseadas em Kubernetes, você pode proteger aplicativos em execução em clusters Kubernetes, incluindo ambientes de OpenShift Virtualization. O NetApp Disaster Recovery é compatível com qualquer versão do Kubernetes atualmente suportada pelo Trident Protect, garantindo integração perfeita e recursos robustos de recuperação de desastres para aplicativos conteinerizados.
+
+Para começar a proteger cargas de trabalho baseadas em Kubernetes, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/task-kubernetes-requirements.html["Requisitos do Kubernetes para NetApp Disaster Recovery"^].
+
+
+
+[[resource-transformations]]
+=== Transformações de recursos
+
+A NetApp Disaster Recovery agora oferece suporte a transformações de recursos, permitindo que você modifique qualquer aspecto de uma carga de trabalho durante um failover. Esse recurso proporciona flexibilidade para adaptar cargas de trabalho a diferentes ambientes e configurações durante um evento de NetApp Disaster Recovery.
+
+As transformações de recursos são aplicadas quando você cria um plano de replicação. Você pode criar, editar e excluir transformações de recursos na nova página Configurações. Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-resource-transformation.html["Gerenciar transformações de recursos"^].
+
+
+
+[[script-execution]]
+=== Execução de script
+
+Agora você pode inserir scripts personalizados no fluxo de trabalho de failover para coordenar a inatividade e a retomada de aplicativos. Esse recurso ajuda a garantir que os aplicativos estejam devidamente preparados antes que um snapshot seja replicado e restaurado adequadamente, para que as operações possam ser retomadas sem problemas após o failover.
+
+Para aprender como injetar um script personalizado, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"^].
+
+
+
+[[new-workloads-page]]
+=== Nova página de cargas de trabalho
+
+O NetApp Disaster Recovery adicionou uma página de Workloads à interface do usuário, fornecendo uma visão abrangente de todos os workloads detectados e seu status de proteção. A página de Workloads permite que você monitore e gerencie seus workloads com mais eficiência.
+
+Para mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/dashboard-view.html["Analisar o estado de saúde e proteção no NetApp Disaster Recovery"^].
+
+
+
+[[settings-page]]
+=== Página de configurações
+
+O NetApp Disaster Recovery agora oferece uma página de Configurações para gerenciar centralmente os modelos de transformação de recursos e AppVaults. Esta página fornece uma interface única para configurar e gerenciar esses componentes críticos dos seus planos de NetApp Disaster Recovery. Para saber mais sobre as opções na página de Configurações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-resource-transformation.html["Gerenciar transformações de recursos"^] e link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-appvault.html["Gerenciar AppVaults"^].
+
+
+
+[[general-improvements]]
+=== Melhorias gerais
+
+A funcionalidade de NetApp Disaster Recovery introduziu validações aprimoradas na página de criação do plano de replicação para garantir uma experiência de usuário mais tranquila e livre de erros.
+
+O NetApp Disaster Recovery também aumentou a resiliência do serviço para tolerar timeouts de requisição intermitentes, melhorando o desempenho e a confiabilidade geral da interface do usuário.

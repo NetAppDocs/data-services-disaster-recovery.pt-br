@@ -259,13 +259,20 @@ TIP: Execute o comando da CLI `kubectl get pvc -n <namespace>` no namespace para
 Escolha o *Horário de início dos Snapshots e da retenção* (data e hora do calendário), a *Frequência de Snapshots e retenção* (com que frequência os snapshots são iniciados) e a *Quantidade de retenção de Snapshots* (quantos snapshots são salvos).
 
 +
-Ao definir a frequência de Snapshot, o mínimo permitido é de cinco minutos.
+Ao definir a frequência de snapshot, você deve escolher uma frequência de pelo menos a cada cinco minutos.
 
 . Selecione *Adicionar AppVault* para criar o AppVault onde os dados de proteção serão salvos.
 +
 .. Insira um *Nome* e selecione o *Agente do Console* ao qual o AppVault deve ser conectado.
 .. Selecione o provedor de nuvem para hospedar o *AppVault*.
-.. Com base no provedor selecionado, o Disaster Recovery preenche as assinaturas de cloud configuradas existentes. Escolha a *Subscription*, o *Resource group* e a *Storage account* para o cloud provider.
+.. Com base no provedor selecionado, o Disaster Recovery preenche as assinaturas de cloud configuradas existentes.
++
+Para o Azure, escolha a *Assinatura*, o *Grupo de recursos* e a *Conta de armazenamento* para o provedor de nuvem.
+
++
+Para AWS, ONTAP S3 e StorageGRID, selecione a *Acount*, as *Credentials* e o *Bucket*.
+
+.. Se você selecionou o ONTAP S3 ou o StorageGRID, pode adicionar credenciais opcionalmente. Selecione *Adicionar credenciais* para expandir as opções e, em seguida, adicione o *Nome da credencial*, o *FQDN do nó de gateway*, o número da *porta*, a *Chave de acesso* e a *Chave secreta*.
 .. Selecione **Adicionar**.
 +
 image:kubernetes-mapping.png["Captura de tela do mapeamento de classes de armazenamento para Kubernetes"]
@@ -282,7 +289,29 @@ Após selecionar Adicionar, você poderá monitorar as diferentes tarefas em **M
 --
 ====
 
-NOTE: Para o Kubernetes, este é o passo final para criar uma replicação. Para vCenters, continue para o <<Seção de recursos computacionais>>.
+
+==== Transformações de recursos e execuções de scripts
+
+Para planos de replicação do Kubernetes, você pode aplicar transformações de recursos e execuções de scripts. Essas etapas são opcionais.
+
+.Adicionar uma transformação de recurso
+Adicionar uma transformação de recursos permite que você modifique qualquer aspecto de uma carga de trabalho durante um failover. As transformações de recursos oferecem flexibilidade para adaptar cargas de trabalho a diferentes ambientes e configurações durante um evento de recuperação de desastres. link:task-resource-transformation.html["Aprenda como criar e transformar recursos."^]
+
+As transformações de recursos são aplicadas na ordem em que você as lista.
+
+. No menu suspenso, selecione a transformação de recurso que você deseja adicionar.
+. Escolha os recursos aos quais você deseja aplicar a transformação e, em seguida, adicione os valores necessários
+. Revise a ordem das transformações para garantir que as operações sejam executadas na ordem apropriada.
+
+
+.Adicionar uma execução de script
+O NetApp Disaster Recovery pode executar um script antes ou depois de tirar um snapshot para gerenciar a quiescência e a retomada de um aplicativo. Executar essa ação garante que os aplicativos estejam devidamente preparados antes que um snapshot seja replicado e restaurado, e possam retomar as operações sem interrupções após o failover.
+
+. Selecione *+ Adicionar script*.
+. Selecione *Carregar* para escolher o arquivo de script.
+. Escolha a *Etapa de execução*: *Pré-snapshot* para executar antes de criar o snapshot ou *Pós-snapshot* para executar depois.
+. Selecione *Salvar*.
+
 
 
 

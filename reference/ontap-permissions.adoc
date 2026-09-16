@@ -12,14 +12,14 @@ summary: Ao utilizar NetApp Disaster Recovery, certifique-se de ter as permissõ
 
 
 [role="lead"]
-Ao utilizar NetApp Disaster Recovery, certifique-se de ter as permissões corretas configuradas no ONTAP para garantir o funcionamento adequado.
+Configure as permissões ONTAP necessárias para que o NetApp Disaster Recovery funcione corretamente.
 
 
 
 [[minimum-ontap-permissions]]
 == Permissões mínimas do ONTAP
 
-As seguintes permissões do ONTAP são necessárias para NetApp Disaster Recovery:
+O NetApp Disaster Recovery requer as seguintes permissões do ONTAP:
 
 [cols="3,1"]
 |===
@@ -111,7 +111,7 @@ As seguintes permissões do ONTAP são necessárias para NetApp Disaster Recover
 [[add-permissions-in-ontap]]
 == Adicionar permissões no ONTAP
 
-Adicionar permissões no ONTAP requer a criação de uma função com as permissões necessárias e a atribuição dessa função a um usuário. Você pode realizar essa tarefa no ONTAP usando System Manager ou a CLI do ONTAP.
+Para adicionar permissões no ONTAP, crie uma função com os privilégios necessários e atribua-a a um usuário. Você pode concluir essa tarefa no ONTAP com o System Manager ou a ONTAP CLI.
 
 [role="tabbed-block"]
 ====
