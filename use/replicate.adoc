@@ -12,7 +12,7 @@ summary: Usando o NetApp Disaster Recovery, você pode replicar aplicativos VMwa
 
 
 [role="lead"]
-Usando o NetApp Disaster Recovery, você pode replicar aplicativos VMware do seu site de origem para um site remoto de recuperação de desastres na nuvem usando a replicação SnapMirror.
+Com o NetApp Disaster Recovery, você pode replicar aplicativos VMware do seu site de origem para um local remoto de recuperação de desastres na nuvem usando a replicação SnapMirror. Manter os dados de recuperação atualizados em um local remoto garante que os aplicativos protegidos possam ser restaurados a partir de snapshots SnapMirror recentes.
 
 
 TIP: Depois de criar o plano de recuperação de desastres, identificar a recorrência no assistente e iniciar uma replicação para um site de recuperação de desastres, a cada 30 minutos o NetApp Disaster Recovery verifica se a replicação está realmente ocorrendo de acordo com o plano. Você pode monitorar o progresso na página Job Monitor.

@@ -19,9 +19,10 @@ Antes de configurar o NetApp Disaster Recovery para Kubernetes, prepare cada clu
 [[prerequisites]]
 == Pré-requisitos
 
-Antes de começar, certifique-se de que seu cluster Kubernetes e seus clusters ONTAP estejam configurados.
+* Antes de configurar os requisitos do cluster Kubernetes, certifique-se de ter configurado seu cluster Kubernetes e os clusters ONTAP.
+* Certifique-se de estar usando uma versão compatível do Kubernetes. A Recuperação de Desastres oferece suporte a link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["qualquer versão do Kubernetes atualmente suportada pelo Trident Protect"^].
+* Configure o link:../reference/trident-permissions.html["permissões para o Trident Protect"] apropriado.
 
-A recuperação de desastres oferece suporte a link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["qualquer versão do Kubernetes atualmente suportada pelo Trident Protect"^].
 
 
 
@@ -61,13 +62,8 @@ Se você já instalou Trident, verifique a instalação com o comando
 
 
 
-[[configure-ontap-backend-and-trident-storageclass]]
-== Configurar o backend ONTAP e Trident StorageClass
-
-
-
 [[create-a-kubernetes-secret]]
-=== Criar um segredo do Kubernetes
+== Criar um segredo do Kubernetes
 
 Crie um segredo do Kubernetes no namespace:
 
@@ -113,7 +109,7 @@ Você pode verificar a configuração com o comando `kubectl get TridentBackendC
 
 
 [[configure-the-storage-class]]
-=== Configurar a classe de armazenamento
+== Configurar a classe de armazenamento
 
 link:https://docs.netapp.com/us-en/trident/trident-use/create-stor-class.html["Crie o objeto da classe de armazenamento"^]. Utilize o provisionador `csi.trident.netapp.io`. Por exemplo:
 
@@ -215,6 +211,13 @@ Após verificar o status de todos os recursos, implante ou link:https://docs.net
 
 
 ====
+
+
+[[netapp-console-roles]]
+== NetApp Console funções
+
+Após realizar suas configurações do Trident Protect e do Kubernetes, link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Certifique-se de ter as funções corretas do NetApp Console para o NetApp Disaster Recovery para executar a descoberta, o failover e outras tarefas."^]
+
 
 
 [[more-information]]

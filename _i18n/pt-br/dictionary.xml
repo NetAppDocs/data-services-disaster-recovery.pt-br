@@ -1145,7 +1145,6 @@
   <block id="b5e92408332ec8fe388fc403b03249bf" category="section-title">Exibir informações das máquinas virtuais</block>
   <block id="3849da8702f93c4c73b8b2d18d7d3b4d" category="list-text">Selecione *Máquinas virtuais*.</block>
   <block id="2e91c6382e139b4d3b0307917725df9c" category="list-text">Veja as informações das máquinas virtuais.</block>
-  <block id="74b7e5a581d3f8be472f23c9f533948e" category="summary">Usando o NetApp Disaster Recovery, você pode migrar aplicativos VMware do seu site de origem para outro site.</block>
   <block id="e149f52ef3987c9798fc0b5e92f0d94c" category="doc">Migrar aplicativos para outro site com o NetApp Disaster Recovery</block>
   <block id="c1845ff7083c49cb3022e9cb477f265b" category="summary">O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres.  Você pode monitorar todos os trabalhos de recuperação de desastres e determinar seu progresso.</block>
   <block id="45b443b335251cfe162de8423d5b2021" category="doc">Monitorar trabalhos de NetApp Disaster Recovery</block>
@@ -1880,7 +1879,6 @@
   <block id="265b5db3aaacf91c1fc792d5022d95b7" category="paragraph">Se você estiver usando o VMware Cloud SDDC, estes pré-requisitos adicionais se aplicam:</block>
   <block id="9aa66a327a3181a340b88cc81b7ac070" category="summary">Antes de usar NetApp Disaster Recovery, certifique-se de que seus clusters Kubernetes atendam aos requisitos.</block>
   <block id="90e2c61883b995611cf3a865b7eefbbd" category="doc">Requisitos de cluster Kubernetes para NetApp Disaster Recovery</block>
-  <block id="189edd980c131edf9d5711ed1e7b1d73" category="paragraph">A recuperação de desastres oferece suporte a <block ref="ee3b2775270ba891227fbdcc3618242b" category="inline-link-macro-rx"></block>.</block>
   <block id="85eb427901278daf26f132cb3e076914" category="section-title">Clusters Kubernetes</block>
   <block id="3db879f685c32ec1d391ee151f8cbbb3" category="paragraph">Para cada cluster Kubernetes, assegure-se de que:</block>
   <block id="b6a170e7cec78934ee3380877053401e" category="list-text">Você tem acesso de administrador<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block> a cada cluster Kubernetes.</block>
@@ -1892,7 +1890,6 @@
   <block id="92601eac5d4e753f0d60f0e5ba9a27f1" category="inline-link-macro">Instale o operador Trident em _cada_ cluster^.</block>
   <block id="bd2bdca3f6b8a3f02b562505d50b41e2" category="paragraph"><block ref="bd2bdca3f6b8a3f02b562505d50b41e2" category="inline-link-macro-rx"></block></block>
   <block id="ed5e6801d7e087345895d132f7e9d2dc" category="paragraph">Se você já instalou Trident, verifique a instalação com o comando <block ref="8dd3e3fab389d3d56b4dbea697d52e91" prefix=" " category="inline-code"></block>. Se a instalação for bem-sucedida, você verá o Trident controller, os pods do nó (DaemonSet) e o estado do operador será <block ref="5bda814c4aedb126839228f1a3d92f09" prefix=" " category="inline-code"></block> state após alguns minutos.</block>
-  <block id="33c1ffdebe58ba196b293c23e0e2f697" category="section-title">Configurar o backend ONTAP e Trident StorageClass</block>
   <block id="ed6eabebedff09350cdabab556887c62" category="section-title">Criar um segredo do Kubernetes</block>
   <block id="019a873bad5bd15622bc515c6deabc69" category="paragraph">Crie um segredo do Kubernetes no namespace:</block>
   <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
@@ -2312,7 +2309,6 @@
   <block id="7bb121cdcae2c2832838e2f290a86bf5" category="list-text">Todos os clusters VMware que o NetApp Disaster Recovery gerencia devem usar volumes ONTAP para hospedar as máquinas virtuais que você deseja proteger.</block>
   <block id="dfb6f3404d01c2320e91dc82c3743342" category="list-text">Vincule o VMware Cloud SDDC a uma instância do Amazon FSx for NetApp ONTAP. Consulte <block ref="703588ab376df01744e79984f081d5fd" category="inline-link-rx"></block>.</block>
   <block id="652475d7336cd836411ec7d566842d60" category="paragraph">Antes de configurar o NetApp Disaster Recovery para Kubernetes, prepare cada cluster Kubernetes. A proteção normalmente se aplica a um cluster de origem e a um cluster de destino, então conclua esses procedimentos em cada cluster do par.</block>
-  <block id="9ac66e8e2bbbe7b9901c0c80b4c7ed2e" category="paragraph">Antes de começar, certifique-se de que seu cluster Kubernetes e seus clusters ONTAP estejam configurados.</block>
   <block id="0a4e25753cea4f154af0469ab230e9ba" category="list-text">O Helm 3 está disponível onde você executa os comandos de instalação.</block>
   <block id="538e8cc604d9acb8c54b11be5d28123e" category="list-text">**LIF de gerenciamento**: usado pelo Trident para acesso à API de gerenciamento.</block>
   <block id="e8fe43ecd8f37d6c3b374d6267a0e1bc" category="list-text">**LIF de dados (NFS)**: usado para tráfego NFS em volumes.</block>
@@ -2348,7 +2344,6 @@
   <block id="5d6353688a496fa47de65c195b8ac3bc" category="paragraph">No failback, o NetApp Disaster Recovery replica (ressincroniza) quaisquer alterações de volta para a máquina virtual de origem antes de inverter a direção da replicação. Esse processo começa após um relacionamento ter feito failover para o destino e envolve as seguintes etapas:</block>
   <block id="44d4c6d5260eb624900ebb869b4a4939" category="paragraph">Se você estiver usando proteção baseada em datastore, as VMs podem ser adicionadas ao datastore durante o failover. Se isso acontecer, certifique-se de fornecer as informações de mapeamento adicionais para essas VMs antes de iniciar o failback. Para editar o mapeamento de recursos, consulte <block ref="aae3ec9b67319c36c78ebcd18b670ec7" category="inline-link-macro-rx"></block>.</block>
   <block id="a1502915916db4624a57959d103aa608" category="list-text">Identifique o plano de replicação que você deseja reverter. Selecione a opção *Ações* <block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>, passe o cursor sobre *Recuperar* e selecione *Reverter*.</block>
-  <block id="dfd07f1f5209a167efdb80c6f3885d11" category="paragraph">Se ocorrer um desastre, faça o failover do seu site VMware local principal para outro site VMware local ou para o VMware Cloud on AWS. Você também pode testar o processo de failover antecipadamente para confirmar que a recuperação funciona conforme o esperado.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="section-title">Sobre esta tarefa</block>
   <block id="634ed35083de0dc9fd6ca402130b2364" category="paragraph">Durante o failover, o NetApp Disaster Recovery usa por padrão a cópia de snapshot mais recente do SnapMirror, embora você possa selecionar um snapshot específico de um snapshot de ponto no tempo (de acordo com a política de retenção do SnapMirror). Use a opção de ponto no tempo se as réplicas mais recentes estiverem comprometidas, como durante um ataque de ransomware.</block>
   <block id="992afcf904b48182f53abedd4c345eb3" category="paragraph">Antes de realizar um failover em produção, você pode executar um teste para verificar a prontidão. As cargas de trabalho permanecem online durante o processo de teste.</block>
@@ -2379,12 +2374,10 @@
   <block id="260df5358fdc3f07758e38ffb3a77c19" category="list-text">Selecione o *Tipo de arquivo* (PDF, HTML ou JSON) e o *Período de tempo* (dos últimos um a sete dias) para o relatório.</block>
   <block id="ba11bffa8084f9c85a1963af8d050a3f" category="summary">Os grupos de recursos permitem que você organize recursos dependentes em grupos lógicos que atendam aos seus requisitos.</block>
   <block id="6e21e837facbd5d06523d904bcd2334d" category="doc">Crie um grupo de recursos em NetApp Disaster Recovery</block>
-  <block id="1679edd6924beab7d71a5390cf59b854" category="paragraph">Após adicionar recursos aos sites, crie grupos de recursos para organizar VMs, armazenamentos de dados ou clusters Kubernetes como uma única unidade. Os grupos de recursos permitem que você organize recursos dependentes em grupos lógicos que atendam às suas necessidades. Por exemplo, você pode agrupar VMs para um aplicativo ou agrupar aplicativos que compartilham camadas semelhantes. Os grupos de recursos também podem incluir ordens de inicialização atrasadas que são executadas durante a recuperação.</block>
   <block id="868ae8e25cad278cb95070092e1b5058" category="admonition">Cada grupo de recursos pode incluir uma ou mais VMs, armazenamentos de dados ou clusters Kubernetes. As VMs serão ligadas de acordo com a sequência em que você as incluir no plano de replicação. Você pode alterar a ordem arrastando as VMs ou os armazenamentos de dados para cima ou para baixo na lista do grupo de recursos.</block>
   <block id="7ef9d7f4e6bf5f38edfd03606bf493da" category="paragraph">O NetApp Disaster Recovery protege as VMs replicando os volumes e LUNs do ONTAP subjacentes que hospedam as VMs no grupo de recursos. Para fazer isso, o sistema consulta o vCenter para obter o nome de cada armazenamento de dados que hospeda VMs em um grupo de recursos. O NetApp Disaster Recovery identifica então o volume ou LUN do ONTAP de origem que hospeda esse armazenamento de dados. Toda a proteção é realizada no nível do volume do ONTAP usando a replicação do SnapMirror.</block>
   <block id="03c66aa95215fd945ab9f6521baef55e" category="paragraph">Se as VMs no grupo de recursos forem hospedadas em diferentes armazenamentos de dados, o NetApp Disaster Recovery usa um dos seguintes métodos para criar um snapshot consistente com os dados dos volumes ONTAP ou LUNs.</block>
   <block id="183b61458af19e5b813be061374378cf" category="list-text">Classifique os *tipos de recursos*. Por padrão, a seleção é "Inclui todos", que indica vários tipos de recursos.</block>
-  <block id="372899929926faabc33dabdd64a2ecc2" category="paragraph">Antes de criar um plano de recuperação de desastres, adicione os sites que você deseja proteger no NetApp Disaster Recovery. Um site é uma coleção de servidores vCenter ou clusters Kubernetes, seja local ou na nuvem. Adicione tanto o site de produção quanto o site de recuperação de desastres.</block>
   <block id="11a59530affce2463e250e21bdbcc29c" category="summary">Perguntas frequentes sobre NetApp Disaster Recovery para cargas de trabalho VMware e Kubernetes.</block>
   <block id="6782fe55d65b471e3f7ea9c8c6c97abb" category="paragraph">Este FAQ responde a perguntas comuns sobre o NetApp Disaster Recovery para cargas de trabalho VMware e Kubernetes. Ele se concentra em conceitos, terminologia, comportamento do sistema e restrições úteis na implementação de configurações de recuperação de desastres e no gerenciamento de operações de replicação, migração, failover e failback.</block>
   <block id="cb59b87e00d11222bfd9159d0d23836f" category="section-title">Começando</block>
@@ -2682,4 +2675,53 @@
   <block id="808c9323236f2ed48bff12970a5f1c49" category="list-text"><block ref="808c9323236f2ed48bff12970a5f1c49" category="inline-link-macro-rx"></block></block>
   <block id="005c3fd782ef9a703a22a6405758e8d0" category="sidebar">Veja o status de integridade e proteção do seu plano</block>
   <block id="8b2d90137c20f81f88555e65f6c0467a" category="sidebar">Gerencie modelos de transformação de recursos</block>
+  <block id="870caf8c63b38657c754a6ae2bfdccfa" category="list-text">Antes de configurar os requisitos do cluster Kubernetes, certifique-se de ter configurado seu cluster Kubernetes e os clusters ONTAP.</block>
+  <block id="6fc27d93b674dc2181e0f20fed00ba74" category="list-text">Certifique-se de estar usando uma versão compatível do Kubernetes. A Recuperação de Desastres oferece suporte a <block ref="ee3b2775270ba891227fbdcc3618242b" category="inline-link-macro-rx"></block>.</block>
+  <block id="ef591b016875b0c367446c1b32d0cb33" category="inline-link-macro">permissões para o Trident Protect</block>
+  <block id="6a8721c6d84b89d600d6f9f71aee3cd0" category="list-text">Configure o <block ref="2e82bab41ca83cccc3d3234ff27d0186" category="inline-link-macro-rx"></block> apropriado.</block>
+  <block id="da4a61950000370345af09d5653606e5" category="section-title">NetApp Console funções</block>
+  <block id="000b23326681f264355080f1b40f0c3a" category="inline-link-macro">Certifique-se de ter as funções corretas do NetApp Console para o NetApp Disaster Recovery para executar a descoberta, o failover e outras tarefas.</block>
+  <block id="633d8dca168073e743492024f682a468" category="paragraph">Após realizar suas configurações do Trident Protect e do Kubernetes, <block ref="75e0472282f0516ba7697bd410d51691" category="inline-link-macro-rx"></block></block>
+  <block id="95318750d34cc904bb16702f9a790ce8" category="summary">Ao usar o NetApp Disaster Recovery, certifique-se de ter as configurações corretas do Trident Protect configuradas para descobrir e registrar seus clusters Kubernetes.</block>
+  <block id="4fb98e5696b973e4f7e26f71b1dc5572" category="doc">Configure as permissões do Trident Protect para o NetApp Disaster Recovery</block>
+  <block id="510f7e6ce9bfcf6223b479b6d2b5bf57" category="section-title">Permissões do cluster Trident Protect</block>
+  <block id="e63fae19e777b24af95d46b917748920" category="paragraph">As seguintes permissões de cluster são necessárias para o NetApp Disaster Recovery:</block>
+  <block id="ed5dea09095f671b801bee34ea28a319" category="cell">Permissão</block>
+  <block id="86408593c34af77fdd90df932f8b5261" category="cell">Função</block>
+  <block id="075beeeea7e84e77a2ecc9b64b6c9276" category="cell">dr:trident_cluster-view</block>
+  <block id="fccae372786983126b9675ff75dfdbc7" category="cell">Visualize os clusters Kubernetes registrados e o inventário de clusters usados pelo NetApp Disaster Recovery</block>
+  <block id="33c1f6a282a123d4cb586cdfc39796ba" category="cell">dr:trident_cluster-create</block>
+  <block id="2ef43485b730a57e6d07cff8f3000fb5" category="cell">Registre um cluster Kubernetes e gere comandos de configuração.</block>
+  <block id="cfb270fe2ed558fee43873a56ed2de55" category="cell">dr:trident_cluster-update</block>
+  <block id="a22b7cbab8eae9790586bc03c12fbe0c" category="cell">Modificar um cluster Kubernetes registrado.</block>
+  <block id="d5f936a20f2376f49e243e2b6ea3fcea" category="cell">dr:trident_cluster-delete</block>
+  <block id="1d8144283609007a3d4c341c419c349a" category="cell">Excluir um cluster Kubernetes registrado.</block>
+  <block id="33ecd3ae9b8df84f4271d342f6cdd95c" category="cell">dr:trident_cluster-refresh</block>
+  <block id="8acf065073d123ab8eeb78e96905246f" category="cell">Execute a descoberta de clusters do Trident.</block>
+  <block id="9cd9d05d35ebe6942d491e995eb85059" category="section-title">Permissões do Trident Protect AppVault</block>
+  <block id="8c7283f469c713d4e5f2e9d03fffb21f" category="paragraph">As seguintes permissões do AppVault são necessárias com o NetApp Disaster Recovery:</block>
+  <block id="29b70ab80a4f3aecbd88e1aa39334b52" category="cell">dr:trident_appvault-view</block>
+  <block id="4e6887c24ac5bb7b528699f806376f21" category="cell">Veja o Trident AppVaults e os dados de descoberta em nuvem/object-store necessários para a configuração do AppVault.</block>
+  <block id="e525b1d33e3251e3b61c77ec8aa4b345" category="cell">dr:trident_appvault-create</block>
+  <block id="3faa34364f354654f4330d1023ab4196" category="cell">Crie um recurso personalizado do Trident AppVault por meio do NetApp Disaster Recovery.</block>
+  <block id="c473474f3a32f5ce35cebb7bac6ea99a" category="section-title">Permissões de credencial do Trident Protect</block>
+  <block id="01bac8a90b2b6c564c7d063b834773a7" category="paragraph">As seguintes permissões de credencial são necessárias com o NetApp Disaster Recovery:</block>
+  <block id="57dea2516cdc11e5173ac0e824c65ed2" category="cell">dr:credential-view</block>
+  <block id="d53f4c1b208e8e382831c9ae73eee559" category="cell">Visualize os metadados da credencial e liste os buckets do ONTAP S3/StorageGRID para a configuração do AppVault.</block>
+  <block id="c0e93404607f0eea5f02a73c75225bbf" category="cell">dr:credencial-criar</block>
+  <block id="8c5965f17b42f7518125742451c79924" category="cell">Registre as credenciais, incluindo o ONTAP S3 e o StorageGRID.</block>
+  <block id="c237c22374e72d1ba1788c15ddb6fe60" category="cell">dr:atualização-de-credencial</block>
+  <block id="d8d15ad255eb96a9222a8f0f61c9f3a2" category="cell">Atualize as credenciais, incluindo o ONTAP S3 e o StorageGRID.</block>
+  <block id="48b722a9b0d9600d166bf0f2b2a64f8b" category="cell">dr:credential-delete</block>
+  <block id="c84e57eedd140baa3e64f5ac5e7f1871" category="cell">Exclua as credenciais, incluindo o ONTAP S3 e o StorageGRID.</block>
+  <block id="ca2825c2ddf78928b38c75787c2ca73d" category="paragraph">Quando ocorrer um desastre ou outro evento similar, use o NetApp Disaster Recovery para recuperar cargas de trabalho críticas, para que os aplicativos possam ser retomados no site de recuperação de desastres com os mapeamentos planejados.</block>
+  <block id="77cb0faa6eb8788ec91dedae1de2f3f9" category="paragraph">O NetApp Disaster Recovery também oferece suporte a testes de failover. Realizar testes ajuda você a se familiarizar com o processo e confirma que a recuperação funciona conforme o esperado.</block>
+  <block id="fbddadf2edd321dc064fe81274b6ff1e" category="paragraph">NetApp Disaster Recovery oferece suporte à migração de aplicativos VMware da origem para um site secundário. Você pode usar o recurso de migração se, por exemplo, houver alterações na infraestrutura que permitam que o ambiente de destino assuma as operações de produção.</block>
+  <block id="4e3e73573935056375c83edc2d6f5bfe" category="paragraph">Com o NetApp Disaster Recovery, você pode replicar aplicativos VMware do seu site de origem para um local remoto de recuperação de desastres na nuvem usando a replicação SnapMirror. Manter os dados de recuperação atualizados em um local remoto garante que os aplicativos protegidos possam ser restaurados a partir de snapshots SnapMirror recentes.</block>
+  <block id="6187f0da8e0aee4b4df945d5f7c68b0f" category="paragraph">Utilize relatórios para avaliar a conformidade da replicação e o histórico de recuperação antes de um incidente para que você possa identificar lacunas de proteção.</block>
+  <block id="8240e502c7ce5e9805091f5f8c4a3085" category="inline-link-macro">Você pode consultar os status de proteção em um nível geral no Dashboard ou por carga de trabalho na página Workloads.</block>
+  <block id="18d6539292478681d68b9282daa86220" category="admonition"><block ref="18d6539292478681d68b9282daa86220" category="inline-link-macro-rx"></block></block>
+  <block id="efcf3aea6733a7f1535a22c63a31816e" category="section-title">Sobre os relatórios de NetApp Disaster Recovery</block>
+  <block id="08e23a6b35ef4e66680d353da268fa9d" category="paragraph">Depois de adicionar recursos aos sites, você pode criar grupos de recursos para organizar VMs, datastores ou clusters Kubernetes como uma única unidade. Os grupos de recursos permitem que você organize recursos dependentes em grupos lógicos que atendam às suas necessidades. Por exemplo, você pode agrupar VMs para um aplicativo ou agrupar aplicativos que compartilham camadas semelhantes. Os grupos de recursos também podem incluir ordens de inicialização atrasadas que são executadas durante a recuperação para garantir que os recursos sejam iniciados na ordem correta.</block>
+  <block id="0b3812b60ebe3c1059cea904557f00cb" category="paragraph">Antes de criar um plano de recuperação, adicione os sites que você deseja proteger no NetApp Disaster Recovery. Um site é um conjunto de servidores vCenter ou clusters Kubernetes, seja local ou na nuvem. Adicione tanto o site de produção quanto o site de recuperação de desastres para que o Disaster Recovery possa coordenar os recursos usados para a recuperação.</block>
 </blocks>

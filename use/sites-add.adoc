@@ -12,7 +12,7 @@ summary: Antes de criar um plano de recuperação de desastres, você precisa ad
 
 
 [role="lead"]
-Antes de criar um plano de recuperação de desastres, adicione os sites que você deseja proteger no NetApp Disaster Recovery. Um site é uma coleção de servidores vCenter ou clusters Kubernetes, seja local ou na nuvem. Adicione tanto o site de produção quanto o site de recuperação de desastres.
+Antes de criar um plano de recuperação, adicione os sites que você deseja proteger no NetApp Disaster Recovery. Um site é um conjunto de servidores vCenter ou clusters Kubernetes, seja local ou na nuvem. Adicione tanto o site de produção quanto o site de recuperação de desastres para que o Disaster Recovery possa coordenar os recursos usados para a recuperação.
 
 
 TIP: Certifique-se de que tanto a origem quanto o destino utilizem o mesmo agente do NetApp Console.
