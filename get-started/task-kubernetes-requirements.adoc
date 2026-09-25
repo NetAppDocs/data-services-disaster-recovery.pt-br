@@ -12,7 +12,7 @@ summary: Antes de usar NetApp Disaster Recovery, certifique-se de que seus clust
 
 
 [role="lead"]
-Antes de configurar o NetApp Disaster Recovery para Kubernetes, prepare cada cluster Kubernetes. A proteção normalmente se aplica a um cluster de origem e a um cluster de destino, então conclua esses procedimentos em cada cluster do par.
+Antes de configurar o NetApp Disaster Recovery para Kubernetes, prepare cada cluster Kubernetes para garantir sua prontidão para replicação e failover. A proteção normalmente se aplica a um cluster de origem e a um cluster de destino; conclua esses procedimentos em cada cluster do par.
 
 
 

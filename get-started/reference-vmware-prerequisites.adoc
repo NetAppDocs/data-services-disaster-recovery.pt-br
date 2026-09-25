@@ -12,7 +12,7 @@ summary: Antes de usar NetApp Disaster Recovery, certifique-se de que seu ambien
 
 
 [role="lead"]
-Antes de usar NetApp Disaster Recovery, certifique-se de que seu ambiente atenda aos requisitos do cluster VMware vCenter.
+Antes de usar o NetApp Disaster Recovery, certifique-se de que seu ambiente atenda aos requisitos de cluster do VMware vCenter para que a replicação e a recuperação possam ser executadas sem problemas de compatibilidade.
 
 
 

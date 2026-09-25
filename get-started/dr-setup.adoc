@@ -12,7 +12,7 @@ summary: Para usar o NetApp Disaster Recovery, siga algumas etapas para configur
 
 
 [role="lead"]
-Para usar o NetApp Disaster Recovery, conclua algumas etapas de configuração no NetApp Console e em seu ambiente de recuperação de desastres compatível.
+Para utilizar o NetApp Disaster Recovery, primeiro prepare seu ambiente de recuperação antes de uma interrupção, para que a replicação e o failover possam ser configurados e testados com o mínimo de atraso.
 
 
 TIP: Análiselink:../get-started/dr-prerequisites.html["pré-requisitos"] para garantir que seu sistema esteja pronto.
@@ -24,10 +24,10 @@ TIP: Análiselink:../get-started/dr-prerequisites.html["pré-requisitos"] para g
 
 Você pode usar o NetApp Disaster Recovery nas seguintes infraestruturas:
 
-* Recuperação de desastres (DR) em nuvem híbrida que replica um datacenter VMware local com ONTAP para uma infraestrutura de DR da AWS baseada em VMware Cloud on AWS ou Elastic VMware Service (Exchange Virtual Server) e Amazon FSx for NetApp ONTAP.
-* DR de nuvem privada que replica um VMware mais ONTAP vCenter local para outro VMware mais ONTAP vCenter local.
-* Cloud DR que replica uma infraestrutura de DR da AWS baseada em VMware Cloud on AWS ou Exchange Virtual Server para outra infraestrutura de DR baseada na AWS usando FSx for NetApp ONTAP.
-* Recuperação de desastres (DR) em nuvem híbrida que replica um datacenter VMware local com ONTAP para uma infraestrutura de DR do Google baseada no Google Cloud VMware Engine e no Google Cloud NetApp Volumes.
+* Recuperação de desastres em nuvem híbrida que replica um datacenter VMware local com ONTAP para uma infraestrutura de recuperação de desastres da AWS baseada em VMware Cloud on AWS ou Elastic VMware Service (Exchange Virtual Server) e Amazon FSx for NetApp ONTAP.
+* Recuperação de desastres em nuvem privada que replica um ambiente VMware com ONTAP vCenter para outro ambiente VMware com ONTAP vCenter.
+* Recuperação de desastres na nuvem que replica uma infraestrutura de recuperação de desastres da AWS baseada em VMware Cloud on AWS ou Exchange Virtual Server para outra infraestrutura de recuperação de desastres baseada na AWS usando FSx for NetApp ONTAP.
+* Recuperação de desastres em nuvem híbrida que replica um datacenter VMware local com ONTAP para uma infraestrutura de recuperação de desastres do Google baseada no Google Cloud VMware Engine e no Google Cloud NetApp Volumes.
 
 
 
@@ -35,9 +35,9 @@ Você pode usar o NetApp Disaster Recovery nas seguintes infraestruturas:
 [[hybrid-cloud-with-vmware-cloud-and-amazon-fsx-for-netapp-ontap]]
 == Nuvem híbrida com VMware Cloud e Amazon FSx for NetApp ONTAP
 
-Este método consiste em uma infraestrutura vCenter de produção local usando datastores hospedados em volumes ONTAP FlexVol usando um protocolo NFS.  O site de DR consiste em uma ou mais instâncias do VMware Cloud SDDC usando armazenamentos de dados hospedados em volumes FlexVol fornecidos por uma ou mais instâncias do FSx for ONTAP usando um protocolo NFS.
+Este método consiste em uma infraestrutura de produção local vCenter usando datastores hospedados em volumes FlexVol do ONTAP por meio do protocolo NFS. O site de recuperação de desastres consiste em uma ou mais instâncias do VMware Cloud SDDC usando datastores hospedados em volumes FlexVol fornecidos por uma ou mais instâncias do FSx for ONTAP por meio do protocolo NFS.
 
-Os sites de produção e de recuperação de desastres (DR) são conectados por uma conexão segura compatível com a AWS. Os tipos de conexão comuns são uma VPN segura (privada ou fornecida pela AWS), AWS Direct Connect ou outros métodos de interconexão aprovados.
+Os sites de produção e recuperação de desastres são conectados por uma conexão segura compatível com a AWS. Os tipos de conexão comuns são uma VPN segura (privada ou fornecida pela AWS), AWS Direct Connect ou outros métodos de interconexão aprovados.
 
 Para recuperação de desastres envolvendo infraestrutura de nuvem da AWS, você deve usar o agente do Console para AWS.  O agente deve ser instalado na mesma VPC que a instância do FSx para ONTAP .  Se instâncias adicionais do FSx for ONTAP foram implantadas em outras VPCs, a VPC que hospeda o agente deve ter acesso às outras VPCs.
 
@@ -52,7 +52,7 @@ A AWS oferece suporte à implantação de soluções em uma ou mais Zonas de Dis
 * *AWS FSx for NetApp ONTAP*: quando o Amazon FSx for NetApp ONTAP é implantado em uma configuração multi-AZ, cada volume pertence a um sistema de arquivos do FSx for ONTAP, e os dados são espelhados para o segundo sistema de arquivos. O FSx for ONTAP pode ser implantado em configurações single-AZ ou multi-AZ. O NetApp Disaster Recovery suporta ambos os modelos de implantação.
 
 
-*MELHOR PRÁTICA*: Para a configuração do site de DR na AWS, a NetApp recomenda o uso de implantações em uma única AZ tanto para o VMware Cloud quanto para o AWS FSx for ONTAP. Como a AWS está sendo usada para recuperação de desastres, não há vantagem em introduzir múltiplas Zonas de Disponibilidade. Implantações em múltiplas Zonas de Disponibilidade podem aumentar o custo e a complexidade.
+*MELHOR PRÁTICA*: Para a configuração de site de recuperação de desastres na AWS, a NetApp recomenda usar implantações em uma única AZ tanto para o VMware Cloud quanto para instâncias do AWS FSx for ONTAP. Como a AWS está sendo usada para recuperação de desastres, não há vantagem em introduzir múltiplas Zonas de Disponibilidade. Implantações em múltiplas Zonas de Disponibilidade podem aumentar o custo e a complexidade.
 
 
 
@@ -63,10 +63,10 @@ A AWS fornece os seguintes métodos para conectar datacenters privados à nuvem 
 
 * *AWS Direct Connect*: Esta é uma interconexão da nuvem AWS localizada na mesma área geográfica que seu data center privado e fornecida por um parceiro da AWS. Essa solução oferece uma conexão segura e privada entre seu data center local e a nuvem da AWS sem a necessidade de uma conexão pública com a internet. Este é o método de conexão mais direto e eficiente oferecido pela AWS.
 * *AWS Internet Gateway*: fornece conectividade pública entre recursos de nuvem da AWS e recursos de computação externos.  Esse tipo de conexão normalmente é usado para fornecer serviços a clientes externos, como serviços HTTP/HTTPS, onde a segurança não é um requisito.  Não há controle de qualidade de serviço, segurança ou garantia de conectividade.  Por esse motivo, esse método de conexão não é recomendado para conectar um datacenter de produção à nuvem.
-* *VPN Site-to-Site da AWS*: essa conexão de rede privada virtual pode fornecer conectividade segura por meio de um provedor de serviços de internet público. A VPN criptografa e descriptografa todos os dados que trafegam de e para a nuvem da AWS. As VPNs podem ser baseadas em software ou baseadas em hardware. Para aplicações corporativas, o provedor de serviços de internet (ISP) público deve oferecer garantias de qualidade de serviço para assegurar que haja largura de banda e latência adequadas para a replicação de DR.
+* *AWS Site-to-Site VPN*: Essa conexão de rede privada virtual pode fornecer conectividade segura por meio de um provedor de serviços de internet público. A VPN criptografa e descriptografa todos os dados que trafegam de e para a nuvem da AWS. As VPNs podem ser baseadas em software ou baseadas em hardware. Para aplicações corporativas, o provedor de serviços de internet (ISP) deve oferecer garantias de qualidade de serviço para garantir que haja largura de banda e latência adequadas para a replicação de recuperação de desastres.
 
 
-*PRÁTICA RECOMENDADA*: Para configuração de site de DR da AWS, a NetApp recomenda usar o AWS Direct Connect.  Esta solução oferece o mais alto desempenho e segurança para aplicativos corporativos.  Caso não esteja disponível, uma conexão ISP pública de alto desempenho juntamente com uma VPN deve ser usada.  Certifique-se de que o ISP ofereça níveis de serviço de QoS comerciais para garantir um desempenho de rede adequado.
+*MELHOR PRÁTICA*: Para a configuração do site de recuperação de desastres na AWS, a NetApp recomenda usar o AWS Direct Connect. Essa solução oferece o mais alto desempenho e segurança para aplicações corporativas. Se não estiver disponível, deve-se usar uma conexão pública de ISP de alta performance juntamente com uma VPN. Certifique-se de que o ISP ofereça níveis de serviço de QoS comerciais para garantir desempenho de rede adequado.
 
 
 
@@ -80,7 +80,7 @@ A AWS oferece os seguintes tipos de interconexões de VPC para VPC.  Cada soluç
 * *AWS Transit Gateway*: Este é um tipo de conexão centralizada baseada em roteador que permite que cada VPC se conecte a um único gateway central, que atua como um hub central para todo o tráfego de VPC para VPC.  Isso também pode ser conectado à sua solução VPN para permitir que recursos do datacenter local acessem recursos hospedados no AWS VPC.  Esse tipo de conexão normalmente exige um custo adicional para ser implementado.
 
 
-*MELHOR PRÁTICA*: Para soluções de DR que utilizam o VMware Cloud e uma única VPC do FSx for ONTAP, a NetApp recomenda usar o peering de VPC. Se várias VPCs do FSx for ONTAP forem implantadas, recomendamos usar um AWS Transit Gateway para reduzir a sobrecarga no gerenciamento de múltiplas conexões de peering de VPC.
+*MELHOR PRÁTICA*: Para soluções de recuperação de desastres que utilizam o VMware Cloud e uma única VPC do Amazon FSx for NetApp ONTAP, a NetApp recomenda usar o peering de VPC. Se várias VPCs do Amazon FSx for NetApp ONTAP forem implantadas, recomendamos usar um AWS Transit Gateway para reduzir a sobrecarga no gerenciamento de múltiplas conexões de peering de VPC.
 
 
 
@@ -127,7 +127,7 @@ Você pode usar o NetApp Disaster Recovery para proteger VMs VMware hospedadas e
 
 Para situações de local para local, instale o agente do Console em um dos sites físicos.
 
-O Disaster Recovery oferece suporte à replicação de site para site usando Ethernet e TCP/IP.  Certifique-se de que haja largura de banda adequada disponível para suportar taxas de alteração de dados nas VMs do site de produção, para que todas as alterações possam ser replicadas no site de DR dentro do período do Objetivo de Ponto de Recuperação (RPO).
+O NetApp Disaster Recovery suporta replicação site a site usando Ethernet e TCP/IP. Certifique-se de que haja largura de banda suficiente disponível para suportar as taxas de alteração de dados nas VMs do site de produção, para que todas as alterações possam ser replicadas para o site de NetApp Disaster Recovery dentro do prazo do Recovery Point Objective (RPO).
 
 
 

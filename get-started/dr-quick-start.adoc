@@ -12,7 +12,7 @@ summary: Comece a usar o serviço NetApp Disaster Recovery em algumas etapas.
 
 
 [role="lead"]
-Siga estes passos para começar com o NetApp Disaster Recovery. Os links em cada passo levam a páginas com mais detalhes.
+Aprenda como começar rapidamente com o NetApp Disaster Recovery, garantindo que seu sistema atenda aos requisitos, descobrindo cargas de trabalho e configurando planos de replicação para se preparar para o failover.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"]Revise os pré-requisitos
 [role="quick-margin-para"]

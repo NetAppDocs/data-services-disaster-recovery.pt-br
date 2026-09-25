@@ -22,8 +22,6 @@ summary: Perguntas frequentes sobre NetApp Disaster Recovery para cargas de trab
 Este FAQ responde a perguntas comuns sobre o NetApp Disaster Recovery para cargas de trabalho VMware e Kubernetes. Ele se concentra em conceitos, terminologia, comportamento do sistema e restrições úteis na implementação de configurações de recuperação de desastres e no gerenciamento de operações de replicação, migração, failover e failback.
 
 
-toc::[]
-
 
 [[getting-started]]
 == Começando
