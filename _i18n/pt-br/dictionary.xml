@@ -315,29 +315,14 @@
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">Um</block>
   <block id="a2d56436fc6737079209e6c74380c5fb" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block>Revise os pré-requisitos</block>
   <block id="8245d68da46718af8e64343032f76d49" category="inline-link-macro">Certifique-se de que seu sistema atenda a esses requisitos</block>
-  <block id="50b527e0838c12c02e25ab9a4fcd5504" category="paragraph"><block ref="a3f1443a0df3325eac10e29ebb8e240a" category="inline-link-macro-rx"></block> .</block>
   <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">Dois</block>
   <block id="6a69fd00ba725b1639174a30530de6be" category="list-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>Configurar o NetApp Disaster Recovery</block>
   <block id="bba2d28657478d7f1f8cfa1202334b6c" category="inline-link-macro">Configurar a infraestrutura para o serviço</block>
-  <block id="922a3f684ad3f3d8beda0f750bdbb18f" category="list-text"><block ref="d5f560af5db6cf4511b8e34e3209d0d9" category="inline-link-macro-rx"></block> .</block>
-  <block id="143a2ad68b93a4241fb25dee71d34878" category="list-text"><block ref="eaa54a57026891d12cbf928afd176564" category="inline-link-macro-rx"></block> .</block>
   <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">Três</block>
-  <block id="fb35cdd7029fec15aadbdddd879fa161" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>O que vem a seguir?</block>
-  <block id="a58c9f9b0e3161b6e373e0839c8e8ef2" category="inline-link-macro">Adicione seus sites do vCenter ao NetApp Disaster Recovery</block>
-  <block id="d883674dc3cca3be0ad5160baba8bf86" category="list-text"><block ref="82ae3efa25dbb783bb1a9bac0fdc23dd" category="inline-link-macro-rx"></block> .</block>
-  <block id="b65e0d1bdfae52b7003edeca0851a1cd" category="inline-link-macro">Crie seu primeiro grupo de recursos</block>
-  <block id="2694ce9387b386ed8def037e0ef2a01c" category="list-text"><block ref="92830d5aa0eb820db09685f71801553b" category="inline-link-macro-rx"></block> .</block>
-  <block id="81b20ae68e2b688ed9a18df38cce62c6" category="inline-link-macro">Crie seu primeiro plano de replicação</block>
-  <block id="1bef08da93920d58af9116d6cc82018e" category="list-text"><block ref="3447feddfbfb06a3f88061bcb344494c" category="inline-link-macro-rx"></block> .</block>
   <block id="847c11e2bf47a2c63ba2cf24f4cfa928" category="inline-link-macro">Replicar aplicativos para outro site</block>
-  <block id="3733a924551067923391fb57d35c7a3f" category="list-text"><block ref="ed1db02de11c4d365ac64a594dde8a8e" category="inline-link-macro-rx"></block> .</block>
-  <block id="1fe816fda92d87bdaa9cb3f438b34e0b" category="list-text"><block ref="524f5a32773e3e832b74877ecf58916f" category="inline-link-macro-rx"></block> .</block>
   <block id="4f1f3c6d1472c505e740ebe57c2881ce" category="inline-link-macro">Fazer failback de aplicativos para o site de origem original</block>
-  <block id="5faa19197effc4c0fdc74b32045263ef" category="list-text"><block ref="6fbeff9687fcc9f06bd89057c3ed5a34" category="inline-link-macro-rx"></block> .</block>
   <block id="e111b7436e71ef6b7b99d4ab60693716" category="inline-link-macro">Gerenciar sites, grupos de recursos e planos de replicação</block>
-  <block id="9c0c127bbcf25422e200cf3bf5c94728" category="list-text"><block ref="b808936e11943a7ce505d2bf605d808d" category="inline-link-macro-rx"></block> .</block>
   <block id="01a7e7f1580e9ccf4f0275e9f79a32dd" category="inline-link-macro">Monitorar operações de recuperação de desastres</block>
-  <block id="899a3601f4e45edcb69bd9d82c68fbef" category="list-text"><block ref="698cc22cc758157d8f18359f8b528216" category="inline-link-macro-rx"></block> .</block>
   <block id="f908b1751b236e73d9e2a5a1506e778e" category="summary">Para usar o NetApp Disaster Recovery, siga algumas etapas para configurá-lo.</block>
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">pré-requisitos</block>
   <block id="c266abec3014ef58af380dae0b855a81" category="admonition">Análise<block ref="92ab8b24e9e19913fbd62d38b5e3558b" category="inline-link-macro-rx"></block> para garantir que seu sistema esteja pronto.</block>
@@ -1283,7 +1268,6 @@
   <block id="548b49f4267cb06525a994818f01fc03" category="sidebar">Criar um grupo de recursos</block>
   <block id="a900cb57c651ef75881dfa4543e4701d" category="sidebar">Replicar para outro site</block>
   <block id="ad80d6168dc288f4361413eeca80dc5f" category="sidebar">Migrar para outro site</block>
-  <block id="b7cd69eed80f723036ef0a99b8bb375e" category="sidebar">Gerenciar informações de sites, planos, armazenamentos de dados e máquinas virtuais</block>
   <block id="dd64baea4cd51b54ff1827028e4db4f6" category="paragraph"><block ref="b0f53b92ba6c515b65cd9cce152b9651" category="inline-link-macro-rx"></block>.</block>
   <block id="867215f2d24d8d500f9d6d76b166230b" category="summary">Antes de usar o NetApp Disaster Recovery, certifique-se de que seu ambiente atenda aos requisitos de armazenamento ONTAP , cluster VMware vCenter e NetApp Console .</block>
   <block id="43f2bccff85f631b4171a654387bbcc5" category="list-text">O SVM que hospeda os volumes de recuperação de desastres deve existir no cluster de destino.</block>
@@ -2278,7 +2262,6 @@
   <block id="1a72702bea711f39b088ed0d4020a87c" category="paragraph">Estes pré-requisitos se aplicam às instâncias do ONTAP e do Amazon FSx for NetApp ONTAP.</block>
   <block id="9beb22b2943c3a24a0fe864d1a41e546" category="inline-link">Inscreva-se no NetApp Console e crie uma organização</block>
   <block id="10a3aa4ddbdce4dbbdbe8c24197b32e1" category="paragraph">Se você ainda não fez isso,<block ref="1fb558a2395bd23df7d326ce1f18cd71" category="inline-link-rx"></block>.</block>
-  <block id="e173ccdbd07742f5e12ded0d5ceb4119" category="paragraph">Após configurar o serviço, você pode concluir as próximas etapas.</block>
   <block id="5eee3cef11a4fc8d1e9f1807b868b72c" category="section-title">Zonas de disponibilidade da AWS</block>
   <block id="35fa6d73da1bc964f0127c1985e1ed16" category="paragraph">A AWS oferece suporte à implantação de soluções em uma ou mais Zonas de Disponibilidade (AZs) dentro de uma região. A NetApp Disaster Recovery utiliza dois serviços hospedados na AWS: VMware Cloud on AWS e Amazon FSx for NetApp ONTAP.</block>
   <block id="6a78d39d8c8decb76164d1c3cc7ba8c8" category="list-text">*VMware Cloud for AWS*: oferece suporte à implantação em um ambiente SDDC de cluster stretch de zona única ou dupla. NetApp Disaster Recovery oferece suporte apenas a implantações SDDC de zona única para VMware Cloud on AWS.</block>
@@ -2719,7 +2702,6 @@
   <block id="56dba1a0fa6fc2322a683fe201c0ee47" category="inline-image-macro">Painel de Recuperação de Desastres</block>
   <block id="e21367b623115dc2d573941e82450d18" category="paragraph"><block ref="e21367b623115dc2d573941e82450d18" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0d7437c3aaaf0629acc4ff530b980318" category="paragraph">Valide o armazenamento, o vCenter e os pré-requisitos do Console antes da configuração para que as cargas de trabalho estejam prontas para replicação e recuperação.</block>
-  <block id="d5eebd68b04cfb5ee093006e8a051759" category="paragraph">Aprenda como começar rapidamente com o NetApp Disaster Recovery, garantindo que seu sistema atenda aos requisitos, descobrindo cargas de trabalho e configurando planos de replicação para se preparar para o failover.</block>
   <block id="d05f28ac4af4437fc2d15ad33f1d60d9" category="paragraph">Para utilizar o NetApp Disaster Recovery, primeiro prepare seu ambiente de recuperação antes de uma interrupção, para que a replicação e o failover possam ser configurados e testados com o mínimo de atraso.</block>
   <block id="1d9e43693cfe15e882fe79c64ab0c709" category="list-text">Recuperação de desastres em nuvem híbrida que replica um datacenter VMware local com ONTAP para uma infraestrutura de recuperação de desastres da AWS baseada em VMware Cloud on AWS ou Elastic VMware Service (Exchange Virtual Server) e Amazon FSx for NetApp ONTAP.</block>
   <block id="5e9e30d9aff0f87a7bb097a63f5daea6" category="list-text">Recuperação de desastres em nuvem privada que replica um ambiente VMware com ONTAP vCenter para outro ambiente VMware com ONTAP vCenter.</block>
@@ -2734,4 +2716,37 @@
   <block id="2838fb3a8731afbc320b29a147b86e21" category="paragraph">O NetApp Disaster Recovery suporta replicação site a site usando Ethernet e TCP/IP. Certifique-se de que haja largura de banda suficiente disponível para suportar as taxas de alteração de dados nas VMs do site de produção, para que todas as alterações possam ser replicadas para o site de NetApp Disaster Recovery dentro do prazo do Recovery Point Objective (RPO).</block>
   <block id="022268024cea56e0a580165d587cd756" category="paragraph">Antes de usar o NetApp Disaster Recovery, certifique-se de que seu ambiente atenda aos requisitos de cluster do VMware vCenter para que a replicação e a recuperação possam ser executadas sem problemas de compatibilidade.</block>
   <block id="70de8fd72044fea5813c432b196646c1" category="paragraph">Antes de configurar o NetApp Disaster Recovery para Kubernetes, prepare cada cluster Kubernetes para garantir sua prontidão para replicação e failover. A proteção normalmente se aplica a um cluster de origem e a um cluster de destino; conclua esses procedimentos em cada cluster do par.</block>
+  <block id="b69b0deae43f067aceec60ca46b81e75" category="paragraph">Aprenda como configurar o NetApp Disaster Recovery, garantindo que seu sistema atenda aos requisitos para descobrir cargas de trabalho com sucesso e configurar planos de replicação para se preparar para o failover.</block>
+  <block id="450c303d7338ae99abb9140e57f1802f" category="paragraph">A função de _Super admin_ ou _Organization admin_ é necessária para implantar um agente do Console e atribuir permissões.</block>
+  <block id="4cdcdd6cc684e8847f57a8c461306706" category="inline-link-macro">Implantar um agente de Console</block>
+  <block id="da0194b4447687b49b43d16da4a421bf" category="list-text"><block ref="da0194b4447687b49b43d16da4a421bf" category="inline-link-macro-rx"></block></block>
+  <block id="4fbda210d9079288afd6f2ccf0b2fcf4" category="inline-link-macro">Analise as funções de usuário do NetApp Disaster Recovery e atribua permissões aos usuários que precisam delas</block>
+  <block id="dd112af035097a220b3fd99a9f196044" category="list-text"><block ref="dd112af035097a220b3fd99a9f196044" category="inline-link-macro-rx"></block></block>
+  <block id="a3f1443a0df3325eac10e29ebb8e240a" category="list-text"><block ref="a3f1443a0df3325eac10e29ebb8e240a" category="inline-link-macro-rx"></block></block>
+  <block id="25b43f115aa356ef13f467c3cedc630f" category="list-text">Certifique-se de atender aos requisitos adequados para o seu tipo de carga de trabalho:</block>
+  <block id="634c312393dca96c3e570e9865274c97" category="list-text"><block ref="634c312393dca96c3e570e9865274c97" category="inline-link-macro-rx"></block></block>
+  <block id="ed40cb42275a28e7b5377d8fa92461ee" category="list-text"><block ref="ed40cb42275a28e7b5377d8fa92461ee" category="inline-link-macro-rx"></block></block>
+  <block id="e1e12e7d2eb44422325db325a5558c5c" category="paragraph">Essas tarefas exigem a função de _Super admin_ ou _Disaster recovery admin_.</block>
+  <block id="d5f560af5db6cf4511b8e34e3209d0d9" category="list-text"><block ref="d5f560af5db6cf4511b8e34e3209d0d9" category="inline-link-macro-rx"></block></block>
+  <block id="eaa54a57026891d12cbf928afd176564" category="list-text"><block ref="eaa54a57026891d12cbf928afd176564" category="inline-link-macro-rx"></block></block>
+  <block id="5d1645ab89b982156d5095ad611b9aaf" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Configurar planos de recuperação de desastres</block>
+  <block id="06e1b78d359c9b62257986a2b478c87d" category="paragraph">Essas tarefas exigem a função de _administrador de recuperação de desastres_.</block>
+  <block id="a4e889b4c4cf96459ebc87610a411cd6" category="inline-link-macro">Adicione seus sites ao Disaster Recovery</block>
+  <block id="0439af6ffc9018ad61a84a98aaf7c382" category="list-text"><block ref="0439af6ffc9018ad61a84a98aaf7c382" category="inline-link-macro-rx"></block></block>
+  <block id="020a36deb114af1bb518c70d5975e940" category="inline-link-macro">Criar grupos de recursos</block>
+  <block id="e630b26a169cbcad33bbea4d618a6289" category="list-text"><block ref="e630b26a169cbcad33bbea4d618a6289" category="inline-link-macro-rx"></block></block>
+  <block id="c12123744a3c90fe5495b387b449f97a" category="inline-link-macro">Para cargas de trabalho do Kubernetes, adicione um AppVault</block>
+  <block id="8619027af6daf10544bdaf5851bcbefd" category="list-text"><block ref="8619027af6daf10544bdaf5851bcbefd" category="inline-link-macro-rx"></block></block>
+  <block id="8aa3c94c171b2c9d7252afb28ee019a7" category="list-text"><block ref="8aa3c94c171b2c9d7252afb28ee019a7" category="inline-link-macro-rx"></block></block>
+  <block id="ed1db02de11c4d365ac64a594dde8a8e" category="list-text"><block ref="ed1db02de11c4d365ac64a594dde8a8e" category="inline-link-macro-rx"></block></block>
+  <block id="a1ecc3af70d301516033783eb7d75412" category="inline-link-macro">Gerenciar transformações de recursos para cargas de trabalho do Kubernetes</block>
+  <block id="fe6c4b92fc7a6c7bf7f3429ce0ccd951" category="list-text"><block ref="fe6c4b92fc7a6c7bf7f3429ce0ccd951" category="inline-link-macro-rx"></block></block>
+  <block id="b808936e11943a7ce505d2bf605d808d" category="list-text"><block ref="b808936e11943a7ce505d2bf605d808d" category="inline-link-macro-rx"></block></block>
+  <block id="698cc22cc758157d8f18359f8b528216" category="list-text"><block ref="698cc22cc758157d8f18359f8b528216" category="inline-link-macro-rx"></block></block>
+  <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">Quatro</block>
+  <block id="7bcfbf6f4e3aa95fa87554dde245ad27" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Recuperar de desastres</block>
+  <block id="4fa723a7acca0573a7f95ed1267196d5" category="paragraph">Essas tarefas exigem a função de _administrador do Disaster Recovery_ ou a função de _administrador de failover do Disaster Recovery_.</block>
+  <block id="524f5a32773e3e832b74877ecf58916f" category="list-text"><block ref="524f5a32773e3e832b74877ecf58916f" category="inline-link-macro-rx"></block></block>
+  <block id="6fbeff9687fcc9f06bd89057c3ed5a34" category="list-text"><block ref="6fbeff9687fcc9f06bd89057c3ed5a34" category="inline-link-macro-rx"></block></block>
+  <block id="57574b91a736e91f1b6149f9abdf3330" category="sidebar">Gerencie sites, planos, datastores e informações de VM</block>
 </blocks>
