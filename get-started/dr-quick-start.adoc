@@ -58,7 +58,7 @@ Essas tarefas exigem a função de _administrador de recuperação de desastres_
 [role="quick-margin-para"]
 Essas tarefas exigem a função de _administrador do Disaster Recovery_ ou a função de _administrador de failover do Disaster Recovery_.
 
-[role="quick-margin-para"]
+[role="quick-margin-list"]
 * link:../use/failover.html["Falha na execução de aplicativos para um site remoto"]
 * link:../use/failback.html["Fazer failback de aplicativos para o site de origem original"]
 
