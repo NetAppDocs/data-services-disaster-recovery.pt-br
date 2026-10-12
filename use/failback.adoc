@@ -56,6 +56,10 @@ image::site-type-toggle.png[Captura de tela da opção de alternância do tipo d
 . Identifique o plano de replicação que você deseja reverter. Selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"], passe o cursor sobre *Recuperar* e selecione *Reverter*.
 . Escolha o snapshot do datastore a partir do qual deseja recuperar. Selecione *Take snapshot now* para iniciar um novo snapshot ou *Select* para escolher entre os snapshots disponíveis.
 +
+
+NOTE: Se você estiver usando snapshots do SnapLock à prova de adulteração, deverá usar a opção *Take snapshot now*. Caso contrário, a operação falhará.
+
++
 image:failback.png["Captura de tela da caixa de diálogo de failback"]
 
 . Digite "Failback" para confirmar a operação e selecione *Failback*.

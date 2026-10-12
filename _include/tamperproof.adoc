@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+
+NOTE: Se você estiver usando snapshots do SnapLock à prova de adulteração, deverá usar a opção *Take snapshot now*. Caso contrário, a operação falhará.

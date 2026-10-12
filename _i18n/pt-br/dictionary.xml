@@ -2280,7 +2280,6 @@
   <block id="bc5f6fc21f6a94d180764bb6c6a4cd7d" category="paragraph">Instale o <block ref="eec6190e0599877ad03e04b40eef0c58" category="inline-link-macro-rx"></block>. Essas instalações são necessárias para snapshots de volume no Trident Protect.</block>
   <block id="918fa72b18f488b31c1a63283c4f2148" category="paragraph"><block ref="4569567eb3ca20d8c53676753a511f69" prefix="" category="inline-code"></block></block>
   <block id="d601ac6a8739700584fe1f4c446d9754" category="list-text">*Fora do ar*: o site está inacessível ou apresenta problemas de conectividade.</block>
-  <block id="6026e48cd116a5cbacecfc8da06638ea" category="paragraph">Após adicionar recursos e sites, crie um plano de replicação para proteger seus dados. O plano define os sites de origem e destino, os grupos de recursos, os mapeamentos de recuperação e o comportamento de inicialização dos seus aplicativos. Você também pode configurar agendamentos de conformidade e teste, além de realizar testes de failover sem afetar os dados de produção.</block>
   <block id="1c4de46c0cd1d0a73f4e3432ea708002" category="paragraph">Você pode proteger várias VMs em vários datastores. NetApp Disaster Recovery cria grupos de consistência ONTAP para todos os volumes ONTAP que hospedam datastores de VMs protegidas.</block>
   <block id="46224a4824d70ef03f0888359b806a9e" category="list-text">Se houver snapshots ausentes no site de destino, o serviço pode excluir os snapshots correspondentes no site de origem durante o próximo processo de reconciliação de snapshots agendado, dependendo da política padrão do SnapMirror para a relação.</block>
   <block id="7e0f1183c0ae5c291e2245966bd03d67" category="paragraph">O assistente guia você por estas etapas:</block>
@@ -2568,7 +2567,6 @@
   <block id="8d57596f9b796b61e90df9540d12cc03" category="paragraph">Para o Azure, escolha a *Assinatura*, o *Grupo de recursos* e a *Conta de armazenamento* para o provedor de nuvem.</block>
   <block id="d575618a014f5e9564ca37f19e47ce57" category="paragraph">Para AWS, ONTAP S3 e StorageGRID, selecione a *Acount*, as *Credentials* e o *Bucket*.</block>
   <block id="5a5927bde0ac7465b00ff420f8ccdb8c" category="list-text">Se você selecionou o ONTAP S3 ou o StorageGRID, pode adicionar credenciais opcionalmente. Selecione *Adicionar credenciais* para expandir as opções e, em seguida, adicione o *Nome da credencial*, o *FQDN do nó de gateway*, o número da *porta*, a *Chave de acesso* e a *Chave secreta*.</block>
-  <block id="796c589626154baa50e1f1b1c6b6ff97" category="section-title">Transformações de recursos e execuções de scripts</block>
   <block id="bb9e542c041adb6fce43a5550a447aee" category="paragraph">Para planos de replicação do Kubernetes, você pode aplicar transformações de recursos e execuções de scripts. Essas etapas são opcionais.</block>
   <block id="89fd45000e9691421f0cd2d2422f2098" category="paragraph-title">Adicionar uma transformação de recurso</block>
   <block id="daac935d0f9259f469bdeb6216a7bedd" category="inline-link-macro">Aprenda como criar e transformar recursos.</block>
@@ -2749,4 +2747,28 @@
   <block id="524f5a32773e3e832b74877ecf58916f" category="list-text"><block ref="524f5a32773e3e832b74877ecf58916f" category="inline-link-macro-rx"></block></block>
   <block id="6fbeff9687fcc9f06bd89057c3ed5a34" category="list-text"><block ref="6fbeff9687fcc9f06bd89057c3ed5a34" category="inline-link-macro-rx"></block></block>
   <block id="57574b91a736e91f1b6149f9abdf3330" category="sidebar">Gerencie sites, planos, datastores e informações de VM</block>
+  <block id="02062d06535ce7696876b02309ed3f5e" category="admonition">Se você estiver usando snapshots do SnapLock à prova de adulteração, deverá usar a opção *Take snapshot now*. Caso contrário, a operação falhará.</block>
+  <block id="1c335a9c5603264a97d8d84cb6c6faf0" category="doc">Ordem de inicialização opcional para grupos de recursos do Kubernetes</block>
+  <block id="84af32d37767e36e149339ec37e513b1" category="paragraph">O NetApp Disaster Recovery agora oferece suporte à configuração opcional da ordem de inicialização para grupos de recursos em um plano de replicação do Kubernetes, especificando uma ordem de prioridade e um tempo de atraso opcional para os recursos. Essa opção permite inicializar recursos ao mesmo tempo quando necessário e atrasar a inicialização de recursos que dependem de outros, ajudando seus aplicativos a voltar a ficar online de forma estável.</block>
+  <block id="f2497ae428eba83b3f39732433d3cb44" category="inline-link-macro">criar um plano de replicação</block>
+  <block id="9e29609c3bbaf3dd61657f73add99007" category="paragraph">Para obter mais informações, consulte <block ref="b368f0a73ce8108f9547ecd0643b331f" category="inline-link-macro-rx"></block>.</block>
+  <block id="05316212411905c51cdd49deaf78a58e" category="section-title">Suporte a volume de SnapLock</block>
+  <block id="a547512ac8a0a093f138ab19fb5f9c67" category="paragraph">O Disaster Recovery agora oferece suporte a volumes de SnapLock, permitindo que você faça failover de snapshots à prova de adulteração.. Ao realizar o failback com volumes de SnapLock, você deve usar a opção *Take snapshot now* para garantir que o failback seja concluído com sucesso.</block>
+  <block id="3ad6e9988864aeae2ef386345946dc6d" category="inline-link-macro">failover</block>
+  <block id="a571d3783c8d552371d5e8b486416b18" category="inline-link-macro">failback</block>
+  <block id="374fdd2efa0670899dec57115b7ed99b" category="paragraph">Para obter mais informações, consulte as instruções para <block ref="8fc81de61ce6b6f345351934ad55bc91" category="inline-link-macro-rx"></block> e <block ref="54d34f2cfe03dcbe402071f8f9beccd0" category="inline-link-macro-rx"></block>.</block>
+  <block id="eec8280b12e61e71ed9a9f31e25a4cb6" category="section-title">Execuções simplificadas de atualização e conformidade</block>
+  <block id="196ba426ef1a0d15830e58f8ea71c405" category="inline-link-macro">monitorar trabalhos</block>
+  <block id="844a671e46adc508ee852b03a616e916" category="paragraph">As execuções de atualização para vCenter, planos de replicação e conformidade foram simplificadas em uma única tarefa para facilitar uma execução mais rápida. Para ver essa alteração, aprenda como <block ref="c4c673075f72fe052d440b509fb5db2d" category="inline-link-macro-rx"></block>.</block>
+  <block id="838e15ad2606430b761fae47ebb38dee" category="section-title">Verificações de conformidade do Kubernetes</block>
+  <block id="07de08b6dc69bbb77fbf2faa073882f2" category="paragraph">O Disaster Recovery adicionou verificações de conformidade para identificar ambientes de trabalho ausentes para cargas de trabalho do Kubernetes. Essas verificações de conformidade ajudam a garantir a integridade dos seus planos de replicação para a integridade das cargas de trabalho.</block>
+  <block id="e019cb225a4644922cdd06575b099710" category="section-title">12 de outubro de 2026</block>
+  <block id="644654fd24758e69ba70d0af50f707b2" category="paragraph">Versão 4.3.8</block>
+  <block id="86ad5929405f6e7a459f3adf67f298e6" category="paragraph">Depois de adicionar recursos e sites, crie um _plano de replicação_ para proteger seus dados com o NetApp Disaster Recovery. O plano define os sites de origem e destino, os grupos de recursos, os mapeamentos de recuperação e o comportamento de inicialização dos seus aplicativos. Você também pode configurar agendamentos de conformidade e de teste e realizar failovers de teste sem afetar os dados de produção.</block>
+  <block id="e65bfba01c1dd06a7952b0d1a116ad70" category="section-title">Transformações de recursos, execuções de scripts e ordem de inicialização</block>
+  <block id="5753c0f11c80b803bc47552e63a898cb" category="paragraph-title">Defina a ordem de inicialização</block>
+  <block id="b5c34ed8fbc17ece1ce6b8ca13f9d672" category="paragraph">Para planos de replicação que incluem vários grupos de recursos, você pode, opcionalmente, definir uma ordem de inicialização para garantir que os recursos que precisam entrar em funcionamento juntos o façam, enquanto os grupos de recursos que dependem de outros não entram em funcionamento até que suas dependências entrem.</block>
+  <block id="b2784505a08cc196fdf2c01fb8722bbc" category="list-text">Selecione a seção *Ordem e atraso de inicialização*.</block>
+  <block id="7b49064e2ebb0dab724dfae418ebec8e" category="list-text">Atribua um valor de *Ordem* de inicialização para cada recurso no plano de replicação, começando com um. Quaisquer recursos que devam inicializar ao mesmo tempo devem receber o mesmo número.</block>
+  <block id="9aae48d2077953d7be448b6a399f3b3c" category="list-text">Defina o tempo de *Atraso* em minutos. Se algum recurso precisar ser atrasado, defina a duração do atraso em minutos.</block>
 </blocks>

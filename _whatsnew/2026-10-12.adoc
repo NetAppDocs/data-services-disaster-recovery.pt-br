@@ -1,0 +1,35 @@
+= Ordem de inicialização opcional para grupos de recursos do Kubernetes
+:allow-uri-read: 
+
+
+
+
+[[optional-boot-order-for-kubernetes-resource-groups]]
+=== Ordem de inicialização opcional para grupos de recursos do Kubernetes
+
+O NetApp Disaster Recovery agora oferece suporte à configuração opcional da ordem de inicialização para grupos de recursos em um plano de replicação do Kubernetes, especificando uma ordem de prioridade e um tempo de atraso opcional para os recursos. Essa opção permite inicializar recursos ao mesmo tempo quando necessário e atrasar a inicialização de recursos que dependem de outros, ajudando seus aplicativos a voltar a ficar online de forma estável.
+
+Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["criar um plano de replicação"^].
+
+
+
+[[snaplock-volume-support]]
+=== Suporte a volume de SnapLock
+
+O Disaster Recovery agora oferece suporte a volumes de SnapLock, permitindo que você faça failover de snapshots à prova de adulteração.. Ao realizar o failback com volumes de SnapLock, você deve usar a opção *Take snapshot now* para garantir que o failback seja concluído com sucesso.
+
+Para obter mais informações, consulte as instruções para link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["failover"^] e link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failback.html["failback"^].
+
+
+
+[[simplified-refresh-and-compliance-runs]]
+=== Execuções simplificadas de atualização e conformidade
+
+As execuções de atualização para vCenter, planos de replicação e conformidade foram simplificadas em uma única tarefa para facilitar uma execução mais rápida. Para ver essa alteração, aprenda como link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["monitorar trabalhos"^].
+
+
+
+[[kubernetes-compliance-checks]]
+=== Verificações de conformidade do Kubernetes
+
+O Disaster Recovery adicionou verificações de conformidade para identificar ambientes de trabalho ausentes para cargas de trabalho do Kubernetes. Essas verificações de conformidade ajudam a garantir a integridade dos seus planos de replicação para a integridade das cargas de trabalho.
