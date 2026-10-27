@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+Se você planeja realizar testes de failover como parte do seu plano de replicação, você deve fornecer um conjunto de mapeamentos de failover de teste para garantir que as VMs iniciadas durante o teste de failover não interfiram nas VMs de produção. Você pode fazer isso fornecendo às VMs de teste endereços IP diferentes ou mapeando as NICs virtuais das VMs de teste para uma rede diferente, isolada da produção, mas com a mesma configuração de IP (conhecida como "bolha" ou "rede de teste").

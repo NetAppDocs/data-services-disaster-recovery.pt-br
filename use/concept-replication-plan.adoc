@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: use/concept-replication-plan.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, snapmirror, snapshot, backup, best practices 
+summary: Antes de implantar sua replicação no NetApp Disaster Recovery, entenda as melhores práticas para garantir a eficácia da sua estratégia de recuperação de desastres. 
+---
+= Otimize seu plano de replicação no NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+O plano de replicação é uma parte essencial da sua estratégia de recuperação de desastres, definindo a frequência de criação de snapshots, a ordem de inicialização, o mapeamento de rede e outros detalhes importantes de failover e failback. Antes de criar um plano de replicação no NetApp Disaster Recovery, certifique-se de compreender como os planos de replicação funcionam e quais são as melhores práticas.
+
+
+
+[[about-replication-plans]]
+== Sobre planos de replicação
+
+Você pode proteger várias VMs, datastores ou namespaces com um único plano de replicação. O Disaster Recovery cria grupos de consistência do ONTAP para todos os volumes do ONTAP que hospedam recursos de dados protegidos.
+
+
+
+[[resource-planning]]
+== Planejamento de recursos
+
+Organize suas VMs ou namespaces antes de atribuir recursos a um plano de replicação para minimizar a dispersão. Coloque os recursos que precisam de proteção em um subconjunto de datastores e os recursos que não serão protegidos em outro subconjunto de datastores. Para organizar os grupos de recursos antes de criar o plano de replicação, consulte link:resource-group.html["Criar um grupo de recursos"].
+
+
+
+[[test-failover]]
+== Teste de failover
+
+Ao criar o plano de replicação, você tem a opção de configurar mapeamentos exclusivos para failover de teste.
+
+Se você planeja realizar testes de failover como parte do seu plano de replicação, você deve fornecer um conjunto de mapeamentos de failover de teste para garantir que as VMs iniciadas durante o teste de failover não interfiram nas VMs de produção. Você pode fazer isso fornecendo às VMs de teste endereços IP diferentes ou mapeando as NICs virtuais das VMs de teste para uma rede diferente, isolada da produção, mas com a mesma configuração de IP (conhecida como "bolha" ou "rede de teste").
+
+
+
+[[snapshots]]
+== Instantâneos
+
+A recuperação de desastres mantém o mesmo número de instantâneos nos clusters de origem e destino.  Por padrão, o serviço executa um processo de reconciliação de instantâneos a cada 24 horas para garantir que o número de instantâneos nos clusters de origem e destino seja o mesmo.
+
+As seguintes situações podem fazer com que o número de instantâneos seja diferente entre os clusters de origem e de destino:
+
+* Algumas situações podem fazer com que operações ONTAP fora da Recuperação de Desastres adicionem ou removam instantâneos do volume:
++
+** Se houver snapshots ausentes no site de origem, os snapshots correspondentes no site de destino poderão ser excluídos, dependendo da política padrão do SnapMirror para o relacionamento.
+** Se houver snapshots ausentes no site de destino, o serviço pode excluir os snapshots correspondentes no site de origem durante o próximo processo de reconciliação de snapshots agendado, dependendo da política padrão do SnapMirror para a relação.
+
+
+* Uma redução na contagem de retenção de snapshots do plano de replicação pode fazer com que o serviço exclua os snapshots mais antigos nos sites de origem e de destino para atender ao número de retenção recém-reduzido.
+
+
+Nesses casos, o Disaster Recovery remove snapshots mais antigos dos clusters de origem e destino na próxima verificação de consistência.  Ou o administrador pode executar uma limpeza instantânea imediata selecionando *Ações*image:icon-horizontal-dots.png["Menu de ações de pontos horizontais"] ícone no plano de replicação e selecionando *Limpar instantâneos*.
+
+A Recuperação de Desastres realiza verificações de simetria de snapshots a cada 24 horas.
+
+
+
+[[platform-managed-backups]]
+== Backups gerenciados pela plataforma
+
+Se você planeja usar backups gerenciados pela plataforma (ou seja, snapshots gerenciados pelo ONTAP), é recomendável que você use a política de replicação *MirrorAll*. Consulte a tabela para entender o impacto das diferentes políticas de replicação do SnapMirror e por que *MirrorAll* é a opção recomendada.
+
+[cols="10,10,80"]
+|===
+
+
+| Política | Recomendação | Notas 
+
+
+| *MirrorAll* | Recomendado | Não utilize snapshots de transferência do SnapMirror para operações de failover ou failback. 
+
+
+| *MirrorVault* .2+| Recomendação alternativa .2+| Certifique-se de que os snapshots selecionados durante o failover ou failback estejam presentes tanto nos volumes de origem quanto nos volumes de destino. Caso contrário, ocorrerá o erro: "Falha na transição para o estado 'snapmirrored'. Motivo: Nenhum snapshot comum encontrado." Não utilize snapshots de transferência do SnapMirror para operações de failover ou failback. 
+
+
+| *Assíncrono* 
+
+
+| *MirrorLatest* | _NÃO_ recomendado | Essa política resulta em o destino ter efetivamente apenas um snapshot comum para failover, o que é subótimo para cenários de recuperação de desastres. 
+|===
+
+
+[[disaster-recovery-managed-backups]]
+== Backups gerenciados pelo Disaster Recovery
+
+Ao usar backups gerenciados do NetApp Disaster Recovery, as seguintes diretrizes se aplicam a relações do SnapMirror criadas fora do NetApp Disaster Recovery:
+
+* As relações do SnapMirror podem suportar as políticas de replicação MirrorAll, MirrorVault, MirrorLatest e assíncrona.
+* Não agende atualizações para esses relacionamentos, pois eles serão gerenciados pelo serviço de NetApp Disaster Recovery.
+
+
+
+
+[[application-consistent-replicas]]
+== Réplicas consistentes com a aplicação
+
+Muitas VMs hospedam servidores de banco de dados como Oracle ou Microsoft SQL Server.  Esses servidores de banco de dados exigem instantâneos consistentes com o aplicativo para garantir que o banco de dados esteja em um estado consistente quando o instantâneo for tirado.
+
+Snapshots consistentes com o aplicativo garantem que o banco de dados esteja em um estado consistente quando o snapshot é tirado.  Isso é importante porque garante que o banco de dados possa ser restaurado para um estado consistente após uma operação de failover ou failback.
+
+Os dados gerenciados pelo servidor de banco de dados podem estar no mesmo datastore que a máquina virtual que hospeda o servidor de banco de dados ou em um datastore diferente. A tabela a seguir mostra as configurações compatíveis para snapshots consistentes com o aplicativo no NetApp Disaster Recovery:
+
+[cols="20,20,40a"]
+|===
+| Localização dos dados | Suportado | Notas 
+
+
+| No mesmo armazenamento de dados do vCenter que a VM | Sim  a| 
+Como o servidor de banco de dados e o banco de dados residem no mesmo armazenamento de dados, tanto o servidor quanto os dados estarão sincronizados no failover.
+
+
+
+| Dentro de um armazenamento de dados vCenter diferente da VM | Não  a| 
+O Disaster Recovery não consegue identificar quando os dados de um servidor de banco de dados estão em um armazenamento de dados diferente do vCenter.  O serviço não pode replicar os dados, mas pode replicar a VM do servidor de banco de dados.
+
+Embora os dados do banco de dados não possam ser replicados, o serviço garante que o servidor de banco de dados execute todas as etapas necessárias para garantir que o banco de dados esteja inativo no momento do backup da VM.
+
+
+
+| Dentro de uma fonte de dados externa | Não  a| 
+Se os dados residirem em um LUN montado no convidado ou em um compartilhamento NFS, o Disaster Recovery não poderá replicar os dados, mas poderá replicar a VM do servidor de banco de dados.
+
+Embora os dados do banco de dados não possam ser replicados, o serviço garante que o servidor de banco de dados execute todas as etapas necessárias para garantir que o banco de dados esteja inativo no momento do backup da VM.
+
+|===
+Durante um backup agendado, o Disaster Recovery desativa o servidor de banco de dados e, em seguida, tira um instantâneo da VM que hospeda o servidor de banco de dados.  Isso garante que o banco de dados esteja em um estado consistente quando o instantâneo for tirado.
+
+* Para máquinas virtuais Windows, o serviço utiliza o Microsoft Volume Shadow Copy Service (VSS) para coordenar com qualquer tipo de servidor de banco de dados.
+* Para VMs Linux, o serviço usa um conjunto de scripts para colocar o servidor Oracle no modo de backup.
+

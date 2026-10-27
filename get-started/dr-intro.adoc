@@ -165,7 +165,7 @@ Se essa verificação for bem-sucedida, o Disaster Recovery executará as seguin
 
 Depois que o Disaster Recovery cria e inicializa todos os relacionamentos, em cada backup agendado, o serviço executa as seguintes etapas de proteção de dados:
 
-. Para cada VM sinalizada como “consistente com o aplicativo”, use o VMtools para colocar o aplicativo suportado em um estado de backup.
+. Para cada VM sinalizada como "consistente com o aplicativo", use o VMware Tools para colocar o aplicativo compatível em estado de backup.
 . Crie um novo snapshot de todos os volumes ONTAP que hospedam datastores VMware protegidos.
 . Execute uma operação de atualização do SnapMirror para replicar esses instantâneos no cluster ONTAP de destino.
 . Determine se o número de instantâneos retidos excedeu a retenção máxima de instantâneos definida no plano de replicação e exclua quaisquer instantâneos estranhos dos volumes de origem e destino.

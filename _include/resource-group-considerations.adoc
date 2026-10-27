@@ -1,0 +1,19 @@
+= 
+:allow-uri-read: 
+
+
+Ao criar grupos de recursos, considere os seguintes cenários:
+
+* Antes de adicionar armazenamentos de dados ou namespaces a grupos de recursos, inicie uma descoberta manual ou aguarde a execução de uma descoberta agendada. Isso garante que as VMs sejam descobertas e listadas no grupo de recursos. Se você não iniciar uma descoberta manual, os recursos podem não ser listados no grupo de recursos.
+* Certifique-se de que exista pelo menos um recurso (VM ou namespace) no armazenamento de dados. Se não houver recursos no armazenamento de dados, o Disaster Recovery não detectará o armazenamento de dados.
+* Um único armazenamento de dados não deve hospedar VMs protegidas por mais de um plano de replicação.
+* Não hospede recursos protegidos e não protegidos no mesmo armazenamento de dados. Se recursos protegidos e não protegidos forem hospedados no mesmo armazenamento de dados, os seguintes problemas poderão ocorrer:
++
+** Como o Disaster Recovery usa SnapMirror e o sistema replica volumes inteiros do ONTAP, a capacidade usada desse volume é considerada para fins de licenciamento. Nesse caso, o espaço do volume consumido por VMs protegidas e não protegidas seria incluído nesse cálculo.
+** Se o grupo de recursos e as entidades associadas precisarem passar por failover para o site de recuperação de desastres, todos os recursos desprotegidos (VMs ou namespaces que não fazem parte do grupo de recursos, mas estão hospedados no volume do ONTAP) deixarão de existir no site de origem após o processo de failover, resultando na falha das VMs desprotegidas no site de origem. Além disso, o Disaster Recovery não iniciará esses recursos desprotegidos no site de failover.
+
+
+* Para proteger um recurso, você deve incluí-lo em um grupo de recursos.
+
+
+*MELHOR PRÁTICA*: Organize suas VMs antes de implantar NetApp Disaster Recovery para minimizar a proliferação de datastores. Coloque as VMs que precisam de proteção em um subconjunto de datastores e as VMs que não serão protegidas em outro subconjunto de datastores. Certifique-se de que as VMs em um determinado datastore não estejam protegidas por planos de replicação diferentes.

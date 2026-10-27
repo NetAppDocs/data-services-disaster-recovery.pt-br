@@ -9,7 +9,7 @@
 
 Ao criar um plano de replicação no NetApp Disaster Recovery, agora você pode excluir datastores específicos da replicação. Para situações em que uma máquina virtual está configurada para usar vários datastores, isso permite limitar quais deles serão replicados.
 
-Para obter detalhes, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"^].
+Para obter detalhes, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crie um plano de replicação"^].
 
 
 
@@ -27,7 +27,7 @@ Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-
 
 A Recuperação de Desastres agora inclui novas opções de menu para acionar atualizações do vCenter a partir do painel do plano de replicação. Você pode acessar o submenu no menu de ações do painel do plano de replicação: selecione **Integridade do Plano** e, em seguida, **Atualizar Origem vCenter / Atualizar Destino vCenter**.
 
-Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#modify-a-replication-plan["Modificar um plano de replicação"^].
+Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-modify.html["Modificar um plano de replicação"^].
 
 
 

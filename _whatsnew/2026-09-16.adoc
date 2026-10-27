@@ -27,7 +27,7 @@ As transformações de recursos são aplicadas quando você cria um plano de rep
 
 Agora você pode inserir scripts personalizados no fluxo de trabalho de failover para coordenar a inatividade e a retomada de aplicativos. Esse recurso ajuda a garantir que os aplicativos estejam devidamente preparados antes que um snapshot seja replicado e restaurado adequadamente, para que as operações possam ser retomadas sem problemas após o failover.
 
-Para aprender como injetar um script personalizado, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"^].
+Para aprender como injetar um script personalizado, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["Crie um plano de replicação"^].
 
 
 

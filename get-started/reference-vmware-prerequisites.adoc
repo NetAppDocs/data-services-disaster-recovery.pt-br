@@ -40,5 +40,5 @@ Esses pré-requisitos se aplicam aos clusters vCenter locais e ao data center de
 Se você estiver usando o VMware Cloud SDDC, estes pré-requisitos adicionais se aplicam:
 
 * No VMware Cloud Console, use as funções de serviço de Administrador e Administrador do NSX Cloud.  Use também o proprietário da organização para a função Organização. Consulte https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["Usando o VMware Cloud Foundations com AWS FSx para documentação do NetApp ONTAP"^] .
-* Vincule o VMware Cloud SDDC a uma instância do Amazon FSx for NetApp ONTAP. Consulte  https://vmc.techzone.vmware.com/fsx-guide#overview["Integração do VMware Cloud on AWS com o Amazon FSx for NetApp ONTAP"^].
+* Vincule o VMware Cloud SDDC a uma instância do Amazon FSx for NetApp ONTAP. Consulte https://docs.netapp.com/us-en/workload-vmware/connect-sddc-to-fsx.html["Conecte seus sistemas de arquivos FSx for ONTAP ao VMware Cloud on AWS"^].
 

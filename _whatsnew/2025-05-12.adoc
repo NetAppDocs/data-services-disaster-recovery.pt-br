@@ -53,4 +53,4 @@ Quando a opção é selecionada, o NetApp Disaster Recovery não configura um ag
 
 Depois que isso for configurado, o serviço não fará nenhum snapshot agendado regularmente, mas dependerá da entidade externa para tirar e atualizar esses snapshots.
 
-Para obter detalhes sobre como usar soluções de snapshots externos no plano de replicação, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .
+Para obter detalhes sobre como usar soluções de snapshot externas no plano de replicação, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crie um plano de replicação"].

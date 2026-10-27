@@ -26,7 +26,7 @@ Você pode criar um grupo de recursos com um armazenamento de dados das seguinte
 * Ao criar um plano de replicação e um grupo de recursos dentro do plano, você pode ver as VMs nos armazenamentos de dados.
 
 
-Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crie um plano de replicação"] .
+Para obter detalhes, consulte  https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crie um plano de replicação"].
 
 
 
