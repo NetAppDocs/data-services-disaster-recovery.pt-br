@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/manage.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plans, resource groups 
-summary: Você pode dar uma olhada rápida em todos os seus recursos do NetApp Disaster Recovery e gerenciar sites do vCenter, grupos de recursos e planos de replicação. 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, kubernetes, trident protect, replication plans, resource groups 
+summary: Você pode ter uma visão geral rápida de todos os seus recursos do NetApp Disaster Recovery e gerenciar sites, grupos de recursos e planos de replicação para workloads do VMware e Kubernetes. 
 ---
 = Gerencie sites, grupos de recursos e planos de replicação com o NetApp Disaster Recovery
 :hardbreaks:
@@ -14,29 +14,30 @@ summary: Você pode dar uma olhada rápida em todos os seus recursos do NetApp D
 [role="lead"]
 O NetApp Disaster Recovery oferece visões gerais e perspectivas mais detalhadas de todos os seus recursos:
 
-* Locais
+* Sites (vCenter e Kubernetes)
 * Grupos de recursos
 * Planos de replicação
-* Armazenamentos de dados
-* Máquinas virtuais
+* Datastores (VMware)
+* Máquinas virtuais (VMware)
+* Clusters do Kubernetes e o Trident Protect
 
 
 As tarefas exigem funções diferentes do NetApp Console .  Para obter detalhes, consulte a seção *Função necessária do NetApp Console * em cada tarefa.
 
-link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões do usuário no Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 
 
 [[manage-vcenter-sites]]
 == Gerenciar sites do vCenter
 
-Você pode editar o nome e o tipo do site do vCenter (local ou AWS).
+Você pode editar o nome e o tipo do site do vCenter (local ou AWS). Para gerenciar clusters e sites do Kubernetes, consulte link:manage.html#manage-trident-protect["Gerenciar Trident Protect"].
 
 *Função de console NetApp necessária* É necessário ter a função de administrador da organização, administrador de pasta ou projeto ou administrador de recuperação de desastres para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu, selecione *Sites*.
-. Selecione a opção *Ações*image:../use/icon-vertical-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do nome do vCenter e selecione *Editar*.
+. Selecione a opção *Ações* image:../use/icon-vertical-dots.png["Ícone do menu Ações no serviço de Recuperação de Desastres"] à direita do nome do vCenter e selecione *Editar*.
 . Edite o nome e o local do site do vCenter.
 
 
@@ -45,7 +46,7 @@ Você pode editar o nome e o tipo do site do vCenter (local ou AWS).
 [[manage-resource-groups]]
 == Gerenciar grupos de recursos
 
-Você pode criar grupos de recursos por máquinas virtuais ou datastores. Você pode adicioná-los ao criar o plano de replicação ou posteriormente.
+Você pode criar grupos de recursos por máquinas virtuais, datastores ou recursos do Kubernetes. Você pode adicioná-los ao criar o plano de replicação ou posteriormente.
 
 *Função de console NetApp necessária* A função de Super admin, Disaster recovery admin ou Disaster recovery application admin é necessária para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
@@ -68,7 +69,7 @@ Para obter detalhes sobre como criar um grupo de recursos, consultelink:resource
 .Passos
 . No menu, selecione *Grupos de recursos*.
 . Para adicionar um grupo de recursos, selecione *Adicionar grupo*.
-. Você pode modificar ou excluir o grupo de recursos selecionando a opção *Ações*.image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] .
+. Você pode modificar ou excluir o grupo de recursos selecionando a opção *Actions* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço de Recuperação de Desastres"].
 
 
 
@@ -89,7 +90,7 @@ Você pode desativar, ativar e excluir planos de replicação. Você pode altera
 +
 image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
-. Para visualizar os detalhes do plano, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] e selecione *Ver detalhes do plano*.
+. Para visualizar os detalhes do plano, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço de Recuperação de Desastres"] e selecione *Visualizar detalhes do plano*.
 . Faça qualquer um dos seguintes:
 +
 ** Para editar os detalhes do plano (alterar a recorrência), selecione a aba *Detalhes do plano* e selecione o ícone *Editar* à direita.
@@ -98,8 +99,8 @@ image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
 
 . Retorne à lista de planos selecionando "Planos de replicação" nas trilhas de navegação à esquerda.
-. Para executar ações com o plano, na lista de planos de replicação, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e então escolha uma ação: *Editar agendamentos*, *Testar failover*, *Fail over*, *Fail back*, *Migrar*, *Tirar snapshot agora*, *Limpar snapshots antigos*, *Desabilitar*, *Habilitar* ou *Excluir*.
-. Para definir ou alterar um cronograma de failover de teste ou definir a verificação de frequência de conformidade, selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e selecione *Editar agendamentos*.
+. Para executar ações com o plano, na lista de planos de replicação, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço de Recuperação de Desastres"] à direita do plano e então escolha uma ação: *Editar agendamentos*, *Testar failover*, *Fail over*, *Fail back*, *Migrar*, *Tirar snapshot agora*, *Limpar snapshots antigos*, *Desabilitar*, *Habilitar* ou *Excluir*.
+. Para definir ou alterar um cronograma de failover de teste ou definir a frequência de verificação de conformidade, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço de Recuperação de Desastres"] à direita do plano e selecione *Editar cronogramas*.
 +
 .. Na página Editar agendamentos, insira a frequência em minutos com que você deseja que a verificação de conformidade de failover ocorra.
 .. Marque *Executar failovers de teste conforme agendamento*.
@@ -123,7 +124,7 @@ A Recuperação de Desastres exclui automaticamente os snapshots na origem a cad
 +
 image:../use/dr-plan-list.png["Lista de planos de replicação"]
 
-. Na lista de planos de replicação, selecione a opção *Ações*.image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] Em seguida, *Reconciliar instantâneos*.
+. Na lista de planos de replicação, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço de Recuperação de Desastres"] e depois *Reconciliar snapshots*.
 . Revise as informações de reconciliação.
 . Selecione *Reconciliar*.
 
@@ -139,7 +140,7 @@ Se você excluir um plano de replicação, também poderá excluir os snapshots 
 
 .Passos
 . No menu, selecione *Planos de replicação*.
-. Selecione a opção *Ações*image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"] à direita do plano e selecione *Excluir*.
+. Selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço de Recuperação de Desastres"] à direita do plano e selecione *Excluir*.
 . Selecione se deseja excluir os snapshots primários, os snapshots secundários ou apenas os metadados criados pelo plano.
 . Digite "excluir" para confirmar a exclusão.
 . Selecione *Excluir*.
@@ -200,7 +201,7 @@ Na interface de recuperação de desastres, você pode atualizar ou remover Trid
 [[view-datastore-information]]
 == Visualizar informações do armazenamento de dados
 
-Você pode visualizar quantos datastores existem nos sites de origem e de destino.
+Para cargas de trabalho VMware, você pode visualizar quantos datastores existem nos sites de origem e de destino.
 
 *Função de console NetApp necessária* É necessário ter a função de Super admin, Disaster recovery admin, Disaster recovery failover admin, Disaster recovery application admin ou Disaster recovery viewer para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
@@ -216,7 +217,7 @@ Você pode visualizar quantos datastores existem nos sites de origem e de destin
 [[view-virtual-machines-information]]
 == Exibir informações das máquinas virtuais
 
-Você pode visualizar quantas máquinas virtuais existem nos sites de origem e destino, juntamente com CPU, memória e capacidade disponível.
+Para cargas de trabalho VMware, você pode visualizar quantas máquinas virtuais existem nos sites de origem e destino, juntamente com CPU, memória e capacidade disponível.
 
 *Função de console NetApp necessária* É necessário ter a função de Super admin, Disaster recovery admin, Disaster recovery failover admin, Disaster recovery application admin ou Disaster recovery viewer para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 

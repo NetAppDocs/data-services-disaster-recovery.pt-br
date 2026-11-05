@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/task-replication-plan-modify.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, modify, compliance time, test failover 
+keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, modify, compliance time, test failover, vmware, kubernetes 
 summary: Modifique um plano de replicação para ajustar o tempo de conformidade ou as configurações de failover. 
 ---
 = Modificar um plano de replicação no NetApp Disaster Recovery
@@ -14,7 +14,7 @@ summary: Modifique um plano de replicação para ajustar o tempo de conformidade
 [role="lead"]
 No NetApp Disaster Recovery, você pode modificar o impacto no tempo de conformidade de um plano de replicação para garantir que os testes de failover sejam concluídos com sucesso.
 
-Você pode modificar o tempo de conformidade e testar o impacto do failover. Para editar a recorrência do plano, os mapeamentos de failover ou as VMs, exclua o plano de replicação e crie um novo.
+Você pode modificar o tempo de conformidade e testar o impacto do failover. Para editar a recorrência do plano, os mapeamentos de failover ou os recursos associados, exclua o plano de replicação e crie um novo.
 
 
 
@@ -22,9 +22,9 @@ Você pode modificar o tempo de conformidade e testar o impacto do failover. Par
 == Campos modificáveis
 
 * *Impacto no tempo de conformidade*: quando um plano de replicação é criado, o serviço cria um cronograma de conformidade por padrão.  O tempo de conformidade padrão é de 30 minutos.  Para alterar esse horário, você pode editar o agendamento no plano de replicação.
-* *Teste o impacto do failover*: você pode testar um processo de failover sob demanda ou por meio de um agendamento. Isso permite testar o failover de uma VM para um destino especificado em um plano de replicação.
+* *Teste o impacto do failover*: você pode testar um processo de failover sob demanda ou de acordo com um agendamento. Isso permite testar o failover de VMs ou aplicativos Kubernetes para um destino especificado em um plano de replicação.
 +
-Um failover de teste cria um volume FlexClone , monta o armazenamento de dados e move a carga de trabalho para esse armazenamento de dados.  Uma operação de failover de teste _não_ afeta as cargas de trabalho de produção, o relacionamento SnapMirror usado no site de teste e as cargas de trabalho protegidas que devem continuar operando normalmente.
+Um failover de teste cria um volume FlexClone e, para cargas de trabalho do VMware, monta o datastore e move a carga de trabalho nesse datastore. Uma operação de failover de teste _não_ afeta as cargas de trabalho de produção, a relação do SnapMirror usada no site de teste nem as cargas de trabalho protegidas, que devem continuar a operar normalmente.
 
 
 
@@ -35,12 +35,12 @@ Com base no cronograma, o teste de failover é executado e garante que as cargas
 [[modify-a-replication-plan]]
 == Modificar um plano de replicação
 
-. No menu NetApp Disaster Recovery , selecione *Planos de replicação*.
+. No menu Disaster Recovery, selecione *Replication plans*.
 +
 image:dr-plan-list.png["Captura de tela mostrando a lista de planos de replicação"]
 
-. Selecione as *Ações*image:icon-horizontal-dots.png["Menu de ações de pontos horizontais"] ícone e selecione *Editar agendamentos*.
-. Insira com que frequência, em minutos, você deseja que o NetApp Disaster Recovery verifique a conformidade do teste.
+. Selecione *Ações* image:icon-horizontal-dots.png["Menu de ações de pontos horizontais"] no menu e, em seguida, selecione *Editar horários*.
+. Informe com que frequência, em minutos, você quer que o Disaster Recovery verifique a conformidade dos testes.
 . Para verificar se seus testes de failover estão íntegros, marque *Executar failovers em uma programação mensal*.
 +
 .. Selecione o dia do mês e a hora em que deseja que esses testes sejam executados.
@@ -54,7 +54,29 @@ image:dr-plan-schedule-edit2.png["Captura de tela mostrando onde você pode edit
 . Para limpar o ambiente de teste após a conclusão do teste de failover, marque *Limpar automaticamente após o failover do teste* e insira o número de minutos que você deseja aguardar antes que a limpeza comece.
 +
 
-NOTE: Esse processo cancela o registro das VMs temporárias no local de teste, exclui o volume FlexClone que foi criado e desmonta os armazenamentos de dados temporários.
+NOTE: Este processo exclui o volume FlexClone que foi criado e remove os recursos de teste temporários do local de teste. Para cargas de trabalho VMware, ele também cancela o registro das VMs temporárias e desmonta os datastores temporários.
 
 . Selecione *Salvar*.
+
+
+
+
+[[delete-or-disable-a-replication-plan]]
+== Excluir ou desativar um plano de replicação
+
+Você pode desativar temporariamente um plano de replicação se, por exemplo, precisar aplicar atualizações ou realizar manutenção que afetem a integridade do plano de replicação e suas operações relacionadas.
+
+Você também pode excluir um plano de replicação se não precisar mais dele ou se precisar fazer alterações significativas que estejam além do escopo da modificação.
+
+.Passos
+. No menu Disaster Recovery, selecione *Replication plans*.
++
+image:dr-plan-list.png["Captura de tela mostrando a lista de planos de replicação"]
+
+. Selecione o menu *Ações* image:icon-horizontal-dots.png["Menu de ações de pontos horizontais"] para o plano de replicação que deseja desativar ou excluir.
+. Selecione *Excluir* ou *Desativar*.
+. Leia as instruções na janela pop-up. Para desativar, selecione *Desativar*.
++
+Se você escolher *Excluir*, selecione os snapshots ou os metadados associados para excluir junto com o plano de replicação: *Excluir snapshots primários*, *Excluir snapshots secundários* ou *Excluir metadados do snapshot*. Na caixa de texto, digite "excluir" para confirmar a operação e, em seguida, selecione *Excluir*.
+
 

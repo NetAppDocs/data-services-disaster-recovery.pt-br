@@ -30,7 +30,7 @@ entries:
   url: "/use/task-appvault.html"
 - title: Gerencie modelos de transformação de recursos
   url: "/use/task-resource-transformation.html"
-- title: Gerencie sites, planos, datastores e informações de VM
+- title: Gerenciar sites, grupos de recursos e planos de replicação
   url: "/use/manage.html"
 - title: Monitorar trabalhos de recuperação de desastres
   url: "/use/monitor-jobs.html"

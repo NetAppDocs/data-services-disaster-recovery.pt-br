@@ -41,7 +41,7 @@ Consulte https://docs.netapp.com/us-en/console-setup-admin/task-managing-connect
 +
 Consulte https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["Crie um sistema de arquivos Amazon FSx for NetApp ONTAP"^] .
 
-. No NetApp Disaster Recovery, selecione *Sites*, na linha vCenter selecione a opção *Ações*image:../use/icon-vertical-dots.png["Ícone do menu Ações no NetApp Disaster Recovery"] e, no menu Ações, selecione *Atualizar* para atualizar a descoberta do FSx no NetApp Disaster Recovery.
+. Na Recuperação de Desastres, selecione *Sites*; na linha do vCenter, selecione a opção *Ações* image:../use/icon-vertical-dots.png["Ícone do menu Ações no Disaster Recovery"] e, no menu Ações, selecione *Atualizar* para atualizar a descoberta do FSx na Recuperação de Desastres.
 +
 Isso redescobre o armazenamento de dados, suas máquinas virtuais e seu relacionamento de destino.
 

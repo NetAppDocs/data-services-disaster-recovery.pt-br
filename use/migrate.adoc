@@ -28,7 +28,7 @@ Antes de iniciar a migração, crie um plano de replicação e configure-o para 
 . Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 . No menu, selecione *Planos de replicação*.
 . Selecione o plano de replicação.
-. À direita, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço NetApp Disaster Recovery"], passe o cursor sobre *Recuperar* e selecione *Migrar*.
+. À direita, selecione a opção *Ações* image:../use/icon-horizontal-dots.png["Ícone do menu Ações no serviço de Recuperação de Desastres"], passe o cursor sobre *Recuperar* e selecione *Migrar*.
 . Na caixa de diálogo, escolha *Tirar um instantâneo agora* para criar um novo instantâneo para a migração ou *Selecionar* para escolher um instantâneo existente para a migração.
 . Digite "Migrar" na caixa de texto para confirmar a operação e selecione *Migrar*.
 

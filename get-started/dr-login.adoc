@@ -21,7 +21,7 @@ Para fazer login no NetApp Disaster Recovery, use suas credenciais do site de su
 
 Em NetApp Disaster Recovery, tarefas específicas exigem funções de usuário específicas. Certifique-se de que você atribuiu as funções corretas aos usuários.
 
-Para obter mais informações, consulte: * link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Funções e permissões de usuário no NetApp Disaster Recovery"] * link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp Console funções de acesso para todos os serviços"^]
+Para obter mais informações, consulte: * link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["funções e permissões de usuário no Disaster Recovery"] * link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp Console funções de acesso para todos os serviços"^]
 
 
 

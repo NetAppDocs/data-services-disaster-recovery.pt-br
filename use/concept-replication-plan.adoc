@@ -89,7 +89,7 @@ Se você planeja usar backups gerenciados pela plataforma (ou seja, snapshots ge
 [[disaster-recovery-managed-backups]]
 == Backups gerenciados pelo Disaster Recovery
 
-Ao usar backups gerenciados do NetApp Disaster Recovery, as seguintes diretrizes se aplicam a relações do SnapMirror criadas fora do NetApp Disaster Recovery:
+Ao usar backups gerenciados pelo Disaster Recovery, as seguintes diretrizes se aplicam às relações do SnapMirror criadas fora do Disaster Recovery:
 
 * As relações do SnapMirror podem suportar as políticas de replicação MirrorAll, MirrorVault, MirrorLatest e assíncrona.
 * Não agende atualizações para esses relacionamentos, pois eles serão gerenciados pelo serviço de NetApp Disaster Recovery.
@@ -104,7 +104,7 @@ Muitas VMs hospedam servidores de banco de dados como Oracle ou Microsoft SQL Se
 
 Snapshots consistentes com o aplicativo garantem que o banco de dados esteja em um estado consistente quando o snapshot é tirado.  Isso é importante porque garante que o banco de dados possa ser restaurado para um estado consistente após uma operação de failover ou failback.
 
-Os dados gerenciados pelo servidor de banco de dados podem estar no mesmo datastore que a máquina virtual que hospeda o servidor de banco de dados ou em um datastore diferente. A tabela a seguir mostra as configurações compatíveis para snapshots consistentes com o aplicativo no NetApp Disaster Recovery:
+Os dados gerenciados pelo servidor de banco de dados podem estar no mesmo datastore que a VM que hospeda o servidor de banco de dados, ou podem estar em um datastore diferente. A tabela a seguir mostra as configurações compatíveis com Snapshots consistentes com a aplicação no Disaster Recovery:
 
 [cols="20,20,40a"]
 |===

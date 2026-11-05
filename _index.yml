@@ -2,16 +2,17 @@
 indexpage:
   title: Documentação do NetApp Disaster Recovery
   summary: Com o NetApp Disaster Recovery, você pode replicar suas cargas de trabalho
-    VMware locais que executam armazenamento ONTAP para um data center definido por
-    software em uma nuvem pública como um site de recuperação de desastres usando
-    NetApp storage de nuvem.
-  keywords: disaster, disaster recovery, bluexp, replicate, replication, cloud storage
-  lead: A recuperação de desastres na nuvem é uma maneira resiliente e econômica de
-    proteger cargas de trabalho contra interrupções no local e eventos de corrupção
-    de dados (por exemplo, ransomware). Com NetApp Disaster Recovery, você pode replicar
-    suas cargas de trabalho VMware locais que executam armazenamento ONTAP para um
-    data center definido por software em uma nuvem pública ou para outro local local
-    como um site de recuperação de desastres.
+    locais do VMware e Kubernetes executadas no armazenamento ONTAP para um site de
+    recuperação de desastres.
+  keywords: disaster, disaster recovery, bluexp, replicate, replication, cloud storage,
+    vmware, kubernetes, trident protect, openshift
+  lead: A recuperação de desastres para a nuvem é uma maneira resiliente e econômica
+    de proteger cargas de trabalho contra interrupções de site e eventos de corrupção
+    de dados (por exemplo, ransomware). Com o NetApp Disaster Recovery, você pode
+    proteger suas cargas de trabalho VMware e Kubernetes locais executadas no armazenamento
+    ONTAP, replicando-as para um site de recuperação de desastres, como outro site
+    local ou, para cargas de trabalho VMware, um data center definido por software
+    da VMware em uma nuvem pública.
   tiles:
   - title: Começar
     links:
@@ -29,7 +30,7 @@ indexpage:
       url: "/get-started/dr-faq.html"
   - title: Use a NetApp Disaster Recovery
     links:
-    - title: Adicionar vCenters a um site
+    - title: Adicionar sites
       url: "/use/sites-add.html"
     - title: Crie um plano de recuperação de desastres do VMware
       url: "/use/task-replication-plan-vmware.html"

@@ -29,7 +29,7 @@ Você pode usar as seguintes opções de licenciamento:
 
 
 
-NOTE: As cobranças do NetApp Disaster Recovery são baseadas na capacidade usada dos armazenamentos de dados no site de origem quando há pelo menos uma VM com um plano de replicação.  A capacidade para um armazenamento de dados com failover não está incluída na capacidade permitida.  Para um BYOL, se os dados excederem a capacidade permitida, as operações no serviço serão limitadas até que você obtenha uma licença de capacidade adicional ou atualize a licença no NetApp Console.
+NOTE: As cobranças do Disaster Recovery são baseadas na capacidade usada no site de origem quando há pelo menos uma VM ou recurso do Kubernetes que tenha um plano de replicação. A capacidade de um datastore em failover não está incluída no limite de capacidade. Para um BYOL, se os dados excederem a capacidade permitida, as operações no serviço ficam limitadas até que você obtenha uma licença de capacidade adicional ou atualize a licença no NetApp Console.
 
 link:https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-licenses-subscriptions.html["Saiba mais sobre assinaturas"^].
 
@@ -45,7 +45,7 @@ Após o término do teste gratuito ou a licença expirar, você ainda poderá fa
 [[try-it-out-using-a-30-day-free-trial]]
 == Experimente usando um teste gratuito de 30 dias
 
-Você pode experimentar o NetApp Disaster Recovery usando um teste gratuito de 30 dias.
+Você pode experimentar o Disaster Recovery com um teste gratuito de 30 dias.
 
 
 NOTE: Não há limites de capacidade impostos durante o julgamento.
@@ -61,13 +61,13 @@ Durante o teste, você terá funcionalidade total.
 Se esta for a primeira vez que você faz login neste serviço, a página de destino será exibida.
 
 +
-image:draas-landing6-free-trial.png["Captura de tela da página de destino para NetApp Disaster Recovery"]
+image:draas-landing6-free-trial.png["Captura de tela da landing page para NetApp Disaster Recovery"]
 
 . Se você ainda não adicionou um agente do Console para outros serviços, adicione um.
 +
 Para adicionar um agente de console, consulte https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Saiba mais sobre os agentes do Console"^] .
 
-. Depois de configurar o agente, na página inicial do NetApp Disaster Recovery , o botão para adicionar o agente muda para um botão para iniciar um teste gratuito.  Selecione *Iniciar teste gratuito*.
+. Após configurar o agente, na página inicial do NetApp Disaster Recovery, o botão para adicionar o agente muda para um botão para iniciar um teste gratuito. Selecione *Iniciar teste gratuito*.
 . Comece adicionando os sites primários e de recuperação de desastres.
 +
 Para obter detalhes, consulte link:../use/sites-add.html["Adicionar sites"].
@@ -82,16 +82,16 @@ Para obter detalhes, consulte link:../use/sites-add.html["Adicionar sites"].
 Após o término do teste gratuito, você pode comprar uma licença da NetApp ou assinar pelo AWS Marketplace ou Microsoft Azure Marketplace. Este procedimento fornece uma visão geral de alto nível de como assinar diretamente em um dos Marketplaces.
 
 .Passos
-. No NetApp Disaster Recovery, você vê uma mensagem informando que o teste gratuito está expirando.  Na mensagem, selecione *Assinar ou comprar uma licença*.
+. No Disaster Recovery, você verá uma mensagem informando que a avaliação gratuita está expirando. Na mensagem, selecione *Assinar ou comprar uma licença*.
 +
 Ou, no menu Disaster Recovery, selecione *Ver métodos de pagamento*.
 
 +
-image:dr-licensing-payment-methods.png["Página de métodos de pagamento do NetApp Disaster Recovery"]
+image:dr-licensing-payment-methods.png["A página \"Disaster Recovery Payment methods\""]
 
 . Selecione *Assinar no AWS Marketplace* ou *Assinar no Azure Marketplace*.
-. Use o AWS Marketplace ou o Microsoft Azure Marketplace para assinar o *NetApp Disaster Recovery*.
-. Quando você retorna ao NetApp Disaster Recovery, uma mensagem informa que você está inscrito.
+. Use o AWS Marketplace ou o Microsoft Azure Marketplace para assinar o *Disaster Recovery*.
+. Ao retornar ao Disaster Recovery, uma mensagem informa que você está inscrito.
 +
 Você pode visualizar os detalhes da assinatura na página de assinatura do NetApp Console . link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-homepage.html["Saiba mais sobre o gerenciamento de assinaturas com o NetApp Console"^].
 
@@ -111,7 +111,7 @@ Se você trouxer sua própria licença (BYOL), a configuração inclui a compra 
 [[add-the-license-to-the-netapp-console]]
 === Adicione a licença ao NetApp Console
 
-Após adquirir sua licença do NetApp Disaster Recovery com um representante de vendas da NetApp, você pode gerenciar a licença no Console.
+Depois de adquirir sua licença do Disaster Recovery com um representante de vendas da NetApp, você pode gerenciá-la no Console.
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Saiba mais sobre como adicionar licenças com o NetApp Console"^].
 
@@ -120,7 +120,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 [[update-your-license-when-it-expires]]
 == Atualize sua licença quando ela expirar
 
-Se o prazo da sua licença estiver próximo do vencimento ou se a sua capacidade licenciada estiver atingindo o limite, você será notificado na interface do usuário do NetApp Disaster Recovery. Você pode atualizar sua licença do NetApp Disaster Recovery antes que ela expire para que não haja interrupção no uso do serviço.
+Se o prazo da sua licença estiver próximo da data de vencimento ou se a sua capacidade licenciada estiver atingindo o limite, você receberá uma notificação na interface do usuário do Disaster Recovery. Você pode atualizar sua licença do Disaster Recovery antes que ela expire para que não haja interrupção na sua capacidade de usar o serviço.
 
 
 TIP: Esta mensagem também aparece no NetApp Console e em https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificações"] .
@@ -135,7 +135,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 Você pode interromper o teste gratuito a qualquer momento ou esperar até que ele expire.
 
 .Passos
-. No NetApp Disaster Recovery, selecione *Teste gratuito - Ver detalhes*.
+. No Disaster Recovery, selecione *Teste gratuito: ver detalhes*.
 . Nos detalhes do menu suspenso, selecione *Encerrar teste gratuito*.
 +
 image:draas-trial-end3.png["Fim da página de teste gratuito"]
@@ -146,7 +146,7 @@ Isso exclui todos os agendamentos, planos de replicação, grupos de recursos, v
 
 +
 
-NOTE: Se você encerrar o teste gratuito, não solicitar a exclusão de dados e não comprar uma licença ou assinatura, o NetApp Disaster Recovery excluirá todos os seus dados 60 dias após o término do teste gratuito.
+NOTE: Se você encerrar o período de avaliação gratuita, não solicitar a exclusão de dados e não adquirir uma licença ou assinatura, o Disaster Recovery excluirá todos os seus dados 60 dias após o término do período de avaliação gratuita.
 
 . Digite "encerrar teste" na caixa de texto.
 . Selecione *Fim*.

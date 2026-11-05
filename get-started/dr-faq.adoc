@@ -102,9 +102,9 @@ O NetApp Disaster Recovery suporta as seguintes topologias:
 Para a lista completa, veja link:dr-prerequisites.html["Pré-requisitos para recuperação de desastres"].
 
 .O que é um agente do Console e por que ele é necessário?
-Um agente do Console é um componente de software que permite que o NetApp Console se comunique com o seu armazenamento ONTAP e clusters VMware vCenter. Ele é necessário para que o NetApp Disaster Recovery funcione corretamente. O agente reside em sua rede privada (seja um data center local ou uma VPC na nuvem) e se comunica com suas instâncias de armazenamento ONTAP e clusters vCenter.
+Um agente do Console é um componente de software que permite que o NetApp Console se comunique com seu storage ONTAP e com clusters do VMware vCenter ou clusters do Kubernetes. Ele é necessário para que o Disaster Recovery funcione corretamente. O agente reside na sua rede privada, seja em um data center local ou em uma VPC na nuvem, e se comunica com suas instâncias de storage ONTAP e com clusters do vCenter ou clusters do Kubernetes.
 
-Para recuperação de desastres de um ambiente local para outro, instale o agente do Console local no site de recuperação de desastres. Para recuperação de desastres de um ambiente local para a AWS, instale o agente do Console para AWS na sua AWS VPC. Os clusters de origem e destino vCenter devem usar o mesmo agente do Console. A recuperação de desastres funciona apenas com a implantação do agente no modo padrão.
+Para recuperação de desastres de um ambiente local para outro, instale o agente do Console local no site de recuperação de desastres. Para um ambiente local para a AWS, instale o agente do Console para AWS na sua VPC da AWS. Tanto os clusters de origem e de destino do vCenter quanto os clusters do Kubernetes devem usar o mesmo agente do Console. O Disaster Recovery funciona apenas com a implantação do agente no modo padrão.
 
 .O que um cluster Kubernetes precisa antes de poder ser protegido?
 Cada cluster Kubernetes deve ter o NetApp Trident instalado, um backend ONTAP e uma classe de armazenamento configurados, além dos CRDs e do controlador de snapshot de volume instalados. Os aplicativos devem usar volumes persistentes provisionados por meio da classe de armazenamento Trident. Ao adicionar um cluster Kubernetes como um site, o NetApp Disaster Recovery orienta você na instalação e no registro do Trident Protect nesse cluster. Consulte link:task-kubernetes-requirements.html["Requisitos de cluster Kubernetes para o NetApp Disaster Recovery"] para obter comandos passo a passo e verificações.
@@ -118,7 +118,7 @@ Cada cluster Kubernetes deve ter o NetApp Trident instalado, um backend ONTAP e 
 Um site é um contêiner lógico, geralmente associado a um data center ou a um local na nuvem, que hospeda um ou mais vCenter clusters ou clusters Kubernetes. Você adiciona tanto um site de origem (produção) quanto um site de destino (recuperação de desastres) antes de criar um plano de replicação.
 
 .O que é um grupo de recursos e como ele é utilizado?
-Um grupo de recursos é um contêiner lógico que permite a você gerenciar várias VMs, datastores ou namespaces e recursos do Kubernetes como uma única unidade, para que possam ser protegidos com um snapshot comum. Uma VM pode pertencer a apenas um grupo de recursos por vez. Você pode criar um grupo de recursos para cada aplicativo ou carga de trabalho que deseja proteger, e as VMs são ligadas com base na ordem de inicialização que você configurar dentro do grupo.
+Um grupo de recursos é um contêiner lógico que permite gerenciar várias VMs, datastores ou namespaces e recursos do Kubernetes como uma única unidade, para que possam ser protegidos com um snapshot comum. Uma VM pode pertencer a apenas um grupo de recursos por vez. Você pode criar um grupo de recursos para cada aplicativo ou carga de trabalho que deseja proteger.
 
 .O que é um plano de replicação no NetApp Disaster Recovery?
 Um plano de replicação é um conjunto de regras sobre a frequência com que os backups ocorrem e como lidar com eventos de failover. Ele seleciona os sites de origem e destino, atribui grupos de recursos, define mapeamentos de recuperação e configura o comportamento de inicialização. Os planos definem o objetivo de ponto de recuperação (RPO) por meio da frequência da replicação de dados.
@@ -173,24 +173,24 @@ Sim. Você pode migrar aplicativos VMware de um site de origem para outro usando
 == Failover e testes
 
 .Posso testar meu plano de recuperação de desastres sem afetar as cargas de trabalho de produção?
-Sim. Durante um teste de failover, o NetApp Disaster Recovery cria VMs temporárias a partir de um novo volume FlexClone do snapshot selecionado e mapeia um datastore temporário baseado em FlexClone para os hosts ESXi. Isso não consome capacidade física adicional, não modifica o volume de origem original e não interrompe a relação do SnapMirror nem as cargas de trabalho de produção, que continuam a ser replicadas normalmente. Após o teste, limpe o ambiente de teste usando a ação *Clean up failover test*. Consulte link:../use/failover.html["Falha na execução de aplicativos para um site remoto"].
+Sim. Um teste de failover não modifica o volume de origem original nem interrompe a relação do SnapMirror ou as cargas de trabalho de produção, que continuam sendo replicadas normalmente. Para cargas de trabalho do VMware, o Disaster Recovery cria VMs temporárias a partir de um volume FlexClone do snapshot selecionado e mapeia um datastore temporário com suporte de FlexClone para os hosts ESXi. Para cargas de trabalho do Kubernetes, o teste recupera as aplicações protegidas e os volumes persistentes no cluster de destino. Após o teste, limpe o ambiente de teste usando a ação *Clean up failover test*. Consulte link:../use/failover.html["Falha na execução de aplicativos para um site remoto"].
 
 .O que acontece durante uma operação de failover?
 . O Disaster Recovery executa pré-verificações no cluster de destino e no relacionamento do SnapMirror .
 . Se o snapshot mais recente for selecionado, ele realiza uma atualização do SnapMirror para replicar as alterações mais recentes.
-. As máquinas virtuais de origem foram desligadas.
+. As cargas de trabalho de origem protegidas são interrompidas (no caso do VMware, as VMs protegidas são desligadas).
 . A relação do SnapMirror é quebrada e o volume de destino passa a ser leitura/gravação.
 . Com base na seleção do instantâneo, o sistema de arquivos ativo é restaurado para o instantâneo especificado.
-. Os datastores são criados e montados no cluster ou host VMware ou VMC (os datastores VMFS também recebem um iGroup mapeado para cada LUN).
-. As VMs de destino são registradas no vCenter como novos datastores.
-. As máquinas virtuais de destino são ligadas com base na ordem de inicialização no grupo de recursos.
-. Se a origem vCenter ainda estiver ativa, as VMs do lado da origem que estão sendo transferidas em caso de failover serão desligadas.
-. Quaisquer VMs consistentes com a aplicação são desativadas.
-. Se os clusters vCenter e ONTAP de origem ainda estiverem ativos, uma relação inversa do SnapMirror será criada para replicar as alterações de volta ao site de origem original (a menos que a opção *Ignorar proteção* tenha sido selecionada).
+. Os volumes replicados são disponibilizados no site de recuperação de desastres com base nas informações do plano de replicação. Para cargas de trabalho VMware, os datastores são criados e montados no cluster ou host VMware ou VMC (os datastores VMFS também recebem um iGroup mapeado para cada LUN). Para cargas de trabalho Kubernetes, os volumes são disponibilizados para o cluster de destino.
+. Os recursos de destino são registrados no host de destino.
+. Os recursos de destino são ligados com base na ordem de inicialização do plano de replicação, se uma ordem de inicialização tiver sido especificada.
+. Se as cargas de trabalho protegidas na origem ainda estiverem ativas, elas são interrompidas.
+. Todos os recursos consistentes com a aplicação são reativados.
+. Se os clusters de origem e do ONTAP ainda estiverem ativos, uma relação inversa do SnapMirror será criada para replicar as alterações de volta ao site de origem original (a menos que a opção *Ignorar proteção* tenha sido selecionada).
 
 
-.Posso personalizar a ordem de inicialização das VMs durante um failover?
-Sim. Por padrão, todas as VMs são inicializadas juntas em paralelo, mas você pode atribuir a cada VM um número sequencial (por exemplo, 1, 2, 3) para controlar a ordem de inicialização ou atribuir o mesmo número a várias VMs para inicializá-las simultaneamente. Você também pode definir um atraso de inicialização (0–10 minutos) por VM para escalonar a inicialização, o que é útil para garantir que as VMs prioritárias estejam em execução antes que as VMs de prioridade posterior sejam iniciadas.
+.Posso personalizar a ordem de inicialização das entidades em um plano de replicação durante um failover?
+Sim. Você configura a ordem de inicialização no plano de replicação. Por padrão, todas as entidades são inicializadas juntas em paralelo, mas você pode atribuir a cada entidade um número sequencial (por exemplo, 1, 2, 3) para controlar a ordem de inicialização ou atribuir o mesmo número a vários recursos para inicializá-los simultaneamente. Você também pode definir um atraso na inicialização (0 a 10 minutos) por recurso para escalonar a inicialização, o que é útil para garantir que os recursos prioritários estejam em execução primeiro. A ordem de inicialização é compatível com cargas de trabalho do VMware e do Kubernetes.
 
 
 
@@ -201,11 +201,11 @@ Sim. Por padrão, todas as VMs são inicializadas juntas em paralelo, mas você 
 O failback retorna as operações para o site de origem original após a resolução de um desastre. Partindo de uma relação do SnapMirror que tenha sofrido failover para o destino, o NetApp Disaster Recovery ressincroniza quaisquer alterações de volta para a VM ou cluster Kubernetes de origem original antes de reverter a direção da replicação. O processo:
 
 . Realiza uma verificação de conformidade no site recuperado.
-. Atualiza as informações do vCenter para cada cluster do vCenter no site recuperado.
-. No site de destino, desliga e cancela o registro das VMs e desmonta volumes.
+. Atualiza as informações de descoberta para cada cluster do vCenter ou cluster Kubernetes no site recuperado.
+. No site de destino, interrompe as cargas de trabalho protegidas (para o VMware, desliga e cancela o registro das VMs) e desmonta os volumes.
 . Quebra a relação do SnapMirror na fonte original para torná-la leitura/gravação.
 . Ressincroniza a relação do SnapMirror para inverter a direção da replicação.
-. Liga e registra as VMs de origem e monta os volumes na origem.
+. Inicia as cargas de trabalho protegidas na origem (para o VMware, liga e registra as VMs de origem) e monta os volumes na origem.
 
 
 Consulte link:../use/failback.html["Restaurar aplicativos para a fonte original"].

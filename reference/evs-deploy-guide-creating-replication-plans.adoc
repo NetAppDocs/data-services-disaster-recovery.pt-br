@@ -254,7 +254,7 @@ image:evs-create-rp-wiz-c-datastore-mapping.png["Criar plano de replicação, ma
 [[verify-settings]]
 == Verificar configurações
 
-Após adicionar as informações do plano de replicação no NetApp Disaster Recovery, verifique se as informações que você inseriu estão corretas. Esta é a etapa final.
+Após adicionar as informações do plano de replicação no Disaster Recovery, verifique se as informações inseridas estão corretas. Esta é a etapa final.
 
 .Passos
 . Selecione *Salvar* para revisar suas configurações antes de ativar o plano de replicação.
