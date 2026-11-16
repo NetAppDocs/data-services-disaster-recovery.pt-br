@@ -981,12 +981,10 @@
   <block id="3849da8702f93c4c73b8b2d18d7d3b4d" category="list-text">Selecione *Máquinas virtuais*.</block>
   <block id="2e91c6382e139b4d3b0307917725df9c" category="list-text">Veja as informações das máquinas virtuais.</block>
   <block id="e149f52ef3987c9798fc0b5e92f0d94c" category="doc">Migrar aplicativos para outro site com o NetApp Disaster Recovery</block>
-  <block id="c1845ff7083c49cb3022e9cb477f265b" category="summary">O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres.  Você pode monitorar todos os trabalhos de recuperação de desastres e determinar seu progresso.</block>
   <block id="45b443b335251cfe162de8423d5b2021" category="doc">Monitorar trabalhos de NetApp Disaster Recovery</block>
   <block id="b2885babde6f690716af50f947f38fa4" category="list-text">No menu, selecione *Monitoramento de tarefas*.</block>
   <block id="19a2cef623f0e702dd97e37e1bddd114" category="list-text">Para atualizar as informações, selecione *Atualizar*.</block>
   <block id="24391a0c4e58147fa07febdb32887a1a" category="section-title">Cancelar um trabalho</block>
-  <block id="860b70267867fe6caf0f4adfd247b3e2" category="list-text">Na barra de navegação esquerda do NetApp Console , selecione *Proteção* &gt; *Recuperação de desastres*.</block>
   <block id="49e474835558193a9bed54c7dadf777e" category="paragraph">O trabalho deve estar no estado "Em andamento" ou "Na fila".</block>
   <block id="5542a31575b0db973ecf1e27638145e5" category="doc">Replique aplicativos para outro site com o NetApp Disaster Recovery</block>
   <block id="4fcb591c27b70823ff71112c0db6af4f" category="summary">Analisar relatórios de recuperação de desastres pode ajudar você a analisar sua preparação para recuperação de desastres.  Os relatórios pré-projetados incluem um resumo de failovers e failbacks, detalhes de replicação em todos os sites e detalhes do trabalho do ano passado.</block>
@@ -1841,7 +1839,6 @@
   <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">08 de junho de 2026</block>
   <block id="0926e17414694f3b4201b416c6c4a6ca" category="paragraph">Versão 4.3.4</block>
   <block id="f5fa15f6901bb980064f0a1e081fbfb7" category="list-text">Na página Test failover, escolha o snapshot para o teste de failover: selecione **Take snapshot now** ou **Select** para escolher um snapshot existente. Se você escolher **Select**, escolha o snapshot existente.</block>
-  <block id="e363882b79ccd237ac1f4dd679c679c2" category="paragraph">Você pode cancelar uma tarefa em andamento ou que esteja na fila se estiver travada ou para priorizar uma operação pendente.</block>
   <block id="caf5841d5a0afa8a150bf6da9c22fc2f" category="list-text">No menu suspenso de carga de trabalho, defina o filtro para *Kubernetes*.</block>
   <block id="86839797735bfc02dea42929601e887a" category="list-text">Na janela Configurações, edite os campos conforme necessário.</block>
   <block id="83cfc8bb47b46515d41842fa32fa608b" category="list-text">Para personalizar a programação da descoberta, marque a caixa *Ativar descoberta agendada*. Selecione a data de início da descoberta e o intervalo de descoberta em horas e minutos.</block>
@@ -1906,7 +1903,6 @@
   <block id="f45e2c030a4c208e00f685932255a3ca" category="paragraph">Para revisar os detalhes do plano de replicação, selecione *Ver todos os planos de replicação*.</block>
   <block id="c829e7823834805c5cfdbad004224956" category="list-text">Consulte *Avisos e tarefas recentes* para ver as tarefas e avisos executados mais recentemente e seus respectivos status. Selecione *Ver todas as tarefas* para ver todas as tarefas.</block>
   <block id="cb616e9285bb30b93344966fddafd029" category="list-text">Consulte o *Status de descoberta e proteção* para ver o número de cargas de trabalho descobertas e uma discriminação numérica das cargas de trabalho protegidas versus não protegidas separadas por tipo. Você também pode consultar a capacidade total descoberta de todas as cargas de trabalho e as cargas de trabalho por tipo.</block>
-  <block id="69ebf4461fc9429dbfcd7813c2832c6a" category="list-text">Selecione o menu de ações e, em seguida, **Cancel job**.</block>
   <block id="c6f5d2645082be603586c7fcecedd01e" category="doc">Crie relatórios em NetApp Disaster Recovery</block>
   <block id="466b68043567b88303b6c00217b4aeb5" category="paragraph">O link para download do relatório é válido por seis horas após você gerá-lo.</block>
   <block id="c5cbff21ca879b1c12f07a2c7ced7d25" category="list-text">Faça login no <block ref="3127a7e60ca42a30e72a85e6e4e87658" category="inline-link-macro-rx"></block>.</block>
@@ -2834,4 +2830,15 @@
   <block id="67582bf168c69167e5196885e4690704" category="paragraph">Se você escolher *Excluir*, selecione os snapshots ou os metadados associados para excluir junto com o plano de replicação: *Excluir snapshots primários*, *Excluir snapshots secundários* ou *Excluir metadados do snapshot*. Na caixa de texto, digite "excluir" para confirmar a operação e, em seguida, selecione *Excluir*.</block>
   <block id="8f16177ab00235f59e48b3f88600dc4e" category="sidebar">A recuperação de desastres para a nuvem é uma maneira resiliente e econômica de proteger cargas de trabalho contra interrupções de site e eventos de corrupção de dados (por exemplo, ransomware). Com o NetApp Disaster Recovery, você pode proteger suas cargas de trabalho VMware e Kubernetes locais executadas no armazenamento ONTAP, replicando-as para um site de recuperação de desastres, como outro site local ou, para cargas de trabalho VMware, um data center definido por software da VMware em uma nuvem pública.</block>
   <block id="ca3da73b82227265cf5cad362eba88f9" category="sidebar">Com o NetApp Disaster Recovery, você pode replicar suas cargas de trabalho locais do VMware e Kubernetes executadas no armazenamento ONTAP para um site de recuperação de desastres.</block>
+  <block id="a022cebca1f841a4a75654f3e54a623b" category="doc">Aprimoramento do monitoramento de tarefas ao executar tarefas novamente</block>
+  <block id="c5473f86ef99f2b81306aec2f780c239" category="paragraph">Se você executar novamente determinadas operações com falha, canceladas ou expiradas, o NetApp Disaster Recovery agora registra essas operações como novos trabalhos e identifica o usuário que iniciou a ação. Anteriormente, o NetApp Disaster Recovery listava os novos trabalhos sob o trabalho inicial. Esse aprimoramento cria uma trilha de auditoria mais visível para os trabalhos no NetApp Disaster Recovery, desde que a solicitação não tenha sido redigida. Ele se aplica somente a trabalhos de descoberta, ressincronização, conformidade, proteção, plano de replicação e retenção de backup. As operações de reexecução de failback, failover e migração não são listadas como novos trabalhos. Somente o trabalho mais recente em uma cadeia de reexecução se qualifica, e no máximo uma reexecução pode ser enfileirada atrás de uma em execução.</block>
+  <block id="85aac6cb5b462503919fc861b656a1fa" category="inline-link-macro">Monitorar trabalhos no Disaster Recovery</block>
+  <block id="762e29bb52300aa24d22073f79b3d226" category="paragraph">Para obter mais informações, consulte <block ref="23d16b59790b4ad5fc943f7449cf33c5" category="inline-link-macro-rx"></block>.</block>
+  <block id="e370f8f4d5db9e4f93257ac02adddec3" category="section-title">09 de novembro de 2026</block>
+  <block id="6c6def1e063357d2dbcb737904433f45" category="paragraph">Versão 4.3.9</block>
+  <block id="6c0cf6e0bcdd11f211b4e682480a409b" category="summary">Monitore os trabalhos no NetApp Disaster Recovery para ver o histórico deles, auditar as operações do usuário e acompanhar operações potencialmente problemáticas ou que atingiram o tempo limite.</block>
+  <block id="a0b10368604904a36461ecb27e11a658" category="section-title">Sobre o monitoramento de tarefas</block>
+  <block id="8dec9ccdd6e1ed3c94d0a2f1aa6d21a8" category="paragraph">Se você executar novamente uma tarefa de descoberta, ressincronização, conformidade, proteção, plano de replicação ou retenção de backup que falhou, foi cancelada ou expirou, o Disaster Recovery registra a nova execução como uma nova tarefa e registra o usuário que a iniciou, para que você possa ver quem realizou cada ação. As novas execuções de operações de failback, failover e migração são listadas na tarefa original, e o usuário que iniciou a nova execução não aparece na lista.</block>
+  <block id="f93bdc0664253a11e5d06cbc704f8d85" category="paragraph">Você pode cancelar uma tarefa em andamento ou na fila se ela estiver travada ou se precisar priorizar uma operação pendente.</block>
+  <block id="d89601481d21a5b4c57d9d0c59bcbce3" category="list-text">Selecione o menu de ações e, em seguida, selecione **Cancelar tarefa**.</block>
 </blocks>

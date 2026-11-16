@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/monitor-jobs.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp 
-summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres baseado em nuvem que automatiza fluxos de trabalho de recuperação de desastres.  Você pode monitorar todos os trabalhos de recuperação de desastres e determinar seu progresso. 
+summary: Monitore os trabalhos no NetApp Disaster Recovery para ver o histórico deles, auditar as operações do usuário e acompanhar operações potencialmente problemáticas ou que atingiram o tempo limite. 
 ---
 = Monitorar trabalhos de NetApp Disaster Recovery
 :hardbreaks:
@@ -13,6 +13,13 @@ summary: O NetApp Disaster Recovery é um serviço de recuperação de desastres
 
 [role="lead"]
 Monitore os trabalhos de NetApp Disaster Recovery para visualizar seu histórico, status e detalhes. Acompanhar o status e o progresso dos trabalhos permite que você identifique operações com falha ou paralisadas antes que elas afetem a prontidão para a recuperação.
+
+
+
+[[about-job-monitoring]]
+== Sobre o monitoramento de tarefas
+
+Se você executar novamente uma tarefa de descoberta, ressincronização, conformidade, proteção, plano de replicação ou retenção de backup que falhou, foi cancelada ou expirou, o Disaster Recovery registra a nova execução como uma nova tarefa e registra o usuário que a iniciou, para que você possa ver quem realizou cada ação. As novas execuções de operações de failback, failover e migração são listadas na tarefa original, e o usuário que iniciou a nova execução não aparece na lista.
 
 
 
@@ -39,16 +46,16 @@ TIP: Ao revisar os detalhes da tarefa, o NetApp Disaster Recovery mostra o usuá
 [[cancel-a-job]]
 == Cancelar um trabalho
 
-Você pode cancelar uma tarefa em andamento ou que esteja na fila se estiver travada ou para priorizar uma operação pendente.
+Você pode cancelar uma tarefa em andamento ou na fila se ela estiver travada ou se precisar priorizar uma operação pendente.
 
 *Função de console NetApp necessária* A função de Super admin, Disaster recovery admin, Disaster recovery failover admin ou Disaster recovery application admin é necessária para executar esta tarefa. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Saiba mais sobre funções e permissões de usuário no NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
-. Na barra de navegação esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
+. Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Recuperação de desastres*.
 . No menu, selecione *Monitoramento de tarefas*.
 . Na página de monitoramento de tarefas, anote o ID da tarefa que você deseja cancelar.
 +
 O trabalho deve estar no estado "Em andamento" ou "Na fila".
 
-. Selecione o menu de ações e, em seguida, **Cancel job**.
+. Selecione o menu de ações e, em seguida, selecione **Cancelar tarefa**.
 

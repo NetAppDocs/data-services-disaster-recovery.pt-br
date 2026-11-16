@@ -16,6 +16,22 @@ Descubra as novidades em NetApp Disaster Recovery.
 
 
 
+[[09-november-2026]]
+== 09 de novembro de 2026
+
+Versão 4.3.9
+
+
+
+[[job-monitoring-enhancement-when-rerunning-jobs]]
+=== Aprimoramento do monitoramento de tarefas ao executar tarefas novamente
+
+Se você executar novamente determinadas operações com falha, canceladas ou expiradas, o NetApp Disaster Recovery agora registra essas operações como novos trabalhos e identifica o usuário que iniciou a ação. Anteriormente, o NetApp Disaster Recovery listava os novos trabalhos sob o trabalho inicial. Esse aprimoramento cria uma trilha de auditoria mais visível para os trabalhos no NetApp Disaster Recovery, desde que a solicitação não tenha sido redigida. Ele se aplica somente a trabalhos de descoberta, ressincronização, conformidade, proteção, plano de replicação e retenção de backup. As operações de reexecução de failback, failover e migração não são listadas como novos trabalhos. Somente o trabalho mais recente em uma cadeia de reexecução se qualifica, e no máximo uma reexecução pode ser enfileirada atrás de uma em execução.
+
+Para obter mais informações, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["Monitorar trabalhos no Disaster Recovery"^].
+
+
+
 [[12-october-2026]]
 == 12 de outubro de 2026
 
